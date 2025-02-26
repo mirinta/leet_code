@@ -23,32 +23,30 @@ public:
     int maxAbsoluteSum(std::vector<int>& nums) { return approach2(nums); }
 
 private:
-    // DP with space optimization, TC = O(N), SC = O(1)
     int approach2(const std::vector<int>& nums)
     {
-        const int n = nums.size();
-        int max = 0;
         int min = 0;
+        int max = 0;
         int result = 0;
-        for (int i = 1; i <= n; ++i) {
-            max = std::max(nums[i - 1], max + nums[i - 1]);
-            min = std::min(nums[i - 1], min + nums[i - 1]);
-            result = std::max({result, std::abs(max), std::abs(min)});
+        for (const auto& val : nums) {
+            min = std::min(val, min + val);
+            max = std::max(val, max + val);
+            result = std::max({result, std::abs(min), std::abs(max)});
         }
         return result;
     }
 
-    // DP, TC = O(N), SC = O(N)
     int approach1(const std::vector<int>& nums)
     {
-        // dp[i][0] = max sum of subarrays of nums[0:i-1] ending at nums[i-1]
-        // dp[i][1] = min sum of subarrays of nums[0:i-1] ending at nums[i-1]
+        // dp[i][0] = min subarray sum of nums[0:i] ending at nums[i]
+        // dp[i][1] = max subarray sum of nums[0:i] ending at nums[i]
         const int n = nums.size();
-        std::vector<std::array<int, 2>> dp(n + 1, {0, 0});
-        int result = 0;
-        for (int i = 1; i <= n; ++i) {
-            dp[i][0] = std::max(nums[i - 1], dp[i - 1][0] + nums[i - 1]);
-            dp[i][1] = std::min(nums[i - 1], dp[i - 1][1] + nums[i - 1]);
+        std::vector<std::array<int, 2>> dp(n, {0, 0});
+        dp[0] = {nums[0], nums[0]};
+        int result = std::max(std::abs(dp[0][0]), std::abs(dp[0][1]));
+        for (int i = 1; i < n; ++i) {
+            dp[i][0] = std::min(nums[i], dp[i - 1][0] + nums[i]);
+            dp[i][1] = std::max(nums[i], dp[i - 1][1] + nums[i]);
             result = std::max({result, std::abs(dp[i][0]), std::abs(dp[i][1])});
         }
         return result;
