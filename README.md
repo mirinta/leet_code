@@ -144,6 +144,7 @@ TODO:
 | [1504. Count Submatrices With All Ones][link1504] | `Dynamic Programming`, `Monotonic Stack` | :fire:1845 |
 | [2945. Find Maximum Non-decreasing Array Length][link2945] | `Dynamic Programming`, `Prefix Sum`, `Monotonic Queue` | :fire:2943 |
 | [2597. The Number of Beautiful Subsets7][link2597] | `Dynamic Programming`, `Sorting`, `Backtracking` | :fire:2023 |
+| [1092. Shortest Common Supersequence][link1092] |`Dynamic Programming`, `String` | :fire:1977 |
 | [3068. Find the Maximum Sum of Node Values][link3068] | `Dynamic Programming`, `Tree` | :fire:2268 |
 | [787. Cheapest Flights Within K Stops][link0787] | `Graph`, `Shortest Path` | :fire:1786 |
 | [3022. Minimize OR of Remaining Elements Using Operations][link3022] | `Greedy`, `Bitmask` | :fire:2918 |
@@ -227,3 +228,4 @@ TODO:
 [link3428]: https://leetcode.com/problems/maximum-and-minimum-sums-of-at-most-size-k-subsequences/description/
 [link630]: https://leetcode.com/problems/course-schedule-iii/description/
 [link2375]: https://leetcode.com/problems/construct-smallest-number-from-di-string/description/
+[link1092]: https://leetcode.com/problems/shortest-common-supersequence/description/
