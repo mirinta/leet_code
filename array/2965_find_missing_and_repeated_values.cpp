@@ -23,19 +23,21 @@ public:
     std::vector<int> findMissingAndRepeatedValues(std::vector<std::vector<int>>& grid)
     {
         const int n = grid.size();
-        std::vector<int> freq(n * n + 1, 0);
-        int a = 0;
-        for (const auto& values : grid) {
-            for (const auto& val : values) {
-                freq[val]++;
-                if (freq[val] > 1) {
-                    a = val;
+        std::vector<int> count(n * n + 1, 0);
+        std::vector<int> result;
+        result.reserve(2);
+        for (const auto& row : grid) {
+            for (const auto& val : row) {
+                if (++count[val] > 1) {
+                    result.push_back(val);
                 }
             }
         }
-        for (int i = 1; i <= n * n; ++i) {
-            if (freq[i] == 0)
-                return {a, i};
+        for (int val = 1; val < count.size(); ++val) {
+            if (count[val] == 0) {
+                result.push_back(val);
+                return result;
+            }
         }
         return {};
     }
