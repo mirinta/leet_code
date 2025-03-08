@@ -24,17 +24,14 @@ public:
     int minimumRecolors(std::string blocks, int k)
     {
         const int n = blocks.size();
-        int blacks = 0;
-        int result = INT_MAX;
-        for (int left = 0, right = 0; right < n; ++right) {
+        int result = n;
+        for (int left = 0, right = 0, blacks = 0; right < n; ++right) {
             blacks += blocks[right] == 'B';
-            if (right - left + 1 > k) {
-                blacks -= blocks[left] == 'B';
-                left++;
+            if (right >= k) {
+                blacks -= blocks[left++] == 'B';
             }
-            const int L = right - left + 1;
-            if (L == k) {
-                result = std::min(result, L - blacks);
+            if (right >= k - 1) {
+                result = std::min(result, k - blacks);
             }
         }
         return result;
