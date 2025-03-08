@@ -1,5 +1,5 @@
+#include <array>
 #include <string>
-#include <unordered_map>
 
 /**
  * Given a string s and an integer k, return the number of substrings in s of length k with no
@@ -16,22 +16,12 @@ public:
     int numKLenSubstrNoRepeats(std::string s, int k)
     {
         const int n = s.size();
-        if (k > n)
-            return 0;
-
-        std::unordered_map<char, int> map;
+        std::array<int, 26> count{};
         int result = 0;
-        for (int left = 0, right = 0; right < n; ++right) {
-            map[s[right]]++;
-            if (right - left + 1 > k) {
-                if (--map[s[left]] == 0) {
-                    map.erase(s[left]);
-                }
-                left++;
-            }
-            if (right - left + 1 == k && map.size() == k) {
-                result++;
-            }
+        for (int left = 0, right = 0, uniques = 0; right < n; ++right) {
+            uniques += ++count[s[right] - 'a'] == 1;
+            uniques -= right >= k && --count[s[left++] - 'a'] == 0;
+            result += right >= k - 1 && uniques == k;
         }
         return result;
     }
