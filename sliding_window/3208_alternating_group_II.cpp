@@ -26,21 +26,15 @@ class Solution
 public:
     int numberOfAlternatingGroups(std::vector<int>& colors, int k)
     {
-        // count[i] = max num of alternating colors of nums[0:i] ending at nums[i]
         const int n = colors.size();
-        std::vector<int> count(n, 0);
-        for (int i = 0; i < 2 * n; ++i) {
-            const int curr = i % n;
-            const int prev = (i - 1 + n) % n;
-            if (colors[curr] != colors[prev]) {
-                count[curr] = count[prev] + 1;
-            } else {
-                count[curr] = 0;
-            }
-        }
         int result = 0;
-        for (int i = 0; i < n; ++i) {
-            result += count[i] >= k - 1;
+        for (int i = 0, count = 1; i < n - 1 + k - 1; ++i) {
+            if (colors[i % n] != colors[(i - 1 + n) % n]) {
+                count++;
+            } else {
+                count = 1;
+            }
+            result += count >= k;
         }
         return result;
     }
