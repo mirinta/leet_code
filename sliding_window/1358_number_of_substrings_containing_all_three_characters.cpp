@@ -21,12 +21,18 @@ public:
         int result = 0;
         for (int left = 0, right = 0; right < n; ++right) {
             count[s[right] - 'a']++;
-            while (count[0] >= 1 && count[1] >= 1 && count[2] >= 1) {
+            while (isValid(count)) {
                 count[s[left] - 'a']--;
                 left++;
             }
             result += left;
         }
         return result;
+    }
+
+private:
+    bool isValid(const std::array<int, 3>& count)
+    {
+        return std::all_of(count.begin(), count.end(), [](const auto& val) { return val >= 1; });
     }
 };
