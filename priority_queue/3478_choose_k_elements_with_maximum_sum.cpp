@@ -13,6 +13,11 @@
  *
  * Return an array answer of size n, where answer[i] represents the result for the corresponding
  * index i.
+ *
+ * ! n == nums1.length == nums2.length
+ * ! 1 <= n <= 10^5
+ * ! 1 <= nums1[i], nums2[i] <= 10^6
+ * ! 1 <= k <= n
  */
 
 class Solution
