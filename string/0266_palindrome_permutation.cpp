@@ -1,5 +1,5 @@
+#include <array>
 #include <string>
-#include <unordered_map>
 
 /**
  * Given a string s, return true if a permutation of the string could form a palindrome and false
@@ -14,21 +14,19 @@ class Solution
 public:
     bool canPermutePalindrome(std::string s)
     {
-        std::unordered_map<char, int> map; // letter to frequency
+        const bool isOdd = s.size() % 2;
+        std::array<int, 26> count{};
         for (const auto& c : s) {
-            map[c]++;
+            count[c - 'a']++;
         }
-        const bool isOddLength = s.size() % 2;
-        int countOddFreq = 0;
-        for (const auto& [c, freq] : map) {
-            if (freq % 2) {
-                countOddFreq++;
-            }
-            if (isOddLength && countOddFreq > 1)
+        int countOdd = 0;
+        for (const auto& freq : count) {
+            countOdd += freq % 2;
+            if (isOdd && countOdd > 1)
                 return false;
 
-            if (!isOddLength && countOddFreq > 0)
-                return false;
+            if (!isOdd && countOdd > 0)
+                return false;    
         }
         return true;
     }
