@@ -42,20 +42,17 @@ public:
     }
 
 private:
-    // check if the max num of robbed houses >= k to achieve capability <= max
     bool isValid(int max, const std::vector<int>& nums, int k)
     {
-        const int n = nums.size();
-        int i = 0;
         int count = 0;
-        while (i < n) {
-            if (nums[i] <= max) {
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] <= capacity) {
                 count++;
-                i += 2;
-            } else {
                 i++;
             }
+            if (count >= k)
+                return true;
         }
-        return count >= k;
+        return false;
     }
 };
