@@ -30,38 +30,88 @@
 class SegmentTree
 {
 public:
-    explicit SegmentTree(long long n) : data(4 * n, 0) {}
+    explicit SegmentTree(const std::vector<int>& nums)
+        : n(nums.size()), data(4 * n, 0), lazy(4 * n, 0), flag(4 * n, false)
+    {
+        build(0, n - 1, 1, nums);
+    }
 
-    void update(long long id, long long lo, long long hi, long long targetID, long long targetVal)
+    int query(int L, int R) { return query(L, R, 0, n - 1, 1); }
+
+    void set(int L, int R, int val) { set(L, R, val, 0, n - 1, 1); }
+
+private:
+    void build(int lo, int hi, int id, const std::vector<int>& nums)
     {
         if (lo == hi) {
-            data[id] = targetVal;
+            data[id] = nums[lo];
             return;
         }
-        const long long mid = lo + (hi - lo) / 2;
-        if (targetID <= mid) {
-            update(2 * id, lo, mid, targetID, targetVal);
-        } else {
-            update(2 * id + 1, mid + 1, hi, targetID, targetVal);
+        const int mid = lo + (hi - lo) / 2;
+        build(lo, mid, 2 * id, nums);
+        build(mid + 1, hi, 2 * id + 1, nums);
+        data[id] = std::max(data[2 * id], data[2 * id + 1]);
+    }
+
+    int query(int L, int R, int lo, int hi, int id)
+    {
+        if (lo >= L && hi <= R)
+            return data[id];
+
+        if (flag[id]) {
+            data[2 * id] = lazy[id];
+            data[2 * id + 1] = lazy[id];
+            lazy[2 * id] = lazy[id];
+            lazy[2 * id + 1] = lazy[id];
+            lazy[id] = 0;
+            flag[2 * id] = true;
+            flag[2 * id + 1] = true;
+            flag[id] = false;
+        }
+        const int mid = lo + (hi - lo) / 2;
+        int result = INT_MIN;
+        if (mid >= L) {
+            result = std::max(result, query(L, R, lo, mid, 2 * id));
+        }
+        if (mid < R) {
+            result = std::max(result, query(L, R, mid + 1, hi, 2 * id + 1));
+        }
+        return result;
+    }
+
+    void set(int L, int R, int val, int lo, int hi, int id)
+    {
+        if (lo >= L && hi <= R) {
+            data[id] = val;
+            lazy[id] = val;
+            flag[id] = true;
+            return;
+        }
+        if (flag[id]) {
+            data[2 * id] = lazy[id];
+            data[2 * id + 1] = lazy[id];
+            lazy[2 * id] = lazy[id];
+            lazy[2 * id + 1] = lazy[id];
+            lazy[id] = 0;
+            flag[2 * id] = true;
+            flag[2 * id + 1] = true;
+            flag[id] = false;
+        }
+        const int mid = lo + (hi - lo) / 2;
+        if (mid >= L) {
+            set(L, R, val, lo, mid, 2 * id);
+        }
+        if (mid < R) {
+            set(L, R, val, mid + 1, hi, 2 * id + 1);
         }
         data[id] = std::max(data[2 * id], data[2 * id + 1]);
     }
 
-    // query range [1:R]
-    long long query(long long id, long long lo, long long hi, long long R)
-    {
-        if (hi <= R)
-            return data[id];
-
-        const long long mid = lo + (hi - lo) / 2;
-        if (R <= mid)
-            return query(2 * id, lo, mid, R);
-
-        return std::max(data[2 * id], query(2 * id + 1, mid + 1, hi, R));
-    }
-
 private:
-    std::vector<long long> data;
+    const int n;
+    std::vector<int> data;  // 1-indexed
+    std::vector<int> lazy;  // 1-indexed
+    std::vector<bool> flag; // 1-indexed
 };
 
 class Solution
@@ -69,31 +119,25 @@ class Solution
 public:
     std::vector<bool> getResults(std::vector<std::vector<int>>& queries)
     {
-        // consider 0 and MAX as two obstacles
-        long long boundary = 0;
-        for (const auto& query : queries) {
-            boundary = std::max(boundary, static_cast<long long>(query[1]));
+        int max = 0;
+        for (const auto& q : queries) {
+            max = std::max(max, q[1]);
         }
-        boundary++;
-        const long long n = boundary + 1;
-        SegmentTree tree(n);
-        std::set<long long> obstacles{0, boundary};
+        // tree[i] = empty space between i and the nearest block to the left of i
+        SegmentTree tree(std::vector<int>(max + 2, 0));
+        std::set<int> set{0, max + 1};
         std::vector<bool> result;
-        result.reserve(queries.size());
-        for (const auto& query : queries) {
-            // ... left_obstacle ... x ... right_obstacle
-            //     |<-----x-left---->|<-----right-x---->|
-            const long long x = query[1];
-            auto iter = obstacles.lower_bound(x);
-            const long long left = *std::prev(iter);
-            const long long right = *iter;
-            if (query[0] == 1) {
-                obstacles.insert(x);
-                tree.update(1, 1, n, x + 1, x - left);
-                tree.update(1, 1, n, right + 1, right - x);
+        for (const auto& q : queries) {
+            const int x = q[1];
+            auto iter = set.lower_bound(x);
+            const int prev = *std::prev(iter);
+            const int next = *iter;
+            if (q[0] == 1) {
+                set.insert(x);
+                tree.set(x, x, x - prev);
+                tree.set(next, next, next - x);
             } else {
-                const int maxSpace = std::max(x - left, tree.query(1, 1, n, left + 1));
-                result.push_back(maxSpace >= query[2]);
+                result.push_back(std::max(x - prev, tree.query(0, prev)) >= q[2]);
             }
         }
         return result;
