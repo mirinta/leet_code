@@ -4,7 +4,7 @@ class SegmentTree
 {
 public:
     explicit SegmentTree(const std::vector<long long>& nums)
-        : n(nums.size()), data(4 * n + 1), lazy(4 * n + 1)
+        : n(nums.size()), data(4 * n + 1, 0), lazy(4 * n + 1, 0)
     {
         build(0, n - 1, 1, nums);
     }
