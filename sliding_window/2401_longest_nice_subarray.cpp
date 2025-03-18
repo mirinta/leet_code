@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <array>
 #include <vector>
 
@@ -24,41 +23,43 @@ public:
     int longestNiceSubarray(std::vector<int>& nums) { return approach2(nums); }
 
 private:
-    // bit manipulation, TC = O(N), SC = O(1)
     int approach2(const std::vector<int>& nums)
     {
-        // #NOTE# subarrays of length 1 are valid
         const int n = nums.size();
-        int AND = 0;
         int result = 0;
-        for (int left = 0, right = 0; right < n; ++right) {
-            while ((AND & nums[right]) != 0) {
-                AND ^= nums[left];
-                left++;
+        for (int left = 0, right = 0, OR = 0; right < n; ++right) {
+            while (OR & nums[right]) {
+                OR ^= nums[left++];
             }
-            AND |= nums[right];
             result = std::max(result, right - left + 1);
+            OR |= nums[right];
         }
         return result;
     }
 
-    // naive bit-by-bit, TC = O(N), SC = O(N)
     int approach1(const std::vector<int>& nums)
     {
-        const int n = nums.size();
         std::array<int, 32> count{};
-        auto predicate = [](const auto& val) { return val == 0 || val == 1; };
-        auto maintain = [&count](int val, int sign) {
+        auto isValid = [&count]() {
+            for (const auto& freq : count) {
+                if (freq > 1)
+                    return false;
+            }
+            return true;
+        };
+        auto update = [&count](int val, int delta) {
             for (int i = 0; i < 32; ++i) {
-                count[i] += sign * ((val >> i) & 1);
+                if ((val >> i) & 1) {
+                    count[i] += delta;
+                }
             }
         };
+        const int n = nums.size();
         int result = 0;
         for (int left = 0, right = 0; right < n; ++right) {
-            maintain(nums[right], 1);
-            while (!std::all_of(count.begin(), count.end(), predicate)) {
-                maintain(nums[left], -1);
-                left++;
+            update(nums[right], 1);
+            while (!isValid()) {
+                update(nums[left++], -1);
             }
             result = std::max(result, right - left + 1);
         }
