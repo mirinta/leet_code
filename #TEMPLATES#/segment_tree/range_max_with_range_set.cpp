@@ -10,8 +10,10 @@ public:
         build(0, n - 1, 1, nums);
     }
 
+    // query the max element of nums[L:R], L and R are 0-indexed
     int query(int L, int R) { return query(L, R, 0, n - 1, 1); }
 
+    // set each element of nums[L:R] to val, L and R are 0-indexed
     void set(int L, int R, int val) { set(L, R, val, 0, n - 1, 1); }
 
 private:
@@ -27,8 +29,11 @@ private:
         data[id] = std::max(data[2 * id], data[2 * id + 1]);
     }
 
-    void propagate(int id)
+    long long query(int L, int R, int lo, int hi, int id)
     {
+        if (lo >= L && hi <= R)
+            return data[id];
+
         if (flag[id]) {
             data[2 * id] = lazy[id];
             data[2 * id + 1] = lazy[id];
@@ -39,14 +44,6 @@ private:
             flag[2 * id + 1] = true;
             flag[id] = false;
         }
-    }
-
-    long long query(int L, int R, int lo, int hi, int id)
-    {
-        if (lo >= L && hi <= R)
-            return data[id];
-
-        propagate(id);
         const int mid = lo + (hi - lo) / 2;
         long long result = INT_MIN;
         if (mid >= L) {
@@ -66,7 +63,16 @@ private:
             flag[id] = true;
             return;
         }
-        propagate(id);
+        if (flag[id]) {
+            data[2 * id] = lazy[id];
+            data[2 * id + 1] = lazy[id];
+            lazy[2 * id] = lazy[id];
+            lazy[2 * id + 1] = lazy[id];
+            lazy[id] = 0;
+            flag[2 * id] = true;
+            flag[2 * id + 1] = true;
+            flag[id] = false;
+        }
         const int mid = lo + (hi - lo) / 2;
         if (mid >= L) {
             set(L, R, val, lo, mid, 2 * id);
