@@ -10,30 +10,30 @@ public:
     }
 
     // query sum of nums[L:R], L and R are 0-indexed
-    long long query(int L, int R) { return query(L, R, 0, n - 1, 1); }
+    long long query(long long L, long long R) { return query(L, R, 0, n - 1, 1); }
 
     // add each element of nums[L:R] by delta, L and R are 0-indexed
-    void add(int L, int R, long long delta) { add(L, R, delta, 0, n - 1, 1); }
+    void add(long long L, long long R, long long delta) { add(L, R, delta, 0, n - 1, 1); }
 
 private:
-    void build(int lo, int hi, int id, const std::vector<long long>& nums)
+    void build(long long lo, long long hi, long long id, const std::vector<long long>& nums)
     {
         if (lo == hi) {
             data[id] = nums[lo];
             return;
         }
-        const int mid = lo + (hi - lo) / 2;
+        const long long mid = lo + (hi - lo) / 2;
         build(lo, mid, 2 * id, nums);
         build(mid + 1, hi, 2 * id + 1, nums);
         data[id] = data[2 * id] + data[2 * id + 1];
     }
 
-    long long query(int L, int R, int lo, int hi, int id)
+    long long query(long long L, long long R, long long lo, long long hi, long long id)
     {
         if (lo >= L && hi <= R)
             return data[id];
 
-        const int mid = lo + (hi - lo) / 2;
+        const long long mid = lo + (hi - lo) / 2;
         if (lazy[id] != 0) {
             data[2 * id] += lazy[id] * (mid - lo + 1);
             data[2 * id + 1] += lazy[id] * (hi - mid);
@@ -51,14 +51,14 @@ private:
         return result;
     }
 
-    void add(int L, int R, long long delta, int lo, int hi, int id)
+    void add(long long L, long long R, long long delta, long long lo, long long hi, long long id)
     {
         if (lo >= L && hi <= R) {
             data[id] += delta * (hi - lo + 1);
             lazy[id] += delta;
             return;
         }
-        const int mid = lo + (hi - lo) / 2;
+        const long long mid = lo + (hi - lo) / 2;
         if (lazy[id] != 0) {
             data[2 * id] += lazy[id] * (mid - lo + 1);
             data[2 * id + 1] += lazy[id] * (hi - mid);
@@ -76,7 +76,7 @@ private:
     }
 
 private:
-    const int n;
+    const long long n;
     std::vector<long long> data; // 1-indexed
     std::vector<long long> lazy; // 1-indexed
 };
