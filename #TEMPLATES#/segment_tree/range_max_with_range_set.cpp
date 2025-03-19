@@ -27,11 +27,8 @@ private:
         data[id] = std::max(data[2 * id], data[2 * id + 1]);
     }
 
-    long long query(int L, int R, int lo, int hi, int id)
+    void propagate(int id)
     {
-        if (lo >= L && hi <= R)
-            return data[id];
-
         if (flag[id]) {
             data[2 * id] = lazy[id];
             data[2 * id + 1] = lazy[id];
@@ -42,6 +39,14 @@ private:
             flag[2 * id + 1] = true;
             flag[id] = false;
         }
+    }
+
+    long long query(int L, int R, int lo, int hi, int id)
+    {
+        if (lo >= L && hi <= R)
+            return data[id];
+
+        propagate(id);
         const int mid = lo + (hi - lo) / 2;
         long long result = INT_MIN;
         if (mid >= L) {
@@ -61,16 +66,7 @@ private:
             flag[id] = true;
             return;
         }
-        if (flag[id]) {
-            data[2 * id] = lazy[id];
-            data[2 * id + 1] = lazy[id];
-            lazy[2 * id] = lazy[id];
-            lazy[2 * id + 1] = lazy[id];
-            lazy[id] = 0;
-            flag[2 * id] = true;
-            flag[2 * id + 1] = true;
-            flag[id] = false;
-        }
+        propagate(id);
         const int mid = lo + (hi - lo) / 2;
         if (mid >= L) {
             set(L, R, val, lo, mid, 2 * id);
