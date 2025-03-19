@@ -13,7 +13,7 @@ public:
     // query the max element of nums[L:R], L and R are 0-indexed
     int query(int L, int R) { return query(L, R, 0, n - 1, 1); }
 
-    // set each element of nums[L:R] to val, L and R are 0-indexed
+    // set all elements of nums[L:R] to val, L and R are 0-indexed
     void set(int L, int R, int val) { set(L, R, val, 0, n - 1, 1); }
 
 private:
