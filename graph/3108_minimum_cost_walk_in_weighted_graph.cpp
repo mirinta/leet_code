@@ -35,7 +35,7 @@
 class UnionFind
 {
 public:
-    explicit UnionFind(int n) : root(n), rank(n, 1), cost(n, INT_MAX)
+    explicit UnionFind(int n) : root(n), size(n, 1), cost(n, -1)
     {
         for (int i = 0; i < n; ++i) {
             root[i] = i;
@@ -52,27 +52,27 @@ public:
 
     bool isConnected(int p, int q) { return find(p) == find(q); }
 
-    void connect(int p, int q, int weight)
+    void connect(int p, int q, int w)
     {
         int rootP = find(p);
         int rootQ = find(q);
         if (rootP == rootQ) {
-            cost[rootP] &= weight;
+            cost[rootP] &= w;
             return;
         }
-        if (rank[rootQ] > rank[rootP]) {
+        if (size[rootQ] > size[rootP]) {
             std::swap(rootP, rootQ);
         }
         root[rootQ] = rootP;
-        rank[rootP] += rank[rootQ];
-        cost[rootP] &= cost[rootQ] & weight;
+        size[rootP] += size[rootQ];
+        cost[rootP] &= cost[rootQ] & w;
     }
 
-    int minCost(int x) { return cost[find(x)]; }
+    int groupCost(int x) { return cost[find(x)]; }
 
 private:
     std::vector<int> root;
-    std::vector<int> rank;
+    std::vector<int> size;
     std::vector<int> cost;
 };
 
@@ -83,19 +83,16 @@ public:
                                  std::vector<std::vector<int>>& query)
     {
         UnionFind uf(n);
-        for (const auto& edge : edges) {
-            uf.connect(edge[0], edge[1], edge[2]);
+        for (const auto& e : edges) {
+            uf.connect(e[0], e[1], e[2]);
         }
-        std::vector<int> result(query.size());
-        for (int i = 0; i < query.size(); ++i) {
-            const int s = query[i][0];
-            const int t = query[i][1];
-            if (s == t) {
-                result[i] = 0;
-            } else if (!uf.isConnected(s, t)) {
-                result[i] = -1;
+        std::vector<int> result;
+        result.reserve(query.size());
+        for (const auto& q : query) {
+            if (!uf.isConnected(q[0], q[1])) {
+                result.push_back(-1);
             } else {
-                result[i] = uf.minCost(uf.find(s));
+                result.push_back(uf.groupCost(q[0]));
             }
         }
         return result;
