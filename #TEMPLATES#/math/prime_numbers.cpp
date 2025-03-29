@@ -32,7 +32,7 @@ std::vector<int> getPrimeNumbers(int n)
     std::vector<bool> isPrime(n + 1, true);
     isPrime[0] = false;
     isPrime[1] = false;
-    for (long long i = 2; i <= n; ++i) {
+    for (long long i = 2; i * i <= n; ++i) {
         if (isPrime[i]) {
             for (long long j = i * i; j <= n; j += i) {
                 isPrime[j] = false;
