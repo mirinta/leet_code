@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <string>
 #include <unordered_map>
 #include <vector>
 
@@ -18,50 +19,57 @@
 class Solution
 {
 public:
-    std::vector<int> partitionLabels(const std::string& s) { return approach2(s); }
+    std::vector<int> partitionLabels(std::string s) { return approach2(s); }
 
 private:
+    // hash table, TC = O(N), SC = O(N)
     std::vector<int> approach2(const std::string& s)
     {
-        std::unordered_map<char, int> map; // letter to last occurrence index
-        for (int i = 0; i < s.size(); ++i) {
-            map[s[i]] = i;
+        const int n = s.size();
+        std::unordered_map<int, int> last;
+        for (int i = 0; i < n; ++i) {
+            last[s[i]] = i;
         }
-        int start = 0;
-        int end = 0;
         std::vector<int> result;
-        for (int i = 0; i < s.size(); ++i) {
-            end = std::max(end, map[s[i]]);
+        for (int i = 0, start = 0, end = 0; i < n; ++i) {
+            end = std::max(end, last[s[i]]);
             if (i == end) {
-                result.push_back(i - start + 1);
+                result.emplace_back(end - start + 1);
                 start = i + 1;
             }
         }
         return result;
     }
 
-    // Merging intervals, time O(NlogN), space O(N)
+    // merge intervals, TC = O(NlogN), SC = O(N)
     std::vector<int> approach1(const std::string& s)
     {
-        // smallest index of letter x, largest index of letter x
-        using Interval = std::pair<int, int>;
-        std::unordered_map<char, Interval> map;
+        std::vector<std::pair<int, int>> intervals(26, {-1, -1});
         for (int i = 0; i < s.size(); ++i) {
-            if (!map.count(s[i])) {
-                map[s[i]].first = i;
-                map[s[i]].second = i;
+            const int index = s[i] - 'a';
+            if (intervals[index].first == -1) {
+                intervals[index].first = i;
+                intervals[index].second = i;
             } else {
-                map[s[i]].second = i;
+                intervals[index].second = i;
             }
         }
-        std::vector<Interval> intervals;
-        intervals.reserve(map.size());
-        for (const auto& [c, interval] : map) {
-            intervals.push_back(interval);
+        intervals.erase(std::remove_if(intervals.begin(), intervals.end(),
+                                       [](const auto& p) { return p.first == -1; }),
+                        intervals.end());
+        const auto merged = helper(intervals);
+        std::vector<int> result;
+        result.reserve(merged.size());
+        for (const auto& [start, end] : merged) {
+            result.emplace_back(end - start + 1);
         }
+        return result;
+    }
+
+    std::vector<std::pair<int, int>> helper(std::vector<std::pair<int, int>>& intervals)
+    {
         std::sort(intervals.begin(), intervals.end());
-        // merge intervals
-        std::vector<Interval> merged;
+        std::vector<std::pair<int, int>> merged;
         for (const auto& interval : intervals) {
             if (merged.empty() || interval.first > merged.back().second) {
                 merged.push_back(interval);
@@ -69,10 +77,6 @@ private:
                 merged.back().second = std::max(merged.back().second, interval.second);
             }
         }
-        std::vector<int> result(merged.size());
-        for (int i = 0; i < result.size(); ++i) {
-            result[i] = merged[i].second - merged[i].first + 1;
-        }
-        return result;
+        return merged;
     }
 };
