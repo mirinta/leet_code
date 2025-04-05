@@ -19,10 +19,7 @@
 class Solution
 {
 public:
-    int subsetXORSum(std::vector<int>& nums) { return approach2(nums); }
-
-private:
-    int approach2(const std::vector<int>& nums)
+    int subsetXORSum(std::vector<int>& nums)
     {
         const int n = nums.size();
         int result = 0;
@@ -36,28 +33,5 @@ private:
             result += XOR;
         }
         return result;
-    }
-
-    int approach1(const std::vector<int>& nums)
-    {
-        std::vector<int> subset;
-        int result = 0;
-        backtrack(result, subset, 0, nums);
-        return result;
-    }
-
-private:
-    void backtrack(int& result, std::vector<int>& subset, int i, const std::vector<int>& nums)
-    {
-        int XOR = 0;
-        for (const auto& val : subset) {
-            XOR ^= val;
-        }
-        result += XOR;
-        for (int j = i; j < nums.size(); ++j) {
-            subset.push_back(nums[j]);
-            backtrack(result, subset, j + 1, nums);
-            subset.pop_back();
-        }
     }
 };
