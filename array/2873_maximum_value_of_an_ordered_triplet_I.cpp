@@ -17,14 +17,18 @@ class Solution
 public:
     long long maximumTripletValue(std::vector<int>& nums)
     {
+        // prefixMax[i] = max value of nums[0:i]
+        // suffixMax[i] = max value of nums[i:n-1]
         const int n = nums.size();
-        long long result = 0;
+        std::vector<int> prefixMax(n, INT_MIN);
+        std::vector<int> suffixMax(n, INT_MIN);
         for (int i = 0; i < n; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                for (int k = j + 1; k < n; ++k) {
-                    result = std::max(result, (nums[i] - nums[j]) * 1LL * nums[k]);
-                }
-            }
+            prefixMax[i] = std::max(i > 0 ? prefixMax[i - 1] : INT_MIN, nums[i]);
+            suffixMax[n - i - 1] = std::max(i > 0 ? suffixMax[n - i] : INT_MIN, nums[n - i - 1]);
+        }
+        long long result = 0;
+        for (int j = 1; j < n - 1; ++j) {
+            result = std::max(result, 1LL * (prefixMax[j - 1] - nums[j]) * suffixMax[j + 1]);
         }
         return result;
     }

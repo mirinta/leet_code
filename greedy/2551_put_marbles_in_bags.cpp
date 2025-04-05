@@ -28,26 +28,24 @@ class Solution
 public:
     long long putMarbles(std::vector<int>& weights, int k)
     {
-        // [X1...X2] [Y1...Y2] [Z1...Z2]
-        // - score1 = X1 + X2
-        // - score2 = Y1 + Y2
-        // - score3 = Z1 + Z2
-        // - score = X1 + X2 + Y1 + Y2 + Z1 + Z2
-        // both min(score) and max(score) have X1 and X2,
-        // then diff = (X2 + Y1) + (Y2 + Z1),
-        // it is the sum of adjacent values (at most k-1 pairs)
-        std::vector<long long> adjacentSum;
-        adjacentSum.reserve(weights.size() - 1);
-        for (int i = 0; i < weights.size() - 1; ++i) {
-            adjacentSum.push_back(weights[i] + weights[i + 1]);
+        // for any partition: [0:i1] [i1+1:i2] [i2+1:i3] ... [ik-1+1:n-1]
+        // score = nums[0] + nums[i1] + nums[i1+1] + nums[i2] + ... + nums[ik-1+1] + nums[n-1]
+        //
+        // to calculate the difference of two scores: nums[0] and nums[n-1] can be ignored
+        //
+        // diff = (nums[i1] + nums[i1+1]) + ... + (nums[ik-1] + nums[ik-1+1])
+        //      = k-1 adjacent sums
+        //
+        // answer = greatest k-1 adjacent sums - smallest k-1 adjacent sums
+        const int n = weights.size();
+        std::vector<long long> adjacentSums(n - 1);
+        for (int i = 0; i < n - 1; ++i) {
+            adjacentSums[i] = weights[i] + weights[i + 1];
         }
-        std::sort(adjacentSum.begin(), adjacentSum.end());
+        std::sort(adjacentSums.begin(), adjacentSums.end());
         long long result = 0;
         for (int i = 0; i < k - 1; ++i) {
-            result += adjacentSum[adjacentSum.size() - 1 - i];
-        }
-        for (int i = 0; i < k - 1; ++i) {
-            result -= adjacentSum[i];
+            result += adjacentSums[adjacentSums.size() - 1 - i] - adjacentSums[i];
         }
         return result;
     }
