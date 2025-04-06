@@ -22,54 +22,47 @@ public:
     std::vector<int> largestDivisibleSubset(std::vector<int>& nums) { return approach2(nums); }
 
 private:
-    // DP with space optimization, TC = O(N^2), SC = O(N)
     std::vector<int> approach2(std::vector<int>& nums)
     {
+        // dp[i] = max length of valid subset of nums[0:i] ending at nums[i]
         const int n = nums.size();
+        std::vector<int> dp(n, 1);
         std::sort(nums.begin(), nums.end());
-        // dp[i] = length of the largest valid subset of nums[0:i] ending at nums[i]
-        std::vector<int> dp(n, 1); // single element is a valid subset
         int maxLength = 0;
-        int maxIndex = 0;
+        int maxIndex = -1;
         for (int i = 0; i < n; ++i) {
             for (int j = i - 1; j >= 0; --j) {
-                if (nums[i] % nums[j] != 0)
-                    continue;
-
-                dp[i] = std::max(dp[i], 1 + dp[j]);
+                if (nums[i] % nums[j] == 0) {
+                    dp[i] = std::max(dp[i], dp[j] + 1);
+                }
             }
             if (dp[i] > maxLength) {
                 maxLength = dp[i];
                 maxIndex = i;
             }
         }
-        // reconstruct the result (in any order)
         std::vector<int> result;
-        result.reserve(maxLength);
-        for (int i = maxIndex, len = maxLength; i >= 0; --i) {
-            if (result.empty() || (dp[i] == len && result.back() % nums[i] == 0)) {
+        result.reserve(dp[maxIndex]);
+        for (int i = maxIndex; i >= 0; --i) {
+            if (result.empty() ||
+                (result.size() + dp[i] == maxLength && result.back() % nums[i] == 0)) {
                 result.push_back(nums[i]);
-                len--;
             }
         }
         return result;
     }
-    // DP, TC = O(N^2), SC = O(N^2)
+
     std::vector<int> approach1(std::vector<int>& nums)
     {
-        const int n = nums.size();
-        std::sort(nums.begin(), nums.end());
         // dp[i] = largest valid subset of nums[0:i] ending at nums[i]
-        // #NOTE# subset with single element is valid
+        const int n = nums.size();
         std::vector<std::vector<int>> dp(n);
-        int maxIndex = 0;
+        std::sort(nums.begin(), nums.end());
         int maxLength = 0;
+        int maxIndex = -1;
         for (int i = 0; i < n; ++i) {
             for (int j = i - 1; j >= 0; --j) {
-                if (nums[i] % nums[j] != 0)
-                    continue;
-
-                if (dp[j].size() > dp[i].size()) {
+                if (nums[i] % nums[j] == 0 && dp[j].size() > dp[i].size()) {
                     dp[i] = dp[j];
                 }
             }
