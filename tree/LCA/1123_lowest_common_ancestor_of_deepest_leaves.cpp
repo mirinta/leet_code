@@ -1,3 +1,4 @@
+#include <functional>
 #include <unordered_map>
 
 /**
@@ -41,44 +42,34 @@ public:
         if (!root)
             return nullptr;
 
+        std::unordered_map<int, int> valToDepth;
+        std::unordered_map<int, int> depthToCount;
+        int maxDepth = 0;
+        std::function<void(TreeNode*, int)> preorder = [&](TreeNode* node, int depth) {
+            if (!node)
+                return;
+
+            valToDepth[node->val] = depth;
+            depthToCount[depth]++;
+            maxDepth = std::max(maxDepth, depth);
+            preorder(node->left, depth + 1);
+            preorder(node->right, depth + 1);
+        };
         preorder(root, 0);
-        for (const auto& [val, depth] : map) {
-            if (depth == maxDepth) {
-                numOfDeepestLeaves++;
+        TreeNode* result = nullptr;
+        std::function<int(TreeNode*)> postorder = [&](TreeNode* node) {
+            if (!node)
+                return 0;
+
+            int count = valToDepth[node->val] == maxDepth;
+            count += postorder(node->left);
+            count += postorder(node->right);
+            if (count == depthToCount[maxDepth] && !result) {
+                result = node;
             }
-        }
+            return count;
+        };
         postorder(root);
         return result;
-    }
-
-private:
-    TreeNode* result = nullptr;
-    int maxDepth = 0;
-    int numOfDeepestLeaves = 0;
-    std::unordered_map<int, int> map; // val to depth, use vals as keys because Node.val are unique
-
-    void preorder(TreeNode* root, int depth)
-    {
-        if (!root)
-            return;
-
-        map[root->val] = depth;
-        maxDepth = std::max(maxDepth, depth);
-        preorder(root->left, depth + 1);
-        preorder(root->right, depth + 1);
-    }
-
-    int postorder(TreeNode* root)
-    {
-        if (!root)
-            return 0;
-
-        int count = map[root->val] == maxDepth ? 1 : 0;
-        count += postorder(root->left);
-        count += postorder(root->right);
-        if (count == numOfDeepestLeaves && !result) {
-            result = root;
-        }
-        return count;
     }
 };
