@@ -1,3 +1,4 @@
+#include <array>
 #include <string>
 #include <vector>
 
@@ -16,43 +17,36 @@
 class Solution
 {
 public:
-    // time O(26M + N), space O(26M)
-    // M and N are lengths of the source string and the target string, respectively
     int shortestWay(std::string source, std::string target)
     {
-        // next[i][char] = index of the next "char" after index i,
-        // -1 if there's no "char" after index i
-        const int m = source.size();
-        source.insert(source.begin(), '#');
-        std::vector<std::vector<int>> next(m + 1, std::vector<int>(26, -1));
-        for (int i = m - 1; i >= 0; --i) {
-            // standing at index i,
-            // we can see what next[i+1][...] sees
-            for (int c = 0; c < 26; ++c) {
-                next[i][c] = next[i + 1][c];
-            }
-            // the only difference is the character at index i+1
-            next[i][source[i + 1] - 'a'] = i + 1;
+        // next[i][c] = the smallest index of character c in source[i:n-1]
+        const int n = source.size();
+        std::vector<std::array<int, 26>> next(n + 1);
+        next.back().fill(-1);
+        for (int i = n - 1; i >= 0; --i) {
+            next[i] = next[i + 1];
+            next[i][source[i] - 'a'] = i;
         }
-        int i = 0; // for target string
-        int j = 0; // for source string
-        int count = 1;
-        while (i < target.size()) {
-            if (next[j][target[i] - 'a'] != -1) {
-                // target[i] can be found after s[j]
-                j = next[j][target[i] - 'a'];
-                i++;
-            } else if (j == 0) {
-                // next[0][...] contains all characters of the source string
-                // next[0][char] = -1 means the "char" is not in the source string
+        int i = 0; // scan source
+        int j = 0; // scan target
+        int result = 1;
+        while (j < target.size()) {
+            if (next[i][target[j] - 'a'] != -1) {
+                i = next[i][target[j] - 'a'] + 1;
+                j++;
+            } else if (i == 0) {
+                // i = 0 && next[i][target[j] - 'a'] == -1
+                // it means target[j] can not be found in source[0:n-1]
                 return -1;
             } else {
-                // target[i] can't be found after s[j], we reset j = 0
-                // i.e., looking for a new subsequence to make up target[i]
-                j = 0;
-                count++;
+                // i != 0 && next[i][target[j] - 'a'] == -1
+                // target[j] can not be found in source[i:n-1]
+                // but it may be found in source[0:n-1]
+                // so we reset i = 0
+                result++;
+                i = 0;
             }
         }
-        return count;
+        return result;
     }
 };
