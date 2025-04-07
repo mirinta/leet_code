@@ -18,7 +18,7 @@ private:
     bool approach2(const std::vector<int>& nums)
     {
         const int total = std::accumulate(nums.begin(), nums.end(), 0);
-        if (total % 2 != 0)
+        if (total % 2)
             return false;
 
         const int target = total / 2;
@@ -37,21 +37,23 @@ private:
     bool approach1(const std::vector<int>& nums)
     {
         const int total = std::accumulate(nums.begin(), nums.end(), 0);
-        if (total % 2 != 0)
+        if (total % 2)
             return false;
 
-        const int n = nums.size();
         const int target = total / 2;
+        // dp[i][j] = whether it is possible to make up j using nums[0:i-1]
+        const int n = nums.size();
         std::vector<std::vector<bool>> dp(n + 1, std::vector<bool>(target + 1, false));
         for (int i = 0; i <= n; ++i) {
             dp[i][0] = true;
         }
         for (int i = 1; i <= n; ++i) {
             for (int j = 1; j <= target; ++j) {
-                if (j - nums[i - 1] < 0) {
+                const int diff = j - nums[i - 1];
+                if (diff < 0) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i - 1]];
+                    dp[i][j] = dp[i - 1][j] || dp[i - 1][diff];
                 }
             }
         }
