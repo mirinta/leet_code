@@ -17,17 +17,16 @@
 class UnionFind
 {
 public:
-    explicit UnionFind(int n) : count(n), root(n), rank(n)
+    explicit UnionFind(int n) : count(n), root(n), size(n, 1)
     {
         for (int i = 0; i < n; ++i) {
             root[i] = i;
-            rank[i] = 1;
         }
     }
 
     int find(int x)
     {
-        if (root[x] != x) {
+        if (x != root[x]) {
             root[x] = find(root[x]);
         }
         return root[x];
@@ -35,28 +34,25 @@ public:
 
     void connect(int p, int q)
     {
-        const auto rootP = find(p);
-        const auto rootQ = find(q);
+        int rootP = find(p);
+        int rootQ = find(q);
         if (rootP == rootQ)
             return;
 
-        if (rank[rootP] > rank[rootQ]) {
-            root[rootQ] = rootP;
-        } else if (rank[rootP] < rank[rootQ]) {
-            root[rootP] = rootQ;
-        } else {
-            root[rootQ] = rootP;
-            rank[rootP]++;
+        if (size[rootQ] > size[rootP]) {
+            std::swap(rootP, rootQ);
         }
+        root[rootQ] = rootP;
+        size[rootP] += size[rootQ];
         count--;
     }
 
-    int numOfConnectedComponents() const { return count; }
+    int numOfConnectedComponents() { return count; }
 
 private:
     int count;
     std::vector<int> root;
-    std::vector<int> rank;
+    std::vector<int> size;
 };
 
 class Solution
@@ -65,8 +61,8 @@ public:
     int countComponents(int n, std::vector<std::vector<int>>& edges)
     {
         UnionFind uf(n);
-        for (const auto& edge : edges) {
-            uf.connect(edge[0], edge[1]);
+        for (const auto& e : edges) {
+            uf.connect(e[0], e[1]);
         }
         return uf.numOfConnectedComponents();
     }
