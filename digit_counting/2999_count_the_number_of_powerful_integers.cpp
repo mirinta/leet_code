@@ -26,42 +26,47 @@ class Solution
 public:
     long long numberOfPowerfulInt(long long start, long long finish, int limit, std::string s)
     {
-        return solve(std::to_string(finish), limit, s) - solve(std::to_string(start - 1), limit, s);
+        return helper(std::to_string(finish), limit, s) -
+               helper(std::to_string(start - 1), limit, s);
     }
 
 private:
-    // total number of valid integers:
-    // each integer is in the range [1,stoll(s)] and it ends with stoll(suffix)
-    long long solve(const std::string& s, int limit, const std::string& suffix)
+    // total num of valid integers in the range [1:finish] and the suffix of each integer is s
+    long long helper(const std::string& finish, int limit, const std::string& suffix)
     {
-        if (s.size() < suffix.size())
-            return 0;
-
-        return dfs(0, true, s, limit, suffix);
+        return dfs(0, true, finish, limit, suffix);
     }
 
-    long long dfs(int i, bool isPrefixSame, const std::string& s, int limit,
+    long long dfs(int i, bool isPrefixSame, const std::string& finish, int limit,
                   const std::string& suffix)
     {
-        // X X X X X X X i X X X X X X X
-        // |<--prefix->|   |<--suffix->|
-        // |<-------------s------------>
-        const int n = s.size();
+        // s = 0 X X X X i-1 i X X X X j X X X X n-1
+        //     |<--prefix->|           |<--suffix->|
+        //
+        // case 1: s.prefix != finish.prefix
+        // each digit of s[i] and the remaining digits can be [0:limit],
+        // i.e., num of valid integers = (limit+1)^(j-i)
+        //
+        // case 2: s.prefix == finish.prefix
+        // s[i] can be [0:min(limit, finish[i])]
+        // the remaining digits can not be determined
+        const int n = finish.size();
         const int suffixLength = suffix.size();
-        if (i == n - suffixLength) {
-            if (!isPrefixSame || std::stoll(s.substr(i, suffixLength)) >= std::stoll(suffix))
-                return 1;
-
+        if (n < suffixLength)
             return 0;
-        }
-        // case 1: different prefix, current digit and the remaining digits can be [0:limit]
-        if (!isPrefixSame)
-            return std::pow(1 + limit, n - i - suffixLength);
 
-        // case 2: same prefix, current digit can be [0:min(limit, s[i]-'0)]
+        if (i == n - suffixLength) {
+            if (isPrefixSame && std::stoll(finish.substr(i, suffixLength)) < std::stoll(suffix))
+                return 0;
+
+            return 1; // s[i:n-1] must be equal to suffix, only one choice
+        }
+        if (!isPrefixSame)
+            return std::pow(limit + 1, n - i - suffixLength);
+
         long long result = 0;
-        for (int j = 0; j <= std::min(s[i] - '0', limit); ++j) {
-            result += dfs(i + 1, j == s[i] - '0', s, limit, suffix);
+        for (int d = 0; d <= std::min(limit, finish[i] - '0'); ++d) {
+            result += dfs(i + 1, d == finish[i] - '0', finish, limit, suffix);
         }
         return result;
     }
