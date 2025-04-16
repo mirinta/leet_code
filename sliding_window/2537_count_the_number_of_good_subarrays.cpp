@@ -23,10 +23,8 @@ public:
         long long pairs = 0;
         long long result = 0;
         for (int left = 0, right = 0; right < n; ++right) {
-            // add pairs: (right0,right), (right1,right), ..., (rightk,right)
             pairs += map[nums[right]]++;
             while (pairs >= k) {
-                // remove pairs: (left0,left), (left1,left), ..., (leftk, left)
                 pairs -= --map[nums[left]];
                 left++;
             }
