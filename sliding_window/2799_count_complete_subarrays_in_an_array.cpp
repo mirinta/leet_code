@@ -22,18 +22,20 @@ public:
     int countCompleteSubarrays(std::vector<int>& nums)
     {
         const int n = nums.size();
-        const int distinct = std::unordered_set<int>(nums.begin(), nums.end()).size();
+        const int target = std::unordered_set<int>(nums.begin(), nums.end()).size();
         std::unordered_map<int, int> map;
         int result = 0;
         for (int left = 0, right = 0; right < n; ++right) {
             map[nums[right]]++;
-            while (map.size() == distinct) {
+            while (map.size() == target) {
                 if (--map[nums[left]] == 0) {
                     map.erase(nums[left]);
                 }
                 left++;
             }
-            result += left; // nums[x:right] is valid where x can be 0~left-1
+            // valid subarrays ending at nums[right]:
+            // nums[0:right], nums[1:right], ..., nums[left-1, right]
+            result += left;
         }
         return result;
     }
