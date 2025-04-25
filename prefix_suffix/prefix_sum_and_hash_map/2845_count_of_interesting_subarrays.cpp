@@ -19,27 +19,32 @@
  * ! 0 <= k < modulo
  */
 
+#include <unordered_map>
+#include <vector>
+
 class Solution
 {
 public:
     long long countInterestingSubarrays(std::vector<int>& nums, int modulo, int k)
     {
-        // let count[i] = num of elements in nums[0:i] such that each element % mod = k
-        // if nums[j+1:i] is a valid subarray,
+        // let count[i] = num of indices j in nums[0:j] such that nums[j] % mod = k
+        // if nums[j+1:i] is a valid subarray
         // then (count[i] - count[j]) % mod = k
-        // count[i] - count[j] = A*mod + k
-        // count[i] - A*mod - k = count[j]
-        // (count[i] % mod - k % mod) % mod = count[j] % mod
-        // since k < mod, then k % mod = k
-        // (count[i] % mod - k) % mod = count[j] % mod
+        //
+        // since k < mod,
+        // then there exists an A such that count[i] - count[j] = A * mod + k
+        //
+        // count[j] = count[i] - A * mod - k
+        // count[j] % mod = (count[i] % mod - k % mod) % mod
+        // count[j] % mod = (count[i] % mod - k) % mod
         const int n = nums.size();
-        std::unordered_map<int, long long> map;
-        // base case: nums[0:i] is a valid subarray, then count[i] % mod = k
-        // then (count[i] % mod - k) % mod = 0, thus, map[0] = 1
+        std::unordered_map<int, int> map;
+        // if nums[0:i] is a valid subarray
+        // 0 = (count[i] % mod - k) % mod
+        // thus, map[0] = 1
         map[0] = 1;
-        int count = 0;
         long long result = 0;
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0, count = 0; i < n; ++i) {
             count += nums[i] % modulo == k;
             const int target = (count % modulo - k + modulo) % modulo;
             if (map.count(target)) {
