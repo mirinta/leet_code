@@ -29,30 +29,25 @@ public:
     int maxTaskAssign(std::vector<int>& tasks, std::vector<int>& workers, int pills, int strength)
     {
         std::sort(tasks.begin(), tasks.end());
-        std::sort(workers.begin(), workers.end());
+        std::multiset<int> set(workers.begin(), workers.end());
         int lo = 0;
-        int hi = tasks.size();
+        int hi = std::min(tasks.size(), workers.size());
         while (lo < hi) {
             const int mid = hi - (hi - lo) / 2;
-            if (isValid(mid, tasks, workers, pills, strength)) {
+            if (isValid(mid, tasks, set, pills, strength)) {
                 lo = mid;
             } else {
                 hi = mid - 1;
             }
         }
-        return hi;
+        return lo;
     }
 
 private:
-    // check if it is possible to complete k tasks
-    // greedy: choose the k strongest workers to finish the k easiest tasks
-    bool isValid(int k, const std::vector<int>& tasks, const std::vector<int>& workers, int pills,
+    // check if it is possible to finish the k easiest tasks
+    bool isValid(int k, const std::vector<int>& tasks, std::multiset<int> set, int pills,
                  int strength)
     {
-        if (k > tasks.size() || k > workers.size())
-            return false;
-
-        std::multiset<int> set(workers.end() - k, workers.end());
         for (int i = k - 1; i >= 0; --i) {
             if (*set.rbegin() >= tasks[i]) {
                 set.erase(std::prev(set.end()));
@@ -61,13 +56,12 @@ private:
             if (pills == 0)
                 return false;
 
-            // find the weakest worker such that his strength + pill strength >= tasks[i]
             auto iter = set.lower_bound(tasks[i] - strength);
             if (iter == set.end())
                 return false;
 
-            set.erase(iter);
             pills--;
+            set.erase(iter);
         }
         return true;
     }
