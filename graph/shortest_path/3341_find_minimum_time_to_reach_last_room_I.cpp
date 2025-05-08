@@ -35,8 +35,6 @@ public:
         pq.emplace(0, 0, 0);
         std::vector<std::vector<int>> timeTo(m, std::vector<int>(n, INT_MAX));
         timeTo[0][0] = 0;
-        std::vector<std::vector<bool>> visited(m, std::vector<bool>(n, false));
-        visited[0][0] = true;
         while (!pq.empty()) {
             const auto [t, x, y] = pq.top();
             pq.pop();
@@ -49,12 +47,11 @@ public:
             for (const auto& [dx, dy] : kDirections) {
                 const int i = x + dx;
                 const int j = y + dy;
-                if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j])
+                if (i < 0 || i >= m || j < 0 || j >= n)
                     continue;
 
                 const int eta = std::max(t, moveTime[i][j]) + 1;
                 if (timeTo[i][j] > eta) {
-                    visited[i][j] = true;
                     moveTo[i][j] = eta;
                     pq.emplace(eta, i, j);
                 }
