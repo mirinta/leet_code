@@ -55,6 +55,7 @@ public:
                 const int eta = std::max(t, moveTime[i][j]) + 1;
                 if (timeTo[i][j] > eta) {
                     visited[i][j] = true;
+                    moveTo[i][j] = eta;
                     pq.emplace(eta, i, j);
                 }
             }
