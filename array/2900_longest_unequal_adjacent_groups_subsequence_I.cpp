@@ -28,29 +28,29 @@
 class Solution
 {
 public:
-    std::vector<std::string> getWordsInLongestSubsequence(int n, std::vector<std::string>& words,
-                                                          std::vector<int>& groups)
+    vector<string> getLongestSubsequence(vector<string>& words, vector<int>& groups)
     {
-        const auto indices1 = helper(1, groups);
-        const auto indices0 = helper(0, groups);
+        const auto indices1 = helper(0, words, groups);
+        const auto indices2 = helper(1, words, groups);
         std::vector<std::string> result;
-        for (const auto& i : indices1.size() > indices0.size() ? indices1 : indices0) {
+        result.reserve(std::max(indices1.size(), indices2.size()));
+        for (const auto& i : indices1.size() > indices2.size() ? indices1 : indices2) {
             result.push_back(words[i]);
         }
         return result;
     }
 
 private:
-    std::vector<int> helper(int start, const std::vector<int>& groups)
+    std::vector<int> helper(int target, const std::vector<std::string>& words,
+                            const std::vector<int>& groups)
     {
-        const int n = groups.size();
-        std::vector<int> indices;
-        for (int i = 0, target = start; i < n; ++i) {
+        std::vector<int> result;
+        for (int i = 0; i < words.size(); ++i) {
             if (groups[i] == target) {
-                indices.push_back(i);
+                result.push_back(i);
                 target = 1 - target;
             }
         }
-        return indices;
+        return result;
     }
 };
