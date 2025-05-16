@@ -37,50 +37,50 @@
 class Solution
 {
 public:
-    std::vector<std::string> getWordsInLongestSubsequence(int n, std::vector<std::string>& words,
+    std::vector<std::string> getWordsInLongestSubsequence(std::vector<std::string>& words,
                                                           std::vector<int>& groups)
     {
-        // dp[i] = the longest valid indices ending at words[i]
-        std::vector<std::vector<int>> dp(n);
+        // dp[i] = length of the longest valid subsequence of words[0:i] ending at words[i]
+        const int n = words.size();
+        std::vector<int> dp(n, 1);
+        auto isValid = [&](int i, int j) {
+            if (groups[i] == groups[j] || words[i].size() != words[j].size())
+                return false;
+
+            int count = 0;
+            for (int k = 0; k < words[i].size(); ++k) {
+                count += words[i][k] != words[j][k];
+                if (count > 1)
+                    return false;
+            }
+            return count == 1;
+        };
+        int maxLength = 0;
+        int maxIndex = -1;
         for (int i = 0; i < n; ++i) {
-            int maxLength = 0;
-            int maxIndex = -1;
             for (int j = i - 1; j >= 0; --j) {
-                if (groups[i] != groups[j] && isValid(words[i], words[j])) {
-                    if (dp[j].size() > maxLength) {
-                        maxIndex = j;
-                        maxLength = dp[j].size();
-                    }
+                if (isValid(i, j)) {
+                    dp[i] = std::max(dp[i], 1 + dp[j]);
                 }
             }
-            if (maxIndex >= 0) {
-                dp[i] = dp[maxIndex];
+            if (dp[i] > maxLength) {
+                maxLength = dp[i];
+                maxIndex = i;
             }
-            dp[i].push_back(i);
         }
-        const auto indices =
-            *std::max_element(dp.begin(), dp.end(),
-                              [](const auto& v1, const auto& v2) { return v1.size() < v2.size(); });
         std::vector<std::string> result;
-        result.reserve(indices.size());
-        for (const auto& i : indices) {
-            result.push_back(words[i]);
+        while (maxIndex >= 0) {
+            result.push_back(words[maxIndex]);
+            int j = maxIndex - 1;
+            while (j >= 0 && (!isValid(j, maxIndex) || dp[j] + 1 != dp[maxIndex])) {
+                j--;
+            }
+            if (j < 0)
+                break;
+
+            maxIndex = j;
         }
+        std::reverse(result.begin(), result.end());
         return result;
-    }
-
-private:
-    bool isValid(const std::string& s1, const std::string& s2)
-    {
-        if (s1.size() != s2.size())
-            return false;
-
-        int count = 0;
-        for (int i = 0; i < s1.size(); ++i) {
-            count += s1[i] != s2[i];
-            if (count > 1)
-                return false;
-        }
-        return count == 1;
     }
 };
