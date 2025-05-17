@@ -18,11 +18,7 @@ class Solution
 public:
     void sortColors(std::vector<int>& nums)
     {
-        if (nums.size() < 2)
-            return;
-
-        // three-way partition, pivot = 1
-        constexpr int pivot = 1;
+        static constexpr int pivot = 1;
         int i = 0;
         int lt = 0;
         int gt = nums.size() - 1;
