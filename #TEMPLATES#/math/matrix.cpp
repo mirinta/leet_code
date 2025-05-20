@@ -7,7 +7,10 @@ public:
     explicit Mat() = default;
     virtual ~Mat() = default;
 
-    long long& operator()(size_t i, size_t j) { return data[i][j]; }
+    long long& operator()(size_t i, size_t j)
+    {
+        return const_cast<long long&>(const_cast<const Mat*>(this)->operator()(i, j));
+    }
     const long long& operator()(size_t i, size_t j) const { return data[i][j]; }
 
     /**
