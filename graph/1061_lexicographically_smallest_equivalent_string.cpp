@@ -31,19 +31,16 @@
 class UnionFind
 {
 public:
-    explicit UnionFind(int n) : count(n), root(n), rank(n)
+    explicit UnionFind(int n) : root(n), size(n, 1)
     {
         for (int i = 0; i < n; ++i) {
             root[i] = i;
-            rank[i] = 1;
         }
     }
 
-    int numOfConnectedComponents() const { return count; }
-
     int find(int x)
     {
-        if (x != root[x]) {
+        if (root[x] != x) {
             root[x] = find(root[x]);
         }
         return root[x];
@@ -53,40 +50,33 @@ public:
 
     void connect(int p, int q)
     {
-        const int rootP = find(p);
-        const int rootQ = find(q);
+        int rootP = find(p);
+        int rootQ = find(q);
         if (rootP == rootQ)
             return;
 
-        if (rank[rootP] > rank[rootQ]) {
-            root[rootQ] = rootP;
-        } else if (rank[rootP] < rank[rootP]) {
-            root[rootP] = rootQ;
-        } else {
-            root[rootQ] = rootP;
-            rank[rootP]++;
+        if (size[rootQ] > size[rootP]) {
+            std::swap(rootP, rootQ);
         }
-        count--;
+        root[rootQ] = rootP;
+        size[rootP] += size[rootQ];
     }
 
 private:
-    int count;
     std::vector<int> root;
-    std::vector<int> rank;
+    std::vector<int> size;
 };
 
 class Solution
 {
 public:
-    std::string smallestEquivalentString(const std::string& s1, const std::string& s2,
-                                         const std::string& baseStr)
+    std::string smallestEquivalentString(std::string s1, std::string s2, std::string baseStr)
     {
         UnionFind uf(26);
-        const int length = s1.size();
-        for (int i = 0; i < length; ++i) {
+        for (int i = 0; i < s1.size(); ++i) {
             uf.connect(s1[i] - 'a', s2[i] - 'a');
         }
-        std::string result(baseStr);
+        std::string result(std::move(baseStr));
         for (auto& c : result) {
             for (int i = 0; i < 26; ++i) {
                 if (uf.isConnected(c - 'a', i)) {
