@@ -1,14 +1,6 @@
 #include <vector>
 
 /**
- * Given the root of a binary tree, return true if you can partition the tree into two trees with
- * equal sums of values after removing exactly one edge on the original tree.
- *
- * ! The number of nodes in the tree is in the range [1, 10^4].
- * ! -10^5 <= Node.val <= 10^5
- */
-
-/**
  * Definition for a binary tree node.
  */
 struct TreeNode
@@ -18,6 +10,14 @@ struct TreeNode
     TreeNode* right;
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
+
+/**
+ * Given the root of a binary tree, return true if you can partition the tree into two trees with
+ * equal sums of values after removing exactly one edge on the original tree.
+ *
+ * ! The number of nodes in the tree is in the range [1, 10^4].
+ * ! -10^5 <= Node.val <= 10^5
+ */
 
 class Solution
 {
