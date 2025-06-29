@@ -18,19 +18,22 @@ class Solution
 public:
     int numSubseq(std::vector<int>& nums, int target)
     {
-        constexpr int kMod = 1e9 + 7;
+        static constexpr long long kMod = 1e9 + 7;
         const int n = nums.size();
         std::sort(nums.begin(), nums.end());
         int lo = 0;
         int hi = n - 1;
-        int result = 0;
+        long long result = 0;
         while (lo <= hi) {
             if (nums[lo] + nums[hi] > target) {
                 hi--;
             } else {
-                // count the number of subsequences starting with nums[lo]
-                // each element in nums[lo+1:hi] has two choices: choose or ignore
-                result = (result + powmod(2, hi - lo, kMod)) % kMod;
+                // fix nums[lo] as the lower bound:
+                // nums[lo:hi] is valid
+                // nums[lo:hi-1] is valid
+                // ...
+                // each elements of nums[lo+1:hi] has two choices: pick or not pick
+                result = (result + fastPowMod(2, hi - lo, kMod)) % kMod;
                 lo++;
             }
         }
@@ -38,16 +41,16 @@ public:
     }
 
 private:
-    long long powmod(long long a, long long b, long long mod)
+    long long fastPowMod(long long a, long long b, long long mod)
     {
-        long long result = 1;
         long long base = a;
+        long long result = 1;
         while (b > 0) {
             if (b & 1) {
                 result = result * base % mod;
             }
-            b >>= 1;
             base = base * base % mod;
+            b >>= 1;
         }
         return result;
     }
