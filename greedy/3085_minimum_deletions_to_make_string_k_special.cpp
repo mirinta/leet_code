@@ -1,7 +1,5 @@
-#include <algorithm>
+#include <array>
 #include <string>
-#include <unordered_map>
-#include <vector>
 
 /**
  * You are given a string word and an integer k.
@@ -24,31 +22,31 @@ class Solution
 public:
     int minimumDeletions(std::string word, int k)
     {
-        std::unordered_map<char, int> map;
+        std::array<int, 26> count{};
         for (const auto& c : word) {
-            map[c]++;
+            count[c - 'a']++;
         }
-        std::vector<int> frequencies;
-        for (const auto& [c, freq] : map) {
-            frequencies.push_back(freq);
-        }
-        const int n = frequencies.size();
-        std::sort(frequencies.begin(), frequencies.end());
-        int sum = 0;
         int result = word.size();
-        // choose frequencies[i] as the minimum frequency
-        // we need to remove frequencies[0:i-1] and
-        // check frequencies[i+1:j]
-        for (int i = 0; i < n; ++i) {
-            int remove = sum;
-            for (int j = n - 1; j > i; --j) {
-                if (frequencies[j] - frequencies[i] <= k)
-                    break;
+        // choose count[i] as the minimum frequency
+        // for every j != i:
+        // if count[j] < count[i], remove all count[j]
+        // if count[j] - count[i] > k, let count[j] -= count[j] - count[i] - k
+        for (int i = 0; i < 26; ++i) {
+            if (count[i] == 0)
+                continue;
 
-                remove += frequencies[j] - frequencies[i] - k;
+            int remove = 0;
+            for (int j = 0; j < 26; ++j) {
+                if (i == j || count[j] == 0)
+                    continue;
+
+                if (count[j] < count[i]) {
+                    remove += count[j];
+                } else if (count[j] - count[i] > k) {
+                    remove += count[j] - count[i] - k;
+                }
             }
             result = std::min(result, remove);
-            sum += frequencies[i];
         }
         return result;
     }
