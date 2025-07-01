@@ -1,3 +1,4 @@
+#include <climits>
 #include <tuple>
 
 /**
@@ -41,26 +42,23 @@ public:
     }
 
 private:
-    // return[0] = min value of this tree
-    // return[1] = max value of this tree
-    // return[2] = num of nodes of this tree
-    // use post-order traversal to check whether root is a BST
-    // if root is a BST, then leftMax < root->val < rightMin
-    std::tuple<int, int, int> dfs(int& result, TreeNode* root)
+    // return <num of nodes, max of the tree, min of the tree>
+    std::tuple<int, int, int> dfs(int& result, TreeNode* node)
     {
-        if (!root)
-            return {INT_MAX, INT_MIN, 0};
+        if (!node)
+            return {0, INT_MIN, INT_MAX};
 
-        const auto [leftMin, leftMax, leftCount] = dfs(result, root->left);
-        const auto [rightMin, rightMax, rightCount] = dfs(result, root->right);
+        const auto [leftCount, leftMax, leftMin] = dfs(result, node->left);
+        const auto [rightCount, rightMax, rightMin] = dfs(result, node->right);
         const int count = 1 + leftCount + rightCount;
-        if (root->val <= leftMax || root->val >= rightMin)
-            return {INT_MIN, INT_MAX, count};
+        // a valid BST:
+        // min of its right subtree > root.val > max of its left subtree
+        if (node->val <= leftMax || node->val >= rightMin)
+            return {count, INT_MAX, INT_MIN};
 
         result = std::max(result, count);
-        // if root->left is null, leftMin = INT_MAX
-        // if root->right is null, rightMax = INT_MIN
-        // thus, we use min and max functions to ensure the returned range is valid
-        return {std::min(root->val, leftMin), std::max(root->val, rightMax), count};
+        const int max = std::max({node->val, leftMax, rightMax});
+        const int min = std::min({node->val, leftMin, rightMin});
+        return {count, max, min};
     }
 };
