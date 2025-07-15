@@ -32,8 +32,8 @@ public:
         if (word.size() < 3)
             return false;
 
-        bool vowel = false;
-        bool consonant = false;
+        bool seenVowel = false;
+        bool seenConsonant = false;
         for (const auto& c : word) {
             if (!std::isalnum(c))
                 return false;
@@ -41,15 +41,22 @@ public:
             if (std::isdigit(c))
                 continue;
 
-            if (isVowel(std::tolower(c))) {
-                vowel = true;
+            if (isVowel(c)) {
+                seenVowel = true;
             } else {
-                consonant = true;
+                seenConsonant = true;
             }
         }
-        return vowel && consonant;
+        return seenVowel && seenConsonant;
     }
 
 private:
-    bool isVowel(char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }
+    bool isVowel(char c)
+    {
+        if (!std::isalpha(c))
+            return false;
+
+        const auto lower = std::tolower(c);
+        return lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u';
+    }
 };
