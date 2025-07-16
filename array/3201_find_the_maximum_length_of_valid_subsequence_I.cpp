@@ -22,30 +22,21 @@ class Solution
 public:
     int maximumLength(std::vector<int>& nums)
     {
-        // case 1: same parity, either {odd, odd, ...} or {even, even, ...}
-        // case 2: alternating parity, either {odd, even, ...} or {even, odd, ...}
-        int odd = 0;
-        int even = 0;
-        int alter1 = 0;
-        int alter2 = 0;
-        bool prev1 = 1 - nums[0] % 2;
-        bool prev2 = nums[0] % 2;
+        int case1 = 0; // {odd, odd, ...}
+        int case2 = 0; // {even, even, ...}
+        int case3 = 0; // {even, odd, even, odd, ...}
+        int case4 = 0; // {odd, even, odd, even, ...}
+        bool case3PrevOdd = true;
+        bool case4PrevOdd = false;
         for (const auto& val : nums) {
             const bool isOdd = val % 2;
-            if (isOdd) {
-                odd++;
-            } else {
-                even++;
-            }
-            if (isOdd ^ prev1) {
-                alter1++;
-                prev1 = isOdd;
-            }
-            if (isOdd ^ prev2) {
-                alter2++;
-                prev2 = isOdd;
-            }
+            case1 += isOdd;
+            case2 += !isOdd;
+            case3 += isOdd ^ case3PrevOdd;
+            case4 += isOdd ^ case4PrevOdd;
+            case3PrevOdd = isOdd;
+            case4PrevOdd = isOdd;
         }
-        return std::max({odd, even, alter1, alter2});
+        return std::max({case1, case2, case3, case4});
     }
 };
