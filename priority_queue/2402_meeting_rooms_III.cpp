@@ -1,5 +1,5 @@
+#include <algorithm>
 #include <queue>
-#include <unordered_map>
 #include <vector>
 
 /**
@@ -33,30 +33,34 @@ public:
     int mostBooked(int n, std::vector<std::vector<int>>& meetings)
     {
         std::sort(meetings.begin(), meetings.end());
-        using Pair = std::pair<long long, int>; // <available time, room id>
-        std::priority_queue<Pair, std::vector<Pair>, std::greater<>> occupiedRooms;
-        std::priority_queue<int, std::vector<int>, std::greater<>> availableRooms;
-        for (int i = 0; i < n; ++i) {
-            availableRooms.push(i);
-        }
         std::vector<int> count(n, 0);
+        std::priority_queue<int, std::vector<int>, std::greater<>> unused; // room id
+        for (int i = 0; i < n; ++i) {
+            unused.emplace(i);
+        }
+        using Pair = std::pair<long long, int>; // <actual end time, root id>
+        auto compare = [](const auto& p1, const auto& p2) {
+            if (p1.first == p2.first)
+                return p1.second > p2.second;
+
+            return p1.first > p2.first;
+        };
+        std::priority_queue<Pair, std::vector<Pair>, decltype(compare)> used(compare);
         for (const auto& meeting : meetings) {
-            const int start = meeting[0];
-            const int end = meeting[1];
-            while (!occupiedRooms.empty() && occupiedRooms.top().first <= start) {
-                availableRooms.push(occupiedRooms.top().second);
-                occupiedRooms.pop();
+            while (!used.empty() && used.top().first <= meeting[0]) {
+                unused.emplace(used.top().second);
+                used.pop();
             }
-            if (!availableRooms.empty()) {
-                const int room = availableRooms.top();
-                availableRooms.pop();
+            if (unused.empty()) {
+                const auto [endTime, room] = used.top();
+                used.pop();
                 count[room]++;
-                occupiedRooms.emplace(end, room);
+                used.emplace(endTime + meeting[1] - meeting[0], room);
             } else {
-                const auto [availableTime, room] = occupiedRooms.top();
-                occupiedRooms.pop();
+                const auto room = unused.top();
+                unused.pop();
                 count[room]++;
-                occupiedRooms.emplace(availableTime + end - start, room);
+                used.emplace(meeting[1], room);
             }
         }
         return std::max_element(count.begin(), count.end()) - count.begin();
