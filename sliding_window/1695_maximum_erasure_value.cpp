@@ -19,18 +19,18 @@ class Solution
 public:
     int maximumUniqueSubarray(std::vector<int>& nums)
     {
+        // max sum of a subarray containing unique elements
         const int n = nums.size();
         std::unordered_map<int, int> map;
-        int sum = 0;
-        int result = INT_MIN;
-        for (int left = 0, right = 0; right < n; ++right) {
-            map[nums[right]]++;
+        int result = 0;
+        for (int left = 0, right = 0, sum = 0; right < n; ++right) {
             sum += nums[right];
+            map[nums[right]]++;
             while (map[nums[right]] > 1) {
-                sum -= nums[left];
                 if (--map[nums[left]] == 0) {
                     map.erase(nums[left]);
                 }
+                sum -= nums[left];
                 left++;
             }
             result = std::max(result, sum);
