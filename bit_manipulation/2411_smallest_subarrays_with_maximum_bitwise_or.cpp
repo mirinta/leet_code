@@ -26,28 +26,28 @@ public:
     std::vector<int> smallestSubarrays(std::vector<int>& nums)
     {
         const int n = nums.size();
-        std::array<int, 32> seen{}; // the first occurrence of bits[i] = 1
-        std::fill(seen.begin(), seen.end(), -1);
+        std::array<int, 32> seen{};
+        seen.fill(-1);
         std::vector<int> result(n);
         for (int i = n - 1; i >= 0; --i) {
-            const int j = helper(seen, nums[i], i);
+            const int j = helper(seen, i, nums[i]);
             result[i] = j - i + 1;
         }
         return result;
     }
 
 private:
-    int helper(std::array<int, 32>& seen, int val, int index)
+    int helper(std::array<int, 32>& seen, int index, int val)
     {
-        int max = index;
+        int result = index;
         for (int i = 0; i < 32; ++i) {
             if (val >> i & 1) {
-                seen[i] = seen[i] == -1 ? index : std::min(seen[i], index);
+                seen[i] = index;
             }
             if (seen[i] != -1) {
-                max = std::max(max, seen[i]);
+                result = std::max(seen[i], result);
             }
         }
-        return max;
+        return result;
     }
 };
