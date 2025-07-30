@@ -24,8 +24,7 @@ class Solution
 public:
     int longestSubarray(std::vector<int>& nums)
     {
-        // the subarray that has the max bitwise AND: [x, x, x, x, ...]
-        // where x = the max element of nums
+        // longest subarray that all elements are equal to max
         const int n = nums.size();
         const int max = *std::max_element(nums.begin(), nums.end());
         int i = 0;
