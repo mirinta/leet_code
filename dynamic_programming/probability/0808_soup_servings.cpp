@@ -1,5 +1,5 @@
+#include <cmath>
 #include <unordered_map>
-#include <vector>
 
 /**
  * There are two types of soup: type A and type B. Initially, we have n ml of each type of soup.
@@ -31,36 +31,34 @@ class Solution
 public:
     double soupServings(int n)
     {
-        if (n > 4300) // empirical number
-            return 1;
-
-        const int amount = std::ceil(n * 1.0 / 25);
+        n = std::ceil(n / 25.0);
         std::unordered_map<int, std::unordered_map<int, double>> memo;
-        return dfs(memo, amount, amount);
+        for (int i = 1; i <= n; ++i) {
+            if (dfs(memo, i, i) > 1 - 1e-5)
+                return 1;
+        }
+        return dfs(memo, n, n);
     }
 
 private:
-    static constexpr double P = 0.25;
-
-    double dfs(std::unordered_map<int, std::unordered_map<int, double>>& memo, int i, int j)
+    double dfs(std::unordered_map<int, std::unordered_map<int, double>>& memo, int A, int B)
     {
-        if (i <= 0 && j > 0)
+        if (A <= 0 && B > 0)
             return 1;
 
-        if (i <= 0 && j <= 0)
+        if (A <= 0 && B <= 0)
             return 0.5;
 
-        if (i > 0 && j <= 0)
+        if (A > 0 && B <= 0)
             return 0;
 
-        if (memo.count(i) && memo[i].count(j))
-            return memo[i][j];
+        if (memo.count(A) && memo[A].count(B))
+            return memo[A][B];
 
         double result = 0;
-        result += dfs(memo, i - 4, j) * P;
-        result += dfs(memo, i - 3, j - 1) * P;
-        result += dfs(memo, i - 2, j - 2) * P;
-        result += dfs(memo, i - 1, j - 3) * P;
-        return memo[i][j] = result;
+        for (int delta = 1; delta <= 4; ++delta) {
+            result += dfs(memo, A - delta, B - 4 + delta) * 0.25;
+        }
+        return memo[A][B] = result;
     }
 };
