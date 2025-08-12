@@ -22,7 +22,7 @@ public:
     int numberOfWays(int n, int x) { return approach2(n, x); }
 
 private:
-    static constexpr long long kMod = 1e9 + 7;
+    static constexpr int kMod = 1e9 + 7;
 
     int approach2(int n, int x)
     {
