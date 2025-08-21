@@ -17,15 +17,17 @@ public:
         // if a subarray with length L is filled with 0,
         // then there are 1+2+...+L = (1+L)*L/2 valid subarrays
         const int n = nums.size();
+        int i = 0;
         long long count = 0;
         long long result = 0;
-        for (int i = 0; i < n; ++i) {
-            if (nums[i] == 0) {
-                count++;
-            } else {
-                count = 0;
+        while (i < n) {
+            int j = i;
+            while (j < n && nums[j] == 0) {
+                j++;
             }
-            result += count;
+            count = j - i;
+            result += (1 + count) * count / 2;
+            i = std::max(i + 1, j);
         }
         return result;
     }
