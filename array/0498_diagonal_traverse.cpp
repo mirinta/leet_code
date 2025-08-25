@@ -13,32 +13,31 @@
 class Solution
 {
 public:
-    // simulation, time O(MN), space O(1)
     std::vector<int> findDiagonalOrder(std::vector<std::vector<int>>& mat)
     {
-        // start from (i,j)
-        // - go upper right: (i-1,j+1),(i-2,j+2),...
-        // - go bottom left: (i+1,j-1),(i+2,j-2),...
+        // start from mat[i][j]
+        // - go upper right: mat[i-1][j+1], ...
+        // - go bottom left: mat[i+1][j-1], ...
         const int m = mat.size();
         const int n = mat[0].size();
+        const int total = m * n;
         int direction = 1; // 1 for upper right, -1 for bottom left
-        int count = m * n;
         int x = 0;
         int y = 0;
         std::vector<int> result;
-        while (count) {
+        result.reserve(total);
+        while (result.size() < total) {
             while (x >= 0 && x < m && y >= 0 && y < n) {
                 result.push_back(mat[x][y]);
                 x -= direction;
                 y += direction;
-                count--;
             }
             if (direction > 0) {
-                x = y >= n ? x + 2 : 0;
-                y = y >= n ? n - 1 : y;
+                x = y < n ? 0 : x + 2;
+                y = y < n ? y : n - 1;
             } else {
-                y = x >= m ? y + 2 : 0;
-                x = x >= m ? m - 1 : x;
+                y = x < m ? 0 : y + 2;
+                x = x < m ? x : m - 1;
             }
             direction *= -1;
         }
