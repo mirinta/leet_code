@@ -24,6 +24,9 @@
  * ! All the workers and the bikes locations are unique.
  */
 
+#include <climits>
+#include <vector>
+
 class Solution
 {
 public:
@@ -31,19 +34,18 @@ public:
     {
         const int n = workers.size();
         const int m = bikes.size();
-        // dp[i][state] = min total distance of assigning i bikes to workers[0:i)
-        // while the assigned bikes are encoded in "state"
+        // dp[i][state] = min sum of distances of assigning i bikes to workers[0:i)
         std::vector<std::vector<int>> dp(n + 1, std::vector<int>(1 << m, INT_MAX / 2));
         dp[0][0] = 0;
         for (int i = 1; i <= n; ++i) {
             for (int state = 0; state < (1 << m); ++state) {
-                if (binaryOnes(state) != i)
+                if (countSetBits(state) != i)
                     continue;
 
                 for (int j = 0; j < m; ++j) {
                     if ((state >> j) & 1) {
-                        dp[i][state] = std::min(dp[i][state], manhattan(workers[i - 1], bikes[j]) +
-                                                                  dp[i - 1][state ^ (1 << j)]);
+                        dp[i][state] = std::min(dp[i][state], dp[i - 1][state ^ (1 << j)] +
+                                                                  dist(workers[i - 1], bikes[j]));
                     }
                 }
             }
@@ -52,17 +54,17 @@ public:
     }
 
 private:
-    int manhattan(const std::vector<int>& worker, const std::vector<int>& bike)
+    int dist(const std::vector<int>& worker, const std::vector<int>& bike)
     {
         return std::abs(worker[0] - bike[0]) + std::abs(worker[1] - bike[1]);
     }
 
-    int binaryOnes(int n)
+    int countSetBits(int val)
     {
         int result = 0;
-        while (n) {
+        while (val) {
             result++;
-            n &= (n - 1);
+            val &= val - 1;
         }
         return result;
     }
