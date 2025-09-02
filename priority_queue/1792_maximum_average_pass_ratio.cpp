@@ -33,17 +33,15 @@ public:
     {
         std::priority_queue<Tuple, std::vector<Tuple>, Compare> pq;
         double sum = 0;
-        for (const auto& data : classes) {
-            const double pass = data[0];
-            const double total = data[1];
-            pq.emplace(pass, total, delta(pass, total));
-            sum += pass / total;
+        for (const auto& info : classes) {
+            pq.emplace(info[0], info[1], gain(info[0], info[1]));
+            sum += 1.0 * info[0] / info[1];
         }
         for (int i = 0; i < extraStudents; ++i) {
-            const auto [pass, total, increment] = pq.top();
+            const auto [pass, total, delta] = pq.top();
             pq.pop();
-            pq.emplace(pass + 1, total + 1, delta(pass + 1, total + 1));
-            sum += increment;
+            sum += delta;
+            pq.emplace(pass + 1, total + 1, gain(pass + 1, total + 1));
         }
         return sum / classes.size();
     }
@@ -53,15 +51,15 @@ private:
 
     struct Compare
     {
-        bool operator()(const Tuple& t1, const Tuple& t2) const
+        double operator()(const Tuple& t1, const Tuple& t2) const
         {
             return std::get<2>(t1) < std::get<2>(t2);
         }
     };
 
-    double delta(double pass, double total)
+    double gain(double a, double b)
     {
-        const double ratio = pass / total;
-        return (pass + 1) / (total + 1) - ratio;
+        // (a+1)/(b+1) - a/b = (b-a)/b(b+1)
+        return (b - a) / b / (b + 1);
     }
 };
