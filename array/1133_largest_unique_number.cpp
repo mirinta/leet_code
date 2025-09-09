@@ -1,4 +1,3 @@
-#include <unordered_map>
 #include <vector>
 
 /**
@@ -14,17 +13,15 @@ class Solution
 public:
     int largestUniqueNumber(std::vector<int>& nums)
     {
-        std::unordered_map<int, int> map; // val to frequency
+        const int max = *std::max_element(nums.begin(), nums.end());
+        std::vector<int> count(max + 1, 0);
         for (const auto& val : nums) {
-            map[val]++;
+            count[val]++;
         }
-        int result = -1;
-        for (const auto& [val, freq] : map) {
-            if (freq == 1) {
-                // nums[i] are positive integers
-                result = std::max(result, val);
-            }
+        for (int i = max; i >= 1; --i) {
+            if (count[i] == 1)
+                return i;
         }
-        return result;
+        return -1;
     }
 };
