@@ -24,17 +24,7 @@
 class Solution
 {
 public:
-    std::string sortVowels(std::string s) { return approach2(s); }
-
-private:
-    bool isVowel(char c)
-    {
-        c = std::tolower(c);
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
-    }
-
-    // time O(N), space O(N)
-    std::string approach2(const std::string& s)
+    std::string sortVowels(std::string s)
     {
         std::unordered_map<char, int> map;
         for (const auto& c : s) {
@@ -42,45 +32,28 @@ private:
                 map[c]++;
             }
         }
-        if (map.empty())
-            return s;
-
-        static constexpr char vowels[] = "AEIOUaeiou";
-        std::string result(s);
         int i = 0;
-        for (auto& c : result) {
-            if (!isVowel(c)) {
+        for (auto& c : s) {
+            if (!isVowel(c))
                 continue;
-            }
-            while (map[vowels[i]] == 0) {
+
+            while (i < kVowels.size() && map[kVowels[i]] == 0) {
                 i++;
             }
-            c = vowels[i];
-            map[vowels[i]]--;
+            if (i < kVowels.size()) {
+                c = kVowels[i];
+                map[kVowels[i]]--;
+            }
         }
-        return result;
+        return s;
     }
 
-    // time O(NlogN), space O(N)
-    std::string approach1(const std::string& s)
-    {
-        std::string vowels;
-        for (auto& c : s) {
-            if (isVowel(c)) {
-                vowels.push_back(c);
-            }
-        }
-        if (vowels.empty())
-            return s;
+private:
+    static constexpr std::string_view kVowels{"AEIOUaeiou"};
 
-        std::sort(vowels.begin(), vowels.end());
-        int i = 0;
-        std::string result(s);
-        for (auto& c : result) {
-            if (isVowel(c)) {
-                c = vowels[i++];
-            }
-        }
-        return result;
+    bool isVowel(char c)
+    {
+        c = std::tolower(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 };
