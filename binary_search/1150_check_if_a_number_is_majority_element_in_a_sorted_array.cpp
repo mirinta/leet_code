@@ -17,23 +17,19 @@ class Solution
 public:
     bool isMajorityElement(std::vector<int>& nums, int target)
     {
-        const int first = findFirst(target, nums);
-        if (first < 0)
+        const int n = nums.size();
+        const int firstIdx = findFirst(target, nums);
+        if (firstIdx < 0)
             return false;
 
-        const int last = findLast(target, nums);
-        if (last < 0)
-            return false;
-
-        return last - first + 1 > nums.size() / 2;
+        return firstIdx + n / 2 < n && nums[firstIdx + n / 2] == target;
     }
 
 private:
     int findFirst(int target, const std::vector<int>& nums)
     {
-        const int n = nums.size();
         int lo = 0;
-        int hi = n - 1;
+        int hi = nums.size() - 1;
         while (lo <= hi) {
             const int mid = lo + (hi - lo) / 2;
             if (nums[mid] >= target) {
@@ -42,28 +38,6 @@ private:
                 lo = mid + 1;
             }
         }
-        if (lo >= n || nums[lo] != target)
-            return -1;
-
-        return lo;
-    }
-
-    int findLast(int target, const std::vector<int>& nums)
-    {
-        const int n = nums.size();
-        int lo = 0;
-        int hi = n - 1;
-        while (lo <= hi) {
-            const int mid = lo + (hi - lo) / 2;
-            if (nums[mid] <= target) {
-                lo = mid + 1;
-            } else {
-                hi = mid - 1;
-            }
-        }
-        if (hi < 0 || nums[hi] != target)
-            return -1;
-
-        return hi;
+        return lo < nums.size() && nums[lo] == target ? lo : -1;
     }
 };
