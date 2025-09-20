@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <bitset>
 #include <queue>
 #include <unordered_map>
 #include <unordered_set>
@@ -55,22 +56,6 @@
  * ! queries for addPacket will be made in increasing order of timestamp.
  */
 
-namespace std {
-template <>
-struct hash<tuple<int, int, int>>
-{
-    size_t operator()(const tuple<int, int, int>& t) const
-    {
-        const auto& [a, b, c] = t;
-        size_t seed = 0;
-        seed ^= hash<int>{}(a) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
-        seed ^= hash<int>{}(b) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
-        seed ^= hash<int>{}(c) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
-        return seed;
-    }
-};
-} // namespace std
-
 class Router
 {
 public:
@@ -78,14 +63,13 @@ public:
 
     bool addPacket(int source, int destination, int timestamp)
     {
-        if (set.count({source, destination, timestamp}))
+        if (!set.insert(encode(source, destination, timestamp)).second)
             return false;
 
         if (queue.size() == capacity) {
             forwardPacket();
         }
         queue.emplace(source, destination, timestamp);
-        set.emplace(source, destination, timestamp);
         map[destination].emplace_back(timestamp);
         return true;
     }
@@ -95,14 +79,12 @@ public:
         if (queue.empty())
             return {};
 
-        const auto [src, dst, time] = queue.front();
+        const auto [source, destination, timestamp] = queue.front();
         queue.pop();
-        set.erase({src, dst, time});
-        map[dst].erase(std::lower_bound(map[dst].begin(), map[dst].end(), time));
-        if (map[dst].empty()) {
-            map.erase(dst);
-        }
-        return {src, dst, time};
+        set.erase(encode(source, destination, timestamp));
+        map[destination].erase(
+            std::lower_bound(map[destination].begin(), map[destination].end(), timestamp));
+        return {source, destination, timestamp};
     }
 
     int getCount(int destination, int startTime, int endTime)
@@ -110,18 +92,35 @@ public:
         if (!map.count(destination))
             return 0;
 
-        auto lower = std::lower_bound(map[destination].begin(), map[destination].end(), startTime);
-        auto upper = std::upper_bound(map[destination].begin(), map[destination].end(), endTime);
+        const auto lower =
+            std::lower_bound(map[destination].begin(), map[destination].end(), startTime);
+        const auto upper =
+            std::upper_bound(map[destination].begin(), map[destination].end(), endTime);
         return upper - lower;
     }
 
 private:
-    using Packet = std::tuple<int, int, int>;
+    std::bitset<66> encode(int source, int destination, int timestamp)
+    {
+        std::bitset<66> result{};
+        result |= std::bitset<66>(source) << 48;
+        result |= std::bitset<66>(destination) << 30;
+        result |= std::bitset<66>(timestamp);
+        return result;
+    };
 
+    std::tuple<int, int, int> decode(const std::bitset<66>& bitset)
+    {
+        const int source = (bitset >> 48 & std::bitset<66>((1 << 18) - 1)).to_ullong();
+        const int destination = (bitset >> 30 & std::bitset<66>((1 << 18) - 1)).to_ullong();
+        const int timestamp = (bitset & std::bitset<66>((1 << 30) - 1)).to_ullong();
+        return {source, destination, timestamp};
+    }
+
+    std::queue<std::tuple<int, int, int>> queue;
+    std::unordered_set<std::bitset<66>> set;
+    std::unordered_map<int, std::vector<int>> map;
     int capacity;
-    std::queue<Packet> queue;
-    std::unordered_map<int, std::vector<int>> map; // dst to timestamps
-    std::unordered_set<Packet> set;
 };
 
 /**
