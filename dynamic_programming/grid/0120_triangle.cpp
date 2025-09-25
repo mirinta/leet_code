@@ -27,19 +27,19 @@ private:
     {
         const int n = triangle.size();
         std::vector<int> dp(n, INT_MAX);
-        dp[0] = triangle[0][0];
-        for (int i = 1; i < n; ++i) {
+        dp[0] = 0;
+        for (int i = 0; i < n; ++i) {
             for (int j = i; j >= 1; --j) {
                 dp[j] = triangle[i][j] + std::min(dp[j], dp[j - 1]);
             }
-            dp[0] = dp[0] + triangle[i][0];
+            dp[0] += triangle[i][0];
         }
         return *std::min_element(dp.begin(), dp.end());
     }
 
     int approach1(const std::vector<std::vector<int>>& triangle)
     {
-        // dp[i][j] = min sum from (0,0) to (i,j)
+        // dp[i][j] = min path sum from (0,0) to (i,j)
         const int n = triangle.size();
         std::vector<std::vector<int>> dp(n, std::vector<int>(n, INT_MAX));
         dp[0][0] = triangle[0][0];
