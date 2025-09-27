@@ -28,29 +28,28 @@
  * ! All the given revisions in version1 and version2 can be stored in a 32-bit integer.
  */
 
+#include <string>
+
 class Solution
 {
 public:
-    int compareVersion(std::string version1, std::string version2)
+    int compareVersion(const std::string& version1, const std::string& version2)
     {
-        const int n = version1.size();
-        const int m = version2.size();
+        const int m = version1.size();
+        const int n = version2.size();
         int i = 0;
         int j = 0;
-        while (i < n || j < m) {
-            const int val1 = getNumber(i, version1);
-            const int val2 = getNumber(j, version2);
-            if (val1 > val2)
-                return 1;
-
-            if (val1 < val2)
-                return -1;
+        while (i < m || j < n) {
+            const int revision1 = getRevision(i, version1);
+            const int revision2 = getRevision(j, version2);
+            if (revision1 != revision2)
+                return revision1 > revision2 ? 1 : -1;
         }
         return 0;
     }
 
 private:
-    int getNumber(int& i, const std::string& s)
+    int getRevision(int& i, const std::string& s)
     {
         const int n = s.size();
         int result = 0;
