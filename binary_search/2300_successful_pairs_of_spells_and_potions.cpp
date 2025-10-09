@@ -25,16 +25,13 @@ class Solution
 public:
     std::vector<int> successfulPairs(std::vector<int>& spells, std::vector<int>& potions,
                                      long long success)
-    {
-        std::sort(potions.begin(), potions.end());
-        std::vector<int> result(spells.size());
-        for (int i = 0; i < spells.size(); ++i) {
-            const long long target = std::ceil(1.0 * success / spells[i]);
-            auto iter = std::lower_bound(potions.begin(), potions.end(), target);
-            if (iter != potions.end()) {
-                result[i] = potions.end() - iter;
-            }
-        }
-        return result;
+    const int n = spells.size();
+    std::sort(potions.begin(), potions.end());
+    std::vector<int> result(n, 0);
+    for (int i = 0; i < n; ++i) {
+        const long long target = std::ceil(1.0 * success / spells[i]);
+        auto iter = std::lower_bound(potions.begin(), potions.end(), target);
+        result[i] = std::distance(iter, potions.end());
     }
+    return result;
 };
