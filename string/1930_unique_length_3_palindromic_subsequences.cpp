@@ -26,28 +26,32 @@ public:
     int countPalindromicSubsequence(std::string s)
     {
         const int n = s.size();
-        std::array<std::pair<int, int>, 26> seen{}; // <first, last>
+        std::array<std::pair<int, int>, 26>
+            seen{}; // seen[i] = {first index, last index} of character i
         seen.fill({-1, -1});
-        std::vector<std::array<int, 26>> count(n + 1);
+        std::vector<std::array<int, 26>> count(
+            n + 1); // count[i][j] = num of character j in nums[0:i-1]
         for (int i = 0; i < n; ++i) {
-            if (seen[s[i] - 'a'].first == -1) {
-                seen[s[i] - 'a'] = {i, i};
+            const int index = s[i] - 'a';
+            if (seen[index].first == -1) {
+                seen[index].first = i;
+                seen[index].second = i;
             } else {
-                seen[s[i] - 'a'].second = i;
+                seen[index].second = i;
             }
             count[i + 1] = count[i];
-            count[i + 1][s[i] - 'a']++;
+            count[i + 1][index]++;
         }
         int result = 0;
         for (const auto& [first, last] : seen) {
-            if (first < 0 || last < 0 || first == last)
+            if (first == -1 || first == last)
                 continue;
 
-            int unique = 0;
+            int sum = 0;
             for (int i = 0; i < 26; ++i) {
-                unique += count[last][i] - count[first + 1][i] > 0;
+                sum += (count[last][i] - count[first + 1][i]) > 0;
             }
-            result += unique;
+            result += sum;
         }
         return result;
     }
