@@ -1,3 +1,4 @@
+#include <array>
 #include <string>
 #include <vector>
 
@@ -25,25 +26,48 @@
 class Solution
 {
 public:
-    int numberOfWays(std::string corridor)
+    int numberOfWays(const std::string& corridor) { return approach2(corridor); }
+
+private:
+    static constexpr long long kMod = 1e9 + 7;
+
+    int approach2(const std::string& corridor)
     {
-        constexpr int kMod = 1e9 + 7;
+        // dp[i][j] = num of ways to divide corridor[0:i-1]
+        // and the last section has exactly j seats
         const int n = corridor.size();
-        std::vector<int> seats;
+        std::vector<std::array<long long, 3>> dp(n + 1, {0, 0, 0});
+        dp[0][0] = 1;
+        for (int i = 1; i <= n; ++i) {
+            if (corridor[i - 1] == 'S') {
+                dp[i][0] = 0;
+                dp[i][1] = (dp[i - 1][2] + dp[i - 1][0]) % kMod;
+                dp[i][2] = dp[i - 1][1];
+            } else {
+                dp[i][0] = (dp[i - 1][0] + dp[i - 1][2]) % kMod;
+                dp[i][1] = dp[i - 1][1];
+                dp[i][2] = dp[i - 1][2];
+            }
+        }
+        return dp[n][2];
+    }
+
+    int approach1(const std::string& corridor)
+    {
+        const int n = corridor.size();
+        std::vector<int> seats; // indices
         for (int i = 0; i < n; ++i) {
             if (corridor[i] == 'S') {
                 seats.push_back(i);
             }
         }
-        if (seats.size() < 2 || seats.size() % 2 != 0)
+        if (seats.empty() || seats.size() % 2)
             return 0;
 
-        // 0 1 | 4 6
-        //   |<->| diff
         long long result = 1;
-        for (int i = 2; i + 2 <= seats.size(); i += 2) {
-            const int diff = seats[i] - seats[i - 1];
-            result = result * diff % kMod;
+        for (int i = 0; i < seats.size(); i += 2) {
+            const long long choices = i == 0 ? 1 : (seats[i] - seats[i - 1]);
+            result = result * choices % kMod;
         }
         return result;
     }
