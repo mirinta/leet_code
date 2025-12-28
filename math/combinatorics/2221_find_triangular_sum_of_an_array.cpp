@@ -23,8 +23,7 @@
  * ! 0 <= nums[i] <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     int triangularSum(std::vector<int>& nums)
     {

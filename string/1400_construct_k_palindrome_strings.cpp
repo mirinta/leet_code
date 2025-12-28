@@ -10,8 +10,7 @@
  * ! 1 <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canConstruct(std::string s, int k)
     {

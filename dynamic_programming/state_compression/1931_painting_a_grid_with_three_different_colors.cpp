@@ -12,8 +12,7 @@
  * ! 1 <= n <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int colorTheGrid(int m, int n)
     {

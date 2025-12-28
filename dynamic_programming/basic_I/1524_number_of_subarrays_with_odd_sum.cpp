@@ -10,10 +10,12 @@
  * ! 1 <= arr[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numOfSubarrays(std::vector<int>& arr) { return approach2(arr); }
+    int numOfSubarrays(std::vector<int>& arr)
+    {
+        return approach2(arr);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

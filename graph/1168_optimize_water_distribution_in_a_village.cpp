@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -23,8 +24,7 @@
  * ! house1j != house2j
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), rank(n)
     {
@@ -34,7 +34,10 @@ public:
         }
     }
 
-    int numOfConnectedComponents() const { return count; }
+    int numOfConnectedComponents() const
+    {
+        return count;
+    }
 
     int find(int x)
     {
@@ -44,7 +47,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -70,8 +76,7 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
     int minCostToSupplyWater(int n, std::vector<int>& wells, std::vector<std::vector<int>>& pipes)
     {
@@ -125,8 +130,7 @@ private:
         for (int i = 0; i < wells.size(); ++i) {
             pipes.push_back({0, i + 1, wells[i]});
         }
-        std::sort(pipes.begin(), pipes.end(),
-                  [](const auto& v1, const auto& v2) { return v1[2] < v2[2]; });
+        std::sort(pipes.begin(), pipes.end(), [](const auto& v1, const auto& v2) { return v1[2] < v2[2]; });
         UnionFind uf(n + 1);
         int result = 0;
         for (const auto& pipe : pipes) {

@@ -14,8 +14,7 @@
  * ! 1 <= nums[i] <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int missingInteger(std::vector<int>& nums)
     {

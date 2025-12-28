@@ -20,10 +20,12 @@
  * ! -4 <= grid[i][j] <= 4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxProductPath(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int maxProductPath(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     // DP with space optimization, TC = O(MN), SC = O(N)
@@ -43,10 +45,10 @@ private:
             dp[0][1] = std::max(backup * grid[i][0], dp[0][1] * grid[i][0]);
             for (int j = 1; j < n; ++j) {
                 backup = dp[j][0];
-                dp[j][0] = std::min({backup * grid[i][j], dp[j][1] * grid[i][j],
-                                     dp[j - 1][0] * grid[i][j], dp[j - 1][1] * grid[i][j]});
-                dp[j][1] = std::max({backup * grid[i][j], dp[j][1] * grid[i][j],
-                                     dp[j - 1][0] * grid[i][j], dp[j - 1][1] * grid[i][j]});
+                dp[j][0] = std::min(
+                    {backup * grid[i][j], dp[j][1] * grid[i][j], dp[j - 1][0] * grid[i][j], dp[j - 1][1] * grid[i][j]});
+                dp[j][1] = std::max(
+                    {backup * grid[i][j], dp[j][1] * grid[i][j], dp[j - 1][0] * grid[i][j], dp[j - 1][1] * grid[i][j]});
             }
         }
         if (dp[n - 1][1] < 0)
@@ -75,12 +77,10 @@ private:
         }
         for (int i = 1; i < m; ++i) {
             for (int j = 1; j < n; ++j) {
-                dp[i][j][0] =
-                    std::min({dp[i - 1][j][0] * grid[i][j], dp[i - 1][j][1] * grid[i][j],
-                              dp[i][j - 1][0] * grid[i][j], dp[i][j - 1][1] * grid[i][j]});
-                dp[i][j][1] =
-                    std::max({dp[i - 1][j][0] * grid[i][j], dp[i - 1][j][1] * grid[i][j],
-                              dp[i][j - 1][0] * grid[i][j], dp[i][j - 1][1] * grid[i][j]});
+                dp[i][j][0] = std::min({dp[i - 1][j][0] * grid[i][j], dp[i - 1][j][1] * grid[i][j],
+                                        dp[i][j - 1][0] * grid[i][j], dp[i][j - 1][1] * grid[i][j]});
+                dp[i][j][1] = std::max({dp[i - 1][j][0] * grid[i][j], dp[i - 1][j][1] * grid[i][j],
+                                        dp[i][j - 1][0] * grid[i][j], dp[i][j - 1][1] * grid[i][j]});
             }
         }
         if (dp[m - 1][n - 1][1] < 0)

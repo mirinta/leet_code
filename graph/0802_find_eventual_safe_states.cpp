@@ -21,8 +21,7 @@
  * ! The number of edges in the graph will be in the range [1, 4 * 10^4].
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> eventualSafeNodes(std::vector<std::vector<int>>& graph)
     {

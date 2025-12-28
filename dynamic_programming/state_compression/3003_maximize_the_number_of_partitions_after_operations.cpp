@@ -23,10 +23,12 @@
  * ! 1 <= k <= 26
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxPartitionsAfterOperations(std::string s, int k) { return dp(0, 0, k, s); }
+    int maxPartitionsAfterOperations(std::string s, int k)
+    {
+        return dp(0, 0, k, s);
+    }
 
 private:
     std::unordered_map<int, std::unordered_map<int, int>> memo;

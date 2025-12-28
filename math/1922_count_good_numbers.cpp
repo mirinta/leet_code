@@ -14,8 +14,7 @@
  * ! 1 <= n <= 10^15
  */
 
-class Solution
-{
+class Solution {
 public:
     int countGoodNumbers(long long n)
     {

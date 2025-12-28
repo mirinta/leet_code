@@ -27,15 +27,17 @@
  * ! 1 <= costs[i] <= 10^4
  */
 
-class RangeHash
-{
+class RangeHash {
     using LLONG = long long;
 
     static constexpr LLONG kMod = 1e9 + 7;
     static constexpr LLONG kBase = 26;
 
 public:
-    static LLONG valueOf(char c) { return c - 'a' + 1; }
+    static LLONG valueOf(char c)
+    {
+        return c - 'a' + 1;
+    }
 
     explicit RangeHash(const std::string& s) : prefixHash(s.size() + 1), powMod(s.size() + 1)
     {
@@ -61,9 +63,7 @@ private:
     std::vector<LLONG> powMod;     // Base^i
 };
 
-
-class Solution
-{
+class Solution {
 public:
     int minimumCost(std::string target, std::vector<std::string>& words, std::vector<int>& costs)
     {

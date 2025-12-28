@@ -26,8 +26,7 @@
  * ! 0 <= batteryPercentages[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int countTestedDevices(std::vector<int>& batteryPercentages)
     {

@@ -17,8 +17,7 @@
  * ! 0 <= k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestEqualSubarray(std::vector<int>& nums, int k)
     {

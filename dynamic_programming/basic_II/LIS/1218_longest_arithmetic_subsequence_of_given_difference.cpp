@@ -13,8 +13,7 @@
  * ! -10^4 <= arr[i], difference <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestSubsequence(const std::vector<int>& arr, int difference)
     {

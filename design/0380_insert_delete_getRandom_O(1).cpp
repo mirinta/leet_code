@@ -25,8 +25,7 @@
  * ! There will be at least one element in the data structure when getRandom is called.
  */
 
-class RandomizedSet
-{
+class RandomizedSet {
 public:
     RandomizedSet() : gen(rd()) {}
 

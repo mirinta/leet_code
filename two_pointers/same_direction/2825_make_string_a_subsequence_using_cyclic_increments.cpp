@@ -19,8 +19,7 @@
  * ! str1 and str2 consist of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canMakeSubsequence(std::string str1, std::string str2)
     {

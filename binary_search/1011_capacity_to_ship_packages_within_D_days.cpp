@@ -16,8 +16,7 @@
  * ! 1 <= weights[i] <= 500
  */
 
-class Solution
-{
+class Solution {
 public:
     int shipWithinDays(std::vector<int>& weights, int days)
     {

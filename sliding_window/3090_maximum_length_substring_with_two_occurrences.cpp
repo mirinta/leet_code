@@ -1,3 +1,4 @@
+#include <string>
 #include <unordered_map>
 #include <vector>
 
@@ -9,8 +10,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumLengthSubstring(std::string s)
     {

@@ -37,8 +37,7 @@
  * ! The input is generated such that taskId will be valid.
  */
 
-class TaskManager
-{
+class TaskManager {
 public:
     TaskManager(std::vector<std::vector<int>>& tasks)
     {
@@ -61,7 +60,10 @@ public:
         pq.emplace(map[taskId].first, taskId, newPriority, map[taskId].second);
     }
 
-    void rmv(int taskId) { map[taskId].second++; }
+    void rmv(int taskId)
+    {
+        map[taskId].second++;
+    }
 
     int execTop()
     {
@@ -77,16 +79,14 @@ public:
     }
 
 private:
-    struct Task
-    {
+    struct Task {
         int userId{-1};
         int taskId{-1};
         int priority{-1};
         int timestamp{0};
     };
 
-    struct Compare
-    {
+    struct Compare {
         bool operator()(const Task& t1, const Task& t2) const
         {
             return t1.priority != t2.priority ? t1.priority < t2.priority : t1.taskId < t2.taskId;

@@ -15,8 +15,7 @@
  * ! -10^5 <= matrix[i][j] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maxMatrixSum(std::vector<std::vector<int>>& matrix)
     {

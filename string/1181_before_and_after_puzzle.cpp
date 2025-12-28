@@ -22,8 +22,7 @@
  * ! 1 <= phrases[i].length <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> beforeAndAfterPuzzles(std::vector<std::string>& phrases)
     {

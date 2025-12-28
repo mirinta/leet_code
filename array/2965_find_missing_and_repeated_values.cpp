@@ -17,8 +17,7 @@
  * ! i, j <= n - 1 and grid[i][j] == x.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findMissingAndRepeatedValues(std::vector<std::vector<int>>& grid)
     {

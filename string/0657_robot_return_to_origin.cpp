@@ -17,8 +17,7 @@
  * ! moves only contains the characters 'U', 'D', 'L' and 'R'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool judgeCircle(const std::string& moves)
     {
@@ -29,20 +28,20 @@ public:
         int verticalMovement = 0;
         for (const auto& move : moves) {
             switch (move) {
-            case 'U':
-                horizontalMovement++;
-                break;
-            case 'D':
-                horizontalMovement--;
-                break;
-            case 'L':
-                verticalMovement++;
-                break;
-            case 'R':
-                verticalMovement--;
-                break;
-            default:
-                break;
+                case 'U':
+                    horizontalMovement++;
+                    break;
+                case 'D':
+                    horizontalMovement--;
+                    break;
+                case 'L':
+                    verticalMovement++;
+                    break;
+                case 'R':
+                    verticalMovement--;
+                    break;
+                default:
+                    break;
             }
         }
         return horizontalMovement == 0 && verticalMovement == 0;

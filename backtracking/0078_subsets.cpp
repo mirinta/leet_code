@@ -12,8 +12,7 @@
  * ! All the numbers of nums are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> subsets(std::vector<int>& nums)
     {
@@ -24,8 +23,7 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::vector<int>>& result, std::vector<int>& subset, int i,
-                   const std::vector<int>& nums)
+    void backtrack(std::vector<std::vector<int>>& result, std::vector<int>& subset, int i, const std::vector<int>& nums)
     {
         if (i == nums.size()) {
             result.push_back(subset);

@@ -25,11 +25,9 @@
  * ! The maze contains at least 2 empty spaces.
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool hasPath(std::vector<std::vector<int>>& maze, std::vector<int>& start,
-                 std::vector<int>& destination)
+    bool hasPath(std::vector<std::vector<int>>& maze, std::vector<int>& start, std::vector<int>& destination)
     {
         static const std::vector<std::pair<int, int>> kDirections{{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
         const int m = maze.size();

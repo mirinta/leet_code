@@ -16,8 +16,7 @@
  * ! All the values of arr are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numFactoredBinaryTrees(std::vector<int>& arr)
     {

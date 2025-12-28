@@ -8,8 +8,7 @@
  * ! 如果你不使用额外的数据结构，会很加分。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isUnique(std::string astr)
     {

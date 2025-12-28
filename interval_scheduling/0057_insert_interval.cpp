@@ -21,11 +21,9 @@
  * ! 0 <= start <= end <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> insert(std::vector<std::vector<int>>& intervals,
-                                         std::vector<int>& newInterval)
+    std::vector<std::vector<int>> insert(std::vector<std::vector<int>>& intervals, std::vector<int>& newInterval)
     {
         auto iter = std::upper_bound(intervals.begin(), intervals.end(), newInterval[0],
                                      [](int val, const auto& v) { return val < v[0]; });

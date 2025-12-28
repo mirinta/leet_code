@@ -16,8 +16,7 @@
  * ! 本题与LC 10相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isMatch(const std::string& s, const std::string& p)
     {

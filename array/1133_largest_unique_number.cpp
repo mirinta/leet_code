@@ -8,8 +8,7 @@
  * ! 0 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int largestUniqueNumber(std::vector<int>& nums)
     {

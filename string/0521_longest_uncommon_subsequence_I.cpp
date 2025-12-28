@@ -11,8 +11,7 @@
  * ! a and b consist of lower-case English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findLUSlength(std::string a, std::string b)
     {

@@ -10,8 +10,7 @@
  * ! 1 <= k <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int numKLenSubstrNoRepeats(std::string s, int k)
     {

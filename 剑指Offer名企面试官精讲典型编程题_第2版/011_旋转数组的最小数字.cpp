@@ -17,8 +17,7 @@
  * ! 本题与LC 154相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int minArray(const std::vector<int>& nums)
     {

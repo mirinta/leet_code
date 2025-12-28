@@ -23,8 +23,7 @@
  * ! arrays.
  */
 
-class Solution
-{
+class Solution {
 public:
     int getLastMoment(int n, std::vector<int>& left, std::vector<int>& right)
     {

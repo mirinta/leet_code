@@ -11,8 +11,7 @@
  * ! nums1 and nums2 are sorted.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long kthSmallestProduct(std::vector<int>& nums1, std::vector<int>& nums2, long long k)
     {

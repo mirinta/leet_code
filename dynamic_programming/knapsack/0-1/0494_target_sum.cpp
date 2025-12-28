@@ -18,10 +18,12 @@
  * ! -1000 <= target <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findTargetSumWays(std::vector<int>& nums, int target) { return approach2(nums, target); }
+    int findTargetSumWays(std::vector<int>& nums, int target)
+    {
+        return approach2(nums, target);
+    }
 
 private:
     // DP with space optimization
@@ -70,8 +72,5 @@ private:
             }
         }
         return dp[n][A];
-    }
-};
-
     }
 };

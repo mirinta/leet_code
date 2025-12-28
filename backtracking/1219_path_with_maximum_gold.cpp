@@ -23,8 +23,7 @@
  * ! There are at most 25 cells containing gold.
  */
 
-class Solution
-{
+class Solution {
 public:
     int getMaximumGold(std::vector<std::vector<int>>& grid)
     {
@@ -41,8 +40,7 @@ public:
     }
 
 private:
-    int backtrack(std::vector<std::vector<bool>>& visited, int i, int j,
-                  const std::vector<std::vector<int>>& grid)
+    int backtrack(std::vector<std::vector<bool>>& visited, int i, int j, const std::vector<std::vector<int>>& grid)
     {
         if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size())
             return 0;

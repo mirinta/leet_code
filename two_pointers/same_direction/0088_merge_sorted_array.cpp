@@ -20,8 +20,7 @@
  * ! Can you come up with an algorithm that runs in O(m + n) time?
  */
 
-class Solution
-{
+class Solution {
 public:
     void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n)
     {

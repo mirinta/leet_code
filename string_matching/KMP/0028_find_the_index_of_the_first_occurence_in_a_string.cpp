@@ -9,10 +9,12 @@
  * ! haystack and needle consist of only lowercase English characters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int strStr(std::string haystack, std::string needle) { return approach2(haystack, needle); }
+    int strStr(std::string haystack, std::string needle)
+    {
+        return approach2(haystack, needle);
+    }
 
 private:
     // KMP

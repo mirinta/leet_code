@@ -16,8 +16,7 @@
  * ! All the pairs of dislikes are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool possibleBipartition(int n, std::vector<std::vector<int>>& dislikes)
     {

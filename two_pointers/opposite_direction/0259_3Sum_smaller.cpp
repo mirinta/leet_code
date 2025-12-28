@@ -11,8 +11,7 @@
  * ! -100 <= target <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int threeSumSmaller(std::vector<int>& nums, int target)
     {

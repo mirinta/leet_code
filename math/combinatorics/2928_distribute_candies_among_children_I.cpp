@@ -10,8 +10,7 @@
  * ! 1 <= limit <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int distributeCandies(int n, int limit)
     {

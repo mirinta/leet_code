@@ -32,11 +32,10 @@
  * ! All values in positions are distinct
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> survivedRobotsHealths(std::vector<int>& positions, std::vector<int>& healths,
-                                           std::string directions)
+    std::vector<int>
+        survivedRobotsHealths(std::vector<int>& positions, std::vector<int>& healths, std::string directions)
     {
         const int n = positions.size();
         std::vector<std::array<int, 2>> robots(n); // <initial position, robot index>
@@ -44,8 +43,7 @@ public:
             robots[i][0] = positions[i];
             robots[i][1] = i;
         }
-        std::sort(robots.begin(), robots.end(),
-                  [](const auto& p1, const auto& p2) { return p1[0] < p2[0]; });
+        std::sort(robots.begin(), robots.end(), [](const auto& p1, const auto& p2) { return p1[0] < p2[0]; });
         std::stack<int> robotsGoRight;
         for (const auto& [initPos, i] : robots) {
             if (directions[i] == 'R') {

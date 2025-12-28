@@ -15,8 +15,7 @@ bool isBadVersion(int version);
  * ! 1 <= bad <= n <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int firstBadVersion(int n)
     {

@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -13,8 +12,7 @@ struct ListNode
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -36,8 +34,7 @@ struct TreeNode
  * ! 1 <= Node.val <= 100 for each node in the linked list and binary tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isSubPath(ListNode* head, TreeNode* root)
     {

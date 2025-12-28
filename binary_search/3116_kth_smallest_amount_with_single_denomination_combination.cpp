@@ -17,8 +17,7 @@
  * ! coins contains pairwise distinct integers.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long findKthSmallest(std::vector<int>& coins, int k)
     {

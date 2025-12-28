@@ -16,8 +16,7 @@
  * ! Input is generated in a way that the length of the answer doesn't exceed 105.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> wordBreak(std::string s, std::vector<std::string>& wordDict)
     {
@@ -29,8 +28,11 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::string>& result, std::vector<std::string>& path, int i,
-                   const std::string& s, const std::unordered_set<std::string>& set)
+    void backtrack(std::vector<std::string>& result,
+                   std::vector<std::string>& path,
+                   int i,
+                   const std::string& s,
+                   const std::unordered_set<std::string>& set)
     {
         if (i == s.size()) {
             std::string concat;

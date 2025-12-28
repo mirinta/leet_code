@@ -17,8 +17,7 @@
  * ! The input graph is always connected.
  */
 
-class Solution
-{
+class Solution {
 public:
     int shortestPathLength(std::vector<std::vector<int>>& graph)
     {

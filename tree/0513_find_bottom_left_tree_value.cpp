@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -20,10 +19,12 @@ struct TreeNode
  * ! -2^31 <= Node.val <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findBottomLeftValue(TreeNode* root) { return approach2(root); }
+    int findBottomLeftValue(TreeNode* root)
+    {
+        return approach2(root);
+    }
 
 private:
     // DFS, TC = O(N), SC = O(N)

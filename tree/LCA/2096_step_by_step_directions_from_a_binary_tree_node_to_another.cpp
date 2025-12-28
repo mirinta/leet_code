@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -38,8 +37,7 @@ struct TreeNode
  * ! startValue != destValue
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string getDirections(TreeNode* root, int startValue, int destValue)
     {

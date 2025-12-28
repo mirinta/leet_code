@@ -15,8 +15,7 @@
  * ! At most 10^4 calls will be made to next.
  */
 
-class MovingAverage
-{
+class MovingAverage {
 public:
     MovingAverage(int size) : capacity(size) {}
 

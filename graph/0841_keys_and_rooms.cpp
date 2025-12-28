@@ -21,10 +21,12 @@
  * ! All the values of rooms[i] are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool canVisitAllRooms(std::vector<std::vector<int>>& rooms) { return approach2(rooms); }
+    bool canVisitAllRooms(std::vector<std::vector<int>>& rooms)
+    {
+        return approach2(rooms);
+    }
 
 private:
     // BFS, time O(V+E), space O(V)
@@ -59,8 +61,7 @@ private:
         return visited.size() == n;
     }
 
-    void dfs(std::unordered_set<int>& visited, int current,
-             const std::vector<std::vector<int>>& rooms)
+    void dfs(std::unordered_set<int>& visited, int current, const std::vector<std::vector<int>>& rooms)
     {
         visited.insert(current);
         for (const auto& adj : rooms[current]) {

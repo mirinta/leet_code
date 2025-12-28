@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -16,8 +15,7 @@ struct ListNode
  * 例如，传入节点 c（位于单向链表 a->b->c->d->e->f 中），将其删除后，剩余链表为 a->b->d->e->f
  */
 
-class Solution
-{
+class Solution {
 public:
     void deleteNode(ListNode* node)
     {

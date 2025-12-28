@@ -31,11 +31,9 @@
  * ! access_times[i][1] consists only of '0' to '9'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> findHighAccessEmployees(
-        std::vector<std::vector<std::string>>& access_times)
+    std::vector<std::string> findHighAccessEmployees(std::vector<std::vector<std::string>>& access_times)
     {
         std::unordered_map<std::string, std::vector<int>> map;
         for (const auto& info : access_times) {

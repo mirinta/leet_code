@@ -6,8 +6,7 @@
  * ! 字符串长度在[0, 50000]范围内。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string compressString(std::string S)
     {

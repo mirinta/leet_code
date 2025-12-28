@@ -20,8 +20,7 @@
  * ! -2^31 <= x_start < x_end <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     // time O(NlogN), space O(std::sort)=O(logN)
     int findMinArrowShots(std::vector<std::vector<int>>& points)

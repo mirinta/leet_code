@@ -11,8 +11,7 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isArraySpecial(std::vector<int>& nums)
     {

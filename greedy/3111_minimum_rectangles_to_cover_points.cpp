@@ -24,8 +24,7 @@
  * ! All pairs (xi, yi) are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minRectanglesToCoverPoints(std::vector<std::vector<int>>& points, int w)
     {

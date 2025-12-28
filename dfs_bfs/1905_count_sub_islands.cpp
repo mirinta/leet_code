@@ -16,8 +16,7 @@
  * ! grid1[i][j] and grid2[i][j] are either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countSubIslands(std::vector<std::vector<int>>& grid1, std::vector<std::vector<int>>& grid2)
     {

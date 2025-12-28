@@ -13,8 +13,7 @@
  * ! picture[i][j] is 'W' or 'B'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findLonelyPixel(std::vector<std::vector<char>>& picture)
     {

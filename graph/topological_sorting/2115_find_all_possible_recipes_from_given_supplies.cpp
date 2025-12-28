@@ -26,8 +26,7 @@
  * ! Each ingredients[i] does not contain any duplicate values.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> findAllRecipes(std::vector<std::string>& recipes,
                                             std::vector<std::vector<std::string>>& ingredients,

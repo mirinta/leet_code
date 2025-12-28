@@ -64,8 +64,7 @@
  * ! At most 500 calls will be made to exp.
  */
 
-class SQL
-{
+class SQL {
 public:
     SQL(std::vector<std::string>& names, std::vector<int>& columns)
         : columns(std::move(columns)), counts(names.size(), 0), tables(names.size())

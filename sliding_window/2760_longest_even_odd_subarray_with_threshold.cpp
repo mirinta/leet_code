@@ -20,8 +20,7 @@
  * ! 1 <= threshold <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestAlternatingSubarray(std::vector<int>& nums, int threshold)
     {

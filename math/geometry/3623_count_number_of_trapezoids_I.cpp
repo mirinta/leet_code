@@ -18,8 +18,7 @@
  * ! All points are pairwise distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countTrapezoids(std::vector<std::vector<int>>& points)
     {

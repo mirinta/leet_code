@@ -23,14 +23,12 @@
  * ! 0 <= cost[i][j] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minCost(int n, std::vector<std::vector<int>>& cost)
     {
-        Memo memo(n / 2,
-                  std::array<std::array<long long, 4>, 4>{
-                      {{-1, -1, -1, -1}, {-1, -1, -1, -1}, {-1, -1, -1, -1}, {-1, -1, -1, -1}}});
+        Memo memo(n / 2, std::array<std::array<long long, 4>, 4>{
+                             {{-1, -1, -1, -1}, {-1, -1, -1, -1}, {-1, -1, -1, -1}, {-1, -1, -1, -1}}});
         return dfs(memo, n / 2 - 1, 3, 3, cost);
     }
 
@@ -39,8 +37,7 @@ private:
 
     // X X X X index .......... equidistant_index X X X X
     //           <-|            |->
-    long long dfs(Memo& memo, int index, int prevColor, int prevEquidColor,
-                  const std::vector<std::vector<int>>& cost)
+    long long dfs(Memo& memo, int index, int prevColor, int prevEquidColor, const std::vector<std::vector<int>>& cost)
     {
         if (index < 0)
             return 0;

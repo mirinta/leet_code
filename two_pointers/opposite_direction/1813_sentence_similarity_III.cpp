@@ -27,8 +27,7 @@
  * ! The words in sentence1 and sentence2 are separated by a single space.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool areSentencesSimilar(std::string sentence1, std::string sentence2)
     {

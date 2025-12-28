@@ -12,14 +12,16 @@
  * 假设所有操作都是有效的（例如，一个空的队列不会调用 pop 或者 peek 操作）。
  */
 
-class MyQueue
-{
+class MyQueue {
 public:
     /** Initialize your data structure here. */
     MyQueue() {}
 
     /** Push element x to the back of queue. */
-    void push(int x) { stack1.push(x); }
+    void push(int x)
+    {
+        stack1.push(x);
+    }
 
     /** Removes the element from in front of queue and returns that element. */
     int pop()
@@ -37,7 +39,10 @@ public:
     }
 
     /** Returns whether the queue is empty. */
-    bool empty() { return stack1.empty() && stack2.empty(); }
+    bool empty()
+    {
+        return stack1.empty() && stack2.empty();
+    }
 
 private:
     void process()

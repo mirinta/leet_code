@@ -17,8 +17,7 @@
  * ! Every number and running calculation will fit in a signed 32-bit integer.
  */
 
-class Solution
-{
+class Solution {
 public:
     int calculate(std::string s)
     {

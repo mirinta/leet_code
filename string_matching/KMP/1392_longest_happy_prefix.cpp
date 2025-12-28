@@ -12,8 +12,7 @@
  * ! s contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string longestPrefix(std::string s)
     {

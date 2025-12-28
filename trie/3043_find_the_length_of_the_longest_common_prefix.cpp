@@ -22,8 +22,7 @@
  * ! 1 <= arr1[i], arr2[i] <= 10^8
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode) {}
 
@@ -55,16 +54,14 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::array<TrieNode*, 10> next{};
     };
 
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
     int longestCommonPrefix(std::vector<int>& arr1, std::vector<int>& arr2)
     {

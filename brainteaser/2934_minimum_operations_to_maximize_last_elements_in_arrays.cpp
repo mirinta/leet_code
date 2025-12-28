@@ -25,8 +25,7 @@ max(nums1[0], nums1[1], ..., nums1[n - 1]).
  * ! 1 <= nums2[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<int>& nums1, std::vector<int>& nums2)
     {

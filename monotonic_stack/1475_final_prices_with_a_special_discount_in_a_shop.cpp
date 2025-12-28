@@ -15,8 +15,7 @@
  * ! 1 <= prices[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> finalPrices(std::vector<int>& prices)
     {

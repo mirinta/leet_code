@@ -29,8 +29,7 @@
  * ! It is guaranteed a sufficient team exists.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> smallestSufficientTeam(std::vector<std::string>& req_skills,
                                             std::vector<std::vector<std::string>>& people)

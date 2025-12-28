@@ -6,8 +6,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -31,8 +30,7 @@ struct TreeNode
  * ! All the values of the tree are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumOperations(TreeNode* root)
     {

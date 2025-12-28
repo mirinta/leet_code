@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -30,8 +29,7 @@ struct TreeNode
  * ! root is a perfect binary tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* reverseOddLevels(TreeNode* root)
     {

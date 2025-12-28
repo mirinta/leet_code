@@ -17,8 +17,7 @@
  * ! 1 <= dist <= team.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int catchMaximumAmountofPeople(std::vector<int>& team, int dist)
     {

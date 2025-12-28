@@ -20,10 +20,12 @@
  * ! 1 <= costs[i][j] <= 20
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minCost(std::vector<std::vector<int>>& costs) { return approach2(costs); }
+    int minCost(std::vector<std::vector<int>>& costs)
+    {
+        return approach2(costs);
+    }
 
 private:
     // DP with space optimization, TC = O(N), SC = O(1)

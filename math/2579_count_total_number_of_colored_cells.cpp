@@ -11,8 +11,7 @@
  * ! 1 <= n <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long coloredCells(int n)
     {

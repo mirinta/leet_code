@@ -21,8 +21,7 @@
  * ! The answer is guaranteed to fit in a 32-bit integer.
  */
 
-class Solution
-{
+class Solution {
 public:
     int calculate(std::string s)
     {
@@ -63,5 +62,8 @@ public:
     }
 
 private:
-    bool isOperator(char c) { return c == '+' || c == '-' || c == '*' || c == '/'; }
+    bool isOperator(char c)
+    {
+        return c == '+' || c == '-' || c == '*' || c == '/';
+    }
 };

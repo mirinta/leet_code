@@ -17,8 +17,7 @@
  * ! s consists of parentheses only '()[]{}'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isValid(std::string s)
     {

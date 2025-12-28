@@ -38,8 +38,7 @@
  * ! 1 <= queries[i][1] <= c
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 0)
     {
@@ -56,7 +55,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -77,11 +79,10 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> processQueries(int c, std::vector<std::vector<int>>& connections,
-                                    std::vector<std::vector<int>>& queries)
+    std::vector<int>
+        processQueries(int c, std::vector<std::vector<int>>& connections, std::vector<std::vector<int>>& queries)
     {
         UnionFind uf(c + 1);
         for (const auto& c : connections) {
@@ -97,8 +98,7 @@ public:
                 map[uf.find(q[1])].erase(q[1]);
             } else {
                 const auto& set = map[uf.find(q[1])];
-                result.emplace_back(
-                    set.empty() ? -1 : (set.find(q[1]) == set.end() ? *set.begin() : q[1]));
+                result.emplace_back(set.empty() ? -1 : (set.find(q[1]) == set.end() ? *set.begin() : q[1]));
             }
         }
         return result;

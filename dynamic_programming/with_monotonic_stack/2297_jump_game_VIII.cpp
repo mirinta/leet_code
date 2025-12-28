@@ -20,8 +20,7 @@
  * ! 0 <= nums[i], costs[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minCost(std::vector<int>& nums, std::vector<int>& costs)
     {

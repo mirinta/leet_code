@@ -14,8 +14,7 @@
  * ! 1 <= k <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k)
     {

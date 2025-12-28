@@ -25,10 +25,9 @@
  * ! words[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    vector<string> getLongestSubsequence(vector<string>& words, vector<int>& groups)
+    std::vector<std::string> getLongestSubsequence(std::vector<std::string>& words, std::vector<int>& groups)
     {
         const auto indices1 = helper(0, words, groups);
         const auto indices2 = helper(1, words, groups);
@@ -41,8 +40,7 @@ public:
     }
 
 private:
-    std::vector<int> helper(int target, const std::vector<std::string>& words,
-                            const std::vector<int>& groups)
+    std::vector<int> helper(int target, const std::vector<std::string>& words, const std::vector<int>& groups)
     {
         std::vector<int> result;
         for (int i = 0; i < words.size(); ++i) {

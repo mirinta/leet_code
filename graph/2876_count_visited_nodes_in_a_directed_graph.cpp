@@ -20,8 +20,7 @@
  * ! edges[i] != i
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> countVisitedNodes(std::vector<int>& edges)
     {
@@ -69,7 +68,10 @@ public:
     }
 
 private:
-    void dfs(std::vector<int>& result, int node, int depth, const std::vector<int>& indegree,
+    void dfs(std::vector<int>& result,
+             int node,
+             int depth,
+             const std::vector<int>& indegree,
              const std::vector<std::vector<int>>& graph)
     {
         result[node] = depth;

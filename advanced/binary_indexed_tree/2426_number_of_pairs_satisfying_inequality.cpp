@@ -19,8 +19,7 @@
  * ! -10^4 <= diff <= 10^4
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
 public:
     explicit BinaryIndexedTree(int n) : tree(n + 1, 0) {}
 
@@ -31,7 +30,10 @@ public:
         }
     }
 
-    int query(int left, int right) { return presum(right) - presum(left - 1); }
+    int query(int left, int right)
+    {
+        return presum(right) - presum(left - 1);
+    }
 
 private:
     int presum(int i)
@@ -43,14 +45,16 @@ private:
         return sum;
     }
 
-    int lowbit(int i) { return i & -i; }
+    int lowbit(int i)
+    {
+        return i & -i;
+    }
 
 private:
     std::vector<int> tree;
 };
 
-class Solution
-{
+class Solution {
 public:
     long long numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int diff)
     {
@@ -102,8 +106,7 @@ private:
         return result;
     }
 
-    void mergeSort(long long& result, std::vector<int>& nums, std::vector<int>& aux, int lo, int hi,
-                   int diff)
+    void mergeSort(long long& result, std::vector<int>& nums, std::vector<int>& aux, int lo, int hi, int diff)
     {
         if (lo >= hi)
             return;
@@ -114,8 +117,7 @@ private:
         merge(result, nums, aux, lo, mid, hi, diff);
     }
 
-    void merge(long long& result, std::vector<int>& nums, std::vector<int>& aux, int lo, int mid,
-               int hi, int diff)
+    void merge(long long& result, std::vector<int>& nums, std::vector<int>& aux, int lo, int mid, int hi, int diff)
     {
         for (int k = lo; k <= hi; ++k) {
             aux[k] = nums[k];

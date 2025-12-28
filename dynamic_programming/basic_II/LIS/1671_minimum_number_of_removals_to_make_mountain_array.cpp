@@ -19,8 +19,7 @@
  * ! It is guaranteed that you can make a mountain array out of nums.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumMountainRemovals(std::vector<int>& nums)
     {

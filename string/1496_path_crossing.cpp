@@ -13,8 +13,7 @@
  * ! path[i] is either 'N', 'S', 'E', or 'W'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isPathCrossing(std::string path)
     {
@@ -41,5 +40,8 @@ public:
     }
 
 private:
-    std::string encode(int x, int y) { return std::to_string(x) + "," + std::to_string(y); }
+    std::string encode(int x, int y)
+    {
+        return std::to_string(x) + "," + std::to_string(y);
+    }
 };

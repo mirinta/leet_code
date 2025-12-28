@@ -30,8 +30,7 @@
  * ! It is guaranteed that the snake starts at empty cells.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumMoves(std::vector<std::vector<int>>& grid)
     {
@@ -50,20 +49,17 @@ public:
                     return moves;
 
                 // go right
-                if (isValidBody(tailX, tailY + 1, orientation, grid) &&
-                    !visited[tailX][tailY + 1][orientation]) {
+                if (isValidBody(tailX, tailY + 1, orientation, grid) && !visited[tailX][tailY + 1][orientation]) {
                     visited[tailX][tailY + 1][orientation] = true;
                     queue.emplace(tailX, tailY + 1, orientation);
                 }
                 // go down
-                if (isValidBody(tailX + 1, tailY, orientation, grid) &&
-                    !visited[tailX + 1][tailY][orientation]) {
+                if (isValidBody(tailX + 1, tailY, orientation, grid) && !visited[tailX + 1][tailY][orientation]) {
                     visited[tailX + 1][tailY][orientation] = true;
                     queue.emplace(tailX + 1, tailY, orientation);
                 }
                 // rotate clockwise or counterclockwise
-                if (isValidBody(tailX, tailY, orientation ^ 1, grid) &&
-                    isValidPos(tailX + 1, tailY + 1, grid) &&
+                if (isValidBody(tailX, tailY, orientation ^ 1, grid) && isValidPos(tailX + 1, tailY + 1, grid) &&
                     !visited[tailX][tailY][orientation ^ 1]) {
                     visited[tailX][tailY][orientation ^ 1] = true;
                     queue.emplace(tailX, tailY, orientation ^ 1);
@@ -80,10 +76,8 @@ private:
         return x >= 0 && x < grid.size() && y >= 0 && y < grid.size() && grid[x][y] == 0;
     }
 
-    bool isValidBody(int tailX, int tailY, int orientation,
-                     const std::vector<std::vector<int>>& grid)
+    bool isValidBody(int tailX, int tailY, int orientation, const std::vector<std::vector<int>>& grid)
     {
-        return isValidPos(tailX, tailY, grid) &&
-               isValidPos(tailX + orientation, tailY + 1 - orientation, grid);
+        return isValidPos(tailX, tailY, grid) && isValidPos(tailX + orientation, tailY + 1 - orientation, grid);
     }
 };

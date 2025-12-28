@@ -13,8 +13,7 @@
  * ! nums[i] is either 0, 1, or 2.
  */
 
-class Solution
-{
+class Solution {
 public:
     void sortColors(std::vector<int>& nums)
     {

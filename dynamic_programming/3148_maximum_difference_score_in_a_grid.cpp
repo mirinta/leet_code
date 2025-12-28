@@ -17,8 +17,7 @@
  * ! 1 <= grid[i][j] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxScore(std::vector<std::vector<int>>& grid)
     {

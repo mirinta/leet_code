@@ -6,8 +6,7 @@
  * ! 0 <= 数组长度 <= 50000
  */
 
-class Solution
-{
+class Solution {
 public:
     int reversePairs(std::vector<int>& nums)
     {

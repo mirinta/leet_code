@@ -18,8 +18,7 @@
  * ! s contains only 'Q', 'W', 'E', and 'R'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int balancedString(std::string s)
     {

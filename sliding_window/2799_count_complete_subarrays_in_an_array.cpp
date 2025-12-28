@@ -16,8 +16,7 @@
  * ! 1 <= nums[i] <= 2000
  */
 
-class Solution
-{
+class Solution {
 public:
     int countCompleteSubarrays(std::vector<int>& nums)
     {

@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -15,8 +14,7 @@ struct TreeNode
  * 如果指定节点没有对应的“下一个”节点，则返回null。
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p)
     {

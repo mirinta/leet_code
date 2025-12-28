@@ -11,8 +11,7 @@
  * ! 本题与LC 53相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxSubArray(std::vector<int>& nums)
     {

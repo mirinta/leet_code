@@ -19,10 +19,12 @@
  * ! All the characters of order are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::string customSortString(std::string order, std::string s) { return approach2(order, s); }
+    std::string customSortString(std::string order, std::string s)
+    {
+        return approach2(order, s);
+    }
 
 private:
     std::string approach2(const std::string& order, const std::string& s)

@@ -25,8 +25,7 @@
  * ! 1 <= k <= n <= 500
  */
 
-class Solution
-{
+class Solution {
 public:
     int findTheWinner(int n, int k)
     {

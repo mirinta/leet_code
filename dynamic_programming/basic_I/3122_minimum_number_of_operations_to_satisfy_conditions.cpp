@@ -17,10 +17,12 @@
  * ! 0 <= grid[i][j] <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumOperations(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int minimumOperations(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     int approach2(const std::vector<std::vector<int>>& grid)
@@ -56,8 +58,7 @@ private:
     {
         const int m = grid.size();
         const int n = grid[0].size();
-        std::vector<std::vector<int>> count(
-            n, std::vector<int>(11, 0)); // frequency of each element of grid[:][j]
+        std::vector<std::vector<int>> count(n, std::vector<int>(11, 0)); // frequency of each element of grid[:][j]
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 count[j][grid[i][j]]++;
@@ -68,7 +69,11 @@ private:
     }
 
     // min operations to make grid[:][col:n-1] valid
-    int dfs(std::vector<std::vector<int>>& memo, int col, int prev, int m, int n,
+    int dfs(std::vector<std::vector<int>>& memo,
+            int col,
+            int prev,
+            int m,
+            int n,
             const std::vector<std::vector<int>>& count)
     {
         if (col == n)

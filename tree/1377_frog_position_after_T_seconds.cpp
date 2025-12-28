@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -23,8 +24,7 @@
  * ! 1 <= target <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     double frogPosition(int n, std::vector<std::vector<int>>& edges, int t, int target)
     {
@@ -46,8 +46,8 @@ public:
             for (int i = queue.size(); i > 0; --i) {
                 const auto v = queue.front();
                 queue.pop();
-                const int count = std::count_if(graph[v].begin(), graph[v].end(),
-                                                [&visited](const int w) { return !visited[w]; });
+                const int count =
+                    std::count_if(graph[v].begin(), graph[v].end(), [&visited](const int w) { return !visited[w]; });
                 for (const auto& w : graph[v]) {
                     if (visited[w])
                         continue;

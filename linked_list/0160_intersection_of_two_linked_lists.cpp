@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -27,8 +26,7 @@ struct ListNode
  * ! intersectVal == listA[skipA] == listB[skipB] if listA and listB intersect.
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* getIntersectionNode(ListNode* headA, ListNode* headB)
     {

@@ -18,8 +18,7 @@
  * ! There is exactly one island in grid.
  */
 
-class Solution
-{
+class Solution {
 public:
     int islandPerimeter(std::vector<std::vector<int>>& grid)
     {

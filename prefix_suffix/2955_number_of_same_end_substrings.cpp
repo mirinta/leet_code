@@ -21,8 +21,7 @@
  * ! 0 <= li <= ri < s.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sameEndSubstringCount(std::string s, std::vector<std::vector<int>>& queries)
     {

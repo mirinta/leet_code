@@ -8,8 +8,7 @@
  * modification to the input array in place and do not return anything.
  */
 
-class Solution
-{
+class Solution {
 public:
     void duplicateZeros(std::vector<int>& arr)
     {

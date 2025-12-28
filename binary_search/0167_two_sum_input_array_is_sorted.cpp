@@ -19,8 +19,7 @@
  * ! Your solution must use only constant extra place.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& numbers, int target)
     {

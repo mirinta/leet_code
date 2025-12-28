@@ -6,8 +6,7 @@
  * This is the HtmlParser's API interface.
  * You should not implement it, or speculate about its implementation
  */
-class HtmlParser
-{
+class HtmlParser {
 public:
     std::vector<std::string> getUrls(std::string url);
 };
@@ -57,8 +56,7 @@ public:
  * ! You may assume there're no duplicates in url library.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> crawl(std::string startUrl, HtmlParser htmlParser)
     {

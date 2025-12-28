@@ -20,8 +20,7 @@
  * ! 1 <= queries[i][1] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> queryResults(int limit, std::vector<std::vector<int>>& queries)
     {

@@ -17,8 +17,7 @@
  * ! 1 <= k <= 10^12
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumCandies(std::vector<int>& candies, long long k)
     {

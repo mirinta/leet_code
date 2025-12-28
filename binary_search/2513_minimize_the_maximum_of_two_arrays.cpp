@@ -20,8 +20,7 @@
  * ! 2 <= uniqueCnt1 + uniqueCnt2 <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimizeSet(int divisor1, int divisor2, int uniqueCnt1, int uniqueCnt2)
     {
@@ -43,8 +42,7 @@ private:
     // arr1 contains >= uniqueCnt1 distinct integers which are not divisible by divisor1
     // arr2 contains >= uniqueCnt1 distinct integers which are not divisible by divisor2
     // arr1 and arr2 are different
-    bool isValid(long long n, long long divisor1, long long divisor2, long long uniqueCnt1,
-                 long long uniqueCnt2)
+    bool isValid(long long n, long long divisor1, long long divisor2, long long uniqueCnt1, long long uniqueCnt2)
     {
         // A = num of distinct integers which are not divisible by divisor1
         const long long A = n - n / divisor1;

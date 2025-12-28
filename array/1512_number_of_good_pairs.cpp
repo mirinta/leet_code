@@ -10,8 +10,7 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     // time O(N), space O(N)
     int numIdenticalPairs(std::vector<int>& nums)

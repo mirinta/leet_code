@@ -15,8 +15,7 @@
  * ! arrays[i] is sorted in strictly increasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> longestCommonSubsequence(std::vector<std::vector<int>>& arrays)
     {

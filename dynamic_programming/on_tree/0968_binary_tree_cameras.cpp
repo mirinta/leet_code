@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -24,10 +23,12 @@ struct TreeNode
  * ! Node.val == 0
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minCameraCover(TreeNode* root) { return approach2(root); }
+    int minCameraCover(TreeNode* root)
+    {
+        return approach2(root);
+    }
 
 private:
     enum State { NotCovered, Covered_HasCamera, Covered_NoCamera };
@@ -69,8 +70,7 @@ private:
             const auto [left0, left1, left2] = dfs(root->left);
             const auto [right0, right1, right2] = dfs(root->right);
             // case 1: current node has a camera
-            const int case1 =
-                1 + std::min({left0, left1, left2}) + std::min({right0, right1, right2});
+            const int case1 = 1 + std::min({left0, left1, left2}) + std::min({right0, right1, right2});
             // case 2: current node has no camera and it is covered by its parent
             // then its children must be covered by itself or covered by their children
             const int case2 = std::min(left0, left2) + std::min(right0, right2);

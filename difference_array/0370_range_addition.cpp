@@ -16,8 +16,7 @@
  * ! -1000 <= inci <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> getModifiedArray(int length, std::vector<std::vector<int>>& updates)
     {

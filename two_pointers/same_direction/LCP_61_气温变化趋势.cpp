@@ -19,8 +19,7 @@
  * ! -20 <= temperatureA[i], temperatureB[i] <= 40
  */
 
-class Solution
-{
+class Solution {
 public:
     int temperatureTrend(std::vector<int>& temperatureA, std::vector<int>& temperatureB)
     {
@@ -30,8 +29,8 @@ public:
         while (i < n) {
             int j = i + 1;
             int days = 0;
-            while (j < n && compare(temperatureA[j], temperatureA[j - 1]) ==
-                                compare(temperatureB[j], temperatureB[j - 1])) {
+            while (j < n &&
+                   compare(temperatureA[j], temperatureA[j - 1]) == compare(temperatureB[j], temperatureB[j - 1])) {
                 j++;
                 days++;
             }

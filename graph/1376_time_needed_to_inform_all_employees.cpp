@@ -29,8 +29,7 @@
  * ! It is guaranteed that all the employees can be informed.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numOfMinutes(int n, int headID, std::vector<int>& manager, std::vector<int>& informTime)
     {
@@ -51,8 +50,7 @@ private:
         return dfs(headID, informTime, graph);
     }
 
-    int dfs(int current, const std::vector<int>& informTime,
-            const std::vector<std::vector<int>>& graph)
+    int dfs(int current, const std::vector<int>& informTime, const std::vector<std::vector<int>>& graph)
     {
         int result = 0;
         for (const auto& adj : graph[current]) {

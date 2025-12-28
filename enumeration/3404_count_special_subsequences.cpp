@@ -18,8 +18,7 @@
  * ! 1 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     long long numberOfSubsequences(std::vector<int>& nums)
     {

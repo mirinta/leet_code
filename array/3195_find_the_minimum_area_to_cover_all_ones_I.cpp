@@ -11,8 +11,7 @@
  * ! The input is generated such that there is at least one 1 in grid.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumArea(std::vector<std::vector<int>>& grid)
     {

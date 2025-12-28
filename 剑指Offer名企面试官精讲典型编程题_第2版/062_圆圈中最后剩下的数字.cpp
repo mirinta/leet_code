@@ -10,8 +10,7 @@
  * ! 1 <= m <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int lastRemaining(int n, int m)
     {

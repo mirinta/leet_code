@@ -12,8 +12,7 @@
  * ! 1 <= nums[i][j] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findDiagonalOrder(std::vector<std::vector<int>>& nums)
     {

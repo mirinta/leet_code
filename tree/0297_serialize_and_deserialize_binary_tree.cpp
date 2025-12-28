@@ -4,8 +4,7 @@
 /**
  * Definition of a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -42,8 +41,7 @@ struct TreeNode
  * 7. inorder w/ nullptr info               |   YES (if all the values are unique)
  */
 
-class Codec
-{
+class Codec {
 public:
     // Encodes a tree to a single string.
     std::string serialize(TreeNode* root)

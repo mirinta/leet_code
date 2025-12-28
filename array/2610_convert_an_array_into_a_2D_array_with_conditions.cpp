@@ -19,8 +19,7 @@
  * ! 1 <= nums[i] <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> findMatrix(std::vector<int>& nums)
     {

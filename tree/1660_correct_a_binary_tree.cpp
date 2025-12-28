@@ -5,8 +5,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -47,8 +46,7 @@ struct TreeNode
  * ! fromNode.right is null in the initial tree from the test data.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* correctBinaryTree(TreeNode* root)
     {

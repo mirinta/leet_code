@@ -1,10 +1,10 @@
+#include <cmath>
 #include <utility>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -16,10 +16,12 @@ struct TreeNode
  * 1。
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isBalanced(TreeNode* root) { return dfs(root) >= 0; }
+    bool isBalanced(TreeNode* root)
+    {
+        return dfs(root) >= 0;
+    }
 
 private:
     int dfs(TreeNode* root)

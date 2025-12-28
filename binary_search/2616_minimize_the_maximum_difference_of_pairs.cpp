@@ -17,8 +17,7 @@
  * ! 0 <= p <= (nums.length)/2
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimizeMax(std::vector<int>& nums, int p)
     {

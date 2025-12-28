@@ -15,8 +15,7 @@
  * ! words[i] and allowed contain only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countConsistentStrings(std::string allowed, std::vector<std::string>& words)
     {

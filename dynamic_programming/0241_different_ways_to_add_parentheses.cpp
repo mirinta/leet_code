@@ -14,8 +14,7 @@
  * ! All the integer values in the input expression are in the range [0, 99].
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> diffWaysToCompute(std::string expression)
     {

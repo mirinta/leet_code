@@ -7,8 +7,7 @@
  * 说明：解集不能包含重复的子集。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> generateParenthesis(int n)
     {

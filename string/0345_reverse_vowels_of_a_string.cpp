@@ -10,8 +10,7 @@
  * ! s consist of printable ASCII characters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string reverseVowels(std::string s)
     {

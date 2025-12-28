@@ -25,10 +25,12 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long maximumTotalCost(std::vector<int>& nums) { return approach2(nums); }
+    long long maximumTotalCost(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     long long approach2(const std::vector<int>& nums)

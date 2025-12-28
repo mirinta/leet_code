@@ -22,19 +22,24 @@
  * ! There is at most one edge between every two nodes.
  */
 
-class Solution
-{
+class Solution {
 public:
-    double maxProbability(int n, std::vector<std::vector<int>>& edges,
-                          std::vector<double>& succProb, int start_node, int end_node)
+    double maxProbability(int n,
+                          std::vector<std::vector<int>>& edges,
+                          std::vector<double>& succProb,
+                          int start_node,
+                          int end_node)
     {
         return approach2(n, edges, succProb, start_node, end_node);
     }
 
 private:
     // Bellman-Ford
-    double approach2(int n, const std::vector<std::vector<int>>& edges,
-                     const std::vector<double>& succProb, int start_node, int end_node)
+    double approach2(int n,
+                     const std::vector<std::vector<int>>& edges,
+                     const std::vector<double>& succProb,
+                     int start_node,
+                     int end_node)
     {
         std::vector<double> dp(n, 0);
         dp[start_node] = 1;
@@ -60,8 +65,11 @@ private:
     }
 
     // Dijkstra
-    double approach1(int n, const std::vector<std::vector<int>>& edges,
-                     const std::vector<double>& succProb, int start_node, int end_node)
+    double approach1(int n,
+                     const std::vector<std::vector<int>>& edges,
+                     const std::vector<double>& succProb,
+                     int start_node,
+                     int end_node)
     {
         std::vector<std::vector<std::pair<int, double>>> graph(n);
         for (int i = 0; i < edges.size(); ++i) {

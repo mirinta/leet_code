@@ -22,8 +22,7 @@
  * ! words[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> palindromePairs(std::vector<std::string>& words)
     {

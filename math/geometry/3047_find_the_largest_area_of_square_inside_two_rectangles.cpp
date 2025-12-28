@@ -21,11 +21,9 @@
  * ! bottomLeft[i][1] < topRight[i][1]
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long largestSquareArea(std::vector<std::vector<int>>& bottomLeft,
-                                std::vector<std::vector<int>>& topRight)
+    long long largestSquareArea(std::vector<std::vector<int>>& bottomLeft, std::vector<std::vector<int>>& topRight)
     {
         const int n = bottomLeft.size();
         long long maxLength = 0;
@@ -37,10 +35,10 @@ public:
                 if (bottomLeft[i][1] >= topRight[j][1] || bottomLeft[j][1] >= topRight[i][1])
                     continue; // no intersection
 
-                const long long w = std::abs(std::max(bottomLeft[i][0], bottomLeft[j][0]) -
-                                             std::min(topRight[i][0], topRight[j][0]));
-                const long long h = std::abs(std::max(bottomLeft[i][1], bottomLeft[j][1]) -
-                                             std::min(topRight[i][1], topRight[j][1]));
+                const long long w =
+                    std::abs(std::max(bottomLeft[i][0], bottomLeft[j][0]) - std::min(topRight[i][0], topRight[j][0]));
+                const long long h =
+                    std::abs(std::max(bottomLeft[i][1], bottomLeft[j][1]) - std::min(topRight[i][1], topRight[j][1]));
                 maxLength = std::max(maxLength, std::min(h, w));
             }
         }

@@ -20,8 +20,7 @@
  * ! num only consists of digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string largestGoodInteger(std::string num)
     {
@@ -29,8 +28,7 @@ public:
         int maxIdx = -1;
         for (int i = 1; i + 1 < num.size(); ++i) {
             if (num[i] == num[i - 1] && num[i] == num[i + 1]) {
-                const int value =
-                    (num[i - 1] - 'a') * 100 + (num[i] - 'a') * 10 + (num[i + 1] - 'a');
+                const int value = (num[i - 1] - 'a') * 100 + (num[i] - 'a') * 10 + (num[i + 1] - 'a');
                 if (value > maxVal) {
                     maxIdx = i;
                     maxVal = value;

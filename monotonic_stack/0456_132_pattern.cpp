@@ -12,8 +12,7 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool find132pattern(std::vector<int>& nums)
     {

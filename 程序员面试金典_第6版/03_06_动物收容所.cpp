@@ -16,12 +16,14 @@
  * ! 收纳所的最大容量为20000
  */
 
-class AnimalShelf
-{
+class AnimalShelf {
 public:
     AnimalShelf() {}
 
-    void enqueue(std::vector<int> animal) { data[animal[1]].push(animal[0]); }
+    void enqueue(std::vector<int> animal)
+    {
+        data[animal[1]].push(animal[0]);
+    }
 
     std::vector<int> dequeueAny()
     {

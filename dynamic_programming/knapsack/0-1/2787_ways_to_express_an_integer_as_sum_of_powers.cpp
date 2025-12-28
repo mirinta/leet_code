@@ -16,10 +16,12 @@
  * ! 1 <= x <= 5
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numberOfWays(int n, int x) { return approach2(n, x); }
+    int numberOfWays(int n, int x)
+    {
+        return approach2(n, x);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

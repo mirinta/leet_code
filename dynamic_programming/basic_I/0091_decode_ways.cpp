@@ -28,10 +28,12 @@
  * ! s contains only digits and may contain leading zero(s).
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numDecodings(std::string s) { return approach2(s); }
+    int numDecodings(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     // DP with space optimization, time O(N), space O(1)

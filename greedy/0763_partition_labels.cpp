@@ -16,10 +16,12 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> partitionLabels(std::string s) { return approach2(s); }
+    std::vector<int> partitionLabels(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     // hash table, TC = O(N), SC = O(N)
@@ -54,8 +56,7 @@ private:
                 intervals[index].second = i;
             }
         }
-        intervals.erase(std::remove_if(intervals.begin(), intervals.end(),
-                                       [](const auto& p) { return p.first == -1; }),
+        intervals.erase(std::remove_if(intervals.begin(), intervals.end(), [](const auto& p) { return p.first == -1; }),
                         intervals.end());
         const auto merged = helper(intervals);
         std::vector<int> result;

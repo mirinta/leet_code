@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -15,8 +14,7 @@ struct ListNode
  * 个节点是值为 4 的节点。
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* getKthFromEnd(ListNode* head, int k)
     {

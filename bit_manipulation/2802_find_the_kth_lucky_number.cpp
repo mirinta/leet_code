@@ -9,8 +9,7 @@
  * ! 1 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string kthLuckyNumber(int k)
     {

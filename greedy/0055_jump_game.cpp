@@ -10,10 +10,12 @@
  * ! 0 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool canJump(std::vector<int>& nums) { return approach2(nums); }
+    bool canJump(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // Greedy, time O(N), space O(1)

@@ -11,13 +11,11 @@
  * ! 0 <= nums[i] <= 2^31 - 1
  */
 
-struct TrieNode
-{
+struct TrieNode {
     TrieNode* next[2];
 };
 
-class Solution
-{
+class Solution {
 public:
     int findMaximumXOR(std::vector<int>& nums)
     {

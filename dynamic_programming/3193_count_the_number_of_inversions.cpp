@@ -24,8 +24,7 @@
  * ! The input is generated such that all endi are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfPermutations(int n, std::vector<std::vector<int>>& requirements)
     {

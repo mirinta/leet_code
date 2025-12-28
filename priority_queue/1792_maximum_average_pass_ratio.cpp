@@ -26,8 +26,7 @@
  * ! 1 <= extraStudents <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     double maxAverageRatio(std::vector<std::vector<int>>& classes, int extraStudents)
     {
@@ -49,8 +48,7 @@ public:
 private:
     using Tuple = std::tuple<double, double, double>;
 
-    struct Compare
-    {
+    struct Compare {
         double operator()(const Tuple& t1, const Tuple& t2) const
         {
             return std::get<2>(t1) < std::get<2>(t2);

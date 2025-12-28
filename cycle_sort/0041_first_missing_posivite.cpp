@@ -9,8 +9,7 @@
  * ! -2^31 <= nums[i] <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int firstMissingPositive(std::vector<int>& nums)
     {

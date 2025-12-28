@@ -43,10 +43,12 @@ long long combinationsMod(long long m, long long n, long long mod = 1e9 + 7)
     return factorial[m] * invFactorial[n] % mod * invFactorial[m - n] % mod;
 }
 
-class Solution
-{
+class Solution {
 public:
-    int valueAfterKSeconds(int n, int k) { return approach4(n, k); }
+    int valueAfterKSeconds(int n, int k)
+    {
+        return approach4(n, k);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

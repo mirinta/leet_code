@@ -17,8 +17,7 @@
  * ! 1 <= grid[i][j] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPaths(std::vector<std::vector<int>>& grid)
     {
@@ -38,8 +37,7 @@ private:
     static constexpr int kMod = 1e9 + 7;
 
     // num of strictly increasing paths starting from grid[x][y]
-    int dfs(std::vector<std::vector<int>>& memo, int x, int y,
-            const std::vector<std::vector<int>>& grid)
+    int dfs(std::vector<std::vector<int>>& memo, int x, int y, const std::vector<std::vector<int>>& grid)
     {
         static const std::vector<std::pair<int, int>> kDirections{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         if (memo[x][y] != -1)

@@ -21,8 +21,7 @@
  * ! At most 10^4 calls will be made to shouldPrintMessage.
  */
 
-class Logger
-{
+class Logger {
 public:
     Logger() {}
 

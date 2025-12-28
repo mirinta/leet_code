@@ -13,10 +13,12 @@
  * ! -10^4 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int constrainedSubsetSum(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int constrainedSubsetSum(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     // DP + Monotonic Queue, time O(N), space O(N)

@@ -10,8 +10,7 @@
  * ! 1 <= low <= high <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int countSymmetricIntegers(int low, int high)
     {

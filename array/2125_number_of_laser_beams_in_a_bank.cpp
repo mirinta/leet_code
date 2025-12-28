@@ -22,16 +22,14 @@
  * ! bank[i][j] is either '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfBeams(std::vector<std::string>& bank)
     {
         int prev = 0;
         int result = 0;
         for (const auto& row : bank) {
-            const int count =
-                std::count_if(row.begin(), row.end(), [](const auto& c) { return c == '1'; });
+            const int count = std::count_if(row.begin(), row.end(), [](const auto& c) { return c == '1'; });
             if (count > 0) {
                 result += count * prev;
                 prev = count;

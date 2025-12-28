@@ -30,8 +30,7 @@
  * ! 1 <= horizontalCut[i], verticalCut[i] <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumCost(int m, int n, std::vector<int>& horizontalCut, std::vector<int>& verticalCut)
     {
@@ -44,8 +43,7 @@ private:
 
     // top left corner = (x0, y0)
     // bottom right corner = (x1, y1)
-    int dfs(int x0, int y0, int x1, int y1, const std::vector<int>& horizontalCut,
-            const std::vector<int>& verticalCut)
+    int dfs(int x0, int y0, int x1, int y1, const std::vector<int>& horizontalCut, const std::vector<int>& verticalCut)
     {
         if (x0 + 1 == x1 && y0 + 1 == y1)
             return 0;

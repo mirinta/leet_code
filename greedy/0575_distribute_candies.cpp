@@ -18,8 +18,7 @@
  * ! -10^5 <= candyType[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int distributeCandies(std::vector<int>& candyType)
     {

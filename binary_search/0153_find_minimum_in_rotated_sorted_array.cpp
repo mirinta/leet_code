@@ -22,8 +22,7 @@
  * ! nums is sorted and rotated between 1 and n times.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMin(std::vector<int>& nums)
     {

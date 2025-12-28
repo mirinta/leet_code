@@ -12,8 +12,7 @@
  * ! 数组的数取值为 [0, 13]
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isStraight(std::vector<int>& nums)
     {

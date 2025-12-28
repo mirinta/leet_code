@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -25,8 +24,7 @@ struct TreeNode
  * ! Both of the given trees will have values in the range [0, 200].
  */
 
-class Solution
-{
+class Solution {
 public:
     bool leafSimilar(TreeNode* root1, TreeNode* root2)
     {

@@ -15,8 +15,7 @@
  * ! board[i][j] is either '.' or 'X'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countBattleships(std::vector<std::vector<char>>& board)
     {

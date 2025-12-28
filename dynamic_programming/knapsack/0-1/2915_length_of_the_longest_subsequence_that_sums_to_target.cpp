@@ -14,8 +14,7 @@
  * ! 1 <= target <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int lengthOfLongestSubsequence(std::vector<int>& nums, int target)
     {

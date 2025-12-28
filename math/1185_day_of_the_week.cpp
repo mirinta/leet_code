@@ -12,14 +12,13 @@
  * ! The given dates are valid dates between the years 1971 and 2100.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string dayOfTheWeek(int day, int month, int year)
     {
         // 1971/1/1 is a Friday
-        static const std::array<std::string, 7> kDaysOfWeek{
-            "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"};
+        static const std::array<std::string, 7> kDaysOfWeek{"Thursday", "Friday",  "Saturday", "Sunday",
+                                                            "Monday",   "Tuesday", "Wednesday"};
         int total = 0;
         for (int i = 1971; i < year; ++i) {
             total += daysOfYear(i);
@@ -43,7 +42,10 @@ private:
         return true;
     }
 
-    int daysOfYear(int year) { return isLeapYear(year) ? 366 : 365; }
+    int daysOfYear(int year)
+    {
+        return isLeapYear(year) ? 366 : 365;
+    }
 
     int daysOfMonth(int month, int year)
     {

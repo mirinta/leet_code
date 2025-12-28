@@ -21,11 +21,9 @@
  * ! All the positions in guards and walls are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countUnguarded(int m, int n, std::vector<std::vector<int>>& guards,
-                       std::vector<std::vector<int>>& walls)
+    int countUnguarded(int m, int n, std::vector<std::vector<int>>& guards, std::vector<std::vector<int>>& walls)
     {
         std::vector<std::vector<char>> grid(m, std::vector<char>(n, ' '));
         for (const auto& coord : walls) {

@@ -8,8 +8,7 @@
  * ! s and c consist only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countSubstrings(std::string s, char c)
     {

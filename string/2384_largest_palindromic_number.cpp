@@ -17,8 +17,7 @@
  * ! num consists of digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string largestPalindromic(std::string num)
     {

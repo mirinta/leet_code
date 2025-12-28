@@ -27,8 +27,7 @@
  * ! board[i][j] is 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     // Two-pass, time O(MN), space O(1)
     void gameOfLife(std::vector<std::vector<int>>& board)
@@ -41,31 +40,30 @@ public:
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 switch (board[i][j]) {
-                case Die:
-                    board[i][j] = countLiveNeighbors(i, j, board) == 3 ? AboutToLive : Die;
-                    break;
-                case Live:
-                {
-                    const int count = countLiveNeighbors(i, j, board);
-                    board[i][j] = count < 2 || count > 3 ? AboutToDie : Live;
-                    break;
-                }
-                default:
-                    break;
+                    case Die:
+                        board[i][j] = countLiveNeighbors(i, j, board) == 3 ? AboutToLive : Die;
+                        break;
+                    case Live: {
+                        const int count = countLiveNeighbors(i, j, board);
+                        board[i][j] = count < 2 || count > 3 ? AboutToDie : Live;
+                        break;
+                    }
+                    default:
+                        break;
                 }
             }
         }
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 switch (board[i][j]) {
-                case AboutToDie:
-                    board[i][j] = Die;
-                    break;
-                case AboutToLive:
-                    board[i][j] = Live;
-                    break;
-                default:
-                    break;
+                    case AboutToDie:
+                        board[i][j] = Die;
+                        break;
+                    case AboutToLive:
+                        board[i][j] = Live;
+                        break;
+                    default:
+                        break;
                 }
             }
         }

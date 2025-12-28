@@ -21,8 +21,7 @@
  * ! 0 <= digits[i] <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findEvenNumbers(std::vector<int>& digits)
     {

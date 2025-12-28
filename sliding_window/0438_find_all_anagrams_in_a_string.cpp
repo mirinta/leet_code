@@ -13,8 +13,7 @@
  * ! s and p consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findAnagrams(std::string s, std::string p)
     {

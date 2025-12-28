@@ -13,8 +13,7 @@
  * ! -10^9 <= matrix[i][j] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> transpose(std::vector<std::vector<int>>& matrix)
     {

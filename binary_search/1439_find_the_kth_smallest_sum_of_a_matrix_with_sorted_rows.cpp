@@ -18,10 +18,12 @@
  * ! mat[i] is a non-decreasing array.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int kthSmallest(std::vector<std::vector<int>>& mat, int k) { return approach2(mat, k); }
+    int kthSmallest(std::vector<std::vector<int>>& mat, int k)
+    {
+        return approach2(mat, k);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;
@@ -58,8 +60,7 @@ private:
         return count >= k;
     }
 
-    void dfs(int& count, int row, int sum, int target, int k,
-             const std::vector<std::vector<int>>& mat)
+    void dfs(int& count, int row, int sum, int target, int k, const std::vector<std::vector<int>>& mat)
     {
         const int m = mat.size();
         const int n = mat[0].size();

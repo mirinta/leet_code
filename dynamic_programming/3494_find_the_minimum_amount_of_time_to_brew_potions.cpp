@@ -19,8 +19,7 @@
  * ! 1 <= mana[i], skill[i] <= 5000
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minTime(std::vector<int>& skill, std::vector<int>& mana)
     {

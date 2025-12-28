@@ -1,12 +1,8 @@
 #include <vector>
 
-class Difference2D
-{
+class Difference2D {
 public:
-    Difference2D(int rows, int cols)
-        : m(rows), n(cols), diff(m + 1, std::vector<int>(n + 1, 0)), total(diff)
-    {
-    }
+    Difference2D(int rows, int cols) : m(rows), n(cols), diff(m + 1, std::vector<int>(n + 1, 0)), total(diff) {}
 
     /**
      * @brief Add delta to all the elements in the submatrix mat[x1:x2][y1:y2].

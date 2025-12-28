@@ -13,8 +13,7 @@
  * ! 1 <= hours[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countCompleteDayPairs(std::vector<int>& hours)
     {

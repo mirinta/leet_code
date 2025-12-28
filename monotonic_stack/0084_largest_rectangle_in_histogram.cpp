@@ -9,8 +9,7 @@
  * ! 0 <= heights[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int largestRectangleArea(std::vector<int>& heights)
     {

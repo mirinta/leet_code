@@ -17,8 +17,7 @@
  * ! s consists of only digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool hasSameDigits(std::string s)
     {

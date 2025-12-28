@@ -11,11 +11,9 @@
  * ! -100 <= mat1[i][j], mat2[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> multiply(std::vector<std::vector<int>>& mat1,
-                                           std::vector<std::vector<int>>& mat2)
+    std::vector<std::vector<int>> multiply(std::vector<std::vector<int>>& mat1, std::vector<std::vector<int>>& mat2)
     {
         // mat1.shape = MxK
         // mat2.shape = KxN

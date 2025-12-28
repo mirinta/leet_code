@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -22,8 +23,7 @@
  * ! 1 <= quality[i], wage[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     double mincostToHireWorkers(std::vector<int>& quality, std::vector<int>& wage, int k)
     {
@@ -40,8 +40,7 @@ public:
             ratio[i].first = wage[i] * 1.0 / quality[i];
             ratio[i].second = i;
         }
-        std::sort(ratio.begin(), ratio.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+        std::sort(ratio.begin(), ratio.end(), [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
         std::priority_queue<int, std::vector<int>, std::less<>> pq;
         int totalQuality = 0;
         for (int i = 0; i < k - 1; ++i) {

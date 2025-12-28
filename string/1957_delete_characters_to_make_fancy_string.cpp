@@ -12,8 +12,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string makeFancyString(std::string s)
     {

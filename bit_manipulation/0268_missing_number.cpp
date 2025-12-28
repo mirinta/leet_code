@@ -11,10 +11,12 @@
  * ! All the numbers of nums are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int missingNumber(std::vector<int>& nums) { return approach2(nums); }
+    int missingNumber(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     int approach2(const std::vector<int>& nums)

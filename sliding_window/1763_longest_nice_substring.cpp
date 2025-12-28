@@ -13,8 +13,7 @@
  * ! s consists of uppercase and lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string longestNiceSubstring(std::string s)
     {

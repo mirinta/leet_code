@@ -19,8 +19,7 @@
  * ! The input is generated such that it's possible to redistribute packs of apples into boxes.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumBoxes(std::vector<int>& apple, std::vector<int>& capacity)
     {

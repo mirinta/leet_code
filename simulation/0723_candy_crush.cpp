@@ -31,8 +31,7 @@
  * ! 1 <= board[i][j] <= 2000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> candyCrush(std::vector<std::vector<int>>& board)
     {
@@ -51,9 +50,15 @@ private:
     int m{0};
     int n{0};
 
-    int encode(int i, int j) const { return i * n + j; }
+    int encode(int i, int j) const
+    {
+        return i * n + j;
+    }
 
-    std::pair<int, int> decode(int val) const { return {val / n, val % n}; }
+    std::pair<int, int> decode(int val) const
+    {
+        return {val / n, val % n};
+    }
 
     void drop(std::vector<std::vector<int>>& board) const
     {

@@ -25,8 +25,7 @@
  * ! students[i] is 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countStudents(std::vector<int>& students, std::vector<int>& sandwiches)
     {

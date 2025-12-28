@@ -26,8 +26,7 @@
  * ! -10^5 <= lower <= upper <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfArrays(std::vector<int>& differences, int lower, int upper)
     {

@@ -4,8 +4,7 @@
  * Definition for a Node.
  *
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* left;
@@ -34,8 +33,7 @@ public:
  * ! 本题与LC 426相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* treeToDoublyList(Node* root)
     {

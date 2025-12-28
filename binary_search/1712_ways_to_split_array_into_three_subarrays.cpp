@@ -17,10 +17,12 @@
  * ! 0 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int waysToSplit(std::vector<int>& nums) { return approach2(nums); }
+    int waysToSplit(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;
@@ -79,10 +81,9 @@ private:
         }
         int result = 0;
         for (int i = 1; i <= n - 2; ++i) {
-            auto iter1 =
-                std::lower_bound(presum.begin() + i, std::prev(presum.end()), 2 * presum[i - 1]);
-            auto iter2 = std::upper_bound(presum.begin() + i, std::prev(presum.end()),
-                                          (presum[n - 1] + presum[i - 1]) / 2);
+            auto iter1 = std::lower_bound(presum.begin() + i, std::prev(presum.end()), 2 * presum[i - 1]);
+            auto iter2 =
+                std::upper_bound(presum.begin() + i, std::prev(presum.end()), (presum[n - 1] + presum[i - 1]) / 2);
             result = (result + std::max<int>(0, iter2 - iter1)) % kMod;
         }
         return result;

@@ -16,8 +16,7 @@
  * ! 0 <= desiredTotal <= 300
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canIWin(int maxChoosableInteger, int desiredTotal)
     {
@@ -39,8 +38,7 @@ public:
 
 private:
     // return true if this player wins, otherwise false
-    bool dp(std::vector<int>& memo, int state, int currentTotal, int maxChoosableInteger,
-            int desiredTotal)
+    bool dp(std::vector<int>& memo, int state, int currentTotal, int maxChoosableInteger, int desiredTotal)
     {
         if (memo[state] == 1)
             return false;

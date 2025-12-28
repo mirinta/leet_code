@@ -23,8 +23,7 @@
  * ! 0 <= ci < n
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : n(n), root(n), rank(n, 1)
     {
@@ -33,7 +32,10 @@ public:
         }
     }
 
-    int count() { return n; }
+    int count()
+    {
+        return n;
+    }
 
     int find(int x)
     {
@@ -64,8 +66,7 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> numIslands2(int m, int n, std::vector<std::vector<int>>& positions)
     {
@@ -96,6 +97,9 @@ public:
 private:
     static const std::vector<std::pair<int, int>> kDirections;
 
-    int encode(int x, int y, int n) { return x * n + y; }
+    int encode(int x, int y, int n)
+    {
+        return x * n + y;
+    }
 };
 const std::vector<std::pair<int, int>> Solution::kDirections{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};

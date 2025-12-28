@@ -20,8 +20,7 @@
 #include <deque>
 #include <vector>
 
-class Solution
-{
+class Solution {
 public:
     long long countSubarrays(std::vector<int>& nums, int minK, int maxK)
     {

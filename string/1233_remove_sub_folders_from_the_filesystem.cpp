@@ -23,8 +23,7 @@
  * ! Each folder name is unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> removeSubfolders(std::vector<std::string>& folder)
     {

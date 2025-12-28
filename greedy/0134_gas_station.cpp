@@ -17,8 +17,7 @@
  * ! 0 <= gas[i], cost[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int canCompleteCircuit(std::vector<int>& gas, std::vector<int>& cost)
     {

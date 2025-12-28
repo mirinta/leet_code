@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -25,8 +24,7 @@ struct TreeNode
  * ! -1000 <= targetSum <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int pathSum(TreeNode* root, int targetSum)
     {
@@ -40,8 +38,7 @@ public:
     }
 
 private:
-    void backtrack(int& result, std::unordered_map<long, int>& map, TreeNode* node,
-                   long currentPrefix, long targetSum)
+    void backtrack(int& result, std::unordered_map<long, int>& map, TreeNode* node, long currentPrefix, long targetSum)
     {
         if (!node)
             return;

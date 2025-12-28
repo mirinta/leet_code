@@ -21,11 +21,9 @@
  * ! pizza consists of characters 'A' and '.' only.
  */
 
-class PrefixSum2D
-{
+class PrefixSum2D {
 public:
-    PrefixSum2D(int m, int n, const std::vector<std::string>& mat)
-        : presum(m + 1, std::vector<int>(n + 1, 0))
+    PrefixSum2D(int m, int n, const std::vector<std::string>& mat) : presum(m + 1, std::vector<int>(n + 1, 0))
     {
         for (int i = 1; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
@@ -44,8 +42,7 @@ private:
     std::vector<std::vector<int>> presum;
 };
 
-class Solution
-{
+class Solution {
 public:
     int ways(std::vector<std::string>& pizza, int k)
     {

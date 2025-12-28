@@ -20,8 +20,7 @@
  * ! 0 <= tokens[i], power < 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int bagOfTokensScore(std::vector<int>& tokens, int power)
     {

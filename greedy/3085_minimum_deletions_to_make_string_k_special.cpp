@@ -17,8 +17,7 @@
  * ! word consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumDeletions(std::string word, int k)
     {

@@ -12,8 +12,7 @@
  * ! Each number in nums appears either once or twice.
  */
 
-class Solution
-{
+class Solution {
 public:
     int duplicateNumbersXOR(std::vector<int>& nums)
     {

@@ -12,8 +12,7 @@
  * 1 <= x, y <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string losingPlayer(int x, int y)
     {

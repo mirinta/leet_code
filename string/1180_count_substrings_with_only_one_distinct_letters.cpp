@@ -7,8 +7,7 @@
  * ! s[i] consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countLetters(std::string s)
     {

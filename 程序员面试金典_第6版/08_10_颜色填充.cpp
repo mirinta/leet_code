@@ -16,11 +16,9 @@
  * ! image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535] 内。
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc,
-                                            int newColor)
+    std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc, int newColor)
     {
         const int m = image.size();
         const int n = image[0].size();

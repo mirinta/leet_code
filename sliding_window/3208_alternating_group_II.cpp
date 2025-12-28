@@ -21,8 +21,7 @@
  * ! 3 <= k <= colors.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfAlternatingGroups(std::vector<int>& colors, int k)
     {

@@ -24,8 +24,7 @@
  * ! This question is the same as LC.758.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string addBoldTag(std::string s, std::vector<std::string>& words)
     {

@@ -13,8 +13,7 @@
  * ! 1 <= values[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxScoreSightseeingPair(std::vector<int>& values)
     {

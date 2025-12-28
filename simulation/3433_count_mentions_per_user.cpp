@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -47,8 +48,7 @@
  * ! event occurs.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> countMentions(int numberOfUsers, std::vector<std::vector<std::string>>& events)
     {

@@ -29,8 +29,7 @@
  * ! 1 <= grid[i][j], queries[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> maxPoints(std::vector<std::vector<int>>& grid, std::vector<int>& queries)
     {
@@ -42,12 +41,9 @@ public:
             q[i].first = queries[i];
             q[i].second = i;
         }
-        std::sort(q.begin(), q.end(),
-                  [](const auto& q1, const auto& q2) { return q1.first < q2.first; });
+        std::sort(q.begin(), q.end(), [](const auto& q1, const auto& q2) { return q1.first < q2.first; });
         using Tuple = std::tuple<int, int, int>;
-        auto compare = [&](const auto& t1, const auto& t2) {
-            return std::get<0>(t1) > std::get<0>(t2);
-        };
+        auto compare = [&](const auto& t1, const auto& t2) { return std::get<0>(t1) > std::get<0>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(compare)> pq(compare);
         pq.emplace(grid[0][0], 0, 0);
         std::vector<std::vector<bool>> visited(m, std::vector<bool>(n, false));

@@ -24,8 +24,7 @@
  * ! directions[i] is either 'L', 'R', or 'S'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countCollisions(std::string directions)
     {

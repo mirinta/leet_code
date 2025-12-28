@@ -26,8 +26,7 @@
  * ! There are no duplicate highways.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumCost(int n, std::vector<std::vector<int>>& highways, int discounts)
     {
@@ -52,8 +51,7 @@ public:
 
             for (const auto& [w, cost] : graph[v]) {
                 // case 1: go to vertex w using a discount
-                if (remainingDiscounts > 0 &&
-                    costToV + cost / 2 < costTo[w][remainingDiscounts - 1]) {
+                if (remainingDiscounts > 0 && costToV + cost / 2 < costTo[w][remainingDiscounts - 1]) {
                     costTo[w][remainingDiscounts - 1] = costToV + cost / 2;
                     pq.push({costTo[w][remainingDiscounts - 1], w, remainingDiscounts - 1});
                 }
@@ -70,8 +68,10 @@ public:
 private:
     using Triplet = std::array<int, 3>; // <cost to v, v, remaining discounts>
 
-    struct Compare
-    {
-        bool operator()(const Triplet& t1, const Triplet& t2) const { return t1[0] > t2[0]; }
+    struct Compare {
+        bool operator()(const Triplet& t1, const Triplet& t2) const
+        {
+            return t1[0] > t2[0];
+        }
     };
 };

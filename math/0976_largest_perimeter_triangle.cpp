@@ -10,8 +10,7 @@
  * ! 1 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int largestPerimeter(std::vector<int>& nums)
     {

@@ -17,8 +17,7 @@
  * ! 1 <= n <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> findPrimePairs(int n)
     {

@@ -32,11 +32,9 @@
  * ! The input is generated such that edges represents a valid tree.
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long maximumScoreAfterOperations(std::vector<std::vector<int>>& edges,
-                                          std::vector<int>& values)
+    long long maximumScoreAfterOperations(std::vector<std::vector<int>>& edges, std::vector<int>& values)
     {
         const int n = values.size();
         std::vector<std::vector<int>> graph(n);
@@ -51,8 +49,7 @@ public:
 private:
     // return the min sum of the given tree
     // each node can be ignored or picked, the sum must be greater than 0
-    long long dfs(int root, int parent, const std::vector<int>& values,
-                  const std::vector<std::vector<int>>& graph)
+    long long dfs(int root, int parent, const std::vector<int>& values, const std::vector<std::vector<int>>& graph)
     {
         long long sumOfSubtrees = 0;
         for (const auto& child : graph[root]) {

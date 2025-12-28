@@ -14,8 +14,7 @@
  * ! 0 <= nums[i] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfGoodSubarraySplits(std::vector<int>& nums)
     {

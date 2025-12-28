@@ -19,10 +19,12 @@
  * ! 0 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int waysToReachStair(int k) { return dfs(1, 0, true, k); }
+    int waysToReachStair(int k)
+    {
+        return dfs(1, 0, true, k);
+    }
 
 private:
     std::unordered_map<long long, int> memo;

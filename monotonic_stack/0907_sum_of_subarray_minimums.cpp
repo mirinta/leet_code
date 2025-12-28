@@ -9,10 +9,12 @@
  * ! 1 <= arr[i] <= 3 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int sumSubarrayMins(std::vector<int>& arr) { return approach2(arr); }
+    int sumSubarrayMins(std::vector<int>& arr)
+    {
+        return approach2(arr);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

@@ -26,8 +26,7 @@
  * ! endTime[i] <= startTime[i + 1] where i lies in the range [0, n - 2].
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxFreeTime(int eventTime, int k, std::vector<int>& startTime, std::vector<int>& endTime)
     {

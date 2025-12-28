@@ -14,8 +14,7 @@
  * ! 1 <= nums[i], k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int subarraysWithKDistinct(std::vector<int>& nums, int k)
     {

@@ -17,8 +17,7 @@
  * ! 1 <= cars <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     long long repairCars(std::vector<int>& ranks, int cars)
     {

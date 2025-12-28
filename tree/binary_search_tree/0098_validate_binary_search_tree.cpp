@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -29,10 +28,12 @@ struct TreeNode
  * ! -2^31 <= Node.val <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isValidBST(TreeNode* root) { return approach3(root); }
+    bool isValidBST(TreeNode* root)
+    {
+        return approach3(root);
+    }
 
 private:
     // post traversal
@@ -50,8 +51,7 @@ private:
             if (leftMax >= root->val || rightMin <= root->val)
                 return std::make_pair(LLONG_MIN, LLONG_MAX); // invalid status
 
-            return std::make_pair(std::min<LL>(leftMin, root->val),
-                                  std::max<LL>(rightMax, root->val));
+            return std::make_pair(std::min<LL>(leftMin, root->val), std::max<LL>(rightMax, root->val));
         };
         return dfs(root).first != LLONG_MIN;
     }

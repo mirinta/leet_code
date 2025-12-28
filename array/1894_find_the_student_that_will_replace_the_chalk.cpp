@@ -20,8 +20,7 @@
  * ! 1 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int chalkReplacer(std::vector<int>& chalk, int k)
     {

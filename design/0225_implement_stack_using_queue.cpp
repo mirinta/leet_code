@@ -27,8 +27,7 @@
  * ! All the calls to pop and top are valid.
  */
 
-class MyStack
-{
+class MyStack {
 public:
     MyStack() {}
 
@@ -60,7 +59,10 @@ public:
         return data.front();
     }
 
-    bool empty() { return data.empty(); }
+    bool empty()
+    {
+        return data.empty();
+    }
 
 private:
     std::queue<int> data;

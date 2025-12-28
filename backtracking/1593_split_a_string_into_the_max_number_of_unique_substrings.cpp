@@ -15,8 +15,7 @@
  * ! s contains only lower case English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxUniqueSplit(std::string s)
     {
@@ -27,8 +26,7 @@ public:
     }
 
 private:
-    void backtrack(int& result, std::unordered_set<std::string>& set, int start, int count,
-                   const std::string& s)
+    void backtrack(int& result, std::unordered_set<std::string>& set, int start, int count, const std::string& s)
     {
         if (start == s.size()) {
             result = std::max(result, count);

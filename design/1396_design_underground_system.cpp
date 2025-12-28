@@ -1,3 +1,4 @@
+#include <string>
 #include <unordered_map>
 
 /**
@@ -42,8 +43,7 @@
  * ! Answers within 10-5 of the actual value will be accepted.
  */
 
-class UndergroundSystem
-{
+class UndergroundSystem {
 public:
     UndergroundSystem() = default;
 

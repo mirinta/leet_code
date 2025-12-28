@@ -16,8 +16,7 @@
  * ! text1 and text2 consist of only lowercase English characters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestCommonSubsequence(std::string text1, std::string text2)
     {

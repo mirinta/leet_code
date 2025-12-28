@@ -16,8 +16,7 @@
  * ! It is guaranteed that A and B are both a permutation of n integers.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findThePrefixCommonArray(std::vector<int>& A, std::vector<int>& B)
     {

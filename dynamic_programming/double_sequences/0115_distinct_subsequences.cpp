@@ -1,5 +1,5 @@
-#include <vector>
 #include <string>
+#include <vector>
 
 /**
  * Given two strings s and t, return the number of distinct subsequences of s which equals t.
@@ -10,10 +10,12 @@
  * ! s and t consist of English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numDistinct(std::string s, std::string t) { return approach2(s, t); }
+    int numDistinct(std::string s, std::string t)
+    {
+        return approach2(s, t);
+    }
 
 private:
     int approach2(const std::string& s, const std::string& t)

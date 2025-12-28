@@ -21,8 +21,7 @@
  * ! 1 <= k <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string getHappyString(int n, int k)
     {

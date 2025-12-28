@@ -16,8 +16,7 @@
  * ! 1 <= mat[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> matrixBlockSum(std::vector<std::vector<int>>& mat, int k)
     {
@@ -27,8 +26,7 @@ public:
         std::vector<std::vector<int>> presum(m + 1, std::vector<int>(n + 1, 0));
         for (int i = 1; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
-                presum[i][j] =
-                    presum[i - 1][j] + presum[i][j - 1] - presum[i - 1][j - 1] + mat[i - 1][j - 1];
+                presum[i][j] = presum[i - 1][j] + presum[i][j - 1] - presum[i - 1][j - 1] + mat[i - 1][j - 1];
             }
         }
         std::vector<std::vector<int>> result(m, std::vector<int>(n, 0));

@@ -16,8 +16,7 @@
  * ! 1 <= k <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfPaths(std::vector<std::vector<int>>& grid, int k)
     {
@@ -25,8 +24,7 @@ public:
         constexpr int kMod = 1e9 + 7;
         const int m = grid.size();
         const int n = grid[0].size();
-        std::vector<std::vector<std::vector<int>>> dp(
-            m, std::vector<std::vector<int>>(n, std::vector<int>(k)));
+        std::vector<std::vector<std::vector<int>>> dp(m, std::vector<std::vector<int>>(n, std::vector<int>(k)));
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 const int x = grid[i][j] % k;

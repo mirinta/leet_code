@@ -15,8 +15,7 @@
  * ! 0 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkArray(std::vector<int>& nums, int k)
     {

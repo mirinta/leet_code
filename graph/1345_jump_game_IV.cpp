@@ -22,8 +22,7 @@
  * ! -10^8 <= arr[i] <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
     int minJumps(std::vector<int>& arr)
     {

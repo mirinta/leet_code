@@ -19,10 +19,12 @@
  * ! 1 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int getWinner(std::vector<int>& arr, int k) { return approach2(arr, k); }
+    int getWinner(std::vector<int>& arr, int k)
+    {
+        return approach2(arr, k);
+    }
 
 private:
     // simulation, time O(N), space O(1)

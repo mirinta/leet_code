@@ -33,8 +33,7 @@
  * ! grid[0][0] == grid[m - 1][n - 1] == 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumMinutes(std::vector<std::vector<int>>& grid)
     {
@@ -64,8 +63,7 @@ public:
 private:
     const std::vector<std::pair<int, int>> kDirections{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
-    bool isValid(std::queue<std::pair<int, int>> fire, std::vector<std::vector<int>> grid, int time,
-                 int m, int n)
+    bool isValid(std::queue<std::pair<int, int>> fire, std::vector<std::vector<int>> grid, int time, int m, int n)
     {
         spreadFire(fire, grid, time, m, n);
         std::queue<std::pair<int, int>> queue;
@@ -96,8 +94,7 @@ private:
         return false;
     }
 
-    void spreadFire(std::queue<std::pair<int, int>>& fire, std::vector<std::vector<int>>& grid,
-                    int time, int m, int n)
+    void spreadFire(std::queue<std::pair<int, int>>& fire, std::vector<std::vector<int>>& grid, int time, int m, int n)
     {
         while (!fire.empty() && time > 0) {
             for (int k = fire.size(); k > 0; --k) {

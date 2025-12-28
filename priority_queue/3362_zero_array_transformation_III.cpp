@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -24,13 +25,11 @@
  * ! 0 <= li <= ri < nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxRemoval(std::vector<int>& nums, std::vector<std::vector<int>>& queries)
     {
-        std::sort(queries.begin(), queries.end(),
-                  [](const auto& q1, const auto& q2) { return q1[0] < q2[0]; });
+        std::sort(queries.begin(), queries.end(), [](const auto& q1, const auto& q2) { return q1[0] < q2[0]; });
         std::priority_queue<int> pq;
         std::vector<int> diff(nums.size(), 0);
         for (int i = 0, j = 0, decrement = 0; i < nums.size(); ++i) {

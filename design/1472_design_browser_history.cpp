@@ -27,10 +27,12 @@
  * ! At most 5000 calls will be made to visit, back, and forward.
  */
 
-class BrowserHistory
-{
+class BrowserHistory {
 public:
-    explicit BrowserHistory(std::string homepage) { _deque.push_front(std::move(homepage)); }
+    explicit BrowserHistory(std::string homepage)
+    {
+        _deque.push_front(std::move(homepage));
+    }
 
     void visit(std::string url)
     {

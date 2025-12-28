@@ -12,8 +12,7 @@
  * ! The elements in nums are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> buildArray(std::vector<int>& nums)
     {

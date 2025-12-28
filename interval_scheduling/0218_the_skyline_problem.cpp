@@ -35,8 +35,7 @@
  * ! buildings are sorted by left_i in non-decreasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> getSkyline(std::vector<std::vector<int>>& buildings)
     {

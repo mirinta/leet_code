@@ -12,10 +12,12 @@
  * ! 1 <= k <= s.length
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isValidPalindrome(std::string s, int k) { return approach2(s, k); }
+    bool isValidPalindrome(std::string s, int k)
+    {
+        return approach2(s, k);
+    }
 
 private:
     // DP with space optimization, time O(N^2), space O(N)

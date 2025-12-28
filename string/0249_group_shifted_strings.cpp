@@ -19,8 +19,7 @@
  * ! strings[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<std::string>> groupStrings(std::vector<std::string>& strings)
     {

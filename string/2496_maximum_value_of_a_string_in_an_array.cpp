@@ -15,8 +15,7 @@
  * ! strs[i] consists of only lowercase English letters and digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumValue(std::vector<std::string>& strs)
     {

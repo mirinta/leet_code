@@ -4,8 +4,7 @@
 /**
  * Definitions for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     std::vector<Node*> neighbors;
@@ -52,8 +51,7 @@ public:
  * ! The Graph is connected and all nodes can be visited starting from the given node.
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* cloneGraph(Node* node)
     {
@@ -61,7 +59,7 @@ public:
             return nullptr;
 
         // original node to copied node
-        std::unordered_map<Node*, Node*> map; 
+        std::unordered_map<Node*, Node*> map;
         dfs(map, node);
         return map[node];
     }

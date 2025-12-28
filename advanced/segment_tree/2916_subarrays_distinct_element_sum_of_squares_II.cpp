@@ -3,20 +3,24 @@
 
 static constexpr long long kMod = 1e9 + 7;
 
-class SegmentTree
-{
+class SegmentTree {
 public:
-    explicit SegmentTree(const std::vector<long long>& nums)
-        : n(nums.size()), data(4 * n, 0), lazy(4 * n, 0)
+    explicit SegmentTree(const std::vector<long long>& nums) : n(nums.size()), data(4 * n, 0), lazy(4 * n, 0)
     {
         build(0, n - 1, 1, nums);
     }
 
     // query sum of nums[L:R], L and R are 0-indexed
-    long long query(int L, int R) { return query(L, R, 0, n - 1, 1); }
+    long long query(int L, int R)
+    {
+        return query(L, R, 0, n - 1, 1);
+    }
 
     // add each element of nums[L:R] by delta, L and R are 0-indexed
-    void add(int L, int R, long long delta) { add(L, R, delta, 0, n - 1, 1); }
+    void add(int L, int R, long long delta)
+    {
+        add(L, R, delta, 0, n - 1, 1);
+    }
 
 private:
     void build(int lo, int hi, int id, const std::vector<long long>& nums)
@@ -84,8 +88,7 @@ private:
     std::vector<long long> lazy; // 1-indexed
 };
 
-class Solution
-{
+class Solution {
 public:
     int sumCounts(std::vector<int>& nums)
     {

@@ -8,8 +8,7 @@
  * ! 1 <= nums[i], k <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPairs(std::vector<int>& nums, int k)
     {

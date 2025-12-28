@@ -8,10 +8,12 @@
  * ! 0 <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    void rotate(std::vector<int>& nums, int k) { approach2(nums, k); }
+    void rotate(std::vector<int>& nums, int k)
+    {
+        approach2(nums, k);
+    }
 
 private:
     // time O(N), space O(1)

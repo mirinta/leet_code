@@ -14,16 +14,14 @@
  * ! grid[i][j] is either 'X', 'Y', or '.'.
  */
 
-class Prefix2D
-{
+class Prefix2D {
 public:
     Prefix2D(char c, int m, int n, const std::vector<std::vector<char>>& grid)
         : presum(m + 1, std::vector<int>(n + 1, 0))
     {
         for (int i = 1; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
-                presum[i][j] = presum[i][j - 1] + presum[i - 1][j] - presum[i - 1][j - 1] +
-                               (grid[i - 1][j - 1] == c);
+                presum[i][j] = presum[i][j - 1] + presum[i - 1][j] - presum[i - 1][j - 1] + (grid[i - 1][j - 1] == c);
             }
         }
     }
@@ -37,8 +35,7 @@ private:
     std::vector<std::vector<int>> presum;
 };
 
-class Solution
-{
+class Solution {
 public:
     int numberOfSubmatrices(std::vector<std::vector<char>>& grid)
     {

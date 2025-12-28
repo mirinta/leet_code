@@ -13,8 +13,7 @@
  * ! words[i] and pref consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int prefixCount(std::vector<std::string>& words, std::string pref)
     {

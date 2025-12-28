@@ -16,8 +16,7 @@
  * ! get函数的调用次数不会超过100000
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode()) {}
 
@@ -48,8 +47,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::array<TrieNode*, 26> next;
         int count{0};
     };
@@ -57,8 +55,7 @@ private:
     TrieNode* root;
 };
 
-class WordsFrequency
-{
+class WordsFrequency {
 public:
     WordsFrequency(std::vector<std::string>& book)
     {
@@ -67,7 +64,10 @@ public:
         }
     }
 
-    int get(const std::string& word) { return trie.count(word); }
+    int get(const std::string& word)
+    {
+        return trie.count(word);
+    }
 
 private:
     Trie trie;

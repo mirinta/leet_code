@@ -3,8 +3,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -36,10 +35,12 @@ struct ListNode
  * ! The value of each even-indexed node is even.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::string gameResult(ListNode* head) { return approach2(head); }
+    std::string gameResult(ListNode* head)
+    {
+        return approach2(head);
+    }
 
 private:
     std::string approach2(ListNode* head)

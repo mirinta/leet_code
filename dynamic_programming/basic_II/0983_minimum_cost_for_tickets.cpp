@@ -27,8 +27,7 @@
  * ! 1 <= costs[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int mincostTickets(std::vector<int>& days, std::vector<int>& costs)
     {

@@ -14,10 +14,12 @@
  * ! 0 <= arr[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int subarrayBitwiseORs(std::vector<int>& arr) { return approach2(arr); }
+    int subarrayBitwiseORs(std::vector<int>& arr)
+    {
+        return approach2(arr);
+    }
 
 private:
     int approach2(const std::vector<int>& arr)

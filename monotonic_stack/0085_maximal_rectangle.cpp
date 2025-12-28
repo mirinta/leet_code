@@ -11,8 +11,7 @@
  * ! matrix[i][j] is '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximalRectangle(std::vector<std::vector<char>>& matrix)
     {

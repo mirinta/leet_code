@@ -10,8 +10,7 @@
  * ! 本题与LC 169相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int majorityElement(std::vector<int>& nums)
     {

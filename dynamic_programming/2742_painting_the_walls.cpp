@@ -18,8 +18,7 @@
  * ! 1 <= time[i] <= 500
  */
 
-class Solution
-{
+class Solution {
 public:
     int paintWalls(std::vector<int>& cost, std::vector<int>& time)
     {

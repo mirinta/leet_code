@@ -13,8 +13,7 @@
  * ! 0 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int minIncrementForUnique(std::vector<int>& nums)
     {

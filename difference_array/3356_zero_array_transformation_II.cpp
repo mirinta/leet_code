@@ -23,8 +23,7 @@
  * ! 1 <= vali <= 5
  */
 
-class Solution
-{
+class Solution {
 public:
     int minZeroArray(std::vector<int>& nums, std::vector<std::vector<int>>& queries)
     {

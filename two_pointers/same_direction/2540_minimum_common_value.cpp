@@ -12,8 +12,7 @@
  * ! Both nums1 and nums2 are sorted in non-decreasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     int getCommon(std::vector<int>& nums1, std::vector<int>& nums2)
     {

@@ -12,8 +12,7 @@
  * ! 1 <= nums[i] <= 109
  */
 
-class Solution
-{
+class Solution {
 public:
     long long numberOfSubarrays(std::vector<int>& nums)
     {

@@ -9,8 +9,7 @@
  * ! 1 <= n <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     int totalNQueens(int n)
     {

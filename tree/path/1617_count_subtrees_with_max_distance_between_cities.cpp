@@ -24,8 +24,7 @@
  * ! All pairs (ui, vi) are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> countSubgraphsForEachDiameter(int n, std::vector<std::vector<int>>& edges)
     {

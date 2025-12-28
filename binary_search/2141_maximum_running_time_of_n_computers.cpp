@@ -20,8 +20,7 @@
  * ! 1 <= batteries[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maxRunTime(int n, std::vector<int>& batteries)
     {

@@ -9,8 +9,7 @@
  * ! s consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int firstUniqChar(std::string s)
     {

@@ -15,8 +15,7 @@
  * ! The input is generated such that there is at least one index i such that nums[i] >= k.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<int>& nums, int k)
     {

@@ -17,8 +17,7 @@
  * ! The input must be a binary string of length 32
  */
 
-class Solution
-{
+class Solution {
 public:
     uint32_t reverseBits(uint32_t n)
     {

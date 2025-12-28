@@ -24,8 +24,7 @@
  * ! s is a beautiful string.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string smallestBeautifulString(std::string s, int k)
     {

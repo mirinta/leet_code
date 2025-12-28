@@ -21,8 +21,7 @@
  * ! with the given condition
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> tourOfKnight(int m, int n, int r, int c)
     {
@@ -38,8 +37,8 @@ private:
         if (count == m * n)
             return true;
 
-        static const std::vector<std::pair<int, int>> kDirections{
-            {-1, -2}, {-2, -1}, {-2, 1}, {-1, 2}, {1, 2}, {2, 1}, {2, -1}, {1, -2}};
+        static const std::vector<std::pair<int, int>> kDirections{{-1, -2}, {-2, -1}, {-2, 1}, {-1, 2},
+                                                                  {1, 2},   {2, 1},   {2, -1}, {1, -2}};
         for (const auto& [dx, dy] : kDirections) {
             const int x = i + dx;
             const int y = j + dy;

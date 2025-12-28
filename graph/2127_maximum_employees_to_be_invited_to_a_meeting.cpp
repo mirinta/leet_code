@@ -18,8 +18,7 @@
  * ! favorite[i] != i
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumInvitations(std::vector<int>& favorite)
     {

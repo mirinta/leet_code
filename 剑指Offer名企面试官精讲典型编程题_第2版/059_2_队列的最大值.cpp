@@ -10,8 +10,7 @@
  * ! 1 <= value <= 10^5
  */
 
-class MaxQueue
-{
+class MaxQueue {
 public:
     MaxQueue() {}
 

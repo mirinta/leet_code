@@ -21,8 +21,7 @@
  * ! 1 <= maxOperations, nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumSize(std::vector<int>& nums, int maxOperations)
     {

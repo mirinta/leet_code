@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -27,8 +26,7 @@ struct TreeNode
  * ! 0 <= low <= high <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* trimBST(TreeNode* root, int low, int high)
     {

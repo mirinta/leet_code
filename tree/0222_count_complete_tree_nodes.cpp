@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -27,10 +26,12 @@ struct TreeNode
  * ! The tree is guaranteed to be complete.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countNodes(TreeNode* root) { return approach2(root); }
+    int countNodes(TreeNode* root)
+    {
+        return approach2(root);
+    }
 
 private:
     int approach2(TreeNode* root)

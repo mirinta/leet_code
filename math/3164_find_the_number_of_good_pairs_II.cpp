@@ -15,8 +15,7 @@
  * ! 1 <= k <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
     long long numberOfPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k)
     {

@@ -28,8 +28,7 @@
  * ! s1, s2, and baseStr consist of lowercase English letters.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1)
     {
@@ -46,7 +45,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -67,8 +69,7 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::string smallestEquivalentString(std::string s1, std::string s2, std::string baseStr)
     {

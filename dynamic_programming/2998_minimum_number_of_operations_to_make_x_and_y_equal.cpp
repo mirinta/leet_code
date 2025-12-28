@@ -18,8 +18,7 @@
  * ! 1 <= x, y <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumOperationsToMakeEqual(int x, int y)
     {

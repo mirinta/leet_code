@@ -25,8 +25,7 @@
  * ! entrance will always be an empty cell.
  */
 
-class Solution
-{
+class Solution {
 public:
     int nearestExit(std::vector<std::vector<char>>& maze, std::vector<int>& entrance)
     {
@@ -82,5 +81,8 @@ public:
     }
 
 private:
-    bool isSameLocation(int x1, int y1, int x2, int y2) { return (x1 == x2) && (y1 == y2); }
+    bool isSameLocation(int x1, int y1, int x2, int y2)
+    {
+        return (x1 == x2) && (y1 == y2);
+    }
 };

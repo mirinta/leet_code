@@ -12,8 +12,7 @@
  * ! 1 <= k <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     bool areSimilar(std::vector<std::vector<int>>& mat, int k)
     {

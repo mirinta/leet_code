@@ -1,10 +1,10 @@
+#include <limits>
 #include <tuple>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -29,8 +29,7 @@ struct TreeNode
  * ! -4 * 10^4 <= Node.val <= 4 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxSumBST(TreeNode* root)
     {

@@ -15,8 +15,7 @@
  * ! 1 <= k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int findKOr(std::vector<int>& nums, int k)
     {

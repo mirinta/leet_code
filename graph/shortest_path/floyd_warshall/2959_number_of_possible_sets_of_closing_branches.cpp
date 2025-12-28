@@ -34,8 +34,7 @@
  * ! All branches are reachable from each other by traveling some roads.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfSets(int n, int maxDistance, std::vector<std::vector<int>>& roads)
     {
@@ -51,7 +50,10 @@ public:
     }
 
 private:
-    bool isClosed(int i, int mask) { return mask & (1 << i); }
+    bool isClosed(int i, int mask)
+    {
+        return mask & (1 << i);
+    }
 
     bool isValid(int mask, int n, int maxDistance, const std::vector<std::vector<int>>& roads)
     {

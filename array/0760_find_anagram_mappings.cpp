@@ -17,8 +17,7 @@
  * ! nums2 is an anagram of nums1.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> anagramMappings(std::vector<int>& nums1, std::vector<int>& nums2)
     {

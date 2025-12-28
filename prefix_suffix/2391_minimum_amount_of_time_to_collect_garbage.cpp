@@ -26,8 +26,7 @@
  * ! 1 <= travel[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int garbageCollection(std::vector<std::string>& garbage, std::vector<int>& travel)
     {

@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -24,8 +23,7 @@ struct TreeNode
  * ! -10^5 <= Node.val <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxLevelSum(TreeNode* root)
     {

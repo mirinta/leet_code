@@ -8,8 +8,7 @@
  * ! Either x is not zero or n > 0.
  */
 
-class Solution
-{
+class Solution {
 public:
     double myPow(double x, int n)
     {

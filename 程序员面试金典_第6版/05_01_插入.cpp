@@ -6,8 +6,7 @@
  * 题目保证从 i 位到 j 位足以容纳 M， 例如： M = 10011，则 i～j 区域至少可容纳 5 位。
  */
 
-class Solution
-{
+class Solution {
 public:
     int insertBits(int N, int M, int i, int j)
     {

@@ -15,8 +15,7 @@
  * ! 1 <= k <= 10^15
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countSubarrays(std::vector<int>& nums, long long k)
     {

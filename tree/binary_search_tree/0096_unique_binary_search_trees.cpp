@@ -3,8 +3,7 @@
 /**
  Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -28,8 +27,7 @@ struct TreeNode
  * https://mp.weixin.qq.com/s/kcwz2lyRxxOsC3n11qdVSw
  */
 
-class Solution
-{
+class Solution {
 public:
     int numTrees(int n)
     {

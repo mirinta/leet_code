@@ -18,8 +18,7 @@
  * ! grid[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int matrixScore(std::vector<std::vector<int>>& grid)
     {
@@ -50,5 +49,8 @@ public:
     }
 
 private:
-    int flip(int val, int bits) { return (1 << bits) - 1 & (~val); }
+    int flip(int val, int bits)
+    {
+        return (1 << bits) - 1 & (~val);
+    }
 };

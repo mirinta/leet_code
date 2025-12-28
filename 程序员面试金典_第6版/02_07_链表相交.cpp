@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -28,8 +27,7 @@ struct ListNode
  * ! 你能否设计一个时间复杂度 O(n) 、仅用 O(1) 内存的解决方案？
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* getIntersectionNode(ListNode* headA, ListNode* headB)
     {

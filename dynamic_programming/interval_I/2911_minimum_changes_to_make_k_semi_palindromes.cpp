@@ -23,8 +23,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumChanges(std::string s, int k)
     {
@@ -68,8 +67,7 @@ private:
         return result;
     }
 
-    int calcMinChanges(int start, int length, const std::string& s,
-                       const std::vector<std::vector<int>>& divisors)
+    int calcMinChanges(int start, int length, const std::string& s, const std::vector<std::vector<int>>& divisors)
     {
         int result = INT_MAX / 2;
         if (length < 2)

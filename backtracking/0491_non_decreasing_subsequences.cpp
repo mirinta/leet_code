@@ -1,14 +1,13 @@
+#include <string>
 #include <unordered_set>
 #include <vector>
-#include <string>
 
 /**
  * Given an integer array "nums", return all the different possible non-decreasing subsequences of
  * the given array with at least two elements. You may return the answer in any order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> findSubsequences(std::vector<int>& nums)
     {

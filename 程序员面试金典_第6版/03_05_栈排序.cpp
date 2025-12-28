@@ -7,8 +7,7 @@
  * ! 栈中的元素数目在[0, 5000]范围内。
  */
 
-class SortedStack
-{
+class SortedStack {
 public:
     SortedStack() {}
 
@@ -46,7 +45,10 @@ public:
         return stack.top();
     }
 
-    bool isEmpty() { return stack.empty(); }
+    bool isEmpty()
+    {
+        return stack.empty();
+    }
 
 private:
     std::stack<int> stack;

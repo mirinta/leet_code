@@ -13,8 +13,7 @@
  * ! 1 <= k <= min(50, nums.length)
  */
 
-class Solution
-{
+class Solution {
 public:
     int splitArray(std::vector<int>& nums, int k)
     {

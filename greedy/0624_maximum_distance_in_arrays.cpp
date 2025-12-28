@@ -18,8 +18,7 @@
  * ! There will be at most 10^5 integers in all the arrays.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxDistance(std::vector<std::vector<int>>& arrays)
     {
@@ -28,8 +27,7 @@ public:
         int max = arrays[0].back();
         int result = 0;
         for (int i = 1; i < n; ++i) {
-            result = std::max(
-                {result, std::abs(max - arrays[i].front()), std::abs(arrays[i].back() - min)});
+            result = std::max({result, std::abs(max - arrays[i].front()), std::abs(arrays[i].back() - min)});
             min = std::min(min, arrays[i].front());
             max = std::max(max, arrays[i].back());
         }

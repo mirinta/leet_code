@@ -8,8 +8,7 @@
  * ! -10^9 <= arr[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int fixedPoint(std::vector<int>& arr)
     {

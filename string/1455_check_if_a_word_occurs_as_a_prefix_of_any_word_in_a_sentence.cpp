@@ -17,8 +17,7 @@
  * ! searchWord consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int isPrefixOfWord(std::string sentence, std::string searchWord)
     {

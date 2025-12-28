@@ -9,8 +9,7 @@
  * ! You may assume the returned list does not count as extra space.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findDisappearedNumbers(std::vector<int>& nums)
     {

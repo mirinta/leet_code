@@ -19,8 +19,7 @@
  * ! 1 <= nums[i] <= 5 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int reductionOperations(std::vector<int>& nums)
     {

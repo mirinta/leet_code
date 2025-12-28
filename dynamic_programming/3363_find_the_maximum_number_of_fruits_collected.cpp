@@ -31,8 +31,7 @@
  * ! 0 <= fruits[i][j] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxCollectedFruits(std::vector<std::vector<int>>& fruits)
     {

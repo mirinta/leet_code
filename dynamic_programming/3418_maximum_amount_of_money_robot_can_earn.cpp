@@ -27,8 +27,7 @@
  * ! -1000 <= coins[i][j] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumAmount(std::vector<std::vector<int>>& coins)
     {
@@ -61,8 +60,7 @@ public:
                 for (int k = 0; k < 3; ++k) {
                     dp[i][j][k] = std::max(dp[i - 1][j][k], dp[i][j - 1][k]) + coins[i][j];
                     if (coins[i][j] < 0 && k > 0) {
-                        dp[i][j][k] =
-                            std::max({dp[i][j][k], dp[i - 1][j][k - 1], dp[i][j - 1][k - 1]});
+                        dp[i][j][k] = std::max({dp[i][j][k], dp[i - 1][j][k - 1], dp[i][j - 1][k - 1]});
                     }
                 }
             }

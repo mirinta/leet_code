@@ -24,8 +24,7 @@
  * ! 1 <= moveCost[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int minPathCost(std::vector<std::vector<int>>& grid, std::vector<std::vector<int>>& moveCost)
     {

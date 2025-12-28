@@ -1,10 +1,10 @@
+#include <limits>
 #include <utility>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -26,8 +26,7 @@ struct TreeNode
  * ! -1000 <= Node.val <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxPathSum(TreeNode* root)
     {

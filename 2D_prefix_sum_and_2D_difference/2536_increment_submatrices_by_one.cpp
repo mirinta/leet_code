@@ -19,8 +19,7 @@
  * ! 0 <= col1i <= col2i < n
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> rangeAddQueries(int n, std::vector<std::vector<int>>& queries)
     {

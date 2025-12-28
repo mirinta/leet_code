@@ -16,8 +16,7 @@
  * ! 1 <= left <= right <= n * (n + 1) / 2
  */
 
-class Solution
-{
+class Solution {
 public:
     int rangeSum(std::vector<int>& nums, int n, int left, int right)
     {

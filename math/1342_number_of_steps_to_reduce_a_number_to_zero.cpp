@@ -5,8 +5,7 @@
  * subtract 1 from it.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfSteps(int num)
     {

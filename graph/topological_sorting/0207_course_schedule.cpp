@@ -30,8 +30,7 @@
  * ! All the pairs prerequisites[i] are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canFinish(int numCourses, std::vector<std::vector<int>>& prerequisites)
     {

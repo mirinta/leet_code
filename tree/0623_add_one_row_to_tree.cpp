@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -39,10 +38,12 @@ struct TreeNode
  * ! 1 <= depth <= the depth of tree + 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    TreeNode* addOneRow(TreeNode* root, int val, int depth) { return approach2(root, val, depth); }
+    TreeNode* addOneRow(TreeNode* root, int val, int depth)
+    {
+        return approach2(root, val, depth);
+    }
 
 private:
     TreeNode* approach2(TreeNode* root, int val, int depth)

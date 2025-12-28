@@ -18,8 +18,7 @@
  * ! The start point of each interval is unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findRightInterval(std::vector<std::vector<int>>& intervals)
     {

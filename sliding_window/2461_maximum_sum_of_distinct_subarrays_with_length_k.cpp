@@ -18,8 +18,7 @@
  * ! 1 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumSubarraySum(std::vector<int>& nums, int k)
     {

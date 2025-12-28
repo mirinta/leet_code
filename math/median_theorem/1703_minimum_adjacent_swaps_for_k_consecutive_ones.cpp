@@ -11,8 +11,7 @@
  * ! 1 <= k <= sum(nums)
  */
 
-class Solution
-{
+class Solution {
 public:
     int minMoves(std::vector<int>& nums, int k)
     {
@@ -40,7 +39,9 @@ public:
     }
 
 private:
-    int minOperationsToMakeElementsEqual(int left, int length, const std::vector<long long>& presum,
+    int minOperationsToMakeElementsEqual(int left,
+                                         int length,
+                                         const std::vector<long long>& presum,
                                          std::vector<int>& nums)
     {
         const int right = left + length - 1;

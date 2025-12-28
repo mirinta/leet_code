@@ -9,8 +9,7 @@
  * ! s contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findTheLongestSubstring(std::string s)
     {
@@ -39,18 +38,18 @@ private:
     int getState(char c)
     {
         switch (c) {
-        case 'a':
-            return 1;
-        case 'e':
-            return 1 << 1;
-        case 'i':
-            return 1 << 2;
-        case 'o':
-            return 1 << 3;
-        case 'u':
-            return 1 << 4;
-        default:
-            break;
+            case 'a':
+                return 1;
+            case 'e':
+                return 1 << 1;
+            case 'i':
+                return 1 << 2;
+            case 'o':
+                return 1 << 3;
+            case 'u':
+                return 1 << 4;
+            default:
+                break;
         }
         return 0;
     }

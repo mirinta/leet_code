@@ -1,3 +1,5 @@
+#include <utility>
+
 /**
  * Given two integers n and k, return the kth lexicographically smallest integer in the range [1,
  * n].
@@ -5,8 +7,7 @@
  * ! 1 <= k <= n <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int findKthNumber(int n, int k)
     {

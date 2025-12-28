@@ -19,10 +19,12 @@
  * ! 1 <= rewardValues[i] <= 2000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxTotalReward(std::vector<int>& rewardValues) { return approach2(rewardValues); }
+    int maxTotalReward(std::vector<int>& rewardValues)
+    {
+        return approach2(rewardValues);
+    }
 
 private:
     // DP with space optimization, TC = O(n*max), SC = O(max)

@@ -1,10 +1,10 @@
+#include <cmath>
 #include <utility>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -28,8 +28,7 @@ struct TreeNode
  * ! The sum of all Node.val is n.
  */
 
-class Solution
-{
+class Solution {
 public:
     int distributeCoins(TreeNode* root)
     {

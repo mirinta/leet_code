@@ -10,10 +10,12 @@
  * ! 1 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minSubArrayLen(int target, std::vector<int>& nums) { return approach2(target, nums); }
+    int minSubArrayLen(int target, std::vector<int>& nums)
+    {
+        return approach2(target, nums);
+    }
 
 private:
     // sliding window, TC = O(N), SC = O(1)

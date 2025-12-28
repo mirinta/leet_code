@@ -18,8 +18,7 @@
  * Return true if the array has at least one valid partition. Otherwise, return false.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validPartition(std::vector<int>& nums)
     {

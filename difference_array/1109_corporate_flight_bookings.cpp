@@ -17,8 +17,7 @@
  * ! 1 <= seatsi <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> corpFlightBookings(std::vector<std::vector<int>>& bookings, int n)
     {

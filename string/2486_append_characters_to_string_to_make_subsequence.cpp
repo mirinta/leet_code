@@ -13,8 +13,7 @@
  * ! s and t consist only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int appendCharacters(std::string s, std::string t)
     {

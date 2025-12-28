@@ -15,8 +15,7 @@
  * ! s[i] is either 'I' or 'D'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findPermutation(std::string s)
     {

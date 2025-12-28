@@ -24,8 +24,7 @@
  * ! -10^5 <= mat[i][j] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxIncreasingCells(std::vector<std::vector<int>>& mat)
     {
@@ -38,8 +37,7 @@ public:
                 nums.push_back({mat[i][j], i, j});
             }
         }
-        std::sort(nums.begin(), nums.end(),
-                  [](const auto& t1, const auto& t2) { return t1[0] < t2[0]; });
+        std::sort(nums.begin(), nums.end(), [](const auto& t1, const auto& t2) { return t1[0] < t2[0]; });
         std::vector<std::map<int, int>> dpRow(m);
         std::vector<std::map<int, int>> dpCol(n);
         int result = 0;

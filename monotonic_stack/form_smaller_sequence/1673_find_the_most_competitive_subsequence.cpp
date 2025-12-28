@@ -17,8 +17,7 @@
  * ! 1 <= k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> mostCompetitive(std::vector<int>& nums, int k)
     {

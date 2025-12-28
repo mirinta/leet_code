@@ -14,8 +14,7 @@
  * ! 1 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumUniqueSubarray(std::vector<int>& nums)
     {

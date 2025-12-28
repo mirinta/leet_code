@@ -20,10 +20,12 @@
  * ! 1 <= nums[i], x <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long maxScore(std::vector<int>& nums, int x) { return approach3(nums, x); }
+    long long maxScore(std::vector<int>& nums, int x)
+    {
+        return approach3(nums, x);
+    }
 
 private:
     long long approach3(const std::vector<int>& nums, int x)
@@ -71,8 +73,8 @@ private:
         return nums[0] + solve(memo, 1, nums[0] % 2, x, nums);
     }
 
-    long long solve(std::vector<std::array<long long, 2>>& memo, int i, bool prevIsOdd, int x,
-                    const std::vector<int>& nums)
+    long long
+        solve(std::vector<std::array<long long, 2>>& memo, int i, bool prevIsOdd, int x, const std::vector<int>& nums)
     {
         if (i == nums.size())
             return 0;
@@ -82,8 +84,7 @@ private:
 
         const long long case1 = solve(memo, i + 1, prevIsOdd, x, nums);
         const bool currIsOdd = nums[i] % 2;
-        const long long case2 =
-            nums[i] + solve(memo, i + 1, currIsOdd, x, nums) - (currIsOdd ^ prevIsOdd) * x;
+        const long long case2 = nums[i] + solve(memo, i + 1, currIsOdd, x, nums) - (currIsOdd ^ prevIsOdd) * x;
         return memo[i][prevIsOdd] = std::max(case1, case2);
     }
 };

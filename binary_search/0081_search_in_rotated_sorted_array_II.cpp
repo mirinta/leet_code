@@ -20,8 +20,7 @@
  * ! -10^4 <= target <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     bool search(std::vector<int>& nums, int target)
     {

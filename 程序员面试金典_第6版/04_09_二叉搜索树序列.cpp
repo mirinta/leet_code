@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -21,8 +20,7 @@ struct TreeNode
  * ! 用例保证符合要求的数组数量不超过 5000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> BSTSequences(TreeNode* root)
     {
@@ -44,8 +42,12 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::vector<int>>& merged, std::vector<int>& path,
-                   const std::vector<int>& seq1, int i1, const std::vector<int>& seq2, int i2)
+    void backtrack(std::vector<std::vector<int>>& merged,
+                   std::vector<int>& path,
+                   const std::vector<int>& seq1,
+                   int i1,
+                   const std::vector<int>& seq2,
+                   int i2)
     {
         if (i1 == seq1.size() || i2 == seq2.size()) {
             merged.push_back(path);

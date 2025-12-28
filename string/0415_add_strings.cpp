@@ -12,8 +12,7 @@
  * ! num1 and num2 don't have any leading zeros except for the zero itself.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string addStrings(std::string num1, std::string num2)
     {

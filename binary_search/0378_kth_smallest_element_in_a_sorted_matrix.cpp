@@ -16,10 +16,12 @@
  * ! 1 <= k <= n^2
  */
 
-class Solution
-{
+class Solution {
 public:
-    int kthSmallest(std::vector<std::vector<int>>& matrix, int k) { return approach2(matrix, k); }
+    int kthSmallest(std::vector<std::vector<int>>& matrix, int k)
+    {
+        return approach2(matrix, k);
+    }
 
 private:
     int approach2(const std::vector<std::vector<int>>& matrix, int k)
@@ -59,9 +61,7 @@ private:
     {
         const int n = matrix.size();
         using Tuple = std::tuple<int, int, int>; // <val, i, j>
-        auto comparator = [](const auto& t1, const auto& t2) {
-            return std::get<0>(t1) > std::get<0>(t2);
-        };
+        auto comparator = [](const auto& t1, const auto& t2) { return std::get<0>(t1) > std::get<0>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(comparator);
         for (int i = 0; i < n; ++i) {
             pq.emplace(matrix[i][0], i, 0);

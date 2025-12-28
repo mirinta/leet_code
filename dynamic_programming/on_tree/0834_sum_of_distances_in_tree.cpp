@@ -17,8 +17,7 @@
  * ! The given input represents a valid tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sumOfDistancesInTree(int n, std::vector<std::vector<int>>& edges)
     {

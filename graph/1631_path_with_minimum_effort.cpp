@@ -1,5 +1,5 @@
-#include <tuple>
 #include <queue>
+#include <tuple>
 #include <vector>
 
 /**
@@ -20,10 +20,12 @@
  * ! 1 <= heights[i][j] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumEffortPath(std::vector<std::vector<int>>& heights) { return approach1(heights); }
+    int minimumEffortPath(std::vector<std::vector<int>>& heights)
+    {
+        return approach1(heights);
+    }
 
 private:
     static const std::vector<std::pair<int, int>> kDirections;
@@ -83,9 +85,7 @@ private:
         std::vector<std::vector<int>> effortTo(m, std::vector<int>(n, INT_MAX));
         effortTo[0][0] = 0;
         using Tuple = std::tuple<int, int, int>; // <effort, x, y>
-        auto compare = [](const auto& t1, const auto& t2) {
-            return std::get<0>(t1) > std::get<0>(t2);
-        };
+        auto compare = [](const auto& t1, const auto& t2) { return std::get<0>(t1) > std::get<0>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(compare)> pq(compare);
         pq.emplace(0, 0, 0);
         while (!pq.empty()) {

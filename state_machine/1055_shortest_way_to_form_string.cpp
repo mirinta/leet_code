@@ -14,8 +14,7 @@
  * ! source and target consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int shortestWay(std::string source, std::string target)
     {

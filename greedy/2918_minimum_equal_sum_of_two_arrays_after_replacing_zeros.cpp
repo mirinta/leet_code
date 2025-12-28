@@ -12,8 +12,7 @@
  * ! 0 <= nums1[i], nums2[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minSum(std::vector<int>& nums1, std::vector<int>& nums2)
     {

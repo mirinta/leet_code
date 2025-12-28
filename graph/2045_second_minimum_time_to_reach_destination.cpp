@@ -34,8 +34,7 @@
  * ! 1 <= time, change <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
     int secondMinimum(int n, std::vector<std::vector<int>>& edges, int time, int change)
     {

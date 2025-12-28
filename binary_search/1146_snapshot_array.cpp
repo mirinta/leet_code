@@ -22,8 +22,7 @@
  * ! At most 5 * 10^4 calls will be made to set, snap, and get.
  */
 
-class SnapshotArray
-{
+class SnapshotArray {
 public:
     explicit SnapshotArray(int length) : data(length)
     {
@@ -32,9 +31,15 @@ public:
         }
     }
 
-    void set(int index, int val) { data[index].emplace_back(snapID, val); }
+    void set(int index, int val)
+    {
+        data[index].emplace_back(snapID, val);
+    }
 
-    int snap() { return snapID++; }
+    int snap()
+    {
+        return snapID++;
+    }
 
     int get(int index, int snap_id)
     {

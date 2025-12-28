@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -15,8 +14,7 @@ struct ListNode
  * ! 给定的 k 保证是有效的。
  */
 
-class Solution
-{
+class Solution {
 public:
     int kthToLast(ListNode* head, int k)
     {

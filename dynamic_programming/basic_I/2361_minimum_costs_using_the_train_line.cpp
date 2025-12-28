@@ -30,19 +30,16 @@
  * ! 1 <= regular[i], express[i], expressCost <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<long long> minimumCosts(std::vector<int>& regular, std::vector<int>& express,
-                                        int expressCost)
+    std::vector<long long> minimumCosts(std::vector<int>& regular, std::vector<int>& express, int expressCost)
     {
         return approach2(regular, express, expressCost);
     }
 
 private:
     // DP with space optimization, time O(N), space O(1)
-    std::vector<long long> approach2(std::vector<int>& regular, std::vector<int>& express,
-                                     int expressCost)
+    std::vector<long long> approach2(std::vector<int>& regular, std::vector<int>& express, int expressCost)
     {
         const int n = regular.size();
         long long onRegular = 0;
@@ -58,8 +55,7 @@ private:
     }
 
     // DP, time O(N), space O(N)
-    std::vector<long long> approach1(std::vector<int>& regular, std::vector<int>& express,
-                                     int expressCost)
+    std::vector<long long> approach1(std::vector<int>& regular, std::vector<int>& express, int expressCost)
     {
         const int n = regular.size();
         // dp[i][0] = min cost from stop 0 to stop i, and the train stays on regular route at stop i
@@ -72,8 +68,7 @@ private:
         std::vector<long long> result(n, 0);
         for (int i = 1; i <= n; ++i) {
             dp[i][0] = std::min(dp[i - 1][0] + regular[i - 1], dp[i - 1][1] + express[i - 1]);
-            dp[i][1] = std::min(dp[i - 1][0] + regular[i - 1] + expressCost,
-                                dp[i - 1][1] + express[i - 1]);
+            dp[i][1] = std::min(dp[i - 1][0] + regular[i - 1] + expressCost, dp[i - 1][1] + express[i - 1]);
             result[i - 1] = std::min(dp[i][0], dp[i][1]);
         }
         return result;

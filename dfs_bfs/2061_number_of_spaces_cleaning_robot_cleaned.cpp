@@ -20,22 +20,23 @@
  * ! room[0][0] == 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfCleanRooms(std::vector<std::vector<int>>& room)
     {
         const int m = room.size();
         const int n = room[0].size();
-        std::vector<std::vector<std::array<bool, 4>>> visited(m,
-                                                              std::vector<std::array<bool, 4>>(n));
+        std::vector<std::vector<std::array<bool, 4>>> visited(m, std::vector<std::array<bool, 4>>(n));
         std::vector<std::vector<bool>> cleaned(m, std::vector<bool>(n, false));
         return dfs(visited, cleaned, 0, 0, 0, room);
     }
 
 private:
     int dfs(std::vector<std::vector<std::array<bool, 4>>>& visited,
-            std::vector<std::vector<bool>>& cleaned, int i, int j, int heading,
+            std::vector<std::vector<bool>>& cleaned,
+            int i,
+            int j,
+            int heading,
             const std::vector<std::vector<int>>& room)
     {
         static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};

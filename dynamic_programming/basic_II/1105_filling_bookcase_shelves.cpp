@@ -26,8 +26,7 @@
  * ! 1 <= height_i <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int minHeightShelves(std::vector<std::vector<int>>& books, int shelfWidth)
     {

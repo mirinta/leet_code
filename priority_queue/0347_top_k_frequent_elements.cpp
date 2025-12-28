@@ -14,10 +14,12 @@
  * ! It is guaranteed that the answer is unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> topKFrequent(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    std::vector<int> topKFrequent(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     std::vector<int> approach2(const std::vector<int>& nums, int k)

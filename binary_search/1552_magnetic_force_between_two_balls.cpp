@@ -18,8 +18,7 @@
  * ! 2 <= m <= position.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxDistance(std::vector<int>& position, int m)
     {

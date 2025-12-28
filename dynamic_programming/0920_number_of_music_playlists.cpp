@@ -14,10 +14,12 @@
  * ! 0 <= k < n <= goal <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numMusicPlaylists(int n, int goal, int k) { return approach3(n, goal, k); }
+    int numMusicPlaylists(int n, int goal, int k)
+    {
+        return approach3(n, goal, k);
+    }
 
 private:
     using LL = long long;

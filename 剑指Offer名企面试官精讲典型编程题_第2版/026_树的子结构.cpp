@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -17,8 +16,7 @@ struct TreeNode
  * ! 0 <= 节点个数 <= 10000
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isSubStructure(TreeNode* A, TreeNode* B)
     {

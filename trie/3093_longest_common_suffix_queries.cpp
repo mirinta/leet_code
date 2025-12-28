@@ -23,8 +23,7 @@
  * ! Sum of wordsQuery[i].length is at most 5 * 10^5.
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode()) {}
 
@@ -59,8 +58,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::array<TrieNode*, 26> next;
         int index{-1};
         int length{INT_MAX};
@@ -69,11 +67,9 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> stringIndices(std::vector<std::string>& wordsContainer,
-                                   std::vector<std::string>& wordsQuery)
+    std::vector<int> stringIndices(std::vector<std::string>& wordsContainer, std::vector<std::string>& wordsQuery)
     {
         Trie trie;
         int minLength = INT_MAX;

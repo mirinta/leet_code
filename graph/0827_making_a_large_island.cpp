@@ -14,8 +14,7 @@
  * ! grid[i][j] is either 0 or 1.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1)
     {
@@ -46,15 +45,17 @@ public:
         size[rootP] += size[rootQ];
     }
 
-    int sizeOf(int x) { return size[find(x)]; }
+    int sizeOf(int x)
+    {
+        return size[find(x)];
+    }
 
 private:
     std::vector<int> root;
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     int largestIsland(std::vector<std::vector<int>>& grid)
     {

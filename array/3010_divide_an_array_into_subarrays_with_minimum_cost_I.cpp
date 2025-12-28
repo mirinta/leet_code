@@ -14,8 +14,7 @@
  * ! 1 <= nums[i] <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumCost(std::vector<int>& nums)
     {

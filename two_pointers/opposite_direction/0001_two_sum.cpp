@@ -17,10 +17,12 @@
  * ! Only one valid answer exists.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> twoSum(std::vector<int>& nums, int target) { return approach2(nums, target); }
+    std::vector<int> twoSum(std::vector<int>& nums, int target)
+    {
+        return approach2(nums, target);
+    }
 
 private:
     // time O(NlogN), space O(N)
@@ -32,8 +34,7 @@ private:
             pairs[i].first = nums[i];
             pairs[i].second = i;
         }
-        std::sort(pairs.begin(), pairs.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+        std::sort(pairs.begin(), pairs.end(), [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
         int left = 0;
         int right = n - 1;
         while (left < right) {

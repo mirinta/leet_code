@@ -20,8 +20,7 @@
  * ! rooms[i][j] is -1, 0, or 2^31 - 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     void wallsAndGates(std::vector<std::vector<int>>& rooms)
     {

@@ -21,8 +21,7 @@
  * ! 1 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     long long findScore(std::vector<int>& nums)
     {
@@ -54,8 +53,7 @@ public:
 private:
     using Pair = std::pair<long long, int>;
 
-    struct Compare
-    {
+    struct Compare {
         bool operator()(const Pair& p1, const Pair& p2) const
         {
             if (p1.first == p2.first)

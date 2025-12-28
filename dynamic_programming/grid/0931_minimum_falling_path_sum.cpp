@@ -14,10 +14,12 @@
  * ! -100 <= matrix[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minFallingPathSum(std::vector<std::vector<int>>& matrix) { return approach2(matrix); }
+    int minFallingPathSum(std::vector<std::vector<int>>& matrix)
+    {
+        return approach2(matrix);
+    }
 
 private:
     int approach2(const std::vector<std::vector<int>>& matrix)

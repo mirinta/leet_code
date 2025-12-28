@@ -21,8 +21,7 @@
  * ! s only consists of characters 'a', 'b', and 'c'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumLength(std::string s)
     {

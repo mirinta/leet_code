@@ -10,10 +10,12 @@
  * ! All the elements of preorder are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool verifyPreorder(std::vector<int>& preorder) { return approach2(preorder); }
+    bool verifyPreorder(std::vector<int>& preorder)
+    {
+        return approach2(preorder);
+    }
 
 private:
     bool approach2(const std::vector<int>& preorder)

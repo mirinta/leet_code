@@ -23,8 +23,7 @@
  * ! Each pair of cities has at most one road connecting them.
  */
 
-class Solution
-{
+class Solution {
 public:
     // time O(E+V^2), space O(E)
     int maximalNetworkRank(int n, std::vector<std::vector<int>>& roads)

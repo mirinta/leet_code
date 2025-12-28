@@ -20,8 +20,7 @@
  * ! s[i] is either'(' , ')', or lowercase English letter.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string minRemoveToMakeValid(std::string s)
     {

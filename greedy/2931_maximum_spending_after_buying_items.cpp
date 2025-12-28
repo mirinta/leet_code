@@ -26,10 +26,12 @@
  * ! values[i] are sorted in non-increasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long maxSpending(std::vector<std::vector<int>>& values) { return approach2(values); }
+    long long maxSpending(std::vector<std::vector<int>>& values)
+    {
+        return approach2(values);
+    }
 
 private:
     long long approach2(std::vector<std::vector<int>>& values)
@@ -56,11 +58,8 @@ private:
         const int m = values.size();
         const int n = values[0].size();
         using Tuple = std::tuple<int, int, long long>; // <i, j, price>
-        auto comparator = [](const auto& t1, const auto& t2) {
-            return std::get<2>(t1) > std::get<2>(t2);
-        };
-        std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(
-            comparator); // min heap
+        auto comparator = [](const auto& t1, const auto& t2) { return std::get<2>(t1) > std::get<2>(t2); };
+        std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(comparator); // min heap
         for (int i = 0; i < m; ++i) {
             pq.emplace(i, n - 1, values[i].back());
         }

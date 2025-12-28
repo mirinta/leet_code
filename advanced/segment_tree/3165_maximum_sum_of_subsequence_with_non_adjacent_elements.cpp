@@ -23,8 +23,7 @@
  * ! -10^5 <= xi <= 10^5
  */
 
-class SegmentTree
-{
+class SegmentTree {
 public:
     explicit SegmentTree(const std::vector<int>& nums) : dp(4 * nums.size())
     {
@@ -46,7 +45,10 @@ public:
         maintain(id);
     }
 
-    long long query() { return std::max({dp[1][0], dp[1][1], dp[1][2], dp[1][3]}); }
+    long long query()
+    {
+        return std::max({dp[1][0], dp[1][1], dp[1][2], dp[1][3]});
+    }
 
 private:
     void build(int id, int lo, int hi, const std::vector<int>& nums)
@@ -76,8 +78,7 @@ private:
     std::vector<std::array<long long, 4>> dp;
 };
 
-class Solution
-{
+class Solution {
 public:
     int maximumSumSubsequence(std::vector<int>& nums, std::vector<std::vector<int>>& queries)
     {

@@ -7,8 +7,7 @@
  * ! 你能只调用一次检查子串的方法吗？
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isFlipedString(std::string s1, std::string s2)
     {

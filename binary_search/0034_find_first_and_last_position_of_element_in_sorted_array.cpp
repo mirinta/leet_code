@@ -14,8 +14,7 @@
  * ! -10^9 <= target <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> searchRange(std::vector<int>& nums, int target)
     {

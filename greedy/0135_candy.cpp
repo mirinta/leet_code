@@ -18,8 +18,7 @@
  * ! 0 <= ratings[i] <= 2 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int candy(std::vector<int>& ratings)
     {

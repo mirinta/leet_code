@@ -3,8 +3,7 @@
 #include <unordered_map>
 #include <vector>
 
-class Solution
-{
+class Solution {
 public:
     std::vector<double> medianSlidingWindow(std::vector<int>& nums, int k)
     {

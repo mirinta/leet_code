@@ -1,3 +1,4 @@
+#include <cmath>
 #include <utility>
 
 /**
@@ -20,8 +21,7 @@
  * ! 0 <= purchaseAmount <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int accountBalanceAfterPurchase(int purchaseAmount)
     {

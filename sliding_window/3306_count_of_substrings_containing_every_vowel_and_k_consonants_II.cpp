@@ -13,8 +13,7 @@
  * ! 0 <= k <= word.length - 5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countOfSubstrings(std::string word, int k)
     {
@@ -53,5 +52,8 @@ public:
     }
 
 private:
-    bool isVowel(char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }
+    bool isVowel(char c)
+    {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
 };

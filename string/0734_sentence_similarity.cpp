@@ -33,8 +33,7 @@
  * ! All the pairs (xi, yi) are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool areSentencesSimilar(std::vector<std::string>& sentence1,
                              std::vector<std::string>& sentence2,

@@ -12,8 +12,7 @@
  * ! 1 <= people[i] <= limit <= 3 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int numRescueBoats(std::vector<int>& people, int limit)
     {

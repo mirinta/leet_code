@@ -33,8 +33,7 @@
  * ! Each element in passengers is unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int latestTimeCatchTheBus(std::vector<int>& buses, std::vector<int>& passengers, int capacity)
     {

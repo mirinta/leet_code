@@ -13,8 +13,7 @@
  * Return the smallest number of 0's you must flip to connect the two islands.
  */
 
-class Solution
-{
+class Solution {
 public:
     // DFS + BFS: time O(n^2), space O(n^2)
     int shortestBridge(std::vector<std::vector<int>>& grid)
@@ -62,8 +61,7 @@ public:
 private:
     const std::vector<std::pair<int, int>> kDirections{{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
 
-    void dfs(std::queue<std::pair<int, int>>& queue, std::vector<std::vector<int>>& grid, int x,
-             int y)
+    void dfs(std::queue<std::pair<int, int>>& queue, std::vector<std::vector<int>>& grid, int x, int y)
     {
         queue.emplace(x, y);
         grid[x][y] = 2;

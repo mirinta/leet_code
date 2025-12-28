@@ -38,8 +38,7 @@
  * ! current, maximum, and minimum will be called only after update has been called at least once.
  */
 
-class StockPrice
-{
+class StockPrice {
 public:
     StockPrice() {}
 
@@ -54,11 +53,20 @@ public:
         priceToFreq[price]++;
     }
 
-    int current() { return timeToPrice[latest]; }
+    int current()
+    {
+        return timeToPrice[latest];
+    }
 
-    int maximum() { return std::prev(priceToFreq.end())->first; }
+    int maximum()
+    {
+        return std::prev(priceToFreq.end())->first;
+    }
 
-    int minimum() { return priceToFreq.begin()->first; }
+    int minimum()
+    {
+        return priceToFreq.begin()->first;
+    }
 
 private:
     int latest{INT_MIN};

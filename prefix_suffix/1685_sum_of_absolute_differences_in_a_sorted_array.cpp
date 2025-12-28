@@ -15,8 +15,7 @@
  * ! 1 <= nums[i] <= nums[i + 1] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> getSumAbsoluteDifferences(std::vector<int>& nums)
     {

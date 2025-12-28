@@ -18,8 +18,7 @@
  * ! -10^9 <= arr[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> arrayRankTransform(std::vector<int>& arr)
     {

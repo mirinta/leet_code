@@ -20,10 +20,12 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxConsecutiveAnswers(std::string answerKey, int k) { return approach2(answerKey, k); }
+    int maxConsecutiveAnswers(std::string answerKey, int k)
+    {
+        return approach2(answerKey, k);
+    }
 
 private:
     // sliding window (one-pass), TC = O(N), SC = O(1)

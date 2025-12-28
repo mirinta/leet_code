@@ -17,8 +17,7 @@
  * ! 1 <= grid[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> largestLocal(std::vector<std::vector<int>>& grid)
     {

@@ -20,8 +20,7 @@
  * ! grid consists only of lowercase English letters.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), rank(n, 1)
     {
@@ -58,10 +57,12 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
-    bool containsCycle(std::vector<std::vector<char>>& grid) { return approach2(grid); }
+    bool containsCycle(std::vector<std::vector<char>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     bool approach2(const std::vector<std::vector<char>>& grid)
@@ -71,19 +72,20 @@ private:
         UnionFind uf(m * n);
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                if (j + 1 < n && grid[i][j] == grid[i][j + 1] &&
-                    !uf.connect(encode(i, j, n), encode(i, j + 1, n)))
+                if (j + 1 < n && grid[i][j] == grid[i][j + 1] && !uf.connect(encode(i, j, n), encode(i, j + 1, n)))
                     return true;
 
-                if (i + 1 < m && grid[i][j] == grid[i + 1][j] &&
-                    !uf.connect(encode(i, j, n), encode(i + 1, j, n)))
+                if (i + 1 < m && grid[i][j] == grid[i + 1][j] && !uf.connect(encode(i, j, n), encode(i + 1, j, n)))
                     return true;
             }
         }
         return false;
     }
 
-    int encode(int i, int j, int n) { return i * n + j; }
+    int encode(int i, int j, int n)
+    {
+        return i * n + j;
+    }
 
     bool approach1(const std::vector<std::vector<char>>& grid)
     {
@@ -99,7 +101,11 @@ private:
         return false;
     }
 
-    bool dfs(std::vector<std::vector<bool>>& visited, int i, int j, int fromX, int fromY,
+    bool dfs(std::vector<std::vector<bool>>& visited,
+             int i,
+             int j,
+             int fromX,
+             int fromY,
              const std::vector<std::vector<char>>& grid)
     {
         static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
@@ -107,8 +113,7 @@ private:
         for (const auto& [dx, dy] : kDirections) {
             const int x = i + dx;
             const int y = j + dy;
-            if (x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size() ||
-                grid[x][y] != grid[i][j])
+            if (x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size() || grid[x][y] != grid[i][j])
                 continue;
 
             if (visited[x][y] && (x != fromX && y != fromY))

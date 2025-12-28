@@ -19,8 +19,7 @@
  * ! 0 <= profit[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int profitableSchemes(int n, int minProfit, std::vector<int>& group, std::vector<int>& profit)
     {
@@ -33,7 +32,12 @@ private:
     static constexpr int kMod = 1e9 + 7;
     std::vector<std::vector<std::vector<int>>> memo;
 
-    int dfs(int i, int members, int gain, int n, int minProfit, const std::vector<int>& group,
+    int dfs(int i,
+            int members,
+            int gain,
+            int n,
+            int minProfit,
+            const std::vector<int>& group,
             const std::vector<int>& profit)
     {
         if (i == group.size())
@@ -44,8 +48,8 @@ private:
 
         int result = dfs(i + 1, members, gain, n, minProfit, group, profit);
         if (members + group[i] <= n) {
-            result = (result + dfs(i + 1, members + group[i], std::min(gain + profit[i], minProfit),
-                                   n, minProfit, group, profit)) %
+            result = (result + dfs(i + 1, members + group[i], std::min(gain + profit[i], minProfit), n, minProfit,
+                                   group, profit)) %
                      kMod;
         }
         return memo[i][members][gain] = result;

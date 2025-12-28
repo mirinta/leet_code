@@ -9,8 +9,7 @@
  * ! 1 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target)
     {

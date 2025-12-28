@@ -14,10 +14,12 @@
  * ! grid[i][j] is '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numIslands(std::vector<std::vector<char>>& grid) { return approach2(grid); }
+    int numIslands(std::vector<std::vector<char>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     static constexpr char kLand = '1';
@@ -41,8 +43,8 @@ private:
         return result;
     }
 
-    void bfs(std::vector<std::vector<bool>>& visited, int startX, int startY,
-             const std::vector<std::vector<char>>& grid)
+    void
+        bfs(std::vector<std::vector<bool>>& visited, int startX, int startY, const std::vector<std::vector<char>>& grid)
     {
         const int m = grid.size();
         const int n = grid[0].size();
@@ -87,8 +89,7 @@ private:
         return result;
     }
 
-    void dfs(std::vector<std::vector<bool>>& visited, int x, int y,
-             const std::vector<std::vector<char>>& grid)
+    void dfs(std::vector<std::vector<bool>>& visited, int x, int y, const std::vector<std::vector<char>>& grid)
     {
         const int m = grid.size();
         const int n = grid[0].size();

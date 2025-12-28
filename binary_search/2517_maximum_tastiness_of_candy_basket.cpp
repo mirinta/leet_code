@@ -14,8 +14,7 @@
  * ! 1 <= price[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumTastiness(std::vector<int>& price, int k)
     {

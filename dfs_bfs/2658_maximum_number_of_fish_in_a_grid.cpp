@@ -27,8 +27,7 @@
  * ! 0 <= grid[i][j] <= 10
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMaxFish(std::vector<std::vector<int>>& grid)
     {

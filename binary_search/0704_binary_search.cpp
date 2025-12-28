@@ -13,8 +13,7 @@
  * ! nums is sorted in ascending order.
  */
 
-class Solution
-{
+class Solution {
 public:
     // time complexity: O(logN), space complexity: O(1)
     int search(const std::vector<int>& nums, int target)

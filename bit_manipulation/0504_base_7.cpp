@@ -6,8 +6,7 @@
  * ! -10^7 <= num <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string convertToBase7(int num)
     {

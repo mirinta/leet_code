@@ -1,3 +1,4 @@
+#include <string>
 #include <unordered_map>
 #include <vector>
 
@@ -23,17 +24,16 @@
  * ! At most 2 * 10^5 calls will be made to set and get.
  */
 
-class TimeMap
-{
+class TimeMap {
 public:
     TimeMap() = default;
 
-    void set(const std::string &key, const std::string& value, int timestamp)
+    void set(const std::string& key, const std::string& value, int timestamp)
     {
         map[key].emplace_back(value, timestamp);
     }
 
-    std::string get(const std::string &key, int timestamp)
+    std::string get(const std::string& key, int timestamp)
     {
         if (!map.count(key))
             return {};

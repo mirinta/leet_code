@@ -13,8 +13,7 @@
  * probability of picking index "1" is 3 / (1 + 3) = 0.75.
  */
 
-class Solution
-{
+class Solution {
 public:
     //    indices = [0, 1, 2]
     //    weights = [2, 3, 4]
@@ -23,10 +22,7 @@ public:
     // - if x in [1, 2], pickIndex = 0
     // - if x in (2, 5], pickIndex = 1;
     // - if x in (5, 9], pickIndex = 2;
-    Solution(std::vector<int>& w)
-        : prefixSum(getPrefixSum(w)), engine(rd()), distrib(1, prefixSum.back())
-    {
-    }
+    Solution(std::vector<int>& w) : prefixSum(getPrefixSum(w)), engine(rd()), distrib(1, prefixSum.back()) {}
 
     int pickIndex()
     {

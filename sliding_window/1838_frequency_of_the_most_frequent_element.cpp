@@ -14,8 +14,7 @@
  * ! 1 <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxFrequency(std::vector<int>& nums, int k)
     {

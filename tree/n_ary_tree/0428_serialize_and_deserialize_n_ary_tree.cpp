@@ -22,15 +22,17 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     std::vector<Node*> children;
 
     Node() {}
 
-    Node(int _val) { val = _val; }
+    Node(int _val)
+    {
+        val = _val;
+    }
 
     Node(int _val, std::vector<Node*> _children)
     {
@@ -39,8 +41,7 @@ public:
     }
 };
 
-class Codec
-{
+class Codec {
 public:
     // Encodes a tree to a single string.
     std::string serialize(Node* root)

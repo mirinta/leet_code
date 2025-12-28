@@ -15,8 +15,7 @@
  * ! All the strings of nums are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string findDifferentBinaryString(std::vector<std::string>& nums)
     {

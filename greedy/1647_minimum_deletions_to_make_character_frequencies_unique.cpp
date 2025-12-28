@@ -17,8 +17,7 @@
  * ! s contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minDeletions(std::string s)
     {

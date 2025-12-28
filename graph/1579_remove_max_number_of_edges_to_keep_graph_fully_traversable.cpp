@@ -26,8 +26,7 @@
  * ! All tuples (typei, ui, vi) are distinct.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), size(n, 1)
     {
@@ -44,7 +43,10 @@ public:
         return root[x];
     }
 
-    int numOfConnectedComponents() { return count; }
+    int numOfConnectedComponents()
+    {
+        return count;
+    }
 
     bool connect(int p, int q)
     {
@@ -68,8 +70,7 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     int maxNumEdgesToRemove(int n, std::vector<std::vector<int>>& edges)
     {

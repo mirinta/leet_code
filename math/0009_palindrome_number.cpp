@@ -8,8 +8,7 @@
  * ! Follow up: Could you solve it without converting the integer to a string?
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isPalindrome(int x)
     {

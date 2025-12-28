@@ -1,4 +1,4 @@
-// 
+//
 
 #include <vector>
 
@@ -24,8 +24,7 @@
  * ! The product of the stream at any point in time will fit in a 32-bit integer.
  */
 
-class ProductOfNumbers
-{
+class ProductOfNumbers {
 public:
     ProductOfNumbers() {}
 

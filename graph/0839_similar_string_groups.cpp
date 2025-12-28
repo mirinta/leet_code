@@ -22,8 +22,7 @@
  * ! All words in strs have the same length and are anagrams of each other.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), rank(n)
     {
@@ -33,7 +32,10 @@ public:
         }
     }
 
-    int numOfConnectedComponents() const { return count; }
+    int numOfConnectedComponents() const
+    {
+        return count;
+    }
 
     int find(int x)
     {
@@ -67,8 +69,7 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
     int numSimilarGroups(std::vector<std::string>& strs)
     {

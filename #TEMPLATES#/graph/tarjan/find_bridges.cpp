@@ -27,7 +27,7 @@ std::vector<std::pair<int, int>> findEdges(const Graph& graph)
             } else {
                 low[current] = std::min(low[current], dfn[next]);
             }
-                }
+        }
     };
     // -----------------------------------------------------------------
     for (int i = 0; i < n; ++i) {

@@ -25,8 +25,7 @@
  * ! 1 <= x, y, z <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int findClosest(int x, int y, int z)
     {

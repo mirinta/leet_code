@@ -10,8 +10,7 @@
  * ! Can you find an O(1) solution?
  */
 
-class Solution
-{
+class Solution {
 public:
     int thirdMax(const std::vector<int>& nums)
     {

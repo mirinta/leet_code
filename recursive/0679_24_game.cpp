@@ -29,8 +29,7 @@
  * ! 1 <= cards[i] <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool judgePoint24(std::vector<int>& cards)
     {

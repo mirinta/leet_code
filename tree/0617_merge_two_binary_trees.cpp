@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -27,8 +26,7 @@ struct TreeNode
  * ! -10^4 <= Node.val <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2)
     {

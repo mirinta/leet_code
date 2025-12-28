@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -42,8 +41,7 @@ struct TreeNode
  * ! 0 <= target <= 10^6
  */
 
-class FindElements
-{
+class FindElements {
 public:
     FindElements(TreeNode* root)
     {
@@ -69,7 +67,10 @@ public:
         }
     }
 
-    bool find(int target) { return values.count(target); }
+    bool find(int target)
+    {
+        return values.count(target);
+    }
 
 private:
     std::unordered_set<int> values;

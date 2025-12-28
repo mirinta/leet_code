@@ -11,8 +11,7 @@
  * ! 1 <= n <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int binaryGap(int n)
     {

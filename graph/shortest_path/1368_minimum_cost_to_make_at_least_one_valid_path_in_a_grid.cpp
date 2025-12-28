@@ -30,8 +30,7 @@
  * ! 1 <= grid[i][j] <= 4
  */
 
-class Solution
-{
+class Solution {
 public:
     int minCost(std::vector<std::vector<int>>& grid)
     {
@@ -39,9 +38,7 @@ public:
         const int n = grid[0].size();
         static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
         using Tuple = std::tuple<int, int, int>; // <cost, x, y>
-        auto comparator = [](const Tuple& t1, const Tuple& t2) {
-            return std::get<0>(t1) > std::get<0>(t2);
-        };
+        auto comparator = [](const Tuple& t1, const Tuple& t2) { return std::get<0>(t1) > std::get<0>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(comparator);
         pq.emplace(0, 0, 0);
         std::vector<std::vector<int>> costTo(m, std::vector<int>(n, INT_MAX));

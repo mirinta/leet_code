@@ -21,8 +21,7 @@
  * ! s consists only of letters of the English alphabet in uppercase and lowercase.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string sortVowels(std::string s)
     {

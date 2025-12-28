@@ -11,10 +11,12 @@
  * has both squares occupied by a tile.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numTilings(int n) { return approach2(n); }
+    int numTilings(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

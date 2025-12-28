@@ -9,8 +9,7 @@
  * ! 本题与LC.48相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     void rotate(std::vector<std::vector<int>>& matrix)
     {

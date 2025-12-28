@@ -21,8 +21,7 @@
  * ! All the integers in s are in the range [1, 300].
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string decodeString(std::string s)
     {

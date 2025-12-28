@@ -17,8 +17,7 @@
  * ! s consists of lowercase English letters
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfSpecialSubstrings(std::string s)
     {

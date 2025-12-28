@@ -18,8 +18,7 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumRecolors(std::string blocks, int k)
     {

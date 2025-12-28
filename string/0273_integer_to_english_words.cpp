@@ -6,8 +6,7 @@
  * ! 0 <= num <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string numberToWords(int num)
     {
@@ -26,9 +25,8 @@ private:
             return words1[num];
         }
         if (num < 20) {
-            static const std::string words2[]{"Ten",      "Eleven",  "Twelve",  "Thirteen",
-                                              "Fourteen", "Fifteen", "Sixteen", "Seventeen",
-                                              "Eighteen", "Nineteen"};
+            static const std::string words2[]{"Ten",     "Eleven",  "Twelve",    "Thirteen", "Fourteen",
+                                              "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
             return words2[num - 10];
         }
         if (num < 100) {
@@ -43,10 +41,8 @@ private:
             return solve(num / 1000) + " Thousand" + (num % 1000 ? " " : "") + solve(num % 1000);
 
         if (num < 1000000000)
-            return solve(num / 1000000) + " Million" + (num % 1000000 ? " " : "") +
-                   solve(num % 1000000);
+            return solve(num / 1000000) + " Million" + (num % 1000000 ? " " : "") + solve(num % 1000000);
 
-        return solve(num / 1000000000) + " Billion" + (num % 1000000000 ? " " : "") +
-               solve(num % 1000000000);
+        return solve(num / 1000000000) + " Billion" + (num % 1000000000 ? " " : "") + solve(num % 1000000000);
     }
 };

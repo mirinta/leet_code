@@ -16,8 +16,7 @@
  * ! 2 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int sumOfPowers(std::vector<int>& nums, int k)
     {

@@ -14,8 +14,7 @@
  * ! 0 <= budget <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumProfit(std::vector<int>& present, std::vector<int>& future, int budget)
     {
@@ -30,8 +29,7 @@ private:
         for (int i = 1; i <= n; ++i) {
             for (int j = budget; j >= 0; --j) {
                 if (j - present[i - 1] >= 0) {
-                    dp[j] =
-                        std::max(dp[j], dp[j - present[i - 1]] + future[i - 1] - present[i - 1]);
+                    dp[j] = std::max(dp[j], dp[j - present[i - 1]] + future[i - 1] - present[i - 1]);
                 }
             }
         }
@@ -46,8 +44,7 @@ private:
             for (int j = 0; j <= budget; ++j) {
                 dp[i][j] = dp[i - 1][j];
                 if (j - present[i - 1] >= 0) {
-                    dp[i][j] = std::max(
-                        dp[i][j], dp[i - 1][j - present[i - 1]] + future[i - 1] - present[i - 1]);
+                    dp[i][j] = std::max(dp[i][j], dp[i - 1][j - present[i - 1]] + future[i - 1] - present[i - 1]);
                 }
             }
         }

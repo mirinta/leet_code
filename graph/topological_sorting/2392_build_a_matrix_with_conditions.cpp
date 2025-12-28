@@ -32,11 +32,10 @@
  * ! lefti != righti
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> buildMatrix(int k, std::vector<std::vector<int>>& rowConditions,
-                                              std::vector<std::vector<int>>& colConditions)
+    std::vector<std::vector<int>>
+        buildMatrix(int k, std::vector<std::vector<int>>& rowConditions, std::vector<std::vector<int>>& colConditions)
     {
         std::vector<std::vector<int>> result(k, std::vector<int>(k, 0));
         const auto row = topologicalSort(k, rowConditions);
@@ -54,8 +53,7 @@ public:
     }
 
 private:
-    std::unordered_map<int, int> topologicalSort(int n,
-                                                 const std::vector<std::vector<int>>& conditions)
+    std::unordered_map<int, int> topologicalSort(int n, const std::vector<std::vector<int>>& conditions)
     {
         std::vector<std::vector<int>> graph(n + 1); // 1-indexed
         std::vector<int> indegrees(n + 1, 0);       // 1-indexed

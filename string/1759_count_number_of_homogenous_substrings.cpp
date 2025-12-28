@@ -12,8 +12,7 @@
  * ! s consists of lowercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countHomogenous(std::string s)
     {

@@ -14,8 +14,7 @@
  * ! 1 <= dimensions[i][0], dimensions[i][1] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int areaOfMaxDiagonal(std::vector<std::vector<int>>& dimensions)
     {

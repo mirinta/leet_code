@@ -11,8 +11,7 @@
  * ! The largest element in nums is unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int dominantIndex(const std::vector<int>& nums)
     {

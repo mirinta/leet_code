@@ -7,8 +7,7 @@
  * ! -2147483647 <= numbers[i] <= 2147483647
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> swapNumbers(std::vector<int>& numbers)
     {

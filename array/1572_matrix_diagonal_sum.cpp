@@ -7,8 +7,7 @@
  * secondary diagonal that are not part of the primary diagonal.
  */
 
-class Solution
-{
+class Solution {
 public:
     int diagonalSum(std::vector<std::vector<int>>& mat)
     {

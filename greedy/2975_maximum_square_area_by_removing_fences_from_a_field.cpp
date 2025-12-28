@@ -25,8 +25,7 @@
  * ! hFences and vFences are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximizeSquareArea(int m, int n, std::vector<int>& hFences, std::vector<int>& vFences)
     {

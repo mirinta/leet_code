@@ -12,8 +12,7 @@
  * ! board[i][j] is 'X' or 'O'.
  */
 
-class Solution
-{
+class Solution {
 public:
     void solve(std::vector<std::vector<char>>& board)
     {

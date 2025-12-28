@@ -15,10 +15,12 @@
  * ! 0 < frame[0].length <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
-    int jewelleryValue(std::vector<std::vector<int>>& frame) { return approach2(frame); }
+    int jewelleryValue(std::vector<std::vector<int>>& frame)
+    {
+        return approach2(frame);
+    }
 
 private:
     int approach2(const std::vector<std::vector<int>>& frame)

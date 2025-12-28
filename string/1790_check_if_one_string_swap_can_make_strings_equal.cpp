@@ -15,8 +15,7 @@
  * ! s1 and s2 consist of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool areAlmostEqual(std::string s1, std::string s2)
     {

@@ -18,8 +18,7 @@
  * ! There will be at least two friends in the grid.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minTotalDistance(std::vector<std::vector<int>>& grid)
     {
@@ -50,5 +49,8 @@ public:
     }
 
 private:
-    int manhattan(int x1, int y1, int x2, int y2) { return std::abs(x1 - x2) + std::abs(y1 - y2); }
+    int manhattan(int x1, int y1, int x2, int y2)
+    {
+        return std::abs(x1 - x2) + std::abs(y1 - y2);
+    }
 };

@@ -23,15 +23,13 @@
  * ! words[i] only consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestStrChain(std::vector<std::string>& words)
     {
         // dp[i] = length of the longest word chain chosen from words[0:i] that ending at words[i]
         const int n = words.size();
-        std::sort(words.begin(), words.end(),
-                  [](const auto& s1, const auto& s2) { return s1.size() < s2.size(); });
+        std::sort(words.begin(), words.end(), [](const auto& s1, const auto& s2) { return s1.size() < s2.size(); });
         std::unordered_map<std::string, int> map;
         std::vector<int> dp(n);
         int result = 0;

@@ -26,8 +26,7 @@
  * ! The input is generated such that edges represents a valid tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<long long> placedCoins(std::vector<std::vector<int>>& edges, std::vector<int>& cost)
     {
@@ -47,8 +46,7 @@ private:
     using LL = long long;
 
     // return at most 5 values: {max, secondMax, thirdMax, secondMin, min} in the subtree of node i
-    std::vector<LL> dfs(std::vector<LL>& result, int i, int parent, const Tree& tree,
-                        const std::vector<int>& cost)
+    std::vector<LL> dfs(std::vector<LL>& result, int i, int parent, const Tree& tree, const std::vector<int>& cost)
     {
         std::vector<long long> values{cost[i]};
         for (const auto& child : tree[i]) {
@@ -64,8 +62,7 @@ private:
             return values;
         }
         std::sort(values.begin(), values.end(), std::greater<>());
-        result[i] = std::max(
-            {0LL, values[0] * values[1] * values[2], values[n - 1] * values[n - 2] * values[0]});
+        result[i] = std::max({0LL, values[0] * values[1] * values[2], values[n - 1] * values[n - 2] * values[0]});
         if (n <= 5)
             return values;
 

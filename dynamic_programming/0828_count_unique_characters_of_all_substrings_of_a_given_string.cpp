@@ -1,3 +1,4 @@
+#include <array>
 #include <numeric>
 #include <string>
 #include <unordered_map>
@@ -19,10 +20,12 @@
  * ! s consists of uppercase English letters only.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int uniqueLetterString(std::string s) { return approach2(s); }
+    int uniqueLetterString(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     // DP with space optimization, TC = O(N), SC = O(N)

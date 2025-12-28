@@ -11,8 +11,7 @@
  * ! 1 <= target <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int numRollsToTarget(int n, int k, int target)
     {

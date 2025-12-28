@@ -26,8 +26,7 @@
  * ! sentence does not have leading or trailing spaces.
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode()) {}
 
@@ -62,8 +61,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::array<TrieNode*, 26> next{};
         bool isEnd{false};
     };
@@ -71,8 +69,7 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::string replaceWords(std::vector<std::string>& dictionary, std::string sentence)
     {

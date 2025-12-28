@@ -24,8 +24,7 @@
  * ! 1 <= k <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<int>& nums, int k)
     {

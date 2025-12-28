@@ -19,8 +19,7 @@
  * ! 1 <= d <= 10
  */
 
-class Solution
-{
+class Solution {
 public:
     int minDifficulty(std::vector<int>& jobDifficulty, int d)
     {

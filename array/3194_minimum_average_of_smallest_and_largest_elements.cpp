@@ -18,8 +18,7 @@
  * ! 1 <= nums[i] <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     double minimumAverage(std::vector<int>& nums)
     {

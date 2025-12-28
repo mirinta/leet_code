@@ -29,11 +29,9 @@
  * ! The graph may not be connected.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maximalPathQuality(std::vector<int>& values, std::vector<std::vector<int>>& edges,
-                           int maxTime)
+    int maximalPathQuality(std::vector<int>& values, std::vector<std::vector<int>>& edges, int maxTime)
     {
         const int n = values.size();
         std::vector<std::vector<std::pair<int, int>>> graph(n);

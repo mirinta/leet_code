@@ -18,8 +18,7 @@
  * ! 0 <= ranges[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int minTaps(int n, std::vector<int>& ranges)
     {

@@ -23,8 +23,7 @@
  * ! s consists of only English lowercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int beautifulSubstrings(std::string s, int k)
     {
@@ -44,5 +43,8 @@ public:
     }
 
 private:
-    bool isVowel(char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }
+    bool isVowel(char c)
+    {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
 };

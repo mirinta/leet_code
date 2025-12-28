@@ -18,8 +18,7 @@
  * ! 1 <= candidates[i] <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     int largestCombination(std::vector<int>& candidates)
     {

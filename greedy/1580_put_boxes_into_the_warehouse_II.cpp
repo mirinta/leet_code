@@ -25,8 +25,7 @@
  * ! 1 <= boxes[i], warehouse[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxBoxesInWarehouse(std::vector<int>& boxes, std::vector<int>& warehouse)
     {

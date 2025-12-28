@@ -1,8 +1,7 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* next;
@@ -39,8 +38,7 @@ public:
  * ! -10^6 <= Node.val, insertVal <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* insert(Node* head, int insertVal)
     {

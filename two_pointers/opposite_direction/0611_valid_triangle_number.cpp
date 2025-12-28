@@ -9,8 +9,7 @@
  * ! 0 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int triangleNumber(std::vector<int>& nums)
     {

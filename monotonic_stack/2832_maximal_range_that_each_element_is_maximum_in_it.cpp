@@ -16,8 +16,7 @@
  * ! All elements in nums are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> maximumLengthOfRanges(std::vector<int>& nums)
     {

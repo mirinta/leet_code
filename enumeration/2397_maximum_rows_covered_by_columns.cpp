@@ -24,8 +24,7 @@
  * ! 1 <= numSelect <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumRows(const std::vector<std::vector<int>>& matrix, int numSelect)
     {
@@ -60,9 +59,8 @@ private:
             if (binaryOnes(state) != numSelect)
                 continue;
 
-            const int count = std::count_if(rows.begin(), rows.end(), [&state](const auto& val) {
-                return (state & val) == val;
-            });
+            const int count =
+                std::count_if(rows.begin(), rows.end(), [&state](const auto& val) { return (state & val) == val; });
             result = std::max(result, count);
         }
         return result;
@@ -76,7 +74,10 @@ private:
         return result;
     }
 
-    void backtrack(int& result, std::unordered_set<int>& selected, int start, int numSelect,
+    void backtrack(int& result,
+                   std::unordered_set<int>& selected,
+                   int start,
+                   int numSelect,
                    const std::vector<std::vector<int>>& matrix)
     {
         if (selected.size() == numSelect) {

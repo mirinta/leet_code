@@ -20,14 +20,12 @@
  * ! 1 <= time <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int videoStitching(std::vector<std::vector<int>>& clips, int time)
     {
-        std::sort(clips.begin(), clips.end(), [](const auto& v1, const auto& v2) {
-            return v1[0] == v2[0] ? v1[1] > v2[1] : v1[0] < v2[0];
-        });
+        std::sort(clips.begin(), clips.end(),
+                  [](const auto& v1, const auto& v2) { return v1[0] == v2[0] ? v1[1] > v2[1] : v1[0] < v2[0]; });
         if (clips[0][0] != 0)
             return -1;
 

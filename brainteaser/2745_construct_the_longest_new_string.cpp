@@ -14,8 +14,7 @@
  * ! 1 <= x, y, z <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestString(int x, int y, int z)
     {

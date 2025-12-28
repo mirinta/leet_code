@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -33,8 +32,7 @@ struct TreeNode
  * ! The binary tree described by descriptions is valid.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* createBinaryTree(std::vector<std::vector<int>>& descriptions)
     {

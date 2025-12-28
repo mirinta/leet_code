@@ -7,8 +7,7 @@
  * ! 本题与LC 155相同。
  */
 
-class MinStack
-{
+class MinStack {
 public:
     /** initialize your data structure here. */
     MinStack() {}
@@ -29,9 +28,15 @@ public:
         _min.pop();
     }
 
-    int top() { return _data.top(); }
+    int top()
+    {
+        return _data.top();
+    }
 
-    int min() { return _min.top(); }
+    int min()
+    {
+        return _min.top();
+    }
 
 private:
     std::stack<int> _data;

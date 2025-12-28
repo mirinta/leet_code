@@ -1,6 +1,6 @@
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
-#include <string>
 #include <vector>
 
 /**
@@ -18,10 +18,12 @@
  * ! All strings consist of lowercase and uppercase English letters and the space character.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::string destCity(std::vector<std::vector<std::string>>& paths) { return approach2(paths); }
+    std::string destCity(std::vector<std::vector<std::string>>& paths)
+    {
+        return approach2(paths);
+    }
 
 private:
     std::string approach2(std::vector<std::vector<std::string>>& paths)

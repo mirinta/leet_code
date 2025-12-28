@@ -18,8 +18,7 @@
  * ! There will be at least k elements in the array when you search for the kth element.
  */
 
-class KthLargest
-{
+class KthLargest {
 public:
     KthLargest(int k, std::vector<int>& nums) : k(k)
     {

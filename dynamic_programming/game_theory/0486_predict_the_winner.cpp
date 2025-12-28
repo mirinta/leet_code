@@ -18,8 +18,7 @@
  * ! 0 <= nums[i] <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     bool predictTheWinner(std::vector<int>& nums)
     {
@@ -35,7 +34,10 @@ public:
 
 private:
     // max score that the 1st action player can get at the end of the game nums[lo:hi]
-    int dfs(std::vector<std::vector<int>>& memo, int lo, int hi, const std::vector<int>& nums,
+    int dfs(std::vector<std::vector<int>>& memo,
+            int lo,
+            int hi,
+            const std::vector<int>& nums,
             const std::vector<int>& presum)
     {
         if (lo > hi)
@@ -44,8 +46,7 @@ private:
         if (memo[lo][hi] != -1)
             return memo[lo][hi];
 
-        const int case1 =
-            nums[lo] + presum[hi + 1] - presum[lo + 1] - dfs(memo, lo + 1, hi, nums, presum);
+        const int case1 = nums[lo] + presum[hi + 1] - presum[lo + 1] - dfs(memo, lo + 1, hi, nums, presum);
         const int case2 = nums[hi] + presum[hi] - presum[lo] - dfs(memo, lo, hi - 1, nums, presum);
         return memo[lo][hi] = std::max(case1, case2);
     }

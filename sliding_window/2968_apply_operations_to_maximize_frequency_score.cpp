@@ -18,8 +18,7 @@
  * ! 0 <= k <= 10^14
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxFrequencyScore(std::vector<int>& nums, long long k)
     {

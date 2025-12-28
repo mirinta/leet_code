@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -28,8 +29,7 @@
  * ! 0 <= capital[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMaximizedCapital(int k, int w, std::vector<int>& profits, std::vector<int>& capital)
     {
@@ -40,8 +40,7 @@ public:
             info[i].first = capital[i];
             info[i].second = profits[i];
         }
-        std::sort(info.begin(), info.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+        std::sort(info.begin(), info.end(), [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
         std::priority_queue<int> pq; // max heap storing profits of available projects
         for (int t = 0, i = 0; t < k; ++t) {
             while (i < n && info[i].first <= w) {

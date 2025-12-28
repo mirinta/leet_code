@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -30,8 +29,7 @@ struct TreeNode
  * ! All integers in nums are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* constructMaximumBinaryTree(std::vector<int>& nums)
     {

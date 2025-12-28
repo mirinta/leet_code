@@ -26,8 +26,7 @@
  * ! startGene, endGene, and bank[i] consist of only the characters ['A', 'C', 'G', 'T'].
  */
 
-class Solution
-{
+class Solution {
 public:
     int minMutation(std::string startGene, std::string endGene, std::vector<std::string>& bank)
     {

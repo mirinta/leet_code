@@ -10,10 +10,12 @@
  * ! matrix[i][j] is '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maximalSquare(std::vector<std::vector<char>>& matrix) { return approach3(matrix); }
+    int maximalSquare(std::vector<std::vector<char>>& matrix)
+    {
+        return approach3(matrix);
+    }
 
 private:
     // DP with space optimization, TC = O(MN), SC = O(N)
@@ -127,8 +129,7 @@ private:
             if (x2 < 0 || x2 >= m || y2 < 0 || y2 >= n)
                 return 0;
 
-            return presum[x2 + 1][y2 + 1] - presum[x2 + 1][y1] - presum[x1][y2 + 1] +
-                   presum[x1][y1];
+            return presum[x2 + 1][y2 + 1] - presum[x2 + 1][y1] - presum[x1][y2 + 1] + presum[x1][y1];
         };
         std::vector<std::vector<int>> dp(m, std::vector<int>(n, 0));
         int maxLength = 0;
@@ -152,12 +153,10 @@ private:
                 if (query(i, j - L1, i, j) == L1 + 1 && query(i - L1, j, i, j) == L1 + 1) {
                     dp[i][j] = std::max(dp[i][j], 1 + L1);
                 }
-                if (query(i - L2, j - L2, i - L2, j) == L2 + 1 &&
-                    query(i - L2, j, i, j) == L2 + 1) {
+                if (query(i - L2, j - L2, i - L2, j) == L2 + 1 && query(i - L2, j, i, j) == L2 + 1) {
                     dp[i][j] = std::max(dp[i][j], 1 + L2);
                 }
-                if (query(i - L3, j - L3, i, j - L3) == L3 + 1 &&
-                    query(i, j - L3, i, j) == L3 + 1) {
+                if (query(i - L3, j - L3, i, j - L3) == L3 + 1 && query(i, j - L3, i, j) == L3 + 1) {
                     dp[i][j] = std::max(dp[i][j], 1 + L3);
                 }
                 maxLength = std::max(maxLength, dp[i][j]);

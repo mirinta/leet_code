@@ -27,8 +27,7 @@
  * ! The input is generated such that there is at least one query of type 2.
  */
 
-class SegmentTree
-{
+class SegmentTree {
 public:
     explicit SegmentTree(const std::vector<int>& nums)
         : n(nums.size()), data(4 * n, 0), lazy(4 * n, 0), flag(4 * n, false)
@@ -36,9 +35,15 @@ public:
         build(0, n - 1, 1, nums);
     }
 
-    int query(int L, int R) { return query(L, R, 0, n - 1, 1); }
+    int query(int L, int R)
+    {
+        return query(L, R, 0, n - 1, 1);
+    }
 
-    void set(int L, int R, int val) { set(L, R, val, 0, n - 1, 1); }
+    void set(int L, int R, int val)
+    {
+        set(L, R, val, 0, n - 1, 1);
+    }
 
 private:
     void build(int lo, int hi, int id, const std::vector<int>& nums)
@@ -114,8 +119,7 @@ private:
     std::vector<bool> flag; // 1-indexed
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<bool> getResults(std::vector<std::vector<int>>& queries)
     {

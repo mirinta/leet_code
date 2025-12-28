@@ -6,8 +6,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -27,8 +26,7 @@ struct TreeNode
  * ! 0 <= k <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     // DFS + BFS: time O(N), space O(N), N is the number of nodes
     std::vector<int> distanceK(TreeNode* root, TreeNode* target, int k)

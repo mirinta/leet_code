@@ -11,8 +11,7 @@
  * ! All the points are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxPoints(std::vector<std::vector<int>>& points)
     {

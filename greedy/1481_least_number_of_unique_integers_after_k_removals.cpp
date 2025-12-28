@@ -10,8 +10,7 @@
  * ! 0 <= k <= arr.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int findLeastNumOfUniqueInts(std::vector<int>& arr, int k)
     {

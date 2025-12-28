@@ -14,8 +14,7 @@
  * ! s consist only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minAnagramLength(std::string s)
     {

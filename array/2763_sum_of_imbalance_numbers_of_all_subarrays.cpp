@@ -19,8 +19,7 @@
  * ! 1 <= nums[i] <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int sumImbalanceNumbers(std::vector<int>& nums)
     {

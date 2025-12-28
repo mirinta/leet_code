@@ -19,11 +19,9 @@
  * ! There is at least a common string between list1 and list2.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> findRestaurant(std::vector<std::string>& list1,
-                                            std::vector<std::string>& list2)
+    std::vector<std::string> findRestaurant(std::vector<std::string>& list1, std::vector<std::string>& list2)
     {
         std::unordered_map<std::string, int> map;
         for (int i = 0; i < list1.size(); ++i) {

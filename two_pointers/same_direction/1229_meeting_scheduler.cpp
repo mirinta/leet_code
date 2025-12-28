@@ -22,16 +22,13 @@
  * ! 1 <= duration <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> minAvailableDuration(std::vector<std::vector<int>>& slots1,
-                                          std::vector<std::vector<int>>& slots2, int duration)
+    std::vector<int>
+        minAvailableDuration(std::vector<std::vector<int>>& slots1, std::vector<std::vector<int>>& slots2, int duration)
     {
-        std::sort(slots1.begin(), slots1.end(),
-                  [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
-        std::sort(slots2.begin(), slots2.end(),
-                  [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
+        std::sort(slots1.begin(), slots1.end(), [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
+        std::sort(slots2.begin(), slots2.end(), [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
         int i = 0;
         int j = 0;
         while (i < slots1.size() && j < slots2.size()) {

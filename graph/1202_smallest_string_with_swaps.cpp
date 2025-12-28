@@ -17,8 +17,7 @@
  * ! s only contains lower case English letters.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : _root(n), _rank(n), _count(n)
     {
@@ -28,7 +27,10 @@ public:
         }
     }
 
-    int count() const { return _count; }
+    int count() const
+    {
+        return _count;
+    }
 
     int find(int x)
     {
@@ -62,8 +64,7 @@ private:
     int _count;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::string smallestStringWithSwaps(std::string& s, std::vector<std::vector<int>>& pairs)
     {

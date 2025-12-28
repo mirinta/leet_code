@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -23,8 +22,7 @@ struct TreeNode
  * ! -10^9 <= Node.val, target <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool twoSumBSTs(TreeNode* root1, TreeNode* root2, int target)
     {

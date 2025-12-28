@@ -16,10 +16,12 @@
  * ! 0 <= prices[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxProfit(std::vector<int>& prices) { return approach2(prices); }
+    int maxProfit(std::vector<int>& prices)
+    {
+        return approach2(prices);
+    }
 
 private:
     // DP with space optimization

@@ -13,8 +13,7 @@
  * ! This problem is the same as 846.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isPossibleDivide(std::vector<int>& nums, int k)
     {

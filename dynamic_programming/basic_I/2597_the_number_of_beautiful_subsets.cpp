@@ -17,10 +17,12 @@
  * ! 1 <= nums[i], k <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int beautifulSubsets(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int beautifulSubsets(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     // DP, TC = O(NlogN), SC = O(N)
@@ -76,8 +78,7 @@ private:
         return result - 1; // subtract empty subset
     }
 
-    void backtrack(int& result, std::unordered_map<int, int>& map, int i, int k,
-                   const std::vector<int>& nums)
+    void backtrack(int& result, std::unordered_map<int, int>& map, int i, int k, const std::vector<int>& nums)
     {
         if (i == nums.size()) {
             result++;

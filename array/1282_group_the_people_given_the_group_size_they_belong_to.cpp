@@ -19,8 +19,7 @@
  * ! 1 <= groupSizes[i] <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> groupThePeople(std::vector<int>& groupSizes)
     {

@@ -12,13 +12,11 @@
  * ! The string s consists of characters '0' and '1' only.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxScore(std::string s)
     {
-        const int totalOnes =
-            std::count_if(s.begin(), s.end(), [](const auto& c) { return c == '1'; });
+        const int totalOnes = std::count_if(s.begin(), s.end(), [](const auto& c) { return c == '1'; });
         int result = 0;
         for (int i = 0, zeros = 0; i < s.size() - 1; ++i) {
             zeros += s[i] == '0';

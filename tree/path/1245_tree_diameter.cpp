@@ -15,8 +15,7 @@
  * ! ai != bi
  */
 
-class Solution
-{
+class Solution {
 public:
     int treeDiameter(std::vector<std::vector<int>>& edges)
     {

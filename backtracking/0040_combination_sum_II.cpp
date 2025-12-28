@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <functional>
 #include <vector>
 
 /**
@@ -19,7 +20,8 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target) {
+    std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target)
+    {
         std::sort(candidates.begin(), candidates.end());
         std::vector<int> path;
         std::vector<std::vector<int>> result;

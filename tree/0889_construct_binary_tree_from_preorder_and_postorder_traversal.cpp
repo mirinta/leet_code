@@ -5,8 +5,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -32,8 +31,7 @@ struct TreeNode
  * ! of the same binary tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* constructFromPrePost(std::vector<int>& preorder, std::vector<int>& postorder)
     {
@@ -42,8 +40,7 @@ public:
         for (int i = 0; i < n; ++i) {
             map[postorder[i]] = i;
         }
-        std::function<TreeNode*(int, int, int, int)> dfs = [&](int lo1, int hi1, int lo2,
-                                                               int hi2) -> TreeNode* {
+        std::function<TreeNode*(int, int, int, int)> dfs = [&](int lo1, int hi1, int lo2, int hi2) -> TreeNode* {
             if (lo1 > hi1)
                 return nullptr;
 

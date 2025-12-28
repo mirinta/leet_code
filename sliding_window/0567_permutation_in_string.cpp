@@ -11,10 +11,12 @@
  * ! s1 and s2 consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool checkInclusion(std::string s1, std::string s2) { return approach1(s1, s2); }
+    bool checkInclusion(std::string s1, std::string s2)
+    {
+        return approach1(s1, s2);
+    }
 
 private:
     // sliding window

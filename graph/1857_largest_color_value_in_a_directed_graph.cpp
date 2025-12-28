@@ -24,8 +24,7 @@
  * ! 0 <= aj, bj < n
  */
 
-class Solution
-{
+class Solution {
 public:
     // topological sorting (Kahn's algo) + DP, time O(V+E), space (V+E)
     int largestPathValue(std::string colors, std::vector<std::vector<int>>& edges)

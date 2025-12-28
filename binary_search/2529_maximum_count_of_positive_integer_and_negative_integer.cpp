@@ -16,8 +16,7 @@
  * ! Follow up: Can you solve the problem in O(log(n)) time complexity?
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumCount(std::vector<int>& nums)
     {

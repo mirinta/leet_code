@@ -10,8 +10,7 @@
  * ! -10^4 <= arr[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumSum(std::vector<int>& arr)
     {

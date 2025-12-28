@@ -25,8 +25,7 @@
  * ! max(tasks[i]) <= sessionTime <= 15
  */
 
-class Solution
-{
+class Solution {
 public:
     int minSessions(std::vector<int>& tasks, int sessionTime)
     {
@@ -67,8 +66,7 @@ private:
         return result;
     }
 
-    void backtrack(int& result, std::vector<int>& sessions, int i, const std::vector<int>& tasks,
-                   int sessionTime)
+    void backtrack(int& result, std::vector<int>& sessions, int i, const std::vector<int>& tasks, int sessionTime)
     {
         if (sessions.size() >= result)
             return;

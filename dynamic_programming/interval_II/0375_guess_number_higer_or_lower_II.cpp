@@ -21,8 +21,7 @@
  * ! 1 <= n <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
     int getMoneyAmount(int n)
     {

@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -36,8 +35,7 @@ struct TreeNode
  * ! Assume that the implicit stack space incurred due to recursion does not count.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findMode(TreeNode* root)
     {

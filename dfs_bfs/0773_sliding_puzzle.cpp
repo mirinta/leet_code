@@ -19,8 +19,7 @@
  * ! Each value board[i][j] is unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int slidingPuzzle(std::vector<std::vector<int>>& board)
     {
@@ -73,5 +72,8 @@ private:
     static constexpr int m = 2;
     static constexpr int n = 3;
 
-    int encode(int i, int j) { return i * n + j; }
+    int encode(int i, int j)
+    {
+        return i * n + j;
+    }
 };

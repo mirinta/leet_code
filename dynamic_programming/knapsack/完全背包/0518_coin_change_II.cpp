@@ -17,10 +17,12 @@
  * ! 0 <= amount <= 5000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int change(int amount, std::vector<int>& coins) { return approach2(amount, coins); }
+    int change(int amount, std::vector<int>& coins)
+    {
+        return approach2(amount, coins);
+    }
 
 private:
     int approach2(int amount, const std::vector<int>& coins)

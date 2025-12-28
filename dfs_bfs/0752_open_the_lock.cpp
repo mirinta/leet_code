@@ -24,8 +24,7 @@
  * ! - "target" and "deadends[i]" consist of digits only.
  */
 
-class Solution
-{
+class Solution {
 public:
     int openLock(std::vector<std::string>& deadends, std::string target)
     {

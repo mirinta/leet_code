@@ -40,11 +40,9 @@
  * ! At most 10^4 calls will be made to move.
  */
 
-class SnakeGame
-{
+class SnakeGame {
 public:
-    SnakeGame(int width, int height, std::vector<std::vector<int>>& food)
-        : width(width), height(height), food(food)
+    SnakeGame(int width, int height, std::vector<std::vector<int>>& food) : width(width), height(height), food(food)
     {
         snake.emplace_front(0, 0);
         body.insert(0);
@@ -57,20 +55,20 @@ public:
 
         auto [headX, headY] = snake.front();
         switch (direction[0]) {
-        case 'U':
-            headX--;
-            break;
-        case 'D':
-            headX++;
-            break;
-        case 'L':
-            headY--;
-            break;
-        case 'R':
-            headY++;
-            break;
-        default:
-            return score = -1;
+            case 'U':
+                headX--;
+                break;
+            case 'D':
+                headX++;
+                break;
+            case 'L':
+                headY--;
+                break;
+            case 'R':
+                headY++;
+                break;
+            default:
+                return score = -1;
         }
         if (headX < 0 || headX >= height || headY < 0 || headY >= width)
             return score = -1;
@@ -93,7 +91,10 @@ public:
     }
 
 private:
-    int encode(int x, int y) const { return x * width + y; }
+    int encode(int x, int y) const
+    {
+        return x * width + y;
+    }
 
 private:
     const int width;

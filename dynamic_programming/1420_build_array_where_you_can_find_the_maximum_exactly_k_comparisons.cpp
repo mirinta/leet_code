@@ -33,8 +33,7 @@
  * ! 0 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int numOfArrays(int N, int M, int K)
     {

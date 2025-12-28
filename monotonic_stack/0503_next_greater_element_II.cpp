@@ -13,8 +13,7 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> nextGreaterElements(std::vector<int>& nums)
     {

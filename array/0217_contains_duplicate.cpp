@@ -9,8 +9,7 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool containsDuplicate(std::vector<int>& nums)
     {

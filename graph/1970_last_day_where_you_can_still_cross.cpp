@@ -24,8 +24,7 @@
  * ! All the values of cells are unique.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : _root(n), _rank(n), _count(n)
     {
@@ -35,7 +34,10 @@ public:
         }
     }
 
-    int count() const { return _count; }
+    int count() const
+    {
+        return _count;
+    }
 
     int find(int x) const
     {
@@ -45,7 +47,10 @@ public:
         return _root[x];
     }
 
-    bool isConnected(int p, int q) const { return find(p) == find(q); }
+    bool isConnected(int p, int q) const
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -71,8 +76,7 @@ private:
     int _count;
 };
 
-class Solution
-{
+class Solution {
 public:
     int latestDayToCross(int row, int col, std::vector<std::vector<int>>& cells)
     {
@@ -80,8 +84,7 @@ public:
         UnionFind uf(numOfNodes);
         const int kVirtualTop = numOfNodes - 2;
         const int kVirtualBottom = numOfNodes - 1;
-        std::vector<std::vector<int>> graph(
-            row, std::vector<int>(col, 0)); // initialize with 0, all lands
+        std::vector<std::vector<int>> graph(row, std::vector<int>(col, 0)); // initialize with 0, all lands
         // connect each node in the top row with the virtual top node, and
         // connect each node in the bottom row with the virtual bottom node
         for (int j = 0; j < col; ++j) {

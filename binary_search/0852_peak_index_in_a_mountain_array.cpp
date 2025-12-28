@@ -19,8 +19,7 @@
  * ! arr is guaranteed to be a mountain array.
  */
 
-class Solution
-{
+class Solution {
 public:
     int peakIndexInMountainArray(std::vector<int>& arr)
     {

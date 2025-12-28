@@ -37,8 +37,7 @@
  * ! All points[i] are distinct.
  */
 
-class PrefixSum2D
-{
+class PrefixSum2D {
 public:
     explicit PrefixSum2D(const std::vector<std::vector<int>>& mat)
     {
@@ -48,8 +47,7 @@ public:
         std::fill(presum.begin(), presum.end(), std::vector<int>(n + 1, 0));
         for (int i = 1; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
-                presum[i][j] =
-                    mat[i - 1][j - 1] + presum[i - 1][j] + presum[i][j - 1] - presum[i - 1][j - 1];
+                presum[i][j] = mat[i - 1][j - 1] + presum[i - 1][j] + presum[i][j - 1] - presum[i - 1][j - 1];
             }
         }
     }
@@ -63,8 +61,7 @@ private:
     std::vector<std::vector<int>> presum;
 };
 
-class Solution
-{
+class Solution {
 public:
     int numberOfPairs(std::vector<std::vector<int>>& points)
     {
@@ -105,11 +102,9 @@ public:
                 // bottom-right in A = bottom-left in B
                 // we need top-left and bottom-right in B when calling query()
                 const bool case1 = x1 <= x2 && y1 >= y2 &&
-                                   presum.query(mapX[x1], mapY[y2], mapX[x2], mapY[y1]) ==
-                                       2; // (x1,y1) is top-left
+                                   presum.query(mapX[x1], mapY[y2], mapX[x2], mapY[y1]) == 2; // (x1,y1) is top-left
                 const bool case2 = x2 <= x1 && y2 >= y1 &&
-                                   presum.query(mapX[x2], mapY[y1], mapX[x1], mapY[y2]) ==
-                                       2; // (x2,y2) is top-left
+                                   presum.query(mapX[x2], mapY[y1], mapX[x1], mapY[y2]) == 2; // (x2,y2) is top-left
                 if (case1 || case2) {
                     result++;
                 }

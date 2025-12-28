@@ -23,8 +23,7 @@
  * ! word1 and word2 consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestPalindrome(const std::string& word1, const std::string& word2)
     {

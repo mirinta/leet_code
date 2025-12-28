@@ -1,8 +1,7 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* prev;
@@ -10,8 +9,7 @@ public:
     Node* child;
 };
 
-class Solution
-{
+class Solution {
 public:
     Node* flatten(Node* head)
     {

@@ -21,8 +21,7 @@
  * ! At most 2 * 10^5 calls will be made to get and put.
  */
 
-class LRUCache
-{
+class LRUCache {
 public:
     explicit LRUCache(int capacity) : capacity(capacity) {}
 
@@ -87,17 +86,15 @@ private:
  * obj->put(key,value);
  */
 
-struct Node
-{
+struct Node {
     int key;
     int val;
     Node* prev{nullptr};
     Node* next{nullptr};
-    explicit Node(int key, int val) : key(key), val(val){};
+    explicit Node(int key, int val) : key(key), val(val) {};
 };
 
-class DoublyLinkedList
-{
+class DoublyLinkedList {
 public:
     explicit DoublyLinkedList() : vHead(new Node(-1, -1)), vTail(new Node(-1, -1))
     {
@@ -105,7 +102,10 @@ public:
         vTail->prev = vHead;
     };
 
-    int size() const { return count; }
+    int size() const
+    {
+        return count;
+    }
 
     void push_back(Node* node)
     {
@@ -183,8 +183,7 @@ private:
     Node* vTail;
 };
 
-class LRUCache2
-{
+class LRUCache2 {
 public:
     explicit LRUCache2(int capacity) : capacity(capacity) {}
 

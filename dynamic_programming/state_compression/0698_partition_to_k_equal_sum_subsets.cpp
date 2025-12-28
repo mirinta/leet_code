@@ -11,10 +11,12 @@
  * ! The frequency of each element is in the range [1, 4].
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool canPartitionKSubsets(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    bool canPartitionKSubsets(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     bool approach2(std::vector<int>& nums, int k)

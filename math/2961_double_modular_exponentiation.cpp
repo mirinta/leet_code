@@ -18,8 +18,7 @@
  * ! 0 <= target <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> getGoodIndices(std::vector<std::vector<int>>& variables, int target)
     {

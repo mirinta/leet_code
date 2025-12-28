@@ -25,8 +25,7 @@
  * ! n / 2.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minSwaps(std::string s)
     {

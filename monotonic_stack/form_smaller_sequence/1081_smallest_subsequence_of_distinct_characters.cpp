@@ -12,8 +12,7 @@
  * ! This question is the same as LC.316.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string smallestSubsequence(std::string s)
     {

@@ -17,8 +17,7 @@
  * ! word consists of lowercase English letters from 'a' to 'j'.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long wonderfulSubstrings(std::string word)
     {

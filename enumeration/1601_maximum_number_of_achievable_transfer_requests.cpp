@@ -23,8 +23,7 @@
  * ! 0 <= from_i, to_i < n
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumRequests(int n, std::vector<std::vector<int>>& requests)
     {
@@ -46,8 +45,7 @@ private:
                     netChange[requests[i][1]]++;
                 }
             }
-            return std::all_of(netChange.begin(), netChange.end(),
-                               [](const auto& val) { return val == 0; });
+            return std::all_of(netChange.begin(), netChange.end(), [](const auto& val) { return val == 0; });
         };
         for (int i = m; i >= 1; --i) {
             std::fill(mask.begin(), mask.end(), 0);
@@ -74,8 +72,7 @@ private:
                     netChange[requests[i][1]]++;
                 }
             }
-            return std::all_of(netChange.begin(), netChange.end(),
-                               [](const auto& val) { return val == 0; });
+            return std::all_of(netChange.begin(), netChange.end(), [](const auto& val) { return val == 0; });
         };
         int result = 0;
         for (int mask = (1 << m) - 1; mask >= 1; --mask) {
@@ -103,8 +100,7 @@ private:
         int result = 0;
         std::function<void(int, int)> backtrack = [&](int i, int count) {
             if (i == requests.size()) {
-                if (std::all_of(netChange.begin(), netChange.end(),
-                                [](const auto& val) { return val == 0; })) {
+                if (std::all_of(netChange.begin(), netChange.end(), [](const auto& val) { return val == 0; })) {
                     result = std::max(result, count);
                 }
                 return;

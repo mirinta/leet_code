@@ -19,8 +19,7 @@
  * ! 1 <= power[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumTotalDamage(std::vector<int>& power)
     {

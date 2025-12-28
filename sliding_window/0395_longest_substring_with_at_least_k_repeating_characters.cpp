@@ -12,8 +12,7 @@
  * ! 1 <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestSubstring(std::string s, int k)
     {

@@ -20,8 +20,7 @@
  * ! At most 1000 calls will be made to addCar
  */
 
-class ParkingSystem
-{
+class ParkingSystem {
 public:
     ParkingSystem(int big, int medium, int small) : m_spaces({big, medium, small}) {}
 

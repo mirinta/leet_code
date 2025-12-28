@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -25,8 +24,7 @@ struct TreeNode
  * ! -10^9 <= limit <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* sufficientSubset(TreeNode* root, int limit)
     {

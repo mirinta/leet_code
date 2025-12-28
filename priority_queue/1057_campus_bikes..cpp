@@ -32,11 +32,9 @@
  * ! All worker and bike locations are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> assignBikes(std::vector<std::vector<int>>& workers,
-                                 std::vector<std::vector<int>>& bikes)
+    std::vector<int> assignBikes(std::vector<std::vector<int>>& workers, std::vector<std::vector<int>>& bikes)
     {
         const int n = workers.size();
         const int m = bikes.size();

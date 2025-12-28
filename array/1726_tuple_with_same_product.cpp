@@ -10,8 +10,7 @@
  * ! All elements in nums are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int tupleSameProduct(std::vector<int>& nums)
     {

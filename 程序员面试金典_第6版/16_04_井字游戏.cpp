@@ -21,8 +21,7 @@
  * ! 输入一定遵循井字棋规则
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string tictactoe(std::vector<std::string>& board)
     {

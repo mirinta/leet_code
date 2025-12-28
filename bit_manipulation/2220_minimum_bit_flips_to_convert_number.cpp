@@ -11,8 +11,7 @@
  * ! 0 <= start, goal <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minBitFlips(int start, int goal)
     {

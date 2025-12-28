@@ -1,6 +1,6 @@
 #include <queue>
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
 /**
  * In the world of Dota2, there are two parties: the Radiant and the Dire.
@@ -24,8 +24,7 @@
  * "Radiant" or "Dire".
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string predictPartyVictory(const std::string& senate)
     {

@@ -8,8 +8,7 @@
  * 10^-5 of the actual answer will be accepted.
  */
 
-class Solution
-{
+class Solution {
 public:
     double average(const std::vector<int>& salary)
     {

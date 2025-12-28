@@ -13,8 +13,7 @@
  * ! 1 <= k <= n * (n - 1) / 2
  */
 
-class Solution
-{
+class Solution {
 public:
     int smallestDistancePair(std::vector<int>& nums, int k)
     {

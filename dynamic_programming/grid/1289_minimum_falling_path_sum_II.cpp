@@ -13,10 +13,12 @@
  * ! -99 <= grid[i][j] <= 99
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minFallingPathSum(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int minFallingPathSum(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     // DP with time and optimization, TC = O(N^2), SC = O(N)

@@ -22,8 +22,7 @@
  * ! The values in derived are either 0's or 1's
  */
 
-class Solution
-{
+class Solution {
 public:
     bool doesValidArrayExist(std::vector<int>& derived)
     {

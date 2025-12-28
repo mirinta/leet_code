@@ -15,8 +15,7 @@
  * ! '0' <= s[i] <= '9'
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestSemiRepetitiveSubstring(std::string s)
     {

@@ -17,20 +17,17 @@
  * ! The input is generated such that there are no 2 rooks in the same cell.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minMoves(std::vector<std::vector<int>>& rooks)
     {
         const int n = rooks.size();
-        std::sort(rooks.begin(), rooks.end(),
-                  [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
+        std::sort(rooks.begin(), rooks.end(), [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
         int result = 0;
         for (int i = 0; i < n; ++i) {
             result += std::abs(rooks[i][0] - i);
         }
-        std::sort(rooks.begin(), rooks.end(),
-                  [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
+        std::sort(rooks.begin(), rooks.end(), [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
         for (int i = 0; i < n; ++i) {
             result += std::abs(rooks[i][1] - i);
         }

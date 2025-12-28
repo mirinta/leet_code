@@ -8,8 +8,7 @@
  * ! 1 <= n <= 5 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> lexicalOrder(int n)
     {

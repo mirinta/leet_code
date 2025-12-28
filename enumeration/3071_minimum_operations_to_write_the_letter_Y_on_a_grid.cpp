@@ -29,8 +29,7 @@
  * ! n is odd.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumOperationsToWriteY(std::vector<std::vector<int>>& grid)
     {
@@ -58,8 +57,7 @@ public:
     }
 
 private:
-    int solve(int Y, int notY, const std::vector<std::vector<bool>>& mask,
-              const std::vector<std::vector<int>>& grid)
+    int solve(int Y, int notY, const std::vector<std::vector<bool>>& mask, const std::vector<std::vector<int>>& grid)
     {
         const int n = grid.size();
         int result = 0;

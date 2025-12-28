@@ -22,10 +22,12 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long maxBalancedSubsequenceSum(std::vector<int>& nums) { return approach2(nums); }
+    long long maxBalancedSubsequenceSum(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // DP with ordered map, time O(NlogN), space O(N)

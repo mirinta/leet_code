@@ -17,8 +17,7 @@
  * ! You must design an algorithm where "sumRegion" works on O(1) time complexity.
  */
 
-class NumMatrix
-{
+class NumMatrix {
     // suppose the origin is a 3x3 matrix:
     // x00      x01     x02
     // x10      x11     x12
@@ -36,8 +35,8 @@ class NumMatrix
         Matrix result(matrix.size() + 1, std::vector<int>(matrix[0].size() + 1, 0));
         for (size_t row = 0; row < matrix.size(); ++row) {
             for (size_t col = 0; col < matrix[row].size(); ++col) {
-                result[row + 1][col + 1] = result[row][col + 1] + result[row + 1][col] +
-                                           matrix[row][col] - result[row][col];
+                result[row + 1][col + 1] =
+                    result[row][col + 1] + result[row + 1][col] + matrix[row][col] - result[row][col];
             }
         }
         return result;

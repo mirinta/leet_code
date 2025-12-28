@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -43,8 +42,7 @@ struct ListNode
  * ! The node to be deleted is in the list and is not a tail node.
  */
 
-class Solution
-{
+class Solution {
 public:
     void deleteNode(ListNode* node)
     {

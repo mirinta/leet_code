@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -26,8 +27,7 @@
  * ! Each arrivali time is distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int smallestChair(std::vector<std::vector<int>>& times, int targetFriend)
     {

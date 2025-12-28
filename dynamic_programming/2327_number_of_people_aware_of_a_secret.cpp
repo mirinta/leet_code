@@ -15,14 +15,13 @@
  * ! 1 <= delay < forget <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int peopleAwareOfSecret(int n, int delay, int forget)
     {
         static constexpr int kMod = 1e9 + 7;
         std::vector<int> dp(n + 1,
-                            0); // num of new people aware of the secret at the end of ith day
+                            0);          // num of new people aware of the secret at the end of ith day
         std::vector<int> diff(n + 1, 0); // diff[i] = dp[i] - dp[i-1]
         diff[1] = 1;
         diff[2] = -1;

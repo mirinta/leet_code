@@ -15,8 +15,7 @@
  * ! words[i] and chars consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countCharacters(std::vector<std::string>& words, std::string chars)
     {

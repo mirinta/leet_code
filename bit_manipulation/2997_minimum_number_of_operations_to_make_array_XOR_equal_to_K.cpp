@@ -18,10 +18,12 @@
  * ! 0 <= k <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minOperations(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int minOperations(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     int approach2(const std::vector<int>& nums, int k)

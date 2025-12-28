@@ -1,6 +1,6 @@
 #include <algorithm>
-#include <string>
 #include <map>
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
@@ -45,8 +45,7 @@
  * ! All the tuples [username[i], timestamp[i], website[i]] are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> mostVisitedPattern(std::vector<std::string>& username,
                                                 std::vector<int>& timestamp,
@@ -60,8 +59,7 @@ public:
         std::map<std::string, int> map;
         int maxScore = 0;
         for (auto& [user, webs] : info) {
-            std::sort(webs.begin(), webs.end(),
-                      [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+            std::sort(webs.begin(), webs.end(), [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
             const auto set = helper(webs);
             for (const auto& pattern : set) {
                 maxScore = std::max(maxScore, ++map[pattern]);

@@ -16,10 +16,12 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long appealSum(std::string s) { return approach2(s); }
+    long long appealSum(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     // DP with space optimization

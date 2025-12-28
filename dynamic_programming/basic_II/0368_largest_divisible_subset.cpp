@@ -16,10 +16,12 @@
  * ! All the integers in nums are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> largestDivisibleSubset(std::vector<int>& nums) { return approach2(nums); }
+    std::vector<int> largestDivisibleSubset(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     std::vector<int> approach2(std::vector<int>& nums)
@@ -44,8 +46,7 @@ private:
         std::vector<int> result;
         result.reserve(dp[maxIndex]);
         for (int i = maxIndex; i >= 0; --i) {
-            if (result.empty() ||
-                (result.size() + dp[i] == maxLength && result.back() % nums[i] == 0)) {
+            if (result.empty() || (result.size() + dp[i] == maxLength && result.back() % nums[i] == 0)) {
                 result.push_back(nums[i]);
             }
         }

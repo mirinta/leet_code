@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -16,8 +15,7 @@ struct TreeNode
  * ! p、q 为不同节点且均存在于给定的二叉树中。
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
     {

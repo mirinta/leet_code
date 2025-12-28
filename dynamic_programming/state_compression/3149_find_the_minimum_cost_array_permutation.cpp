@@ -14,8 +14,7 @@
  * ! nums is a permutation of [0, 1, 2, ..., n - 1].
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findPermutation(std::vector<int>& nums)
     {
@@ -62,8 +61,7 @@ private:
             if ((state >> val) & 1)
                 continue;
 
-            result =
-                std::min(result, dfs(state | (1 << val), val, nums) + std::abs(prev - nums[val]));
+            result = std::min(result, dfs(state | (1 << val), val, nums) + std::abs(prev - nums[val]));
         }
         return memo[state][prev] = result;
     }
@@ -79,8 +77,7 @@ private:
             if ((state >> val) & 1)
                 continue;
 
-            if (dfs(state, prev, nums) ==
-                dfs(state | (1 << val), val, nums) + std::abs(prev - nums[val])) {
+            if (dfs(state, prev, nums) == dfs(state | (1 << val), val, nums) + std::abs(prev - nums[val])) {
                 generate(result, state | (1 << val), val, nums);
                 break;
             }

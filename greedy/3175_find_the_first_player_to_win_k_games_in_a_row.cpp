@@ -25,8 +25,7 @@
  * ! All integers in skills are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findWinningPlayer(std::vector<int>& skills, int k)
     {

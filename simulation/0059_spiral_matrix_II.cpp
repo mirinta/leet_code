@@ -7,8 +7,7 @@
  * ! 1 <= n <= 20
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> generateMatrix(int n)
     {

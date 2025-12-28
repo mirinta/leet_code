@@ -29,8 +29,7 @@
  * ! The grid contains exactly one '*'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int getFood(std::vector<std::vector<char>>& grid)
     {

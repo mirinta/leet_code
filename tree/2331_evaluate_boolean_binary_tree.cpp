@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -39,8 +38,7 @@ struct TreeNode
  * ! Non-leaf nodes have a value of 2 or 3.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool evaluateTree(TreeNode* root)
     {

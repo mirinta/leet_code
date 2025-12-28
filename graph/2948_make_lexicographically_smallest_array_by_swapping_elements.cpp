@@ -22,8 +22,7 @@
  * ! 1 <= limit <= 10^9
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1)
     {
@@ -59,8 +58,7 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> lexicographicallySmallestArray(std::vector<int>& nums, int limit)
     {
@@ -69,8 +67,7 @@ public:
         for (int i = 0; i < n; ++i) {
             pairs[i] = {nums[i], i};
         }
-        std::sort(pairs.begin(), pairs.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+        std::sort(pairs.begin(), pairs.end(), [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
         UnionFind uf(n);
         for (int i = 1; i < n; ++i) {
             if (pairs[i].first - pairs[i - 1].first <= limit) {

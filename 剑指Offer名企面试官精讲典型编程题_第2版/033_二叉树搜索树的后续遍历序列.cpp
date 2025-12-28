@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -18,8 +17,7 @@ struct TreeNode
  * ! 数组长度 <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     bool verifyPostorder(std::vector<int>& postorder)
     {

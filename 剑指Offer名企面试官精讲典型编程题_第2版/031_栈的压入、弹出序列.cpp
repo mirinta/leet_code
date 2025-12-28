@@ -14,8 +14,7 @@
  * ! pushed 是 popped 的排列。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validateStackSequences(std::vector<int>& pushed, std::vector<int>& popped)
     {

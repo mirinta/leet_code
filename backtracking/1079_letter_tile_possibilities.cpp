@@ -12,8 +12,7 @@
  * ! tiles consists of uppercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numTilePossibilities(std::string& tiles)
     {

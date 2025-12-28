@@ -23,8 +23,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxPointsInsideSquare(std::vector<std::vector<int>>& points, std::string s)
     {
@@ -47,8 +46,7 @@ public:
     }
 
 private:
-    bool isValid(int& result, int halfLength, const std::vector<std::vector<int>>& points,
-                 const std::string& s)
+    bool isValid(int& result, int halfLength, const std::vector<std::vector<int>>& points, const std::string& s)
     {
         const int n = s.size();
         int mask = 0;

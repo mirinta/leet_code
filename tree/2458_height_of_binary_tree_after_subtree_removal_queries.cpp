@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -44,8 +43,7 @@ struct TreeNode
  * ! queries[i] != root.val
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> treeQueries(TreeNode* root, std::vector<int>& queries)
     {

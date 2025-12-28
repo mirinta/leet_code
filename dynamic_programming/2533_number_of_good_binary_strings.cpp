@@ -22,8 +22,7 @@
  * ! 1 <= oneGroup, zeroGroup <= maxLength
  */
 
-class Solution
-{
+class Solution {
 public:
     int goodBinaryStrings(int minLength, int maxLength, int oneGroup, int zeroGroup)
     {

@@ -22,8 +22,7 @@
  * ! pivot equals to an element of nums.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> pivotArray(std::vector<int>& nums, int pivot)
     {

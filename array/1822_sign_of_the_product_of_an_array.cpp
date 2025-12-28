@@ -15,8 +15,7 @@
  * Return "signFunc(product)".
  */
 
-class Solution
-{
+class Solution {
 public:
     int arraySign(const std::vector<int>& nums)
     {

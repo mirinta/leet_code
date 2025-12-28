@@ -11,8 +11,7 @@
  * ! -10 <= nums[i] <= 10
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> subsetsWithDup(std::vector<int>& nums)
     {

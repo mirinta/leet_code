@@ -20,17 +20,14 @@
  * ! s consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPalindromicSubsequence(std::string s)
     {
         const int n = s.size();
-        std::array<std::pair<int, int>, 26>
-            seen{}; // seen[i] = {first index, last index} of character i
+        std::array<std::pair<int, int>, 26> seen{}; // seen[i] = {first index, last index} of character i
         seen.fill({-1, -1});
-        std::vector<std::array<int, 26>> count(
-            n + 1); // count[i][j] = num of character j in nums[0:i-1]
+        std::vector<std::array<int, 26>> count(n + 1); // count[i][j] = num of character j in nums[0:i-1]
         for (int i = 0; i < n; ++i) {
             const int index = s[i] - 'a';
             if (seen[index].first == -1) {

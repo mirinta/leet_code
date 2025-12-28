@@ -18,8 +18,7 @@
  * ! 1 <= n <= 16
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> grayCode(int n)
     {

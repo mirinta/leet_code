@@ -24,8 +24,7 @@
  * ! 0 <= fruits[i] < fruits.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int totalFruit(std::vector<int>& fruits)
     {

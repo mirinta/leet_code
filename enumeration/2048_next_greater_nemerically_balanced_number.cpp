@@ -9,8 +9,7 @@
  * ! 0 <= n <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int nextBeautifulNumber(int n)
     {

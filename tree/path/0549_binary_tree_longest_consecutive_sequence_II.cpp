@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -29,8 +28,7 @@ struct TreeNode
  * ! -3 * 10^4 <= Node.val <= 3 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestConsecutive(TreeNode* root)
     {
@@ -70,8 +68,7 @@ private:
             rightIncrease = 1;
             rightDecrease = 1;
         }
-        result =
-            std::max({result, leftIncrease + rightDecrease - 1, leftDecrease + rightIncrease - 1});
+        result = std::max({result, leftIncrease + rightDecrease - 1, leftDecrease + rightIncrease - 1});
         return {std::max(leftDecrease, rightDecrease), std::max(leftIncrease, rightIncrease)};
     }
 };

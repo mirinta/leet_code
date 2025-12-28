@@ -3,8 +3,7 @@
  *
  * You should not implement it, or speculate about its implementation.
  */
-class MountainArray
-{
+class MountainArray {
 public:
     int get(int index);
     int length();
@@ -41,8 +40,7 @@ public:
  * ! 0 <= mountain_arr.get(index) <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int findInMountainArray(int target, MountainArray& mountainArr)
     {

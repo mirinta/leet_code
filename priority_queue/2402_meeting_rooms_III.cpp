@@ -27,8 +27,7 @@
  * ! All the values of starti are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int mostBooked(int n, std::vector<std::vector<int>>& meetings)
     {

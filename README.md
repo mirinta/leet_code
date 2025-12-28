@@ -126,58 +126,58 @@ TODO:
 
 ## Liked Problems
 
-| Problem | Tags | Difficulty |
-|----|------|------------|
-| [2375. Construct Smallest Number From DI String][link2375] | `Backtracking`, `Greedy` | :fire: 1642 |
-| [98. Validate Binary Search Tree][link0098] | `Binary Search Tree` | `Medium` |
-| [450. Delete Node in a BST][link0450] | `Binary Search Tree` | `Medium` |
-| [701. Insert into a Binary Search Tree][link0701] | `Binary Search Tree` | `Medium` |
-| [2513. Minimize the Maximum of Two Arrays][link2513] | `Binary Search`, `Inclusive-Exclusive Principle` | :fire: 2302 |
-| [3116. Kth Smallest Amount With Single Denomination Combination][link3116] | `Binary Search`, `Inclusive-Exclusive Principle`, `Bit Manipulation` | |
-| [2528. Maximize the Minimum Powered City][link2528] | `Binary Search`, `Sliding Window` | :fire:2236 |
-| [1508. Range Sum of Sorted Subarray Sums][link1508] | `Binary Search`, `Sliding Window` | :fire:1402 |
-| [222. Count Complete Tree Nodes][link0222] | `Complete Binary Tree` | `Easy+` |
-| [3428. Maximum and Minimum Sums of at Most Size K Subsequences][link3428] | `Combinatorics`, `Dynamic Programming` | `Medium+` |
-| [968. Binary Tree Cameras][link0968] | `Dynamic Programming`, `Binary Tree` | :fire:2124 |
-| [1872. Stone Game VIII][link1872] | `Dynamic Programming`, `Game Theory` | :fire:2440 |
-| [907. Sum of Subarray Minimums][link0907] | `Dynamic Programming`, `Monotonic Stack` | :fire:1976 |
-| [1504. Count Submatrices With All Ones][link1504] | `Dynamic Programming`, `Monotonic Stack` | :fire:1845 |
-| [2945. Find Maximum Non-decreasing Array Length][link2945] | `Dynamic Programming`, `Prefix Sum`, `Monotonic Queue` | :fire:2943 |
-| [2597. The Number of Beautiful Subsets7][link2597] | `Dynamic Programming`, `Sorting`, `Backtracking` | :fire:2023 |
-| [1092. Shortest Common Supersequence][link1092] |`Dynamic Programming`, `String` | :fire:1977 |
-| [3068. Find the Maximum Sum of Node Values][link3068] | `Dynamic Programming`, `Tree` | :fire:2268 |
-| [787. Cheapest Flights Within K Stops][link0787] | `Graph`, `Shortest Path` | :fire:1786 |
-| [3022. Minimize OR of Remaining Elements Using Operations][link3022] | `Greedy`, `Bitmask` | :fire:2918 |
-| [1686. Stone Game VI][link1686] | `Greedy`, `Game Theory` | :fire:2001 |
-| [2029. Stone Game IX][link2029] | `Greedy`, `Game Theory` | :fire:2277 |
-| [630. Course Schedule III][link630] | `Greedy`, `Priority Queue` | `Hard` |
-| [1642. Furthest Building You Can Reach][link1642] | `Greedy`, `Priority Queue` | :fire:1962 |
-| [1838. Frequency of the Most Frequent Element][link1838] | `Greedy`, `Sliding Window` | :fire:1876 |
-| [2866. Beautiful Towers II][link2866] | `Monotonic Stack` | :fire:2072 |
-| [962. Maximum Width Ramp][link0962] | `Monotonic Stack`, `Binary Search`, `Two Pointers` | :fire:1608 |
-| [1442. Count Triplets That Can Form Two Arrays of Equal XOR][link1442] | `Prefix Sum`, `Hash Map` | :fire:1525 |
-| [2025. Maximum Number of Ways to Partition an Array][link2025] | `Prefix Sum`, `Hash Map` | :fire:2218 |
-| [2949. Count Beautiful Substrings II][link2949] | `Prefix Sum`, `Hash Map` | :fire:2445 |
-| [42. Trapping Rain Water][link0042] | `Prefix Sum`, `Monotonic Stack`, `Two Pointers` | `Hard` |
-| [1915. Number of Wonderful Substrings][link1915] | `Prefix Sum`, `Hash Map`, `State Compression` | :fire:2235 |
-| [407. Trapping Rain Water II][link0407] | `Priority Queue`, `BFS` | `Hard` | 
-| [2402. Meeting Rooms III][link2402] | `Priority Queue`, `Simulation` | :fire:2093 |
-| [218. The Skyline Problem][link0218] | `Line Sweep`, `Ordered Set` | `Hard` |
-| [315. Count of Smaller Numbers After Self][link0315] | `Merge Sort`, `Two Pointers`, `Binary Indexed Tree` | `Hard` |
-| [493. Reverse Pairs][link0493] | `Merge Sort`, `Two Pointers`, `Binary Indexed Tree`, `Binary Search` | `Hard` |
-| [395. Longest Substring with At Least K Repeating Characters][link0395] | `Sliding Window` | `Medium` |
-| [2401. Longest Nice Subarray][link2401] | `Sliding Window`, `Bit Manipulation` | :fire:1750 |
-| [2106. Maximum Fruits Harvested After at Most K Steps][link2106] | `Sliding Window`, `Binary Search` | :fire:2062 |
-| [1610. Maximum Number of Visible Points][link1610] | `Sliding Window`, `Geometry` | :fire:2147 |
-| [2968. Apply Operations to Maximize Frequency Score][link2968] | `Sliding Window`, `Median Theorem` | :fire:2444 |
-| [1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit][link1438] | `Sliding Window`, `Monotonic Queue`, `Multiset` | :fire:1672 |
-| [2781. Length of the Longest Valid Substring][link2781] | `Sliding Window`, `Trie` | :fire:2204 |
-| [3045. Count Prefix and Suffix Pairs II][link3045] | `Trie`, `KMP` | :fire:2328 |
-| [1574. Shortest Subarray to be Removed to Make Array Sorted][link1574] | `Two Pointers` | :fire:1932 |
-| [1712. Ways to Split Array Into Three Subarrays][link1712] | `Two Pointers`, `Prefix Sum`, `Binary Search` | :fire:2079 |
-| [2444. Count Subarrays With Fixed Bounds][link2444] | `Two Pointers` | :fire:2093 |
-| [2972. Count the Number of Incremovable Subarrays II][link2972] | `Two Pointers` | :fire:2153 |
-| [2709. Greatest Common Divisor Traversal][link2709] | `Union Find`, `Number Theory` | :fire:2172 |
+| Problem                                                                                      | Tags                                                                 | Difficulty  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------- |
+| [2375. Construct Smallest Number From DI String][link2375]                                   | `Backtracking`, `Greedy`                                             | :fire: 1642 |
+| [98. Validate Binary Search Tree][link0098]                                                  | `Binary Search Tree`                                                 | `Medium`    |
+| [450. Delete Node in a BST][link0450]                                                        | `Binary Search Tree`                                                 | `Medium`    |
+| [701. Insert into a Binary Search Tree][link0701]                                            | `Binary Search Tree`                                                 | `Medium`    |
+| [2513. Minimize the Maximum of Two Arrays][link2513]                                         | `Binary Search`, `Inclusive-Exclusive Principle`                     | :fire: 2302 |
+| [3116. Kth Smallest Amount With Single Denomination Combination][link3116]                   | `Binary Search`, `Inclusive-Exclusive Principle`, `Bit Manipulation` |             |
+| [2528. Maximize the Minimum Powered City][link2528]                                          | `Binary Search`, `Sliding Window`                                    | :fire:2236  |
+| [1508. Range Sum of Sorted Subarray Sums][link1508]                                          | `Binary Search`, `Sliding Window`                                    | :fire:1402  |
+| [222. Count Complete Tree Nodes][link0222]                                                   | `Complete Binary Tree`                                               | `Easy+`     |
+| [3428. Maximum and Minimum Sums of at Most Size K Subsequences][link3428]                    | `Combinatorics`, `Dynamic Programming`                               | `Medium+`   |
+| [968. Binary Tree Cameras][link0968]                                                         | `Dynamic Programming`, `Binary Tree`                                 | :fire:2124  |
+| [1872. Stone Game VIII][link1872]                                                            | `Dynamic Programming`, `Game Theory`                                 | :fire:2440  |
+| [907. Sum of Subarray Minimums][link0907]                                                    | `Dynamic Programming`, `Monotonic Stack`                             | :fire:1976  |
+| [1504. Count Submatrices With All Ones][link1504]                                            | `Dynamic Programming`, `Monotonic Stack`                             | :fire:1845  |
+| [2945. Find Maximum Non-decreasing Array Length][link2945]                                   | `Dynamic Programming`, `Prefix Sum`, `Monotonic Queue`               | :fire:2943  |
+| [2597. The Number of Beautiful Subsets7][link2597]                                           | `Dynamic Programming`, `Sorting`, `Backtracking`                     | :fire:2023  |
+| [1092. Shortest Common Supersequence][link1092]                                              | `Dynamic Programming`, `String`                                      | :fire:1977  |
+| [3068. Find the Maximum Sum of Node Values][link3068]                                        | `Dynamic Programming`, `Tree`                                        | :fire:2268  |
+| [787. Cheapest Flights Within K Stops][link0787]                                             | `Graph`, `Shortest Path`                                             | :fire:1786  |
+| [3022. Minimize OR of Remaining Elements Using Operations][link3022]                         | `Greedy`, `Bitmask`                                                  | :fire:2918  |
+| [1686. Stone Game VI][link1686]                                                              | `Greedy`, `Game Theory`                                              | :fire:2001  |
+| [2029. Stone Game IX][link2029]                                                              | `Greedy`, `Game Theory`                                              | :fire:2277  |
+| [630. Course Schedule III][link630]                                                          | `Greedy`, `Priority Queue`                                           | `Hard`      |
+| [1642. Furthest Building You Can Reach][link1642]                                            | `Greedy`, `Priority Queue`                                           | :fire:1962  |
+| [1838. Frequency of the Most Frequent Element][link1838]                                     | `Greedy`, `Sliding Window`                                           | :fire:1876  |
+| [2866. Beautiful Towers II][link2866]                                                        | `Monotonic Stack`                                                    | :fire:2072  |
+| [962. Maximum Width Ramp][link0962]                                                          | `Monotonic Stack`, `Binary Search`, `Two Pointers`                   | :fire:1608  |
+| [1442. Count Triplets That Can Form Two Arrays of Equal XOR][link1442]                       | `Prefix Sum`, `Hash Map`                                             | :fire:1525  |
+| [2025. Maximum Number of Ways to Partition an Array][link2025]                               | `Prefix Sum`, `Hash Map`                                             | :fire:2218  |
+| [2949. Count Beautiful Substrings II][link2949]                                              | `Prefix Sum`, `Hash Map`                                             | :fire:2445  |
+| [42. Trapping Rain Water][link0042]                                                          | `Prefix Sum`, `Monotonic Stack`, `Two Pointers`                      | `Hard`      |
+| [1915. Number of Wonderful Substrings][link1915]                                             | `Prefix Sum`, `Hash Map`, `State Compression`                        | :fire:2235  |
+| [407. Trapping Rain Water II][link0407]                                                      | `Priority Queue`, `BFS`                                              | `Hard`      |
+| [2402. Meeting Rooms III][link2402]                                                          | `Priority Queue`, `Simulation`                                       | :fire:2093  |
+| [218. The Skyline Problem][link0218]                                                         | `Line Sweep`, `Ordered Set`                                          | `Hard`      |
+| [315. Count of Smaller Numbers After Self][link0315]                                         | `Merge Sort`, `Two Pointers`, `Binary Indexed Tree`                  | `Hard`      |
+| [493. Reverse Pairs][link0493]                                                               | `Merge Sort`, `Two Pointers`, `Binary Indexed Tree`, `Binary Search` | `Hard`      |
+| [395. Longest Substring with At Least K Repeating Characters][link0395]                      | `Sliding Window`                                                     | `Medium`    |
+| [2401. Longest Nice Subarray][link2401]                                                      | `Sliding Window`, `Bit Manipulation`                                 | :fire:1750  |
+| [2106. Maximum Fruits Harvested After at Most K Steps][link2106]                             | `Sliding Window`, `Binary Search`                                    | :fire:2062  |
+| [1610. Maximum Number of Visible Points][link1610]                                           | `Sliding Window`, `Geometry`                                         | :fire:2147  |
+| [2968. Apply Operations to Maximize Frequency Score][link2968]                               | `Sliding Window`, `Median Theorem`                                   | :fire:2444  |
+| [1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit][link1438] | `Sliding Window`, `Monotonic Queue`, `Multiset`                      | :fire:1672  |
+| [2781. Length of the Longest Valid Substring][link2781]                                      | `Sliding Window`, `Trie`                                             | :fire:2204  |
+| [3045. Count Prefix and Suffix Pairs II][link3045]                                           | `Trie`, `KMP`                                                        | :fire:2328  |
+| [1574. Shortest Subarray to be Removed to Make Array Sorted][link1574]                       | `Two Pointers`                                                       | :fire:1932  |
+| [1712. Ways to Split Array Into Three Subarrays][link1712]                                   | `Two Pointers`, `Prefix Sum`, `Binary Search`                        | :fire:2079  |
+| [2444. Count Subarrays With Fixed Bounds][link2444]                                          | `Two Pointers`                                                       | :fire:2093  |
+| [2972. Count the Number of Incremovable Subarrays II][link2972]                              | `Two Pointers`                                                       | :fire:2153  |
+| [2709. Greatest Common Divisor Traversal][link2709]                                          | `Union Find`, `Number Theory`                                        | :fire:2172  |
 
 [link0098]: https://leetcode.com/problems/validate-binary-search-tree/
 [link0450]: https://leetcode.com/problems/delete-node-in-a-bst/description/

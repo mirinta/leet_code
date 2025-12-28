@@ -15,8 +15,7 @@
  * ! 0 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPartitions(std::vector<int>& nums, int k)
     {

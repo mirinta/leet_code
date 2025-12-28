@@ -27,11 +27,14 @@
  * ! 1 <= cost[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxNumberOfAlloys(int n, int k, int budget, std::vector<std::vector<int>>& composition,
-                          std::vector<int>& stock, std::vector<int>& cost)
+    int maxNumberOfAlloys(int n,
+                          int k,
+                          int budget,
+                          std::vector<std::vector<int>>& composition,
+                          std::vector<int>& stock,
+                          std::vector<int>& cost)
     {
         int min = 0;
         int max = INT_MAX;
@@ -47,8 +50,10 @@ public:
     }
 
 private:
-    bool isValid(long long production, long long budget,
-                 const std::vector<std::vector<int>>& composition, const std::vector<int>& stock,
+    bool isValid(long long production,
+                 long long budget,
+                 const std::vector<std::vector<int>>& composition,
+                 const std::vector<int>& stock,
                  const std::vector<int>& cost)
     {
         const int n = stock.size();

@@ -28,8 +28,7 @@
  * !expression[i] is one following characters: '(', ')', '&', '|', '!', 't', 'f', and ','.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool parseBoolExpr(std::string expression)
     {
@@ -59,12 +58,10 @@ private:
             return values.front() != 't';
 
         if (operation == '&')
-            return std::all_of(values.begin(), values.end(),
-                               [](const auto& c) { return c == 't'; });
+            return std::all_of(values.begin(), values.end(), [](const auto& c) { return c == 't'; });
 
         if (operation == '|')
-            return std::any_of(values.begin(), values.end(),
-                               [](const auto& c) { return c == 't'; });
+            return std::any_of(values.begin(), values.end(), [](const auto& c) { return c == 't'; });
 
         return false;
     }

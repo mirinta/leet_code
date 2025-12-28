@@ -30,8 +30,7 @@
  * ! 1 <= k <= min(n * (n + 1) / 2, 10^9)
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumScore(std::vector<int>& nums, int k)
     {
@@ -44,8 +43,7 @@ public:
         for (int i = 0; i < n; ++i) {
             data[i] = {nums[i], 1LL * (i - prevGreaterEqual[i]) * (nextGreater[i] - i)};
         }
-        std::sort(data.begin(), data.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
+        std::sort(data.begin(), data.end(), [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
         long long result = 1;
         static constexpr long long kMod = 1e9 + 7;
         for (int i = 0; i < n && k > 0; ++i) {

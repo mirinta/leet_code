@@ -20,8 +20,7 @@
  * ! s consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestPath(std::vector<int>& parent, std::string& s)
     {
@@ -57,8 +56,7 @@ public:
                 secondLongestSubtreePath = path;
             }
         }
-        result = std::max(result, longestSubtreePath + secondLongestSubtreePath +
-                                      1); // +1 to include the root node
-        return longestSubtreePath + 1;    // +1 to include the root node
+        result = std::max(result, longestSubtreePath + secondLongestSubtreePath + 1); // +1 to include the root node
+        return longestSubtreePath + 1;                                                // +1 to include the root node
     }
 };

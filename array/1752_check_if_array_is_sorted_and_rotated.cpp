@@ -13,10 +13,12 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool check(std::vector<int>& nums) { return approach2(nums); }
+    bool check(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     bool approach2(const std::vector<int>& nums)

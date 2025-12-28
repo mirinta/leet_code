@@ -8,8 +8,7 @@
  * ! 字符串长度在[1, 9]之间。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> permutation(std::string s)
     {
@@ -22,8 +21,10 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::string>& result, std::string& permutation,
-                   std::vector<bool>& visited, const std::string& s)
+    void backtrack(std::vector<std::string>& result,
+                   std::string& permutation,
+                   std::vector<bool>& visited,
+                   const std::string& s)
     {
         const int n = s.size();
         if (permutation.size() == n) {

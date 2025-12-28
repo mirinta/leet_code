@@ -23,10 +23,12 @@
  * ! corridor[i] is either 'S' or 'P'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numberOfWays(const std::string& corridor) { return approach2(corridor); }
+    int numberOfWays(const std::string& corridor)
+    {
+        return approach2(corridor);
+    }
 
 private:
     static constexpr long long kMod = 1e9 + 7;

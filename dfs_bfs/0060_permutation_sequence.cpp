@@ -21,8 +21,7 @@
  * ! 1 <= k <= n!
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string getPermutation(int n, int k)
     {
@@ -38,8 +37,7 @@ public:
     }
 
 private:
-    void dfs(std::string& result, std::array<bool, 10>& used, int i, int n, int k,
-             const std::vector<int>& factorial)
+    void dfs(std::string& result, std::array<bool, 10>& used, int i, int n, int k, const std::vector<int>& factorial)
     {
         if (i == n)
             return;

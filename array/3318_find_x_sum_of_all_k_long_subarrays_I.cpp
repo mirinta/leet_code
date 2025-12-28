@@ -24,8 +24,7 @@
  * ! 1 <= x <= k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findXSum(std::vector<int>& nums, int k, int x)
     {

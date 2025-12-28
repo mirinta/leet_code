@@ -23,8 +23,7 @@
  * ! The elements in removable are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumRemovals(std::string s, std::string p, std::vector<int>& removable)
     {

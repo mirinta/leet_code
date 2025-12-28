@@ -5,8 +5,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -33,8 +32,7 @@ struct TreeNode
  * ! A node with a value of start exists in the tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     int amountOfTime(TreeNode* root, int start)
     {
@@ -63,8 +61,7 @@ public:
     }
 
 private:
-    void dfs(std::unordered_map<int, std::pair<TreeNode*, TreeNode*>>& map, TreeNode* curr,
-             TreeNode* parent)
+    void dfs(std::unordered_map<int, std::pair<TreeNode*, TreeNode*>>& map, TreeNode* curr, TreeNode* parent)
     {
         if (!curr)
             return;

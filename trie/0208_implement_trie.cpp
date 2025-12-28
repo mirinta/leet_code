@@ -23,8 +23,7 @@
  * ! At most 3 * 10^4 calls in total will be made to insert, search, and startsWith.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     static constexpr int R = 26; // only lowercase English letters
     std::array<TrieNode*, R> next{};
     bool isEnd = false;
@@ -41,12 +40,14 @@ struct TrieNode
     }
 };
 
-class Trie
-{
+class Trie {
 public:
     Trie() : root(new TrieNode()) {}
 
-    ~Trie() { delete root; }
+    ~Trie()
+    {
+        delete root;
+    }
 
     void insert(const std::string& word)
     {

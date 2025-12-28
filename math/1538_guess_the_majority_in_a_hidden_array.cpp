@@ -2,8 +2,7 @@
  * This is the ArrayReader's API interface.
  * You should not implement it, or speculate about its implementation
  */
-class ArrayReader
-{
+class ArrayReader {
 public:
     // Compares 4 different elements in the array
     // return 4 if the values of the 4 elements are the same (0 or 1).
@@ -38,8 +37,7 @@ public:
  * ! 0 <= nums[i] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int guessMajority(ArrayReader& reader)
     {

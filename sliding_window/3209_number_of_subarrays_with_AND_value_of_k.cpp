@@ -9,8 +9,7 @@
  * ! 0 <= nums[i], k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countSubarrays(std::vector<int>& nums, int k)
     {
@@ -46,8 +45,7 @@ private:
     }
 
     // num of subarrays of nums where the bitwise AND of the elements of the subarray >= k
-    long long solve(const std::vector<int>& nums, int k,
-                    const std::vector<std::array<int, 32>>& count)
+    long long solve(const std::vector<int>& nums, int k, const std::vector<std::array<int, 32>>& count)
     {
         const int n = nums.size();
         long long result = 0;

@@ -22,10 +22,12 @@
  * ! k is odd.
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long maximumStrength(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    long long maximumStrength(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     using LL = long long;
@@ -46,8 +48,7 @@ private:
                 // case 2: nums[i-1] is picked
                 const LL sign = j & 1 ? 1 : -1;
                 // case 2.1: nums[i-1] starts a new subarray
-                const LL case1 =
-                    std::max(prev[j - 1][0], prev[j - 1][1]) + sign * nums[i - 1] * (k - j + 1);
+                const LL case1 = std::max(prev[j - 1][0], prev[j - 1][1]) + sign * nums[i - 1] * (k - j + 1);
                 // case 2.2: nums[i-1] belongs to the previous subarray, nums[i-2] must be picked
                 const LL case2 = prev[j][1] + sign * nums[i - 1] * (k - j + 1);
                 dp[j][1] = std::max(case1, case2);
@@ -78,8 +79,7 @@ private:
                 // case 2: nums[i-1] is picked
                 const LL sign = j & 1 ? 1 : -1;
                 // case 2.1: nums[i-1] starts a new subarray
-                const LL case1 = std::max(dp[i - 1][j - 1][0], dp[i - 1][j - 1][1]) +
-                                 sign * nums[i - 1] * (k - j + 1);
+                const LL case1 = std::max(dp[i - 1][j - 1][0], dp[i - 1][j - 1][1]) + sign * nums[i - 1] * (k - j + 1);
                 // case 2.2: nums[i-1] belongs to the previous subarray, nums[i-2] must be picked
                 const LL case2 = dp[i - 1][j][1] + sign * nums[i - 1] * (k - j + 1);
                 dp[i][j][1] = std::max(case1, case2);

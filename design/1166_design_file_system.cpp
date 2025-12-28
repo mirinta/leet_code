@@ -24,8 +24,7 @@
  * ! At most 10^4 calls in total will be made to createPath and get.
  */
 
-class FileSystem
-{
+class FileSystem {
 public:
     FileSystem() {}
 

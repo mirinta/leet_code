@@ -9,8 +9,7 @@
  * ! 0 <= k <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int lengthOfLongestSubstringKDistinct(std::string s, int k)
     {

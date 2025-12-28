@@ -17,8 +17,7 @@
  * ! num consists only of digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isAdditiveNumber(const std::string& num)
     {

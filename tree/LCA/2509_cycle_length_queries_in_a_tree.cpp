@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -50,8 +49,7 @@ struct TreeNode
  * ! ai != bi
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> cycleLengthQueries(int n, std::vector<std::vector<int>>& queries)
     {

@@ -13,8 +13,7 @@
  * - int fetch(int k) moves the kth element (1-indexed) to the end of the queue and returns it.
  */
 
-class MRUQueue
-{
+class MRUQueue {
 public:
     MRUQueue(int n) : bucketSize(std::sqrt(n))
     {

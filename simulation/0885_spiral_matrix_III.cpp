@@ -17,8 +17,7 @@
  * ! 0 <= cStart < cols
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart)
     {

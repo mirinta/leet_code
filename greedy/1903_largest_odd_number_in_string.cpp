@@ -11,8 +11,7 @@
  * ! num only consists of digits and does not contain any leading zeros.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string largestOddNumber(std::string num)
     {

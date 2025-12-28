@@ -21,8 +21,7 @@
  * ! 1 <= capacity <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     bool carPooling(std::vector<std::vector<int>>& trips, int capacity)
     {

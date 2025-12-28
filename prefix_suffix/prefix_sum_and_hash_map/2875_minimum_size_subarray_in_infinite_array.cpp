@@ -15,8 +15,7 @@
  * ! 1 <= target <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minSizeSubarray(std::vector<int>& nums, int target)
     {

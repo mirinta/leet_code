@@ -22,8 +22,7 @@
  * ! All the pairs (xi, yi) occur at most one time in the input.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), size(n, 1)
     {
@@ -32,7 +31,10 @@ public:
         }
     }
 
-    int numOfConnectedComponents() { return count; }
+    int numOfConnectedComponents()
+    {
+        return count;
+    }
 
     int find(int x)
     {
@@ -64,13 +66,11 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     int earliestAcq(std::vector<std::vector<int>>& logs, int n)
     {
-        std::sort(logs.begin(), logs.end(),
-                  [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
+        std::sort(logs.begin(), logs.end(), [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
         UnionFind uf(n);
         for (const auto& v : logs) {
             uf.connect(v[1], v[2]);

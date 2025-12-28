@@ -16,8 +16,7 @@
  * ! -2^31 <= nums[i] <= 2^31 - 1
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
 public:
     explicit BinaryIndexedTree(int n) : tree(n + 1, 0) {}
 
@@ -28,7 +27,10 @@ public:
         }
     }
 
-    int query(int left, int right) { return presum(right) - presum(left - 1); }
+    int query(int left, int right)
+    {
+        return presum(right) - presum(left - 1);
+    }
 
 private:
     int presum(int i)
@@ -40,16 +42,21 @@ private:
         return sum;
     }
 
-    int lowbit(int i) { return i & -i; }
+    int lowbit(int i)
+    {
+        return i & -i;
+    }
 
 private:
     std::vector<int> tree;
 };
 
-class Solution
-{
+class Solution {
 public:
-    int reversePairs(std::vector<int>& nums) { return approach1(nums); }
+    int reversePairs(std::vector<int>& nums)
+    {
+        return approach1(nums);
+    }
 
 private:
     int approach2(const std::vector<int>& nums)
@@ -97,8 +104,7 @@ private:
     void merge(int& result, std::vector<int>& aux, std::vector<int>& nums, int lo, int mid, int hi)
     {
         for (int i = lo, j = mid + 1; j <= hi; ++j) {
-            while (i <= mid &&
-                   static_cast<long long>(nums[i]) <= 2 * static_cast<long long>(nums[j])) {
+            while (i <= mid && static_cast<long long>(nums[i]) <= 2 * static_cast<long long>(nums[j])) {
                 i++;
             }
             result += mid - i + 1;

@@ -24,8 +24,7 @@
  * ! grid[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> onesMinusZeros(std::vector<std::vector<int>>& grid)
     {

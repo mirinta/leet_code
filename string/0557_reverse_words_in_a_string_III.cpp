@@ -11,8 +11,7 @@
  * ! All the words in s are separated by a single space.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string reverseWords(std::string s)
     {

@@ -28,8 +28,7 @@
  * ! instructions[i] is 'G', 'L' or, 'R'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isRobotBounded(const std::string& instructions)
     {
@@ -44,18 +43,18 @@ public:
         int y = 0;
         for (const auto& instruction : instructions) {
             switch (instruction) {
-            case 'L':
-                index = (index + 3) % 4; // north to west
-                break;
-            case 'R':
-                index = (index + 1) % 4; // north to east
-                break;
-            case 'G':
-                x += directions[index].first;
-                y += directions[index].second;
-                break;
-            default:
-                break;
+                case 'L':
+                    index = (index + 3) % 4; // north to west
+                    break;
+                case 'R':
+                    index = (index + 1) % 4; // north to east
+                    break;
+                case 'G':
+                    x += directions[index].first;
+                    y += directions[index].second;
+                    break;
+                default:
+                    break;
             }
         }
         return (x == 0 && y == 0) || (index != 0);

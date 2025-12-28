@@ -17,8 +17,7 @@
  * ! 1 <= skill[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     long long dividePlayers(std::vector<int>& skill)
     {

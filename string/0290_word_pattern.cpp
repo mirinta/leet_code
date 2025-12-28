@@ -17,8 +17,7 @@
  * ! All the words in s are separated by a single space.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool wordPattern(std::string pattern, std::string s)
     {

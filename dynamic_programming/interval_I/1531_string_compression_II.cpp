@@ -21,8 +21,7 @@
  * ! s contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int getLengthOfOptimalCompression(std::string s, int k)
     {
@@ -58,16 +57,13 @@ public:
                         break;
 
                     if (same >= 100) {
-                        dp[i][t] = std::min(
-                            dp[i][t], dp[j - 1][t - diff] + 4); // 1 for character, 3 for count
+                        dp[i][t] = std::min(dp[i][t], dp[j - 1][t - diff] + 4); // 1 for character, 3 for count
                     } else if (same >= 10) {
-                        dp[i][t] =
-                            std::min(dp[i][t],
-                                     dp[j - 1][t - diff] + 3); // 1 for character, 2 for count
+                        dp[i][t] = std::min(dp[i][t],
+                                            dp[j - 1][t - diff] + 3); // 1 for character, 2 for count
                     } else if (same >= 2) {
-                        dp[i][t] =
-                            std::min(dp[i][t],
-                                     dp[j - 1][t - diff] + 2); // 1 for character, 1 for count
+                        dp[i][t] = std::min(dp[i][t],
+                                            dp[j - 1][t - diff] + 2); // 1 for character, 1 for count
                     } else {
                         dp[i][t] = std::min(dp[i][t], dp[j - 1][t - diff] + 1); // 1 for character
                     }

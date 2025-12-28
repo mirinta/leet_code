@@ -22,8 +22,7 @@
  * ! 0 <= valueDifference <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findIndices(std::vector<int>& nums, int indexDifference, int valueDifference)
     {

@@ -21,8 +21,7 @@
  * ! words[i] == "prev" or 1 <= int(words[i]) <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> lastVisitedIntegers(std::vector<std::string>& words)
     {

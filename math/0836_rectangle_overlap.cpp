@@ -19,8 +19,7 @@
  * ! rec1 and rec2 represent a valid rectangle with a non-zero area.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isRectangleOverlap(std::vector<int>& rec1, std::vector<int>& rec2)
     {

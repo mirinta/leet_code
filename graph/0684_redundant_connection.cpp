@@ -20,8 +20,7 @@
  * ! The given graph is connected.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1)
     {
@@ -58,8 +57,7 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findRedundantConnection(std::vector<std::vector<int>>& edges)
     {

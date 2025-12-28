@@ -8,8 +8,7 @@
  * ! s[i] is either '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numSub(std::string s)
     {

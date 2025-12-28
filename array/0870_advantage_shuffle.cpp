@@ -13,8 +13,7 @@
  * Output: [24, 32, 8, 12]
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> advantageCount(std::vector<int>& nums1, const std::vector<int>& nums2)
     {

@@ -25,11 +25,9 @@
  * ! The input is generated such that edges represents a valid tree.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxKDivisibleComponents(int n, std::vector<std::vector<int>>& edges,
-                                std::vector<int>& values, int k)
+    int maxKDivisibleComponents(int n, std::vector<std::vector<int>>& edges, std::vector<int>& values, int k)
     {
         std::vector<std::vector<int>> graph(n);
         for (const auto& e : edges) {
@@ -42,7 +40,11 @@ public:
     }
 
 private:
-    int dfs(int& result, int node, int parent, int k, const std::vector<int>& values,
+    int dfs(int& result,
+            int node,
+            int parent,
+            int k,
+            const std::vector<int>& values,
             const std::vector<std::vector<int>>& graph)
     {
         int sum = values[node] % k;

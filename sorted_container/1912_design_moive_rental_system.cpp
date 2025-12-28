@@ -56,8 +56,7 @@
  * ! At most 105 calls in total will be made to search, rent, drop and report.
  */
 
-class MovieRentingSystem
-{
+class MovieRentingSystem {
 public:
     MovieRentingSystem(int n, std::vector<std::vector<int>>& entries) : info(n)
     {
@@ -73,8 +72,7 @@ public:
             return {};
 
         std::vector<int> result;
-        for (auto iter = map[movie].begin(); iter != map[movie].end() && result.size() < 5;
-             ++iter) {
+        for (auto iter = map[movie].begin(); iter != map[movie].end() && result.size() < 5; ++iter) {
             result.push_back(iter->second);
         }
         return result;

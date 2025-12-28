@@ -12,8 +12,7 @@
  * ! nums is sorted in non-decreasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isMajorityElement(std::vector<int>& nums, int target)
     {

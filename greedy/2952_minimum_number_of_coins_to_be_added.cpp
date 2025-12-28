@@ -19,8 +19,7 @@
  * ! 1 <= coins[i] <= target
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumAddedCoins(std::vector<int>& coins, int target)
     {

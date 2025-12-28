@@ -23,8 +23,7 @@
  * ! s[i] is either 'I' or 'D'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numPermsDISequence(const std::string& s)
     {

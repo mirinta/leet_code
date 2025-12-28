@@ -49,11 +49,9 @@
  * ! wordlist[i] and queries[i] consist only of only English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> spellchecker(std::vector<std::string>& wordlist,
-                                          std::vector<std::string>& queries)
+    std::vector<std::string> spellchecker(std::vector<std::string>& wordlist, std::vector<std::string>& queries)
     {
         std::array<std::unordered_map<std::string, int>, 3> maps;
         for (int i = 0; i < wordlist.size(); ++i) {
@@ -104,5 +102,8 @@ private:
         return result;
     }
 
-    bool isVowel(char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }
+    bool isVowel(char c)
+    {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
 };

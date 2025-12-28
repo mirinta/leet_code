@@ -17,8 +17,7 @@
  * ! 0 <= nums[i] <= 500
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestArithSeqLength(const std::vector<int>& nums)
     {

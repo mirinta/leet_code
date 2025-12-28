@@ -32,8 +32,7 @@
  * ! target is strictly increasing.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> buildArray(std::vector<int>& target, int n)
     {

@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -26,8 +25,7 @@ struct TreeNode
  * ! 1 <= Node.val <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxProduct(TreeNode* root)
     {

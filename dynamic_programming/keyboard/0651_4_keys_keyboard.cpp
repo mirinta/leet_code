@@ -17,8 +17,7 @@
  * ! 1 <= n <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxA(int n)
     {

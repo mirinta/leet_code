@@ -12,10 +12,12 @@
  * ! 1 <= n <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool reorderedPowerOf2(int n) { return approach2(n); }
+    bool reorderedPowerOf2(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     bool approach2(int n)

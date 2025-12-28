@@ -35,8 +35,7 @@
  * ! isActive[i] is either true or false.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> validateCoupons(std::vector<std::string>& code,
                                              std::vector<std::string>& businessLine,

@@ -8,8 +8,7 @@
  * ! 本题与LC 240相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool findNumberIn2DArray(const std::vector<std::vector<int>>& matrix, int target)
     {

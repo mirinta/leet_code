@@ -16,8 +16,7 @@
  * ! -10^4 <= arr[i], x <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findClosestElements(std::vector<int>& arr, int k, int x)
     {

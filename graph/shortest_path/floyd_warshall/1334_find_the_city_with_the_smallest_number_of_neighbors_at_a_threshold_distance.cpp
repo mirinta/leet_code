@@ -20,8 +20,7 @@
  * ! All pairs (fromi, toi) are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findTheCity(int n, std::vector<std::vector<int>>& edges, int distanceThreshold)
     {

@@ -18,8 +18,7 @@
  * ! 0 <= x < nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int minAbsoluteDifference(std::vector<int>& nums, int x)
     {

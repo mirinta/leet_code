@@ -11,15 +11,13 @@
  * ! 10 <= low <= high <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sequentialDigits(int low, int high)
     {
         const std::string s("123456789");
         std::vector<int> result;
-        for (int length = std::to_string(low).size(); length <= std::to_string(high).size();
-             ++length) {
+        for (int length = std::to_string(low).size(); length <= std::to_string(high).size(); ++length) {
             for (int i = 0; i + length - 1 < s.size(); ++i) {
                 const int val = std::stoi(s.substr(i, length));
                 if (inRange(val, low, high)) {
@@ -31,5 +29,8 @@ public:
     }
 
 private:
-    bool inRange(int val, int low, int high) { return low <= val && val <= high; }
+    bool inRange(int val, int low, int high)
+    {
+        return low <= val && val <= high;
+    }
 };

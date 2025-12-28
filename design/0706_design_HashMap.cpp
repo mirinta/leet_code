@@ -21,21 +21,35 @@
  * ! At most 104 calls will be made to put, get, and remove.
  */
 
-class MyHashMap
-{
+class MyHashMap {
 public:
-    MyHashMap() { std::memset(&data, -1, sizeof(data)); }
+    MyHashMap()
+    {
+        std::memset(&data, -1, sizeof(data));
+    }
 
-    void put(int key, int value) { data[hash(key)] = value; }
+    void put(int key, int value)
+    {
+        data[hash(key)] = value;
+    }
 
-    int get(int key) { return data[hash(key)]; }
+    int get(int key)
+    {
+        return data[hash(key)];
+    }
 
-    void remove(int key) { data[hash(key)] = -1; }
+    void remove(int key)
+    {
+        data[hash(key)] = -1;
+    }
 
 private:
     static constexpr int kSize = 1e6 + 1;
 
-    int hash(int n) { return n % kSize; }
+    int hash(int n)
+    {
+        return n % kSize;
+    }
 
     int data[kSize];
 };

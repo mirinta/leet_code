@@ -15,11 +15,9 @@
  * ! 1 <= k <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> kSmallestPairs(std::vector<int>& nums1, std::vector<int>& nums2,
-                                                 int k)
+    std::vector<std::vector<int>> kSmallestPairs(std::vector<int>& nums1, std::vector<int>& nums2, int k)
     {
         const int m = nums1.size();
         const int n = nums2.size();

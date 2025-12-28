@@ -21,8 +21,7 @@
  * ! words[i] consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxPalindromesAfterOperations(std::vector<std::string>& words)
     {
@@ -40,8 +39,7 @@ public:
         for (const auto& [c, freq] : map) {
             pairs += freq / 2;
         }
-        std::sort(words.begin(), words.end(),
-                  [](const auto& w1, const auto& w2) { return w1.size() < w2.size(); });
+        std::sort(words.begin(), words.end(), [](const auto& w1, const auto& w2) { return w1.size() < w2.size(); });
         int result = 0;
         for (const auto& word : words) {
             const int requirePairs = word.size() / 2;

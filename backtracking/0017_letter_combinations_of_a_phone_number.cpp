@@ -13,8 +13,7 @@
  * ! digits[i] is a digit in the range ['2', '9'].
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> letterCombinations(std::string digits)
     {
@@ -28,11 +27,9 @@ public:
     }
 
 private:
-    const std::array<std::string, 10> kLetters{"",    "",    "abc",  "def", "ghi",
-                                               "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    const std::array<std::string, 10> kLetters{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-    void backtrack(std::vector<std::string>& result, std::string& current, int i,
-                   const std::string& digits)
+    void backtrack(std::vector<std::string>& result, std::string& current, int i, const std::string& digits)
     {
         if (i == digits.size()) {
             result.push_back(current);

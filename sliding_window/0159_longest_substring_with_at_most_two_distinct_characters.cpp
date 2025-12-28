@@ -9,8 +9,7 @@
  * ! s consists of English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int lengthOfLongestSubstringTwoDistinct(std::string s)
     {

@@ -14,8 +14,7 @@
  * ! 1 <= target[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int minNumberOperations(std::vector<int>& target)
     {

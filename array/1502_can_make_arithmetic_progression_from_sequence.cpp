@@ -10,10 +10,12 @@
  * progression. Otherwise, return false;
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool canMakeArithmeticProgression(std::vector<int>& arr) { return approach3(arr); }
+    bool canMakeArithmeticProgression(std::vector<int>& arr)
+    {
+        return approach3(arr);
+    }
 
 private:
     bool approach1(std::vector<int>& arr)

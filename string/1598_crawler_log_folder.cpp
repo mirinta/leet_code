@@ -28,8 +28,7 @@
  * ! Folder names consist of lowercase English letters and digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<std::string>& logs)
     {

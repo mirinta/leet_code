@@ -22,8 +22,7 @@
  * ! At most 10^5 calls will be made in total to change and find.
  */
 
-class NumberContainers
-{
+class NumberContainers {
 public:
     NumberContainers() {}
 

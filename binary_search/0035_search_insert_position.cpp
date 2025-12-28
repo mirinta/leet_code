@@ -12,8 +12,7 @@
  * ! -10^4 <= target <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int searchInsert(std::vector<int>& nums, int target)
     {

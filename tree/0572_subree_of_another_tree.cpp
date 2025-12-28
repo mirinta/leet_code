@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -24,8 +23,7 @@ struct TreeNode
  * ! -10^4 <= subRoot.val <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isSubtree(TreeNode* root, TreeNode* subRoot)
     {

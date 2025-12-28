@@ -25,8 +25,7 @@
  * ! All the characters that occur in votes[0] also occur in votes[j] where 1 <= j < votes.length.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string rankTeams(std::vector<std::string>& votes)
     {

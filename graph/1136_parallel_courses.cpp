@@ -21,8 +21,7 @@
  * ! All the pairs [prevCourse_i, nextCourse_i] are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumSemesters(int n, std::vector<std::vector<int>>& relations)
     {

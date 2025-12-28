@@ -16,8 +16,7 @@
  * ! 0 <= height[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxArea(std::vector<int>& height)
     {

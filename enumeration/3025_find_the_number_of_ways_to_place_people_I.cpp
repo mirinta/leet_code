@@ -18,8 +18,7 @@
  * ! All points[i] are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfPairs(std::vector<std::vector<int>>& points)
     {

@@ -38,8 +38,7 @@
  * ! Each key in the grid has a matching lock.
  */
 
-class Solution
-{
+class Solution {
 public:
     // BFS: time O(MN(2^K)), space O(MN(2^K))
     int shortestPathAllKeys(std::vector<std::string>& grid)
@@ -50,8 +49,7 @@ public:
         // so we can encode them into an integer
         int targetKeychain = 0;
         std::queue<std::tuple<int, int, int>> queue; // <x, y, keychain>
-        std::vector<std::vector<std::unordered_set<int>>> visited(
-            m, std::vector<std::unordered_set<int>>(n));
+        std::vector<std::vector<std::unordered_set<int>>> visited(m, std::vector<std::unordered_set<int>>(n));
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (grid[i][j] == '@') {
@@ -115,7 +113,13 @@ private:
         return (currentKeychain >> (lock - 'A')) & 1;
     }
 
-    bool isLock(char c) { return c >= 'A' && c <= 'Z'; }
+    bool isLock(char c)
+    {
+        return c >= 'A' && c <= 'Z';
+    }
 
-    bool isKey(char c) { return c >= 'a' && c <= 'z'; }
+    bool isKey(char c)
+    {
+        return c >= 'a' && c <= 'z';
+    }
 };

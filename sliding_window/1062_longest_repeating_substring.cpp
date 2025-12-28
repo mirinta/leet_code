@@ -9,8 +9,7 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestRepeatingSubstring(std::string s)
     {
@@ -56,5 +55,8 @@ private:
         return false;
     }
 
-    long long valueOf(char c) { return c - 'a' + 1; }
+    long long valueOf(char c)
+    {
+        return c - 'a' + 1;
+    }
 };

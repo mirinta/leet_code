@@ -21,8 +21,7 @@
  * ! 1 <= x <= 8
  */
 
-class Solution
-{
+class Solution {
 public:
     long long findMaximumNumber(long long k, int x)
     {

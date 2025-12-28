@@ -11,15 +11,13 @@
  * ! 箱子的数目不大于3000个。
  */
 
-class Solution
-{
+class Solution {
 public:
     int pileBox(std::vector<std::vector<int>>& box)
     {
         // dp[i] = max height of subsequences of box[0:i] ending at box[i]
         const int n = box.size();
-        std::sort(box.begin(), box.end(),
-                  [](const auto& b1, const auto& b2) { return b1[0] < b2[0]; });
+        std::sort(box.begin(), box.end(), [](const auto& b1, const auto& b2) { return b1[0] < b2[0]; });
         std::vector<int> dp(n);
         int result = 0;
         for (int i = 0; i < n; ++i) {

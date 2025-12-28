@@ -17,8 +17,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findPermutationDifference(std::string s, std::string t)
     {

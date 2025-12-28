@@ -21,13 +21,11 @@
  * ! s does not have leading zeros.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long numberOfPowerfulInt(long long start, long long finish, int limit, std::string s)
     {
-        return helper(std::to_string(finish), limit, s) -
-               helper(std::to_string(start - 1), limit, s);
+        return helper(std::to_string(finish), limit, s) - helper(std::to_string(start - 1), limit, s);
     }
 
 private:
@@ -37,8 +35,7 @@ private:
         return dfs(0, true, finish, limit, suffix);
     }
 
-    long long dfs(int i, bool isPrefixSame, const std::string& finish, int limit,
-                  const std::string& suffix)
+    long long dfs(int i, bool isPrefixSame, const std::string& finish, int limit, const std::string& suffix)
     {
         // s = 0 X X X X i-1 i X X X X j X X X X n-1
         //     |<--prefix->|           |<--suffix->|

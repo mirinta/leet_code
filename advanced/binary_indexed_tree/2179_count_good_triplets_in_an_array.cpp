@@ -18,8 +18,7 @@
  * ! nums1 and nums2 are permutations of [0, 1, ..., n - 1].
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
     using LLONG = long long;
 
 public:
@@ -32,12 +31,21 @@ public:
         }
     }
 
-    void reset() { std::fill(tree.begin(), tree.end(), 0); }
+    void reset()
+    {
+        std::fill(tree.begin(), tree.end(), 0);
+    }
 
-    LLONG query(LLONG left, LLONG right) { return presum(right) - presum(left - 1); }
+    LLONG query(LLONG left, LLONG right)
+    {
+        return presum(right) - presum(left - 1);
+    }
 
 private:
-    LLONG lowbit(LLONG i) { return i & (-i); }
+    LLONG lowbit(LLONG i)
+    {
+        return i & (-i);
+    }
 
     LLONG presum(LLONG i)
     {
@@ -52,8 +60,7 @@ private:
     std::vector<LLONG> tree;
 };
 
-class Solution
-{
+class Solution {
 public:
     long long goodTriplets(std::vector<int>& nums1, std::vector<int>& nums2)
     {

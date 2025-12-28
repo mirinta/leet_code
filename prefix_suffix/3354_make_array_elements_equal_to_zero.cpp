@@ -32,8 +32,7 @@
  * ! There is at least one element i where nums[i] == 0.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countValidSelections(std::vector<int>& nums)
     {

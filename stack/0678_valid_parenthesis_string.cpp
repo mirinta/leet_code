@@ -20,8 +20,7 @@
  * ! s[i] is '(', ')' or '*'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkValidString(std::string s)
     {

@@ -9,10 +9,12 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool canPartition(std::vector<int>& nums) { return approach2(nums); }
+    bool canPartition(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     bool approach2(const std::vector<int>& nums)

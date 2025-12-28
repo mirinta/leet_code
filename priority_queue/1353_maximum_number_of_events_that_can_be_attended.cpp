@@ -16,14 +16,12 @@
  * ! 1 <= startDayi <= endDayi <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxEvents(std::vector<std::vector<int>>& events)
     {
         const int n = events.size();
-        std::sort(events.begin(), events.end(),
-                  [](const auto& e1, const auto& e2) { return e1[0] < e2[0]; });
+        std::sort(events.begin(), events.end(), [](const auto& e1, const auto& e2) { return e1[0] < e2[0]; });
         int maxDay = 0;
         for (const auto& e : events) {
             maxDay = std::max(maxDay, e[1]);

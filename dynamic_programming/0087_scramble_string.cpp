@@ -26,8 +26,7 @@
  * ! s1 and s2 consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isScramble(std::string s1, std::string s2)
     {
@@ -40,8 +39,8 @@ public:
             count2[i] = count2[i - 1];
             count2[i][s2[i - 1] - 'a']++;
         }
-        std::vector<std::vector<std::vector<int>>> memo(
-            n, std::vector<std::vector<int>>(n, std::vector<int>(n + 1, -1)));
+        std::vector<std::vector<std::vector<int>>> memo(n,
+                                                        std::vector<std::vector<int>>(n, std::vector<int>(n + 1, -1)));
         // check if s2[j:j+L-1] is a scramble string of s1[i:i+L-1]
         std::function<bool(int, int, int)> dfs = [&](int i, int j, int L) -> bool {
             if (L == 1)
@@ -84,7 +83,10 @@ private:
         return true;
     }
 
-    bool isAnagram(int i, int j, int L, const std::vector<std::array<int, 26>>& count1,
+    bool isAnagram(int i,
+                   int j,
+                   int L,
+                   const std::vector<std::array<int, 26>>& count1,
                    const std::vector<std::array<int, 26>>& count2)
     {
         for (int k = 0; k < 26; ++k) {

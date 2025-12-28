@@ -9,8 +9,7 @@
  * ! -50 <= nums[i], target <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPairs(std::vector<int>& nums, int target)
     {

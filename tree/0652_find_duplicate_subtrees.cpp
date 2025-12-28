@@ -5,8 +5,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -26,8 +25,7 @@ struct TreeNode
  * ! -200 <= Node.val <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<TreeNode*> findDuplicateSubtrees(TreeNode* root)
     {
@@ -38,8 +36,7 @@ public:
     }
 
 private:
-    std::string dfs(std::vector<TreeNode*>& result, std::unordered_map<std::string, int>& keys,
-                    TreeNode* root)
+    std::string dfs(std::vector<TreeNode*>& result, std::unordered_map<std::string, int>& keys, TreeNode* root)
     {
         if (!root)
             return "#";

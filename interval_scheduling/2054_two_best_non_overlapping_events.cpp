@@ -19,14 +19,12 @@
  * ! 1 <= valuei <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxTwoEvents(std::vector<std::vector<int>>& events)
     {
         const int n = events.size();
-        std::sort(events.begin(), events.end(),
-                  [](const auto& e1, const auto& e2) { return e1[1] < e2[1]; });
+        std::sort(events.begin(), events.end(), [](const auto& e1, const auto& e2) { return e1[1] < e2[1]; });
         std::vector<int> prefixMax(n);
         prefixMax[0] = events[0][2];
         for (int i = 1; i < n; ++i) {
@@ -39,8 +37,7 @@ public:
             if (iter == events.begin()) {
                 result = std::max(result, e[2]);
             } else {
-                result = std::max(result,
-                                  e[2] + prefixMax[std::distance(events.begin(), std::prev(iter))]);
+                result = std::max(result, e[2] + prefixMax[std::distance(events.begin(), std::prev(iter))]);
             }
         }
         return result;

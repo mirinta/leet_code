@@ -18,8 +18,7 @@
  * ! There is at least one word in s.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string reverseWords(std::string s)
     {

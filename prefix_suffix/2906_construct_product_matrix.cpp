@@ -13,8 +13,7 @@
  * ! 1 <= grid[i][j] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> constructProductMatrix(std::vector<std::vector<int>>& grid)
     {

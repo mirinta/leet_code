@@ -12,8 +12,7 @@
  * ! 1 <= n, m <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int differenceOfSums(int n, int m)
     {

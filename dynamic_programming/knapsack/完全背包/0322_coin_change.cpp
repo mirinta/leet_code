@@ -14,10 +14,12 @@
  * ! 0 <= amount <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int coinChange(std::vector<int>& coins, int amount) { return approach2(coins, amount); }
+    int coinChange(std::vector<int>& coins, int amount)
+    {
+        return approach2(coins, amount);
+    }
 
 private:
     int approach2(const std::vector<int>& coins, int amount)

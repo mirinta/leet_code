@@ -8,8 +8,7 @@
  * ! 1 <= numRows <= 30
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> generate(int numRows)
     {

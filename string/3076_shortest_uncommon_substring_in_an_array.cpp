@@ -18,8 +18,7 @@
  * ! arr[i] consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> shortestSubstrings(std::vector<std::string>& arr)
     {

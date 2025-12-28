@@ -18,8 +18,7 @@
  * ! At most 1000 calls will be made in total to popSmallest and addBack.
  */
 
-class SmallestInfiniteSet
-{
+class SmallestInfiniteSet {
 public:
     SmallestInfiniteSet() = default;
 

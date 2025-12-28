@@ -1,11 +1,10 @@
-#include <vector>
 #include <queue>
+#include <vector>
 
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -27,8 +26,7 @@ struct ListNode
  * ! The sum of lists[i].length will not exceed 10^4.
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* mergeKLists(std::vector<ListNode*>& lists)
     {
@@ -36,8 +34,7 @@ public:
             return nullptr;
 
         auto comparator = [](auto* node1, auto* node2) { return node1->val > node2->val; };
-        std::priority_queue<ListNode*, std::vector<ListNode*>, decltype(comparator)> pq(
-            comparator); // min head
+        std::priority_queue<ListNode*, std::vector<ListNode*>, decltype(comparator)> pq(comparator); // min head
         for (auto* head : lists) {
             if (head) {
                 pq.push(head);

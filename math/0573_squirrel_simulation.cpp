@@ -28,10 +28,12 @@
  * ! 0 <= treec, squirrelc, nutic <= width
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minDistance(int height, int width, std::vector<int>& tree, std::vector<int>& squirrel,
+    int minDistance(int height,
+                    int width,
+                    std::vector<int>& tree,
+                    std::vector<int>& squirrel,
                     std::vector<std::vector<int>>& nuts)
     {
         // assume the squirrel picks nuts[i] at first

@@ -23,8 +23,7 @@
  * ! The sum of the lengths of all words[i] does not exceed 5 * 10^5.
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode()) {}
 
@@ -59,8 +58,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::array<TrieNode*, 26> next;
         int count{0};
     };
@@ -68,8 +66,7 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
     long long countPrefixSuffixPairs(std::vector<std::string>& words)
     {

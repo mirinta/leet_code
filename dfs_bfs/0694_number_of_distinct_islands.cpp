@@ -1,3 +1,4 @@
+#include <string>
 #include <unordered_set>
 #include <vector>
 
@@ -17,8 +18,7 @@
  * ! grid[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numDistinctIslands(std::vector<std::vector<int>>& grid)
     {

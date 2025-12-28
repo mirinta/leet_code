@@ -14,8 +14,7 @@
  * ! bills[i] is either 5, 10, or 20.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool lemonadeChange(std::vector<int>& bills)
     {

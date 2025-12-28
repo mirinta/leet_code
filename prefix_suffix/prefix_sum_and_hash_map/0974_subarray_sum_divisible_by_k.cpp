@@ -12,8 +12,7 @@
  * ! 2 <= k <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int subarraysDivByK(std::vector<int>& nums, int k)
     {

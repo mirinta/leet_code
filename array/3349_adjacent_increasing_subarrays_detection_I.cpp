@@ -16,8 +16,7 @@
  * ! -1000 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     bool hasIncreasingSubarrays(std::vector<int>& nums, int k)
     {

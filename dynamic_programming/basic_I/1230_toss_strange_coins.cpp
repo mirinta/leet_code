@@ -12,8 +12,7 @@
  * ! Answers will be accepted as correct if they are within 10^-5 of the correct answer.
  */
 
-class Solution
-{
+class Solution {
 public:
     double probabilityOfHeads(std::vector<double>& prob, int target)
     {

@@ -23,8 +23,7 @@
  * ! 0 <= amounti <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string stringShift(std::string s, std::vector<std::vector<int>>& shift)
     {

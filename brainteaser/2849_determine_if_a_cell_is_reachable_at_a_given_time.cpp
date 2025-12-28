@@ -1,3 +1,4 @@
+#include <cmath>
 #include <utility>
 
 /**
@@ -15,8 +16,7 @@
  * ! 0 <= t <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isReachableAtTime(int sx, int sy, int fx, int fy, int t)
     {

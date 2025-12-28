@@ -29,8 +29,7 @@
  * ! 1 <= stampHeight, stampWidth <= 105
  */
 
-class PrefixSum2D
-{
+class PrefixSum2D {
 public:
     explicit PrefixSum2D(const std::vector<std::vector<int>>& mat)
     {
@@ -39,8 +38,7 @@ public:
         presum = std::vector<std::vector<int>>(m + 1, std::vector<int>(n + 1, 0));
         for (int i = 1; i <= m; ++i) {
             for (int j = 1; j <= n; ++j) {
-                presum[i][j] =
-                    presum[i][j - 1] + presum[i - 1][j] - presum[i - 1][j - 1] + mat[i - 1][j - 1];
+                presum[i][j] = presum[i][j - 1] + presum[i - 1][j] - presum[i - 1][j - 1] + mat[i - 1][j - 1];
             }
         }
     }
@@ -54,8 +52,7 @@ private:
     std::vector<std::vector<int>> presum;
 };
 
-class Diff2D
-{
+class Diff2D {
 public:
     Diff2D(int m, int n) : m(m), n(n), diff(m + 1, std::vector<int>(n + 1, 0)), total(diff) {}
 
@@ -105,8 +102,7 @@ private:
     std::vector<std::vector<int>> total;
 };
 
-class Solution
-{
+class Solution {
 public:
     bool possibleToStamp(std::vector<std::vector<int>>& grid, int stampHeight, int stampWidth)
     {

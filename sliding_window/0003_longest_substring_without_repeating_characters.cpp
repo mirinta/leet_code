@@ -8,8 +8,7 @@
  * ! s consists of English letters, digits, symbols and spaces.
  */
 
-class Solution
-{
+class Solution {
 public:
     int lengthOfLongestSubstring(std::string s)
     {

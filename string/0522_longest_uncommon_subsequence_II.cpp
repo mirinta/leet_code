@@ -22,8 +22,7 @@
  * ! strs[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findLUSlength(std::vector<std::string>& strs)
     {
@@ -36,16 +35,14 @@ public:
         for (const auto& [s, freq] : map) {
             unique.push_back(s);
         }
-        std::sort(unique.begin(), unique.end(),
-                  [](const auto& s1, const auto& s2) { return s1.size() > s2.size(); });
+        std::sort(unique.begin(), unique.end(), [](const auto& s1, const auto& s2) { return s1.size() > s2.size(); });
         const int n = unique.size();
         for (int i = 0; i < n; ++i) {
             if (map[unique[i]] > 1)
                 continue;
 
-            const bool check = std::none_of(unique.begin(), unique.begin() + i, [&](const auto& s) {
-                return isSubsequence(s, unique[i]);
-            });
+            const bool check = std::none_of(unique.begin(), unique.begin() + i,
+                                            [&](const auto& s) { return isSubsequence(s, unique[i]); });
             if (check)
                 return unique[i].size();
         }

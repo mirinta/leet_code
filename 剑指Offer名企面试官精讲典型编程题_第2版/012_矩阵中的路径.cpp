@@ -19,8 +19,7 @@
  * ! 本题与LC 79相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool exist(std::vector<std::vector<char>>& board, const std::string& word)
     {
@@ -39,8 +38,7 @@ public:
 private:
     bool found = false;
 
-    void backtrack(int x, int y, int i, std::vector<std::vector<char>>& board,
-                   const std::string& word)
+    void backtrack(int x, int y, int i, std::vector<std::vector<char>>& board, const std::string& word)
     {
         if (i == word.size()) {
             found = true;

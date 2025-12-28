@@ -9,8 +9,7 @@
  * ! 正确结果在区间 [0, 2147483647] 内
  */
 
-class Solution
-{
+class Solution {
 public:
     int smallestDifference(std::vector<int>& a, std::vector<int>& b)
     {

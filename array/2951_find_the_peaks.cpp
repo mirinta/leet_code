@@ -16,8 +16,7 @@
  * ! 1 <= mountain[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findPeaks(std::vector<int>& mountain)
     {

@@ -13,8 +13,7 @@
  * ! 1 <= k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findKDistantIndices(std::vector<int>& nums, int key, int k)
     {

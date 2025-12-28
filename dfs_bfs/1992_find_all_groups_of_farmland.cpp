@@ -25,8 +25,7 @@
  * ! Groups of farmland are rectangular in shape.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> findFarmland(std::vector<std::vector<int>>& land)
     {

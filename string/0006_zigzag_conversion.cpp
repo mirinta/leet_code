@@ -18,8 +18,7 @@
  * ! 1 <= numRows <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string convert(std::string s, int numRows)
     {

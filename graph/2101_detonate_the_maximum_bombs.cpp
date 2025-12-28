@@ -21,8 +21,7 @@
  * ! 1 <= xi, yi, ri <= 105
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumDetonation(const std::vector<std::vector<int>>& bombs)
     {
@@ -39,8 +38,7 @@ public:
                 if (i == j)
                     continue;
 
-                if (distanceSquared(bombs[i][0], bombs[i][1], bombs[j][0], bombs[j][1]) <=
-                    rSquared) {
+                if (distanceSquared(bombs[i][0], bombs[i][1], bombs[j][0], bombs[j][1]) <= rSquared) {
                     graph[i].push_back(j);
                 }
             }

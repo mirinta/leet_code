@@ -18,8 +18,7 @@
  * ! 1 <= k <= arr.length * (arr.length - 1) / 2
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> kthSmallestPrimeFraction(std::vector<int>& arr, int k)
     {
@@ -69,9 +68,7 @@ private:
     {
         const int n = arr.size();
         using Tuple = std::tuple<int, int, double>;
-        auto compare = [](const auto& t1, const auto& t2) {
-            return std::get<2>(t1) > std::get<2>(t2);
-        };
+        auto compare = [](const auto& t1, const auto& t2) { return std::get<2>(t1) > std::get<2>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(compare)> pq(compare);
         for (int i = 1; i < n; ++i) {
             pq.emplace(0, i, arr[0] * 1.0 / arr[i]);

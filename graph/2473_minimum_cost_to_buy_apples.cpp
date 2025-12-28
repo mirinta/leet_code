@@ -28,11 +28,9 @@
  * ! There are no repeated edges.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<long long> minCost(int n, std::vector<std::vector<int>>& roads,
-                                   std::vector<int>& appleCost, int k)
+    std::vector<long long> minCost(int n, std::vector<std::vector<int>>& roads, std::vector<int>& appleCost, int k)
     {
         std::vector<std::vector<Pair>> graph(n);
         for (const auto& road : roads) {
@@ -64,8 +62,10 @@ public:
 private:
     using Pair = std::pair<int, long long>; // <v, cost>
 
-    struct Compare
-    {
-        bool operator()(const Pair& p1, const Pair& p2) const { return p1.second > p2.second; }
+    struct Compare {
+        bool operator()(const Pair& p1, const Pair& p2) const
+        {
+            return p1.second > p2.second;
+        }
     };
 };

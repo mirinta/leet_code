@@ -24,8 +24,7 @@
  * ! 1 <= x <= k <= nums.length
  */
 
-class Container
-{
+class Container {
 public:
     explicit Container(long long x) : x(x) {}
 
@@ -50,7 +49,10 @@ public:
         }
     }
 
-    long long getSum() const { return sum; }
+    long long getSum() const
+    {
+        return sum;
+    }
 
 private:
     void insert(const std::pair<long long, long long>& p)
@@ -91,8 +93,7 @@ private:
     long long x;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<long long> findXSum(std::vector<int>& nums, int k, int x)
     {

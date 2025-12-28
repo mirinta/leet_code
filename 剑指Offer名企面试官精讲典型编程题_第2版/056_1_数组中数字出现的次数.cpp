@@ -12,8 +12,7 @@
  * ! 本题与LC 260相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> singleNumbers(std::vector<int>& nums)
     {

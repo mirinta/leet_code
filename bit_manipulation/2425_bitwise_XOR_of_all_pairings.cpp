@@ -11,8 +11,7 @@
  * ! 0 <= nums1[i], nums2[j] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int xorAllNums(std::vector<int>& nums1, std::vector<int>& nums2)
     {

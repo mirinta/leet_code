@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -22,8 +21,7 @@ struct ListNode
  * ! 1 <= list2.length <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* mergeInBetween(ListNode* list1, int a, int b, ListNode* list2)
     {

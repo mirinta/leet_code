@@ -9,8 +9,7 @@
  * ! 本题与LC 239相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> maxSlidingWindow(std::vector<int>& nums, int k)
     {

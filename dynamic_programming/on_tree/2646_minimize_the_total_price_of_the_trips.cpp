@@ -29,10 +29,11 @@
  * ! 0 <= starti, endi <= n - 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumTotalPrice(int n, std::vector<std::vector<int>>& edges, std::vector<int>& price,
+    int minimumTotalPrice(int n,
+                          std::vector<std::vector<int>>& edges,
+                          std::vector<int>& price,
                           std::vector<std::vector<int>>& trips)
     {
         Graph graph(n);
@@ -76,8 +77,8 @@ private:
 
     // similar to LC.337
     // return <min cost if current is not halved, min cost if current is halved>
-    std::pair<int, int> dfs(int current, int parent, const std::vector<int>& count,
-                            const std::vector<int>& price, const Graph& graph)
+    std::pair<int, int>
+        dfs(int current, int parent, const std::vector<int>& count, const std::vector<int>& price, const Graph& graph)
     {
         int notHalved = price[current] * count[current];
         int halved = price[current] * count[current] / 2;

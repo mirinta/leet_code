@@ -25,18 +25,22 @@
  * ! 0 <= nums2[i] <= 10^9
  */
 
-class SegmentTree
-{
+class SegmentTree {
 public:
-    explicit SegmentTree(const std::vector<int>& nums)
-        : n(nums.size()), data(4 * n + 1, 0), lazy(4 * n + 1, 0)
+    explicit SegmentTree(const std::vector<int>& nums) : n(nums.size()), data(4 * n + 1, 0), lazy(4 * n + 1, 0)
     {
         build(0, n - 1, 1, nums);
     }
 
-    long long query(int L, int R) { return query(L, R, 0, n - 1, 1); }
+    long long query(int L, int R)
+    {
+        return query(L, R, 0, n - 1, 1);
+    }
 
-    void flip(int L, int R) { flip(L, R, 0, n - 1, 1); }
+    void flip(int L, int R)
+    {
+        flip(L, R, 0, n - 1, 1);
+    }
 
 private:
     void build(int lo, int hi, int id, const std::vector<int>& nums)
@@ -104,11 +108,10 @@ private:
     std::vector<bool> lazy;
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<long long> handleQuery(std::vector<int>& nums1, std::vector<int>& nums2,
-                                       std::vector<std::vector<int>>& queries)
+    std::vector<long long>
+        handleQuery(std::vector<int>& nums1, std::vector<int>& nums2, std::vector<std::vector<int>>& queries)
     {
         SegmentTree tree(nums1);
         long long sum = std::accumulate(nums2.begin(), nums2.end(), 0LL);

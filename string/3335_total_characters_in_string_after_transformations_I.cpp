@@ -19,8 +19,7 @@
  * ! 1 <= t <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int lengthAfterTransformations(std::string s, int t)
     {

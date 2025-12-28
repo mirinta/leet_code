@@ -9,8 +9,7 @@
  * ! 0 <= nums1[i], nums2[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2)
     {

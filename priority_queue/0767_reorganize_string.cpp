@@ -13,8 +13,7 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string reorganizeString(std::string s)
     {

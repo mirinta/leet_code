@@ -4,8 +4,7 @@
  * This is the interface that allows for creating nested lists.
  * You should not implement it, or speculate about its implementation
  */
-class NestedInteger
-{
+class NestedInteger {
 public:
     // Return true if this NestedInteger holds a single integer, rather than a nested list.
     bool isInteger() const;
@@ -47,10 +46,12 @@ public:
  * ! The values of the integers in the nested list is in the range [-10^6, 10^6].
  */
 
-class NestedIterator
-{
+class NestedIterator {
 public:
-    NestedIterator(std::vector<NestedInteger>& nestedList) { helper(nestedList); }
+    NestedIterator(std::vector<NestedInteger>& nestedList)
+    {
+        helper(nestedList);
+    }
 
     int next()
     {
@@ -60,7 +61,10 @@ public:
         return INT_MIN;
     }
 
-    bool hasNext() { return idx < data.size(); }
+    bool hasNext()
+    {
+        return idx < data.size();
+    }
 
 private:
     void helper(const std::vector<NestedInteger>& nestedList)

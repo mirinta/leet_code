@@ -22,8 +22,7 @@
  * ! 1 <= k <= num.length (taking num as a string)
  */
 
-class Solution
-{
+class Solution {
 public:
     int divisorSubstrings(int num, int k)
     {

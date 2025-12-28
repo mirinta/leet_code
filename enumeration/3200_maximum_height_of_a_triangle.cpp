@@ -13,8 +13,7 @@
  * ! 1 <= red, blue <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxHeightOfTriangle(int red, int blue)
     {

@@ -26,8 +26,7 @@
  * ! box[i][j] is either '#', '*', or '.'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<char>> rotateTheBox(std::vector<std::vector<char>>& box)
     {

@@ -28,8 +28,7 @@
  * ! 1 <= minutesToDie <= minutesToTest <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int poorPigs(int buckets, int minutesToDie, int minutesToTest)
     {

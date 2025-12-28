@@ -19,10 +19,12 @@
  * ! 1 <= zero, one, limit <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numberOfStableArrays(int zero, int one, int limit) { return approach2(zero, one, limit); }
+    int numberOfStableArrays(int zero, int one, int limit)
+    {
+        return approach2(zero, one, limit);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;
@@ -30,8 +32,7 @@ private:
     // DP with sliding window, TC = O(zero*one), SC = O(zero*one)
     int approach2(int zero, int one, int limit)
     {
-        std::vector<std::vector<std::array<int, 2>>> dp(
-            zero + 1, std::vector<std::array<int, 2>>(one + 1, {0, 0}));
+        std::vector<std::vector<std::array<int, 2>>> dp(zero + 1, std::vector<std::array<int, 2>>(one + 1, {0, 0}));
         dp[0][0] = {1, 1};
         std::vector<int> sum1(one + 1, 0);  // sum1[j] = dp[i-1][j][1] + ... + dp[i-limit][j][1]
         std::vector<int> sum0(zero + 1, 0); // sum0[i] = dp[i][j-1][0] + ... + dp[i][j-limit][0]
@@ -59,8 +60,7 @@ private:
         // ending at 0
         // dp[i][j][1] = num of valid arrays that each array has i 1's and j 0's, and each array is
         // ending at 1
-        std::vector<std::vector<std::array<int, 2>>> dp(
-            zero + 1, std::vector<std::array<int, 2>>(one + 1, {0, 0}));
+        std::vector<std::vector<std::array<int, 2>>> dp(zero + 1, std::vector<std::array<int, 2>>(one + 1, {0, 0}));
         dp[0][0] = {1, 1};
         for (int i = 0; i <= zero; ++i) {
             for (int j = 0; j <= one; ++j) {

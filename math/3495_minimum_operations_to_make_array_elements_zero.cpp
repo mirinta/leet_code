@@ -19,8 +19,7 @@
  * ! 1 <= l < r <= 109
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minOperations(std::vector<std::vector<int>>& queries)
     {

@@ -17,8 +17,7 @@
  * ! citations is sorted in ascending order.
  */
 
-class Solution
-{
+class Solution {
 public:
     int hIndex(std::vector<int>& citations)
     {

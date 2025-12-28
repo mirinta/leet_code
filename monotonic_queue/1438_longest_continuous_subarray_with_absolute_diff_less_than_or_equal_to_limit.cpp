@@ -12,10 +12,12 @@
  * ! 0 <= limit <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int longestSubarray(std::vector<int>& nums, int limit) { return approach2(nums, limit); }
+    int longestSubarray(std::vector<int>& nums, int limit)
+    {
+        return approach2(nums, limit);
+    }
 
 private:
     // sliding window + monotonic queue
@@ -34,8 +36,7 @@ private:
                 minDeque.pop_back();
             }
             minDeque.push_back(right);
-            while (!maxDeque.empty() && !minDeque.empty() &&
-                   nums[maxDeque.front()] - nums[minDeque.front()] > limit) {
+            while (!maxDeque.empty() && !minDeque.empty() && nums[maxDeque.front()] - nums[minDeque.front()] > limit) {
                 if (left == maxDeque.front()) {
                     maxDeque.pop_front();
                 }

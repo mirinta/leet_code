@@ -14,8 +14,7 @@
  * ! 0 <= nums[i] <= 1
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
 public:
     explicit BinaryIndexedTree(int n) : tree(n + 1, 0) {}
 
@@ -26,7 +25,10 @@ public:
         }
     }
 
-    int query(int left, int right) { return presum(right) - presum(left - 1); }
+    int query(int left, int right)
+    {
+        return presum(right) - presum(left - 1);
+    }
 
 private:
     int presum(int i)
@@ -38,14 +40,16 @@ private:
         return sum;
     }
 
-    int lowbit(int i) { return i & -i; }
+    int lowbit(int i)
+    {
+        return i & -i;
+    }
 
 private:
     std::vector<int> tree;
 };
 
-class Solution
-{
+class Solution {
 public:
     int subarraysWithMoreZerosThanOnes(std::vector<int>& nums)
     {

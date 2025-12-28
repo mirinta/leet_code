@@ -21,8 +21,7 @@
  * ! -10^5 <= k, nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int waysToPartition(std::vector<int>& nums, int k)
     {

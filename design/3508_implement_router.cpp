@@ -56,8 +56,7 @@
  * ! queries for addPacket will be made in increasing order of timestamp.
  */
 
-class Router
-{
+class Router {
 public:
     Router(int memoryLimit) : capacity(memoryLimit) {}
 
@@ -82,8 +81,7 @@ public:
         const auto [source, destination, timestamp] = queue.front();
         queue.pop();
         set.erase(encode(source, destination, timestamp));
-        map[destination].erase(
-            std::lower_bound(map[destination].begin(), map[destination].end(), timestamp));
+        map[destination].erase(std::lower_bound(map[destination].begin(), map[destination].end(), timestamp));
         return {source, destination, timestamp};
     }
 
@@ -92,10 +90,8 @@ public:
         if (!map.count(destination))
             return 0;
 
-        const auto lower =
-            std::lower_bound(map[destination].begin(), map[destination].end(), startTime);
-        const auto upper =
-            std::upper_bound(map[destination].begin(), map[destination].end(), endTime);
+        const auto lower = std::lower_bound(map[destination].begin(), map[destination].end(), startTime);
+        const auto upper = std::upper_bound(map[destination].begin(), map[destination].end(), endTime);
         return upper - lower;
     }
 

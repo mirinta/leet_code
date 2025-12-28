@@ -16,8 +16,7 @@
  * ! 0 <= |x| + |y| <= 300
  */
 
-class Solution
-{
+class Solution {
 public:
     int minKnightMoves(int x, int y)
     {

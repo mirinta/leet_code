@@ -9,8 +9,7 @@
  * ! 1 <= n <= 11
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<double> dicesProbability(int n)
     {

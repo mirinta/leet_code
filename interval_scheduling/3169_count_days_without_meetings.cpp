@@ -16,13 +16,11 @@
  * ! 1 <= meetings[i][0] <= meetings[i][1] <= days
  */
 
-class Solution
-{
+class Solution {
 public:
     int countDays(int days, std::vector<std::vector<int>>& meetings)
     {
-        std::sort(meetings.begin(), meetings.end(),
-                  [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
+        std::sort(meetings.begin(), meetings.end(), [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
         std::vector<std::vector<int>> merged;
         for (const auto& meeting : meetings) {
             if (merged.empty() || merged.back()[1] < meeting[0]) {

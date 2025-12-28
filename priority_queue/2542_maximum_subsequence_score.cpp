@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <climits>
 #include <cstddef>
 #include <queue>
@@ -26,8 +27,7 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maxScore(std::vector<int>& nums1, std::vector<int>& nums2, int k)
     {
@@ -39,8 +39,7 @@ public:
             pairs[i].second = nums2[i];
         }
         // sort by nums2 in descending order
-        std::sort(pairs.begin(), pairs.end(),
-                  [](const auto& p1, const auto& p2) { return p1.second > p2.second; });
+        std::sort(pairs.begin(), pairs.end(), [](const auto& p1, const auto& p2) { return p1.second > p2.second; });
         // min heap to maintain top k elements of nums1
         std::priority_queue<int, std::vector<int>, std::greater<>> pq;
         long long sum = 0;

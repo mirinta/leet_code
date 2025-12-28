@@ -22,10 +22,12 @@
  * ! 1 <= n <= 2 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countVowelPermutation(int n) { return approach2(n); }
+    int countVowelPermutation(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;
@@ -74,8 +76,7 @@ private:
         // dp[i][2] = num of strings of length i ending at 'i'
         // dp[i][3] = num of strings of length i ending at 'o'
         // dp[i][4] = num of strings of length i ending at 'u'
-        const std::vector<std::vector<int>> kValidPrevVowels{
-            {1, 2, 4}, {0, 2}, {1, 3}, {2}, {2, 3}};
+        const std::vector<std::vector<int>> kValidPrevVowels{{1, 2, 4}, {0, 2}, {1, 3}, {2}, {2, 3}};
         std::vector<std::array<int, 5>> dp(n + 1, {0});
         dp[1] = {1, 1, 1, 1, 1};
         for (int i = 2; i <= n; ++i) {

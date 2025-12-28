@@ -1,5 +1,5 @@
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
 /**
  * 给定一个字符串，编写一个函数判定其是否为某个回文串的排列之一。
@@ -9,8 +9,7 @@
  * 回文串不一定是字典当中的单词。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canPermutePalindrome(std::string s)
     {

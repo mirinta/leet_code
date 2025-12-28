@@ -15,8 +15,7 @@
  * ! s consists only of uppercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minLength(std::string s)
     {

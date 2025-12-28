@@ -4,8 +4,7 @@
  * This is the interface that allows for creating nested lists.
  * You should not implement it, or speculate about its implementation
  */
-class NestedInteger
-{
+class NestedInteger {
 public:
     // Constructor initializes an empty nested list.
     NestedInteger();
@@ -45,8 +44,7 @@ public:
  * ! The maximum depth of any integer is less than or equal to 50.
  */
 
-class Solution
-{
+class Solution {
 public:
     int depthSum(std::vector<NestedInteger>& nestedList)
     {

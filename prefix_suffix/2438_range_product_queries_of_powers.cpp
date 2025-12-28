@@ -18,8 +18,7 @@
  * ! 0 <= starti <= endi < powers.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> productQueries(int n, std::vector<std::vector<int>>& queries)
     {

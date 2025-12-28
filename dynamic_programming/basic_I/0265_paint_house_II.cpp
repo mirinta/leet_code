@@ -22,10 +22,12 @@
  * ! Could you solve it in O(nk) runtime?
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minCostII(std::vector<std::vector<int>>& costs) { return approach2(costs); }
+    int minCostII(std::vector<std::vector<int>>& costs)
+    {
+        return approach2(costs);
+    }
 
 private:
     // DP with time and space optimization, time O(NK), time O(K)

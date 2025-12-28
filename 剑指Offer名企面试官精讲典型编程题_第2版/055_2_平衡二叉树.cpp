@@ -1,10 +1,10 @@
+#include <cmath>
 #include <utility>
 
 /**
  *  Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -19,8 +19,7 @@ struct TreeNode
  * ! 本题与LC 110相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isBalanced(TreeNode* root)
     {

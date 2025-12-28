@@ -16,8 +16,7 @@
  * ! 0 <= queries[i][0] <= queries[i][1] <= nums.length - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<bool> isArraySpecial(std::vector<int>& nums, std::vector<std::vector<int>>& queries)
     {

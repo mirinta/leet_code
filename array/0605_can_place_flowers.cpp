@@ -14,8 +14,7 @@
  * ! 0 <= n <= flowerbed.length
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canPlaceFlowers(std::vector<int>& flowerbed, int n)
     {

@@ -24,8 +24,7 @@
  * ! of operations after which all elements of the array are greater than or equal to k.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<int>& nums, int k)
     {

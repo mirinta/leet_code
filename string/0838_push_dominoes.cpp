@@ -30,8 +30,7 @@
  * ! dominoes[i] is either 'L', 'R', or '.'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string pushDominoes(std::string dominoes)
     {

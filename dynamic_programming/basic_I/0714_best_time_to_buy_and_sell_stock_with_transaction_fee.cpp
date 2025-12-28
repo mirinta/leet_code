@@ -16,10 +16,12 @@
  * ! 0 <= fee < 5 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxProfit(std::vector<int>& prices, int fee) { return approach2(prices, fee); }
+    int maxProfit(std::vector<int>& prices, int fee)
+    {
+        return approach2(prices, fee);
+    }
 
 private:
     // DP with space optimization

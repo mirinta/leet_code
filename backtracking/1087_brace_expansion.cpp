@@ -24,8 +24,7 @@
  * ! All characters inside a pair of consecutive opening and ending curly brackets are different.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> expand(std::string s)
     {
@@ -64,8 +63,7 @@ private:
         return next;
     }
 
-    void backtrack(std::vector<std::string>& result, std::string& path, int i,
-                   const std::vector<std::string>& next)
+    void backtrack(std::vector<std::string>& result, std::string& path, int i, const std::vector<std::string>& next)
     {
         if (i == next.size()) {
             result.push_back(path);

@@ -17,11 +17,9 @@
  * ! There are no repeated connections.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> criticalConnections(int n,
-                                                      std::vector<std::vector<int>>& connections)
+    std::vector<std::vector<int>> criticalConnections(int n, std::vector<std::vector<int>>& connections)
     {
         std::vector<std::vector<int>> graph(n);
         for (const auto& edge : connections) {

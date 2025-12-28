@@ -26,8 +26,7 @@
  * ! The input is generated such that the occurrences of an ID will not be negative in any step.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<long long> mostFrequentIDs(std::vector<int>& nums, std::vector<int>& freq)
     {

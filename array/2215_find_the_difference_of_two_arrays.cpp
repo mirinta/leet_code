@@ -11,8 +11,7 @@
  * Note that the integers in the lists may be returned in any order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> findDifference(std::vector<int>& nums1, std::vector<int>& nums2)
     {

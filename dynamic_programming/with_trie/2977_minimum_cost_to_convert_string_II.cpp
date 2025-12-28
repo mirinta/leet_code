@@ -33,11 +33,12 @@
  * ! 1 <= cost[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long minimumCost(std::string source, std::string target,
-                          std::vector<std::string>& original, std::vector<std::string>& changed,
+    long long minimumCost(std::string source,
+                          std::string target,
+                          std::vector<std::string>& original,
+                          std::vector<std::string>& changed,
                           std::vector<int>& cost)
     {
         if (source.size() != target.size())
@@ -55,8 +56,7 @@ public:
             }
         }
         const int numOfNodes = map.size();
-        std::vector<std::vector<long long>> minDist(numOfNodes,
-                                                    std::vector<long long>(numOfNodes, LLONG_MAX));
+        std::vector<std::vector<long long>> minDist(numOfNodes, std::vector<long long>(numOfNodes, LLONG_MAX));
         for (int i = 0; i < numOfNodes; ++i) {
             minDist[i][i] = 0;
         }
@@ -122,8 +122,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::array<TrieNode*, 26> next{nullptr};
         int id{-1};
     };

@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cmath>
 #include <numbers>
 #include <vector>
 
@@ -37,8 +38,7 @@
  * ! 0 <= posx, posy, xi, yi <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int visiblePoints(std::vector<std::vector<int>>& points, int angle, std::vector<int>& location)
     {

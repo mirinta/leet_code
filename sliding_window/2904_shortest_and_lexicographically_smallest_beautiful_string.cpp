@@ -21,8 +21,7 @@
  * ! 1 <= k <= s.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string shortestBeautifulSubstring(const std::string& s, int k)
     {

@@ -11,8 +11,7 @@
  * ! 本题与LC 233相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int countDigitOne(int n)
     {

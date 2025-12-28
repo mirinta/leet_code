@@ -9,8 +9,7 @@
  * ! s[i] is a printable ascii character.
  */
 
-class Solution
-{
+class Solution {
 public:
     void reverseString(std::vector<char>& s)
     {

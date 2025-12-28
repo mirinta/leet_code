@@ -12,14 +12,15 @@
  * ! 1 <= n <= 14
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> findStrobogrammatic(int n) { return dfs(n, n); }
+    std::vector<std::string> findStrobogrammatic(int n)
+    {
+        return dfs(n, n);
+    }
 
 private:
-    const std::unordered_map<char, char> map{
-        {'0', '0'}, {'1', '1'}, {'6', '9'}, {'8', '8'}, {'9', '6'}};
+    const std::unordered_map<char, char> map{{'0', '0'}, {'1', '1'}, {'6', '9'}, {'8', '8'}, {'9', '6'}};
 
     std::vector<std::string> dfs(int n, int finalLength)
     {

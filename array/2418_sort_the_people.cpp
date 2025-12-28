@@ -18,8 +18,7 @@
  * ! All the values of heights are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> sortPeople(std::vector<std::string>& names, std::vector<int>& heights)
     {
@@ -29,8 +28,7 @@ public:
             info[i].first = heights[i];
             info[i].second = i;
         }
-        std::sort(info.begin(), info.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
+        std::sort(info.begin(), info.end(), [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
         std::vector<std::string> result(n);
         for (int i = 0; i < n; ++i) {
             result[i] = names[info[i].second];

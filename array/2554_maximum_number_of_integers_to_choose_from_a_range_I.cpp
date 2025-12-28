@@ -20,8 +20,7 @@
  * ! 1 <= maxSum <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxCount(std::vector<int>& banned, int n, int maxSum)
     {

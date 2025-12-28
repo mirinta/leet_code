@@ -17,10 +17,12 @@
  * ! -10^4 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxAbsoluteSum(std::vector<int>& nums) { return approach2(nums); }
+    int maxAbsoluteSum(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     int approach2(const std::vector<int>& nums)

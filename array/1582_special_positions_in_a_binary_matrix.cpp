@@ -12,8 +12,7 @@
  * ! mat[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numSpecial(std::vector<std::vector<int>>& mat)
     {

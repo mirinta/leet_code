@@ -23,10 +23,12 @@
  * ! nums consists of equal number of positive and negative integers.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> rearrangeArray(std::vector<int>& nums) { return approach2(nums); }
+    std::vector<int> rearrangeArray(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // Two-pointers, TC = O(N), SC = O(N)

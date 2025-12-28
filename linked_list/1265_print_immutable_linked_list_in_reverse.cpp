@@ -2,8 +2,7 @@
  * This is the ImmutableListNode's API interface.
  * You should not implement it, or speculate about its implementation.
  */
-class ImmutableListNode
-{
+class ImmutableListNode {
 public:
     void printValue();            // print the value of the node.
     ImmutableListNode* getNext(); // return the next node.
@@ -30,10 +29,12 @@ public:
  * ! The value of each node in the linked list is between [-1000, 1000].
  */
 
-class Solution
-{
+class Solution {
 public:
-    void printLinkedListInReverse(ImmutableListNode* head) { return approach2(head); }
+    void printLinkedListInReverse(ImmutableListNode* head)
+    {
+        return approach2(head);
+    }
 
 private:
     // time O(N^2), space O(1)

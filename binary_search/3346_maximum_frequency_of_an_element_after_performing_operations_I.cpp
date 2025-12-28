@@ -19,8 +19,7 @@
  * ! 0 <= numOperations <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxFrequency(std::vector<int>& nums, int k, int numOperations)
     {
@@ -41,13 +40,9 @@ public:
         }
         int result = 0;
         for (int val = unique.front(); val <= unique.back(); ++val) {
-            const int lower =
-                std::lower_bound(unique.begin(), unique.end(), val - k) - unique.begin();
-            const int upper =
-                std::upper_bound(unique.begin(), unique.end(), val + k) - unique.begin();
-            result = std::max(
-                result,
-                map[val] + std::min(numOperations, presum[upper] - presum[lower] - map[val]));
+            const int lower = std::lower_bound(unique.begin(), unique.end(), val - k) - unique.begin();
+            const int upper = std::upper_bound(unique.begin(), unique.end(), val + k) - unique.begin();
+            result = std::max(result, map[val] + std::min(numOperations, presum[upper] - presum[lower] - map[val]));
         }
         return result;
     }

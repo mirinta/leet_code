@@ -11,10 +11,12 @@
  * ! s and t only contain lowercase letters and '#' characters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool backspaceCompare(std::string s, std::string t) { return approach2(s, t); }
+    bool backspaceCompare(std::string s, std::string t)
+    {
+        return approach2(s, t);
+    }
 
 private:
     bool approach2(const std::string& s, const std::string& t)
@@ -58,7 +60,10 @@ private:
         return true;
     }
 
-    bool approach1(const std::string& s, const std::string& t) { return process(s) == process(t); }
+    bool approach1(const std::string& s, const std::string& t)
+    {
+        return process(s) == process(t);
+    }
 
     std::string process(const std::string& s)
     {

@@ -19,8 +19,7 @@
  * ! 2 <= board.length == board[i].length <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> pathsWithMaxScore(std::vector<std::string>& board)
     {
@@ -28,8 +27,7 @@ public:
         // dp[i][j][1] = num of paths from (n-1,n-1) to (i,j) such that path sum = dp[i][j][0]
         constexpr int kMod = 1e9 + 7;
         const int n = board.size();
-        std::vector<std::vector<std::array<int, 2>>> dp(
-            n, std::vector<std::array<int, 2>>(n, {-1, 0}));
+        std::vector<std::vector<std::array<int, 2>>> dp(n, std::vector<std::array<int, 2>>(n, {-1, 0}));
         for (int i = n - 1; i >= 0; --i) {
             for (int j = n - 1; j >= 0; --j) {
                 if (i == n - 1 && j == n - 1) {

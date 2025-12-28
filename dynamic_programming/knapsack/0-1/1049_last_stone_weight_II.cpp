@@ -19,10 +19,12 @@
  * ! 1 <= stones[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int lastStoneWeightII(std::vector<int>& stones) { return approach2(stones); }
+    int lastStoneWeightII(std::vector<int>& stones)
+    {
+        return approach2(stones);
+    }
 
 private:
     int approach2(const std::vector<int>& stones)

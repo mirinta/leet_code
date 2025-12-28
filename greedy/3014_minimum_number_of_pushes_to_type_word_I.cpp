@@ -24,8 +24,7 @@
  * ! All letters in word are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumPushes(std::string word)
     {

@@ -4,8 +4,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -15,10 +14,12 @@ struct ListNode
  * 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> reversePrint(ListNode* head) { return approach3(head); }
+    std::vector<int> reversePrint(ListNode* head)
+    {
+        return approach3(head);
+    }
 
 private:
     std::vector<int> approach1(ListNode* head)

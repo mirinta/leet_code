@@ -20,8 +20,7 @@
  * ! At most 1000 calls will be made to each method of increment, push and pop each separately.
  */
 
-class CustomStack
-{
+class CustomStack {
 public:
     CustomStack(int maxSize) : capacity(maxSize) {}
 

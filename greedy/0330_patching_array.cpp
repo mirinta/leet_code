@@ -13,8 +13,7 @@
  * ! 1 <= n <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int minPatches(std::vector<int>& nums, int n)
     {

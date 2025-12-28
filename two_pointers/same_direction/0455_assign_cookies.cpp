@@ -15,8 +15,7 @@
  * ! 1 <= g[i], s[j] <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int findContentChildren(std::vector<int>& g, std::vector<int>& s)
     {

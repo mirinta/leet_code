@@ -22,10 +22,8 @@
  * ! At most 10^4 calls will be made to addWord and search.
  */
 
-class Trie
-{
-    struct TrieNode
-    {
+class Trie {
+    struct TrieNode {
         std::unordered_map<char, TrieNode*> next;
         bool isEnd{false};
     };
@@ -69,14 +67,19 @@ private:
     TrieNode* root;
 };
 
-class WordDictionary
-{
+class WordDictionary {
 public:
     WordDictionary() {}
 
-    void addWord(const std::string& word) { trie.insert(word); }
+    void addWord(const std::string& word)
+    {
+        trie.insert(word);
+    }
 
-    bool search(const std::string& word) { return trie.fuzzySearch(word); }
+    bool search(const std::string& word)
+    {
+        return trie.fuzzySearch(word);
+    }
 
 private:
     Trie trie;

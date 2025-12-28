@@ -19,8 +19,7 @@
  * ! At most 100 calls will be made to next and hasNext.
  */
 
-class StringIterator
-{
+class StringIterator {
 public:
     StringIterator(std::string compressedString) : s(std::move(compressedString)) {}
 
@@ -40,7 +39,10 @@ public:
         return c;
     }
 
-    bool hasNext() { return i < s.size() || count > 0; }
+    bool hasNext()
+    {
+        return i < s.size() || count > 0;
+    }
 
 private:
     int i{0};

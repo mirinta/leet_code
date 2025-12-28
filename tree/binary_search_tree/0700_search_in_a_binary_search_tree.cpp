@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -23,10 +22,12 @@ struct TreeNode
  * ! 1 <= val <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
-    TreeNode* searchBST(TreeNode* root, int val) { return approach2(root, val); }
+    TreeNode* searchBST(TreeNode* root, int val)
+    {
+        return approach2(root, val);
+    }
 
 private:
     TreeNode* approach2(TreeNode* root, int val)

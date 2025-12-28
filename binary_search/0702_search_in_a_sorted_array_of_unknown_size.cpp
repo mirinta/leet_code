@@ -2,8 +2,7 @@
  * This is the ArrayReader's API interface.
  * You should not implement it, or speculate about its implementation
  */
-class ArrayReader
-{
+class ArrayReader {
 public:
     int get(int index) const;
 };
@@ -29,10 +28,12 @@ public:
  * ! secret is sorted in a strictly increasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int search(const ArrayReader& reader, int target) { return approach2(reader, target); }
+    int search(const ArrayReader& reader, int target)
+    {
+        return approach2(reader, target);
+    }
 
 private:
     int approach1(const ArrayReader& reader, int target)

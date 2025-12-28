@@ -22,17 +22,19 @@
  * ! 1 <= n <= 5000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int knightDialer(int n) { return approach2(n); }
+    int knightDialer(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;
 
-    const std::unordered_map<int, std::vector<int>> map{
-        {0, {4, 6}}, {1, {6, 8}},    {2, {7, 9}}, {3, {4, 8}}, {4, {0, 3, 9}},
-        {5, {}},     {6, {0, 1, 7}}, {7, {2, 6}}, {8, {1, 3}}, {9, {2, 4}}};
+    const std::unordered_map<int, std::vector<int>> map{{0, {4, 6}},    {1, {6, 8}}, {2, {7, 9}},    {3, {4, 8}},
+                                                        {4, {0, 3, 9}}, {5, {}},     {6, {0, 1, 7}}, {7, {2, 6}},
+                                                        {8, {1, 3}},    {9, {2, 4}}};
 
     // DP with space optimization, time O(N), space O(1)
     int approach2(int n)

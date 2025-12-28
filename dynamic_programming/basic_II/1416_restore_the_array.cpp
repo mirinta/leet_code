@@ -15,8 +15,7 @@
  * ! 1 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfArrays(std::string s, int k)
     {

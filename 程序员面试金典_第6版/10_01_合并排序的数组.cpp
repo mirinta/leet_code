@@ -9,8 +9,7 @@
  * ! A.length == n + m
  */
 
-class Solution
-{
+class Solution {
 public:
     void merge(std::vector<int>& A, int m, std::vector<int>& B, int n)
     {

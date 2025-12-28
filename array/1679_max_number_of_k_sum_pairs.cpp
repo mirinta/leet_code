@@ -15,10 +15,12 @@
  * ! 1 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxOperations(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int maxOperations(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     // time O(n), space O(n)

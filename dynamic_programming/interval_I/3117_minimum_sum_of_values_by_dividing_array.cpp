@@ -20,15 +20,14 @@
  * ! 0 <= andValues[j] < 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumValueSum(std::vector<int>& nums, std::vector<int>& andValues)
     {
         const int n = nums.size();
         const int m = andValues.size();
-        std::vector<std::vector<std::unordered_map<int, int>>> memo(
-            n + 1, std::vector<std::unordered_map<int, int>>(m + 1));
+        std::vector<std::vector<std::unordered_map<int, int>>> memo(n + 1,
+                                                                    std::vector<std::unordered_map<int, int>>(m + 1));
         const int result = dp(memo, 0, 0, -1, nums, andValues);
         return result == kMax ? -1 : result;
     }
@@ -36,8 +35,12 @@ public:
 private:
     static constexpr int kMax = INT_MAX / 2;
 
-    int dp(std::vector<std::vector<std::unordered_map<int, int>>>& memo, int i, int j, int AND,
-           const std::vector<int>& nums, const std::vector<int>& andValues)
+    int dp(std::vector<std::vector<std::unordered_map<int, int>>>& memo,
+           int i,
+           int j,
+           int AND,
+           const std::vector<int>& nums,
+           const std::vector<int>& andValues)
     {
         if (i == nums.size())
             return j == andValues.size() ? 0 : kMax;

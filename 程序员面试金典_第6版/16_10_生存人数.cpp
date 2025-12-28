@@ -15,8 +15,7 @@
  * ! birth[i] <= death[i]
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxAliveYear(std::vector<int>& birth, std::vector<int>& death)
     {

@@ -9,8 +9,7 @@
  * ! 0 <= arr[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int countElements(std::vector<int>& arr)
     {

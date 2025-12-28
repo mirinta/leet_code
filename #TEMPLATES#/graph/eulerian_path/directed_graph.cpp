@@ -2,8 +2,7 @@
 #include <unordered_map>
 #include <vector>
 
-class Solve
-{
+class Solve {
 public:
     explicit Solve(const std::vector<std::pair<int, int>>& edges)
     {

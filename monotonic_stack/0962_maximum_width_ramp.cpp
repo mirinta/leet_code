@@ -12,10 +12,12 @@
  * ! 0 <= nums[i] <= 5 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxWidthRamp(std::vector<int>& nums) { return approach3(nums); }
+    int maxWidthRamp(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     // monotonic stack, TC = O(N), SC = O(N)

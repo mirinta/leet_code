@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -21,10 +20,12 @@ struct TreeNode
  * ! -100 <= Node.val <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> inorderTraversal(TreeNode* root) { return approach2(root); }
+    std::vector<int> inorderTraversal(TreeNode* root)
+    {
+        return approach2(root);
+    }
 
 private:
     std::vector<int> approach2(TreeNode* root)

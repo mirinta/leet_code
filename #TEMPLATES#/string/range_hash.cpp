@@ -1,8 +1,7 @@
 #include <string>
 #include <vector>
 
-class RangeHash
-{
+class RangeHash {
     using LLONG = long long;
     static constexpr LLONG kMod = 1e9 + 7;
     static constexpr LLONG kBase = 13; // prime number

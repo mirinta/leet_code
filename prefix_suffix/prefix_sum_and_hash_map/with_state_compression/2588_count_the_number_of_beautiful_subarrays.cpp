@@ -18,8 +18,7 @@
  * ! 0 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     long long beautifulSubarrays(std::vector<int>& nums)
     {

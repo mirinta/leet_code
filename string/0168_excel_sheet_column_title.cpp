@@ -7,8 +7,7 @@
  * ! 1 <= columnNumber <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string convertToTitle(int columnNumber)
     {

@@ -11,8 +11,7 @@
  * 当某个栈为空时，应当删除该栈。当栈中没有元素或不存在该栈时，pop，popAt 应返回 -1.
  */
 
-class StackOfPlates
-{
+class StackOfPlates {
 public:
     StackOfPlates(int cap) : capacity(cap) {}
 
@@ -26,7 +25,10 @@ public:
         }
     }
 
-    int pop() { return popAt(data.size() - 1); }
+    int pop()
+    {
+        return popAt(data.size() - 1);
+    }
 
     int popAt(int index)
     {

@@ -25,8 +25,7 @@
  * - 2 if player 2 is the winner after the move.
  */
 
-class TicTacToe
-{
+class TicTacToe {
 public:
     TicTacToe(int n) : rows(n, 0), cols(n, 0) {}
 

@@ -33,8 +33,7 @@
  * ! s[i] is a digit or '*'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numDecodings(std::string s)
     {

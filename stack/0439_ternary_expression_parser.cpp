@@ -18,8 +18,7 @@
  * ! one-digit number.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string parseTernary(std::string expression)
     {

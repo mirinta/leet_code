@@ -28,11 +28,9 @@
  * ! The maze contains at least 2 empty spaces.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int shortestDistance(std::vector<std::vector<int>>& maze, std::vector<int>& start,
-                         std::vector<int>& destination)
+    int shortestDistance(std::vector<std::vector<int>>& maze, std::vector<int>& start, std::vector<int>& destination)
     {
         static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
         const int m = maze.size();
@@ -76,8 +74,7 @@ public:
 private:
     using Tuple = std::tuple<int, int, int>; // <dist, x, y>
 
-    struct Compare
-    {
+    struct Compare {
         bool operator()(const Tuple& t1, const Tuple& t2) const
         {
             return std::get<0>(t1) > std::get<0>(t2);

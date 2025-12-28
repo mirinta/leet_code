@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -15,10 +14,12 @@ struct TreeNode
  * 给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。
  */
 
-class Solution
-{
+class Solution {
 public:
-    TreeNode* sortedArrayToBST(std::vector<int>& nums) { return build(0, nums.size() - 1, nums); }
+    TreeNode* sortedArrayToBST(std::vector<int>& nums)
+    {
+        return build(0, nums.size() - 1, nums);
+    }
 
 private:
     TreeNode* build(int lo, int hi, const std::vector<int>& nums)

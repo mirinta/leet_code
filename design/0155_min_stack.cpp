@@ -23,8 +23,7 @@
  * ! At most 3 * 10^4 calls will be made to push, pop, top, and getMin.
  */
 
-class MinStack
-{
+class MinStack {
 public:
     MinStack() = default;
 
@@ -47,9 +46,15 @@ public:
         min.pop();
     }
 
-    int top() { return data.empty() ? INT_MIN : data.top(); }
+    int top()
+    {
+        return data.empty() ? INT_MIN : data.top();
+    }
 
-    int getMin() { return min.empty() ? INT_MIN : min.top(); }
+    int getMin()
+    {
+        return min.empty() ? INT_MIN : min.top();
+    }
 
 private:
     std::stack<int> data;

@@ -17,8 +17,7 @@
  * ! grid[0][0] == grid[m - 1][n - 1] == 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int shortestPath(std::vector<std::vector<int>>& grid, int k)
     {

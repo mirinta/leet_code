@@ -13,10 +13,12 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int longestConsecutive(std::vector<int>& nums) { return approach2(nums); }
+    int longestConsecutive(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // time O(N), space O(N)

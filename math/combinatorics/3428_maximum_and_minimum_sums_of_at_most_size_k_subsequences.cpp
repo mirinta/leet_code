@@ -12,8 +12,7 @@
  * ! 1 <= k <= min(70, nums.length)
  */
 
-class Solution
-{
+class Solution {
 public:
     int minMaxSums(std::vector<int>& nums, int k)
     {
@@ -47,8 +46,7 @@ public:
             result = (result + presum[i][std::min(i, k - 1)] * nums[i] % kMod) % kMod;
             // fix nums[i] as the min element
             // num of subsequnces = C(n-i-1,0) + C(n-i-1,1) + ... + C(n-i-1,k-1)
-            result =
-                (result + presum[n - i - 1][std::min(n - i - 1, k - 1)] * nums[i] % kMod) % kMod;
+            result = (result + presum[n - i - 1][std::min(n - i - 1, k - 1)] * nums[i] % kMod) % kMod;
         }
         return result;
     }

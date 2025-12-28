@@ -33,11 +33,9 @@
  * ! getRear, isEmpty, isFull.
  */
 
-class MyCircularDeque
-{
+class MyCircularDeque {
 public:
-    explicit MyCircularDeque(int k)
-        : capacity(k), head(std::make_shared<Node>(-1)), tail(std::make_shared<Node>(-1))
+    explicit MyCircularDeque(int k) : capacity(k), head(std::make_shared<Node>(-1)), tail(std::make_shared<Node>(-1))
     {
         head->next = tail;
         tail->prev = head;
@@ -113,13 +111,18 @@ public:
         return tail->prev.lock()->val;
     }
 
-    bool isEmpty() const { return size == 0; }
+    bool isEmpty() const
+    {
+        return size == 0;
+    }
 
-    bool isFull() const { return size == capacity; }
+    bool isFull() const
+    {
+        return size == capacity;
+    }
 
 private:
-    struct Node
-    {
+    struct Node {
         int val;
         std::weak_ptr<Node> prev;
         std::shared_ptr<Node> next;

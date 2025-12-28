@@ -11,8 +11,7 @@
  * ! ransomNote and magazine consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canConstruct(std::string ransomNote, std::string magazine)
     {

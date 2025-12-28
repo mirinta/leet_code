@@ -22,8 +22,7 @@
  * ! chars[i] is a lowercase English letter, uppercase English letter, digit, or symbol.
  */
 
-class Solution
-{
+class Solution {
 public:
     int compress(std::vector<char>& chars)
     {

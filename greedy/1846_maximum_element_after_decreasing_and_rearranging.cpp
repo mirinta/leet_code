@@ -24,8 +24,7 @@
  * ! 1 <= arr[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumElementAfterDecrementingAndRearranging(std::vector<int>& arr)
     {

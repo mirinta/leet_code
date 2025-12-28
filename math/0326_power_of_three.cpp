@@ -1,5 +1,5 @@
-#include <cmath>
 #include <climits>
+#include <cmath>
 
 /**
  * Given an integer n, return true if it is a power of three. Otherwise, return false.
@@ -9,10 +9,12 @@
  * ! -2^31 <= n <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isPowerOfThree(int n) { return approach2(n); }
+    bool isPowerOfThree(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     bool approach2(int n)

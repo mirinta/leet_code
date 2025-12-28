@@ -20,8 +20,7 @@
  * ! 1 <= ages[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int bestTeamScore(std::vector<int>& scores, std::vector<int>& ages)
     {

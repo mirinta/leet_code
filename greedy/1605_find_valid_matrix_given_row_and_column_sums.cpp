@@ -17,8 +17,7 @@
  * ! sum(rowSum) == sum(colSum)
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> restoreMatrix(std::vector<int>& rowSum, std::vector<int>& colSum)
     {

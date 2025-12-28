@@ -20,8 +20,7 @@
  * ! The input graph is guaranteed to be a DAG.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> allPathsSourceTarget(std::vector<std::vector<int>>& graph)
     {
@@ -33,7 +32,10 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::vector<int>>& result, std::vector<int>& path, int src, int dst,
+    void backtrack(std::vector<std::vector<int>>& result,
+                   std::vector<int>& path,
+                   int src,
+                   int dst,
                    const std::vector<std::vector<int>>& graph)
     {
         if (src == dst) {

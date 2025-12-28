@@ -18,8 +18,7 @@
  * ! 1 <= stoneValue[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int stoneGameV(std::vector<int>& stoneValue)
     {

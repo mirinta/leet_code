@@ -22,8 +22,7 @@
  * ! -10^4 <= stones[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int stoneGameVIII(std::vector<int>& stones)
     {

@@ -7,8 +7,7 @@
  * ! 0 <= nums[i] <= 10000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> exchange(const std::vector<int>& nums)
     {

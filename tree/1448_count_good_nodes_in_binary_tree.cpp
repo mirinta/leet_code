@@ -1,10 +1,11 @@
+
+#include <limits>
 #include <utility>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -23,8 +24,7 @@ struct TreeNode
  * ! Each node's value is between [-10^4, 10^4].
  */
 
-class Solution
-{
+class Solution {
 public:
     int goodNodes(TreeNode* root)
     {

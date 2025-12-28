@@ -12,10 +12,12 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countSubstrings(std::string s) { return approach2(s); }
+    int countSubstrings(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     // DP, TC = O(N^2), SC = O(N^2)

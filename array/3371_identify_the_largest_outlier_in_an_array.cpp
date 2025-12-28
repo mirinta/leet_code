@@ -19,8 +19,7 @@
  * ! The input is generated such that at least one potential outlier exists in nums.
  */
 
-class Solution
-{
+class Solution {
 public:
     int getLargestOutlier(std::vector<int>& nums)
     {

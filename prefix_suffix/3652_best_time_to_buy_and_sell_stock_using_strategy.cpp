@@ -36,8 +36,7 @@
  * ! k is even
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maxProfit(std::vector<int>& prices, std::vector<int>& strategy, int k)
     {

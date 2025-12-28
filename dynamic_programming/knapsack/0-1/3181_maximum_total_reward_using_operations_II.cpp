@@ -20,8 +20,7 @@
  * ! 1 <= rewardValues[i] <= 5 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxTotalReward(std::vector<int>& rewardValues)
     {

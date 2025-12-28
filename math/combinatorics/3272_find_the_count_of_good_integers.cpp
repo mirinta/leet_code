@@ -26,8 +26,7 @@
  * ! 1 <= k <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countGoodIntegers(int n, int k)
     {

@@ -13,13 +13,18 @@
  * ! 1 <= n <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numberOfMatches(int n) { return approach2(n); }
+    int numberOfMatches(int n)
+    {
+        return approach2(n);
+    }
 
 private:
-    int approach2(int n) { return n - 1; }
+    int approach2(int n)
+    {
+        return n - 1;
+    }
 
     int approach1(int n)
     {

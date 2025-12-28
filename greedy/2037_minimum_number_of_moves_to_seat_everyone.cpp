@@ -19,8 +19,7 @@
  * ! 1 <= seats[i], students[j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int minMovesToSeat(std::vector<int>& seats, std::vector<int>& students)
     {

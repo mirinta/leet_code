@@ -1,8 +1,7 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* left;
@@ -26,8 +25,7 @@ public:
  * ! p and q exist in the tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* lowestCommonAncestor(Node* p, Node* q)
     {

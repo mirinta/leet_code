@@ -11,8 +11,7 @@
  * ! 1 <= n <= 18
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> validStrings(int n)
     {

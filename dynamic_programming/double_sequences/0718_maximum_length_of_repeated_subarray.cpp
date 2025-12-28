@@ -8,8 +8,7 @@
  * ! 0 <= nums1[i], nums2[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int findLength(std::vector<int>& nums1, std::vector<int>& nums2)
     {

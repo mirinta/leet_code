@@ -1,7 +1,6 @@
 #include <vector>
 
-class SegmentTree
-{
+class SegmentTree {
 public:
     explicit SegmentTree(const std::vector<long long>& nums)
         : n(nums.size()), data(4 * n, 0), lazyAdd(4 * n, 0), lazyMulti(4 * n, 1)
@@ -10,13 +9,22 @@ public:
     }
 
     // query the sum of nums[L:R], L and R are 0-indexed
-    long long query(long long L, long long R) { return query(L, R, 0, n - 1, 1); }
+    long long query(long long L, long long R)
+    {
+        return query(L, R, 0, n - 1, 1);
+    }
 
     // add each element of nums[L:R] by delta, L and R are 0-indexed
-    void add(long long L, long long R, long long delta) { add(L, R, delta, 0, n - 1, 1); }
+    void add(long long L, long long R, long long delta)
+    {
+        add(L, R, delta, 0, n - 1, 1);
+    }
 
     // multiply each element of nums[L:R] by factor, L and R are 0-indexed
-    void multi(long long L, long long R, long long factor) { multi(L, R, factor, 0, n - 1, 1); }
+    void multi(long long L, long long R, long long factor)
+    {
+        multi(L, R, factor, 0, n - 1, 1);
+    }
 
 private:
     void build(long long lo, long long hi, long long id, const std::vector<long long>& nums)

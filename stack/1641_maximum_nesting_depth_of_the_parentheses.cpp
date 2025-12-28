@@ -30,8 +30,7 @@
  * ! It is guaranteed that parentheses expression s is a VPS.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxDepth(std::string s)
     {

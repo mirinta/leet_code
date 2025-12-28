@@ -28,8 +28,7 @@
  * ! There may be multiple edges between a pair of nodes, but they must have unique weights.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minMaxWeight(int n, std::vector<std::vector<int>>& edges, int threshold)
     {

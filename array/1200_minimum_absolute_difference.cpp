@@ -14,8 +14,7 @@
  * - b - a equals to the minimum absolute difference of any two elements in "arr".
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> minimumAbsDifference(std::vector<int>& arr)
     {

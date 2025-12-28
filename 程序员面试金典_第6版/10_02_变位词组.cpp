@@ -11,8 +11,7 @@
  * ! 不考虑答案输出的顺序。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs)
     {

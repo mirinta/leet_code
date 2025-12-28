@@ -26,8 +26,7 @@
  * ! -1000 <= dungeon[i][j] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int calculateMinimumHP(std::vector<std::vector<int>>& dungeon)
     {

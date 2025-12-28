@@ -19,8 +19,7 @@
  * ! All the pairs [ai, bi] are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findOrder(int numCourses, std::vector<std::vector<int>>& prerequisites)
     {
@@ -82,7 +81,9 @@ private:
         return result;
     }
 
-    bool hasCycle(std::vector<Color>& colors, std::vector<int>& result, int v,
+    bool hasCycle(std::vector<Color>& colors,
+                  std::vector<int>& result,
+                  int v,
                   const std::vector<std::vector<int>>& graph)
     {
         colors[v] = Gray;

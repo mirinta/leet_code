@@ -14,8 +14,7 @@
  * ! nums[i] >= 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int rob(std::vector<int>& nums)
     {

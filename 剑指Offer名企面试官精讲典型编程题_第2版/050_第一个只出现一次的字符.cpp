@@ -7,8 +7,7 @@
  * ! 0 <= s 的长度 <= 50000
  */
 
-class Solution
-{
+class Solution {
 public:
     char firstUniqChar(std::string s)
     {

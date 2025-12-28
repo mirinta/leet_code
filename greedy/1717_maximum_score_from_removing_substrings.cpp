@@ -18,8 +18,7 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumGain(std::string s, int x, int y)
     {
@@ -33,8 +32,7 @@ public:
     }
 
 private:
-    std::pair<std::string, int> solve(const std::string& s,
-                                      const std::pair<std::string, int>& combo)
+    std::pair<std::string, int> solve(const std::string& s, const std::pair<std::string, int>& combo)
     {
         const auto& [key, gain] = combo;
         std::stack<char> stack;

@@ -19,8 +19,7 @@
  * !1 <= grid[i][j] <= 106 or grid[i][j] == -1
  */
 
-class Solution
-{
+class Solution {
 public:
     long long sumRemoteness(std::vector<std::vector<int>>& grid)
     {

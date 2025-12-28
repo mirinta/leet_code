@@ -13,8 +13,7 @@
  * ! Each integer in nums will appear twice, only two integers will appear once.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> singleNumber(std::vector<int>& nums)
     {

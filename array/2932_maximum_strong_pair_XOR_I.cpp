@@ -17,8 +17,7 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumStrongPairXor(std::vector<int>& nums)
     {

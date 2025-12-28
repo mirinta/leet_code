@@ -8,10 +8,12 @@
  * ! 0 <= arr[i][j] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countSquares(std::vector<std::vector<int>>& matrix) { return approach2(matrix); }
+    int countSquares(std::vector<std::vector<int>>& matrix)
+    {
+        return approach2(matrix);
+    }
 
 private:
     // DP with space optimization, TC = O(MN), SC = O(N)

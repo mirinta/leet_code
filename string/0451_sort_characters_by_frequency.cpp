@@ -1,4 +1,5 @@
 #include <queue>
+#include <string>
 #include <unordered_map>
 #include <vector>
 
@@ -12,8 +13,7 @@
  * ! s consists of uppercase and lowercase English letters and digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string frequencySort(std::string s)
     {
@@ -35,8 +35,7 @@ public:
 private:
     using Pair = std::pair<char, int>;
 
-    struct Compare
-    {
+    struct Compare {
         bool operator()(const Pair& p1, const Pair& p2)
         {
             if (p1.second == p2.second)

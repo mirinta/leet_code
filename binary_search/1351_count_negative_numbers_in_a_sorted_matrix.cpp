@@ -11,8 +11,7 @@
  * ! -100 <= grid[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int countNegatives(std::vector<std::vector<int>>& grid)
     {

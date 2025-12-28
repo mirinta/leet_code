@@ -35,8 +35,7 @@
  * ! 0 <= currentEnergy <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumPoints(std::vector<int>& enemyEnergies, int currentEnergy)
     {

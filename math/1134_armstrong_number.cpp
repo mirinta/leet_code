@@ -8,8 +8,7 @@
  * ! 1 <= n <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isArmstrong(int n)
     {

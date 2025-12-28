@@ -26,8 +26,7 @@
  * ! -1000 <= points[i][0], points[i][1] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int minTimeToVisitAllPoints(std::vector<std::vector<int>>& points)
     {

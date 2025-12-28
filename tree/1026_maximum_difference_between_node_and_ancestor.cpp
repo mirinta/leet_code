@@ -1,10 +1,11 @@
+#include <cmath>
+#include <limits>
 #include <utility>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -24,8 +25,7 @@ struct TreeNode
  * ! 0 <= Node.val <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxAncestorDiff(TreeNode* root)
     {

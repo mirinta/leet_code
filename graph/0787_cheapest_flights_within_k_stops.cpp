@@ -21,8 +21,7 @@
  * ! src != dst
  */
 
-class Solution
-{
+class Solution {
 public:
     int findCheapestPrice(int n, std::vector<std::vector<int>>& flights, int src, int dst, int k)
     {
@@ -95,9 +94,7 @@ private:
         std::vector<int> edgesTo(n, INT_MAX);
         edgesTo[src] = 0;
         using Triplets = std::tuple<int, int, int>; // <cost, edges, v>
-        auto comparator = [](const auto& t1, const auto& t2) {
-            return std::get<0>(t1) > std::get<0>(t2);
-        };
+        auto comparator = [](const auto& t1, const auto& t2) { return std::get<0>(t1) > std::get<0>(t2); };
         std::priority_queue<Triplets, std::vector<Triplets>, decltype(comparator)> pq(comparator);
         pq.emplace(0, 0, src);
         while (!pq.empty()) {

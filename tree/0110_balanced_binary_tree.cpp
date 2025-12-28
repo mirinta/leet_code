@@ -1,10 +1,10 @@
+#include <cmath>
 #include <utility>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -23,10 +23,12 @@ struct TreeNode
  * ! -10^4 <= Node.val <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isBalanced(TreeNode* root) { return dfs(root) != -1; }
+    bool isBalanced(TreeNode* root)
+    {
+        return dfs(root) != -1;
+    }
 
 private:
     // return the max depth of the given binary tree

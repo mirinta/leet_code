@@ -17,8 +17,7 @@
  * ! 1 <= queries[i] <= m
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> processQueries(std::vector<int>& queries, int m)
     {

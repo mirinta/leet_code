@@ -11,8 +11,7 @@
  * ! -10^9 <= num2 <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int makeTheIntegerZero(int num1, int num2)
     {

@@ -23,8 +23,7 @@
  * ! grumpy[i] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxSatisfied(std::vector<int>& customers, std::vector<int>& grumpy, int minutes)
     {

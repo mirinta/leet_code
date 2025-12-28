@@ -2,10 +2,8 @@
 #include <string>
 #include <unordered_map>
 
-class Trie
-{
-    struct TrieNode
-    {
+class Trie {
+    struct TrieNode {
         bool isEnd{false};
         std::unordered_map<char, TrieNode*> next;
     };

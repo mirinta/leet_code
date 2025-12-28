@@ -15,8 +15,7 @@
  * ! s​​​​​​ and part consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string removeOccurrences(std::string s, std::string part)
     {

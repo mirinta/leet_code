@@ -11,17 +11,14 @@
  * ! 0 <= heightMap[i][j] <= 2 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int trapRainWater(std::vector<std::vector<int>>& heightMap)
     {
         const int m = heightMap.size();
         const int n = heightMap[0].size();
         using Tuple = std::tuple<int, int, int>; // x, y, height
-        auto comparator = [](const auto& t1, const auto& t2) {
-            return std::get<2>(t1) > std::get<2>(t2);
-        };
+        auto comparator = [](const auto& t1, const auto& t2) { return std::get<2>(t1) > std::get<2>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(comparator);
         std::vector<std::vector<bool>> visited(m, std::vector<bool>(n, false));
         for (int i = 0; i < m; ++i) {

@@ -21,8 +21,7 @@
  * ! There are no repeated roads among the queries.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> shortestDistanceAfterQueries(int n, std::vector<std::vector<int>>& queries)
     {

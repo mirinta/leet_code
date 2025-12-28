@@ -22,8 +22,7 @@
  * ! s1, s2, and s3 consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isInterleave(std::string s1, std::string s2, std::string s3)
     {

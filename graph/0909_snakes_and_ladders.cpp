@@ -35,8 +35,7 @@
  * ! The squares labeled 1 and n2 do not have any ladders or snakes.
  */
 
-class Solution
-{
+class Solution {
 public:
     // BFS, time O(N^2), space O(N^2)
     int snakesAndLadders(std::vector<std::vector<int>>& board)

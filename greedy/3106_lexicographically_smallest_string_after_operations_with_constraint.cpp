@@ -19,8 +19,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string getSmallestString(std::string s, int k)
     {
@@ -43,5 +42,8 @@ public:
     }
 
 private:
-    int dist(char c1, char c2) { return std::min(std::abs(c1 - c2), 26 - std::abs(c1 - c2)); }
+    int dist(char c1, char c2)
+    {
+        return std::min(std::abs(c1 - c2), 26 - std::abs(c1 - c2));
+    }
 };

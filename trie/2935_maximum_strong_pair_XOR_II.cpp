@@ -19,14 +19,12 @@
  * ! 1 <= nums[i] <= 2^20 - 1
  */
 
-struct TrieNode
-{
+struct TrieNode {
     int count = 0;
     std::array<TrieNode*, 2> next{nullptr, nullptr};
 };
 
-class Trie
-{
+class Trie {
 public:
     Trie() : root(new TrieNode()) {}
 
@@ -80,8 +78,7 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
     int maximumStrongPairXor(std::vector<int>& nums)
     {

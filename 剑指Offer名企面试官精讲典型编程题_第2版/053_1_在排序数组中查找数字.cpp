@@ -11,8 +11,7 @@
  * ! 本题与LC 34仅返回值不同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int search(std::vector<int>& nums, int target)
     {

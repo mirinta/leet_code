@@ -26,11 +26,9 @@
  * ! The graph is generated such that it has no self-loops.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumDistance(int n, std::vector<std::vector<int>>& edges, int s,
-                        std::vector<int>& marked)
+    int minimumDistance(int n, std::vector<std::vector<int>>& edges, int s, std::vector<int>& marked)
     {
         std::vector<std::vector<std::pair<int, int>>> graph(n);
         for (const auto& e : edges) {

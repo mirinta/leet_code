@@ -13,8 +13,7 @@
  * ! 0 <= k <= s.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int takeCharacters(std::string s, int k)
     {

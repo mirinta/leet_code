@@ -4,8 +4,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -20,10 +19,12 @@ struct ListNode
  * ! -10^5 <= Node.val <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    ListNode* sortList(ListNode* head) { return approach2(head); }
+    ListNode* sortList(ListNode* head)
+    {
+        return approach2(head);
+    }
 
 private:
     // Merge sort, time O(NlogN), space O(logN)

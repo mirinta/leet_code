@@ -20,8 +20,7 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string shiftingLetters(const std::string& s, const std::vector<std::vector<int>>& shifts)
     {

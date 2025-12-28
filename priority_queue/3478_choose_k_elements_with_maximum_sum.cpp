@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -20,8 +21,7 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<long long> findMaxSum(std::vector<int>& nums1, std::vector<int>& nums2, int k)
     {
@@ -31,8 +31,7 @@ public:
         for (int i = 0; i < n; ++i) {
             data.emplace_back(nums1[i], i);
         }
-        std::sort(data.begin(), data.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+        std::sort(data.begin(), data.end(), [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
         std::priority_queue<long long, std::vector<long long>, std::greater<>> pq;
         long long sum = 0;
         std::vector<long long> result(n, 0);

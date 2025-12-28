@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -38,10 +37,12 @@ struct TreeNode
  * ! At most 10^5 calls will be made to hasNext, and next.
  */
 
-class BSTIterator
-{
+class BSTIterator {
 public:
-    BSTIterator(TreeNode* root) { traverseLeft(root); }
+    BSTIterator(TreeNode* root)
+    {
+        traverseLeft(root);
+    }
 
     int next()
     {
@@ -54,7 +55,10 @@ public:
         return node->val;
     }
 
-    bool hasNext() { return !stack.empty(); }
+    bool hasNext()
+    {
+        return !stack.empty();
+    }
 
 private:
     void traverseLeft(TreeNode* node)
@@ -72,8 +76,7 @@ private:
     std::stack<TreeNode*> stack;
 };
 
-class BSTIterator2
-{
+class BSTIterator2 {
 public:
     BSTIterator2(TreeNode* root)
     {
@@ -98,7 +101,10 @@ public:
         return -1;
     }
 
-    bool hasNext() { return index < nums.size(); }
+    bool hasNext()
+    {
+        return index < nums.size();
+    }
 
 private:
     int index = 0;

@@ -15,8 +15,7 @@
  * ! grid[i][j] is either '/', '\', or ' '.
  */
 
-class Solution
-{
+class Solution {
 public:
     int regionsBySlashes(std::vector<std::string>& grid)
     {

@@ -20,8 +20,7 @@
  * ! For each IDi, there will be at least five scores.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> highFive(std::vector<std::vector<int>>& items)
     {

@@ -12,8 +12,7 @@
  * ! 1 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> distinctNumbers(std::vector<int>& nums, int k)
     {

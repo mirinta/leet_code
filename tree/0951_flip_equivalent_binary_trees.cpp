@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -26,8 +25,7 @@ struct TreeNode
  * ! Each tree will have unique node values in the range [0, 99].
  */
 
-class Solution
-{
+class Solution {
 public:
     bool flipEquiv(TreeNode* root1, TreeNode* root2)
     {

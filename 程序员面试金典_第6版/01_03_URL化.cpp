@@ -6,10 +6,12 @@
  * ! 字符串长度在 [0, 500000] 范围内。
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::string replaceSpaces(std::string S, int length) { return approach2(S, length); }
+    std::string replaceSpaces(std::string S, int length)
+    {
+        return approach2(S, length);
+    }
 
 private:
     std::string approach2(std::string& s, int length)

@@ -16,10 +16,12 @@
  * ! 1 <= m, n <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findMaxForm(std::vector<std::string>& strs, int m, int n) { return approach2(strs, m, n); }
+    int findMaxForm(std::vector<std::string>& strs, int m, int n)
+    {
+        return approach2(strs, m, n);
+    }
 
 private:
     int approach2(const std::vector<std::string>& strs, int m, int n)
@@ -27,8 +29,7 @@ private:
         const int sz = strs.size();
         std::vector<int> countZeros(sz);
         for (int i = 0; i < sz; ++i) {
-            countZeros[i] = std::count_if(strs[i].begin(), strs[i].end(),
-                                          [](const auto& c) { return c == '0'; });
+            countZeros[i] = std::count_if(strs[i].begin(), strs[i].end(), [](const auto& c) { return c == '0'; });
         }
         std::vector<std::vector<int>> dp(m + 1, std::vector<int>(n + 1, 0));
         for (int i = 1; i <= sz; ++i) {
@@ -52,11 +53,10 @@ private:
         const int sz = strs.size();
         std::vector<int> countZeros(sz);
         for (int i = 0; i < sz; ++i) {
-            countZeros[i] = std::count_if(strs[i].begin(), strs[i].end(),
-                                          [](const auto& c) { return c == '0'; });
+            countZeros[i] = std::count_if(strs[i].begin(), strs[i].end(), [](const auto& c) { return c == '0'; });
         }
-        std::vector<std::vector<std::vector<int>>> dp(
-            sz + 1, std::vector<std::vector<int>>(m + 1, std::vector<int>(n + 1, 0)));
+        std::vector<std::vector<std::vector<int>>> dp(sz + 1,
+                                                      std::vector<std::vector<int>>(m + 1, std::vector<int>(n + 1, 0)));
         for (int i = 1; i <= sz; ++i) {
             const int zeros = countZeros[i - 1];
             const int ones = strs[i - 1].size() - zeros;

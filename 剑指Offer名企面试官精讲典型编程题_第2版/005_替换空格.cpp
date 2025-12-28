@@ -4,8 +4,7 @@
  * 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string replaceSpace(std::string s)
     {

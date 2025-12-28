@@ -18,8 +18,7 @@
  * ! 1 <= minJump <= maxJump < s.length
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canReach(std::string s, int minJump, int maxJump)
     {

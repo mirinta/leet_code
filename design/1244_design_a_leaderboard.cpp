@@ -23,8 +23,7 @@
  * ! There will be at most 1000 function calls.
  */
 
-class Leaderboard
-{
+class Leaderboard {
 public:
     Leaderboard() {}
 

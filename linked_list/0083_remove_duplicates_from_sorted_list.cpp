@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -19,8 +18,7 @@ struct ListNode
  * ! The list is guaranteed to be sorted in ascending order.
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head)
     {

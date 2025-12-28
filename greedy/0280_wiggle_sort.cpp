@@ -11,10 +11,12 @@
  * ! It is guaranteed that there will be an answer for the given input nums.
  */
 
-class Solution
-{
+class Solution {
 public:
-    void wiggleSort(std::vector<int>& nums) { return approach2(nums); }
+    void wiggleSort(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // time O(N), space O(1)

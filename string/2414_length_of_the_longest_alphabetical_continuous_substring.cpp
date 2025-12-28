@@ -13,8 +13,7 @@
  * ! s consists of only English lowercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestContinuousSubstring(std::string s)
     {

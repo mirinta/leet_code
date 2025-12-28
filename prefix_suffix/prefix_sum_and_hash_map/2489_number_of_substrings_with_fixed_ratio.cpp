@@ -24,8 +24,7 @@
  * ! num1 and num2 are coprime integers.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long fixedRatio(std::string s, int num1, int num2)
     {

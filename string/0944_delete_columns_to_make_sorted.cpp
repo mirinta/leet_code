@@ -25,8 +25,7 @@
  * ! strs[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minDeletionSize(std::vector<std::string>& strs)
     {

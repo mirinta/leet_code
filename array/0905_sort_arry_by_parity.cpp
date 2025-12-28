@@ -10,10 +10,12 @@
  * ! 0 <= nums[i] <= 5000
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> sortArrayByParity(std::vector<int>& nums) { return approach2(nums); }
+    std::vector<int> sortArrayByParity(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // one-pass, in-place, time O(N), space O(1)

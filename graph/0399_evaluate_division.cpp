@@ -27,8 +27,7 @@
  * ! Ai, Bi, Cj, Dj consist of lower case English letters and digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<double> calcEquation(std::vector<std::vector<std::string>>& equations,
                                      std::vector<double>& values,
@@ -61,8 +60,11 @@ public:
 private:
     using Graph = std::unordered_map<std::string, std::unordered_map<std::string, double>>;
 
-    double dfs(std::unordered_set<std::string>& visited, const std::string& start,
-               const std::string& target, double product, const Graph& graph)
+    double dfs(std::unordered_set<std::string>& visited,
+               const std::string& start,
+               const std::string& target,
+               double product,
+               const Graph& graph)
     {
         if (start == target)
             return product;

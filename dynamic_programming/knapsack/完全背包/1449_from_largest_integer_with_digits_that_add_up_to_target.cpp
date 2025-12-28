@@ -18,8 +18,7 @@
  * ! 1 <= cost[i], target <= 5000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string largestNumber(std::vector<int>& cost, int target)
     {

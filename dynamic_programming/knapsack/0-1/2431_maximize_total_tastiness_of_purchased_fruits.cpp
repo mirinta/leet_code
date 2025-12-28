@@ -30,18 +30,15 @@
  * ! 0 <= maxCoupons <= 5
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxTastiness(std::vector<int>& price, std::vector<int>& tastiness, int maxAmount,
-                     int maxCoupons)
+    int maxTastiness(std::vector<int>& price, std::vector<int>& tastiness, int maxAmount, int maxCoupons)
     {
         // dp[i][j][k] = max total tastiness of buying fruits[0:i-1] while the total cost is j and
         // the num of used coupons is k
         const int n = price.size();
         std::vector<std::vector<std::vector<int>>> dp(
-            n + 1,
-            std::vector<std::vector<int>>(1 + maxAmount, std::vector<int>(maxCoupons + 1, 0)));
+            n + 1, std::vector<std::vector<int>>(1 + maxAmount, std::vector<int>(maxCoupons + 1, 0)));
         int result = 0;
         for (int i = 1; i <= n; ++i) {
             const int cost = price[i - 1];

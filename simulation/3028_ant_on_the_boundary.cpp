@@ -24,8 +24,7 @@
  * ! nums[i] != 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int returnToBoundaryCount(std::vector<int>& nums)
     {

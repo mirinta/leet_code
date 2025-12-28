@@ -22,11 +22,9 @@
  * ! 0 <= sc < n
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc,
-                                            int color)
+    std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc, int color)
     {
         if (image.empty() || image[0].empty())
             return {};

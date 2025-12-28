@@ -17,10 +17,12 @@
  * ! and k.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numWays(int n, int k) { return approach2(n, k); }
+    int numWays(int n, int k)
+    {
+        return approach2(n, k);
+    }
 
 private:
     // DP with space optimization, TC = O(N), SC = O(1)

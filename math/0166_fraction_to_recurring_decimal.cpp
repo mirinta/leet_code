@@ -15,8 +15,7 @@
  * ! denominator != 0
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string fractionToDecimal(int numerator, int denominator)
     {

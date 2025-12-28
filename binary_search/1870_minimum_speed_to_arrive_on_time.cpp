@@ -26,8 +26,7 @@
  * ! There will be at most two digits after the decimal point in hour.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minSpeedOnTime(std::vector<int>& dist, double hour)
     {

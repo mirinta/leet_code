@@ -17,8 +17,7 @@
  * ! 1 <= n <= 30
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string countAndSay(int n)
     {

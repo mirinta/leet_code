@@ -14,8 +14,7 @@
  * ! 1 <= num1, num2 <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimizeXor(int num1, int num2)
     {

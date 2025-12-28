@@ -30,10 +30,12 @@ bool knows(int a, int b);
  * ! Could you find a solution without exceeding the maximum number of calls?
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findCelebrity(int n) { return approach2(n); }
+    int findCelebrity(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     int approach2(int n)

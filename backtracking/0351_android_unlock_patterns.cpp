@@ -22,8 +22,7 @@
  * ! 1 <= m, n <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfPatterns(int m, int n)
     {

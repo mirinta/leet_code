@@ -27,12 +27,14 @@
  * ! All the calls to pop and peek are valid.
  */
 
-class MyQueue
-{
+class MyQueue {
 public:
     MyQueue() {}
 
-    void push(int x) { in.push(x); }
+    void push(int x)
+    {
+        in.push(x);
+    }
 
     int pop()
     {
@@ -53,7 +55,10 @@ public:
         return out.top();
     }
 
-    bool empty() { return in.empty() && out.empty(); }
+    bool empty()
+    {
+        return in.empty() && out.empty();
+    }
 
 private:
     void process()

@@ -17,8 +17,7 @@
  * ! nums.length <= threshold <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int smallestDivisor(std::vector<int>& nums, int threshold)
     {

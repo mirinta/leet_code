@@ -12,8 +12,7 @@
  * ! -2^31 <= num <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string toHex(int num)
     {

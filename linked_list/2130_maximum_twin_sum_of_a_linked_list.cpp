@@ -3,8 +3,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -28,8 +27,7 @@ struct ListNode
  * ! 1 <= Node.val <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int pairSum(ListNode* head)
     {

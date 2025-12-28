@@ -18,8 +18,7 @@
  * ! This question is the same as LC.1991.
  */
 
-class Solution
-{
+class Solution {
 public:
     int pivotIndex(std::vector<int>& nums)
     {

@@ -18,8 +18,7 @@
  * ! colors contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minCost(std::string colors, std::vector<int>& neededTime)
     {

@@ -20,8 +20,7 @@
  * ! 0 <= moveTime[i][j] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minTimeToReach(std::vector<std::vector<int>>& moveTime)
     {
@@ -29,9 +28,7 @@ public:
         const int m = moveTime.size();
         const int n = moveTime[0].size();
         using Tuple = std::tuple<int, int, int, int>; // <time, x, y, alter>
-        auto compare = [](const Tuple& t1, const Tuple& t2) {
-            return std::get<0>(t1) > std::get<0>(t2);
-        };
+        auto compare = [](const Tuple& t1, const Tuple& t2) { return std::get<0>(t1) > std::get<0>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(compare)> pq(compare);
         pq.emplace(0, 0, 0, 0);
         std::vector<std::vector<int>> timeTo(m, std::vector<int>(n, INT_MAX));

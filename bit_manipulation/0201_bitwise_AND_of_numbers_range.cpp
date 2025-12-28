@@ -5,8 +5,7 @@
  * ! 0 <= left <= right <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int rangeBitwiseAnd(int left, int right)
     {

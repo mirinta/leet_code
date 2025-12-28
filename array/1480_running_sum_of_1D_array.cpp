@@ -7,8 +7,7 @@
  * Return the running sum of "nums".
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> runningSum(std::vector<int>& nums)
     {

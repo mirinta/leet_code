@@ -21,8 +21,7 @@
  *   of 32-bit int.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string fractionAddition(std::string expression)
     {

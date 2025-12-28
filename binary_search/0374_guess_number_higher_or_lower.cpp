@@ -29,8 +29,7 @@ int guess(int num);
  * 1 <= pick <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int guessNumber(int n)
     {

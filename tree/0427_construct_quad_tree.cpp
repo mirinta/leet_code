@@ -3,8 +3,7 @@
 /**
  * Definition for a QuadTree node.
  */
-class Node
-{
+class Node {
 public:
     bool val;
     bool isLeaf;
@@ -33,8 +32,7 @@ public:
         bottomRight = NULL;
     }
 
-    Node(bool _val, bool _isLeaf, Node* _topLeft, Node* _topRight, Node* _bottomLeft,
-         Node* _bottomRight)
+    Node(bool _val, bool _isLeaf, Node* _topLeft, Node* _topRight, Node* _bottomLeft, Node* _bottomRight)
     {
         val = _val;
         isLeaf = _isLeaf;
@@ -73,8 +71,7 @@ public:
  * ! n == 2^x where 0 <= x <= 6
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* construct(std::vector<std::vector<int>>& grid)
     {
@@ -83,8 +80,7 @@ public:
     }
 
 private:
-    Node* build(int rowStart, int rowEnd, int colStart, int colEnd,
-                const std::vector<std::vector<int>>& grid)
+    Node* build(int rowStart, int rowEnd, int colStart, int colEnd, const std::vector<std::vector<int>>& grid)
     {
         if (rowStart == rowEnd && colStart == colEnd)
             return new Node(grid[rowStart][colStart], true);

@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -25,8 +24,7 @@ struct TreeNode
  * ! 1 <= distance <= 10
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPairs(TreeNode* root, int distance)
     {

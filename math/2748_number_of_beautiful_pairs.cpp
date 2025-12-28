@@ -17,8 +17,7 @@
  * ! nums[i] % 10 != 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int countBeautifulPairs(std::vector<int>& nums)
     {

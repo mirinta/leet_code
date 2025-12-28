@@ -28,8 +28,7 @@
  * ! -1000 <= vals[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumCostSubstring(std::string s, std::string chars, std::vector<int>& vals)
     {

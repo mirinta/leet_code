@@ -36,8 +36,7 @@
  *  ! s consists of only English letters, digits, plus, minus, or dot.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isNumber(const std::string& s)
     {

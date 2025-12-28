@@ -33,11 +33,9 @@
  * ! 0 <= k <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> maxTargetNodes(std::vector<std::vector<int>>& edges1,
-                                    std::vector<std::vector<int>>& edges2, int k)
+    std::vector<int> maxTargetNodes(std::vector<std::vector<int>>& edges1, std::vector<std::vector<int>>& edges2, int k)
     {
         const auto graph2 = buildGraph(edges2);
         const std::vector<int> count2 = helper(graph2, k - 1);

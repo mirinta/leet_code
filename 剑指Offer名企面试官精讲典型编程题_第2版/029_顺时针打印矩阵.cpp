@@ -9,8 +9,7 @@
  * ! 本题与LC 54相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> spiralOrder(std::vector<std::vector<int>>& matrix)
     {

@@ -20,8 +20,7 @@
  * ! s is a valid expression.
  */
 
-class Solution
-{
+class Solution {
 public:
     int calculate(std::string s)
     {
@@ -42,7 +41,10 @@ public:
     }
 
 private:
-    bool isOperator(char c) { return c == '+' || c == '-' || c == '*' || c == '/'; }
+    bool isOperator(char c)
+    {
+        return c == '+' || c == '-' || c == '*' || c == '/';
+    }
 
     int solve(std::string& expression)
     {

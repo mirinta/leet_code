@@ -1,7 +1,7 @@
 #include <array>
 #include <string>
-#include <vector>
 #include <unordered_set>
+#include <vector>
 
 /**
  * Given a digit string s, return the number of unique substrings of s where every digit appears the
@@ -11,8 +11,7 @@
  * ! s consists of digits.
  */
 
-class RangeHash
-{
+class RangeHash {
 public:
     explicit RangeHash(const std::string& s) : prefixHash(s.size() + 1), powMod(s.size() + 1)
     {
@@ -25,14 +24,16 @@ public:
 
     long long query(int left, int right)
     {
-        long long result =
-            prefixHash[right + 1] - prefixHash[left] * powMod[right - left + 1] % kMod;
+        long long result = prefixHash[right + 1] - prefixHash[left] * powMod[right - left + 1] % kMod;
         result = (result + kMod) % kMod;
         return result;
     }
 
 private:
-    long long valueOf(char c) { return c - '0' + 1; }
+    long long valueOf(char c)
+    {
+        return c - '0' + 1;
+    }
 
 private:
     static constexpr long long kMod = 1e9 + 7;
@@ -42,8 +43,7 @@ private:
     std::vector<long long> powMod;
 };
 
-class Solution
-{
+class Solution {
 public:
     int equalDigitFrequency(std::string s)
     {

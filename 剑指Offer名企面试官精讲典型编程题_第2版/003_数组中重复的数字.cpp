@@ -13,13 +13,15 @@
  * ! 2 <= n <= 100000
  */
 
-class Solution
-{
+class Solution {
 public:
     // 【问题】若无重复数字，应返回什么？
     // - 这里暂时返回-1，因为题目说元素取值范围是[0, n-1]
     // 【注意】early return，以及检查数组内元素是否有非法取值的情况
-    int findRepeatNumber(std::vector<int>& nums) { return approach3(nums); }
+    int findRepeatNumber(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     int approach1(std::vector<int>& nums)

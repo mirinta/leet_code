@@ -9,8 +9,7 @@
  * ! nums is sorted in non-decreasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sortedSquares(const std::vector<int>& nums)
     {

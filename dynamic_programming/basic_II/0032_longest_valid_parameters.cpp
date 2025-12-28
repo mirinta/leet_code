@@ -9,8 +9,7 @@
  * ! s[i] is '(', or ')'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestValidParentheses(std::string s)
     {

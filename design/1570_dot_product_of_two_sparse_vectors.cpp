@@ -20,8 +20,7 @@
  * ! 0 <= nums1[i], nums2[i] <= 100
  */
 
-class SparseVector
-{
+class SparseVector {
 public:
     SparseVector(std::vector<int>& nums)
     {
@@ -44,7 +43,10 @@ public:
         return result;
     }
 
-    const std::unordered_map<int, int>& data() { return map; }
+    const std::unordered_map<int, int>& data()
+    {
+        return map;
+    }
 
 private:
     std::unordered_map<int, int> map; // index to non-zero value

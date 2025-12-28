@@ -15,8 +15,7 @@
  * ! All integers in nums have the same number of digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long sumDigitDifferences(std::vector<int>& nums)
     {

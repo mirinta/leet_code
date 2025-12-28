@@ -20,10 +20,12 @@
  * ! Each value grid[i][j] is unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int swimInWater(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int swimInWater(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     static const std::vector<std::pair<int, int>> kDirections;
@@ -35,9 +37,7 @@ private:
         std::vector<std::vector<bool>> visited(n, std::vector<bool>(n, false));
         visited[0][0] = true;
         using Tuple = std::tuple<int, int, int>; // <height, x, y>
-        auto comparator = [](const auto& t1, const auto& t2) {
-            return std::get<0>(t1) > std::get<0>(t2);
-        };
+        auto comparator = [](const auto& t1, const auto& t2) { return std::get<0>(t1) > std::get<0>(t2); };
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(comparator);
         pq.emplace(grid[0][0], 0, 0);
         int time = 0;

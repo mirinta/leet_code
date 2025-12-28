@@ -16,8 +16,7 @@
  * ! 1 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumLength(std::vector<int>& nums)
     {

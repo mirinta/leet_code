@@ -21,10 +21,12 @@
  * ! 1 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int longestSubsequence(std::string s, int k) { return dfs(0, s, k, binaryBits(k))[1]; }
+    int longestSubsequence(std::string s, int k)
+    {
+        return dfs(0, s, k, binaryBits(k))[1];
+    }
 
 private:
     int binaryBits(int val)

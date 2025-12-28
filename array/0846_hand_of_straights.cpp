@@ -15,8 +15,7 @@
  * ! This problem is the same as 1296.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isNStraightHand(std::vector<int>& hand, int groupSize)
     {

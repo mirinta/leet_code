@@ -23,8 +23,7 @@
  * ! 1 <= weights[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long putMarbles(std::vector<int>& weights, int k)
     {

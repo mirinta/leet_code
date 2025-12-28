@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -22,8 +21,7 @@ struct TreeNode
  * ! 1 <= Node.val, target <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* removeLeafNodes(TreeNode* root, int target)
     {

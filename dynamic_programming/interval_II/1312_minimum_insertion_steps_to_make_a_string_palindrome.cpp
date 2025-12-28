@@ -12,8 +12,7 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minInsertions(std::string s)
     {

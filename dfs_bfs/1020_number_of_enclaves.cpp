@@ -16,8 +16,7 @@
  * ! grid[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     // DFS, time O(MN), space O(MN)
     int numEnclaves(const std::vector<std::vector<int>>& grid)
@@ -56,8 +55,7 @@ public:
     }
 
 private:
-    void dfs(std::vector<std::vector<bool>>& visited, int x, int y,
-             const std::vector<std::vector<int>>& grid)
+    void dfs(std::vector<std::vector<bool>>& visited, int x, int y, const std::vector<std::vector<int>>& grid)
     {
         static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
         const int m = grid.size();

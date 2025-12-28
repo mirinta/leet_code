@@ -25,8 +25,7 @@
  * ! All the words in wordList are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int ladderLength(std::string beginWord, std::string endWord, std::vector<std::string>& wordList)
     {

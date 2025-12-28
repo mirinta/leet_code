@@ -10,10 +10,12 @@
  * ! Could you solve this problem in less than O(n) complexity?
  */
 
-class Solution
-{
+class Solution {
 public:
-    int kthFactor(int n, int k) { return approach2(n, k); }
+    int kthFactor(int n, int k)
+    {
+        return approach2(n, k);
+    }
 
 private:
     // TC = O(sqrt(N)), SC = O(1)

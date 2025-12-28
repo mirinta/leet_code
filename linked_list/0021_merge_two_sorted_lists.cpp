@@ -3,8 +3,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -25,10 +24,12 @@ struct ListNode
  * ! Both list1 and list2 are sorted in non-decreasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) { return approach1(list1, list2); }
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
+    {
+        return approach1(list1, list2);
+    }
 
 private:
     ListNode* approach2(ListNode* list1, ListNode* list2)

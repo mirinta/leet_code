@@ -17,8 +17,7 @@
  * ! 1 <= target <= 800
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimizeTheDifference(std::vector<std::vector<int>>& mat, int target)
     {

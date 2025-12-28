@@ -25,8 +25,7 @@
  * ! 1 <= changeIndices[i] <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int earliestSecondToMarkIndices(std::vector<int>& nums, std::vector<int>& changeIndices)
     {

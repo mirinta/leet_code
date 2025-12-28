@@ -29,10 +29,12 @@
  * ! grid[n - 1][n - 1] != -1
  */
 
-class Solution
-{
+class Solution {
 public:
-    int cherryPickup(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int cherryPickup(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     int approach2(const std::vector<std::vector<int>>& grid)

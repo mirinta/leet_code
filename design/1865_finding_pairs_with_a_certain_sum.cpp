@@ -29,8 +29,7 @@
  * ! At most 1000 calls are made to add and count each.
  */
 
-class FindSumPairs
-{
+class FindSumPairs {
 public:
     FindSumPairs(std::vector<int>& nums1, std::vector<int>& nums2) : nums2(nums2)
     {

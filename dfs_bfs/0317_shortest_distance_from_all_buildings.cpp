@@ -30,16 +30,14 @@
  * ! There will be at least one building in the grid.
  */
 
-class Solution
-{
+class Solution {
 public:
     int shortestDistance(std::vector<std::vector<int>>& grid)
     {
         const int m = grid.size();
         const int n = grid[0].size();
         int buildings = 0;
-        std::vector<std::vector<std::array<int, 2>>> data(
-            m, std::vector<std::array<int, 2>>(n, {0, 0}));
+        std::vector<std::vector<std::array<int, 2>>> data(m, std::vector<std::array<int, 2>>(n, {0, 0}));
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (grid[i][j] == 1) {
@@ -61,7 +59,9 @@ public:
     }
 
 private:
-    void bfs(std::vector<std::vector<std::array<int, 2>>>& data, int x0, int y0,
+    void bfs(std::vector<std::vector<std::array<int, 2>>>& data,
+             int x0,
+             int y0,
              const std::vector<std::vector<int>>& grid)
     {
         static const std::vector<std::pair<int, int>> kDirections{{0, -1}, {0, 1}, {-1, 0}, {1, 0}};

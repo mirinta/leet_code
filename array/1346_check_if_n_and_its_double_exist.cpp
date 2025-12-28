@@ -11,8 +11,7 @@
  * - arr[i] == arr[j] * 2
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkIfExist(std::vector<int>& arr)
     {

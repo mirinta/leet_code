@@ -7,10 +7,12 @@
  * ! -10^4 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxSubArray(std::vector<int>& nums) { return approach2(nums); }
+    int maxSubArray(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // Kadane's algorithm, time O(N), space O(1)

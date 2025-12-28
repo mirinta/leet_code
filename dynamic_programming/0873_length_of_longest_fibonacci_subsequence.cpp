@@ -19,8 +19,7 @@
  * ! 1 <= arr[i] < arr[i + 1] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int lenLongestFibSubseq(std::vector<int>& arr)
     {

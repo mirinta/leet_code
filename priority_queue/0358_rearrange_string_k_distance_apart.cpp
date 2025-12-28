@@ -12,8 +12,7 @@
  * ! 0 <= k <= s.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string rearrangeString(std::string s, int k)
     {

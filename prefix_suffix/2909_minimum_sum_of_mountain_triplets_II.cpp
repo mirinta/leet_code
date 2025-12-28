@@ -16,8 +16,7 @@
  * ! 1 <= nums[i] <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumSum(std::vector<int>& nums)
     {

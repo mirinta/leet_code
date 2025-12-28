@@ -19,8 +19,7 @@
  * ! isConnected[i][j] == isConnected[j][i]
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : _root(n), _rank(n), _count(n)
     {
@@ -30,7 +29,10 @@ public:
         }
     }
 
-    int count() const { return _count; }
+    int count() const
+    {
+        return _count;
+    }
 
     int find(int x)
     {
@@ -64,8 +66,7 @@ private:
     int _count;
 };
 
-class Solution
-{
+class Solution {
 public:
     int findCircleNum(std::vector<std::vector<int>>& isConnected)
     {

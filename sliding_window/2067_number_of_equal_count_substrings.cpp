@@ -16,8 +16,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int equalCountSubstrings(std::string s, int count)
     {

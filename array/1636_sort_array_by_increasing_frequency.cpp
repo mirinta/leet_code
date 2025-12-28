@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <unordered_map>
 #include <vector>
 
 /**
@@ -11,8 +12,7 @@
  * ! -100 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> frequencySort(std::vector<int>& nums)
     {

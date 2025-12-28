@@ -25,8 +25,7 @@
  * ! 0 <= threshold <= 255
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> resultGrid(std::vector<std::vector<int>>& image, int threshold)
     {
@@ -56,8 +55,7 @@ private:
     std::vector<std::vector<int>> result;
     std::vector<std::vector<int>> count;
 
-    void helper(int topLeftX, int topLeftY, const std::vector<std::vector<int>>& image,
-                int threshold)
+    void helper(int topLeftX, int topLeftY, const std::vector<std::vector<int>>& image, int threshold)
     {
         const int m = image.size();
         const int n = image[0].size();

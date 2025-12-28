@@ -11,10 +11,12 @@
  * ! 1 <= k <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
-    int missingElement(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int missingElement(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     // time O(logN), space O(1)

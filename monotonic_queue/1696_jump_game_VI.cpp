@@ -17,8 +17,7 @@
  * ! -10^4 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxResult(std::vector<int>& nums, int k)
     {

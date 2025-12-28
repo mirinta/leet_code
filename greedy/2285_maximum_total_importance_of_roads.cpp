@@ -22,8 +22,7 @@
  * There are no duplicate roads.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumImportance(int n, std::vector<std::vector<int>>& roads)
     {

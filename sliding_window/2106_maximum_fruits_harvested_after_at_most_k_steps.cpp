@@ -21,8 +21,7 @@
  * ! 0 <= k <= 2 * 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxTotalFruits(std::vector<std::vector<int>>& fruits, int startPos, int k)
     {
@@ -34,8 +33,7 @@ public:
         // steps = 2 * fruits[right][0] - startPos - fruits[left][0]
         const int n = fruits.size();
         auto comp = [](const auto& v, int val) { return val > v[0]; };
-        int left =
-            std::lower_bound(fruits.begin(), fruits.end(), startPos - k, comp) - fruits.begin();
+        int left = std::lower_bound(fruits.begin(), fruits.end(), startPos - k, comp) - fruits.begin();
         int right = left;
         auto case1 = [&]() { return startPos - 2 * fruits[left][0] + fruits[right][0]; };
         auto case2 = [&]() { return 2 * fruits[right][0] - startPos - fruits[left][0]; };

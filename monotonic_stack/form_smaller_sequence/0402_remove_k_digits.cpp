@@ -9,8 +9,7 @@
  * ! num does not have any leading zeros except for the zero itself.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string removeKdigits(std::string num, int k)
     {

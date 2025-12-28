@@ -16,10 +16,12 @@
  * ! 0 <= prices[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxProfit(int k, std::vector<int>& prices) { return approach2(k, prices); }
+    int maxProfit(int k, std::vector<int>& prices)
+    {
+        return approach2(k, prices);
+    }
 
 private:
     // DP with space optimization
@@ -47,8 +49,8 @@ private:
         // dp[i][j][1] = max profit at the end of the ith day holding one stock by completing at
         // most j transactions
         // base cases: dp[0][j>=0][0] = 0 dp[0][j>=0][1] = INT_MIN
-        std::vector<std::vector<std::vector<int>>> dp(
-            1 + n, std::vector<std::vector<int>>(1 + k, std::vector<int>(2, 0)));
+        std::vector<std::vector<std::vector<int>>> dp(1 + n,
+                                                      std::vector<std::vector<int>>(1 + k, std::vector<int>(2, 0)));
         for (int j = 0; j <= k; ++j) {
             dp[0][j][1] = INT_MIN;
         }

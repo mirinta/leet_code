@@ -17,8 +17,7 @@
  * ! This question is the same as LC.616.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string boldWords(std::vector<std::string>& words, std::string s)
     {

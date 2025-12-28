@@ -12,8 +12,7 @@
  * ! s and t consist only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isSubsequence(std::string s, std::string t)
     {

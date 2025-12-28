@@ -6,8 +6,7 @@
  * permutations in any order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> permuteUnique(std::vector<int>& nums)
     {
@@ -24,8 +23,7 @@ public:
 private:
     std::vector<std::vector<int>> result;
 
-    void backtrack(std::vector<int>& permutation, std::vector<bool>& visited,
-                   const std::vector<int>& nums)
+    void backtrack(std::vector<int>& permutation, std::vector<bool>& visited, const std::vector<int>& nums)
     {
         if (permutation.size() == nums.size()) {
             result.push_back(permutation);

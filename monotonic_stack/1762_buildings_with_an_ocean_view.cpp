@@ -16,8 +16,7 @@
  * ! 1 <= heights[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findBuildings(std::vector<int>& heights)
     {

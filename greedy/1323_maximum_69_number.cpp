@@ -10,8 +10,7 @@
  * ! num consists of only 6 and 9 digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximum69Number(int num)
     {

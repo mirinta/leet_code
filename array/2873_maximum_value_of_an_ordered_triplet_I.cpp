@@ -12,8 +12,7 @@
  * ! 1 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumTripletValue(std::vector<int>& nums)
     {

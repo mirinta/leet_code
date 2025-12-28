@@ -18,8 +18,7 @@
  * ! nums​​​ is sorted in ascending order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> getMaximumXor(std::vector<int>& nums, int maximumBit)
     {

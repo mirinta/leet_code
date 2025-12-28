@@ -14,8 +14,7 @@
  * ! 0 <= num1, num2 <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int countOperations(int num1, int num2)
     {

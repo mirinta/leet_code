@@ -23,8 +23,7 @@
  * ! colors consists of only the letters 'A' and 'B'
  */
 
-class Solution
-{
+class Solution {
 public:
     bool winnerOfGame(std::string colors)
     {

@@ -8,8 +8,7 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validPalindrome(std::string s)
     {

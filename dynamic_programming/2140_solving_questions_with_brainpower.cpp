@@ -23,8 +23,7 @@
  * ! 1 <= pointsi, brainpoweri <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long mostPoints(std::vector<std::vector<int>>& questions)
     {
@@ -33,8 +32,7 @@ public:
     }
 
 private:
-    long long dfs(std::vector<long long>& memo, int i,
-                  const std::vector<std::vector<int>>& questions)
+    long long dfs(std::vector<long long>& memo, int i, const std::vector<std::vector<int>>& questions)
     {
         if (i >= questions.size())
             return 0;

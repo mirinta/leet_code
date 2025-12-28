@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -16,8 +15,7 @@ struct ListNode
  * ! 本题与LC 206相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* reverseList(ListNode* head)
     {

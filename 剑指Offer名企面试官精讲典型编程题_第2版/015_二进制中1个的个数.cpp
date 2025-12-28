@@ -21,10 +21,12 @@
  * ! 本题与LC 191相同。
  */
 
-class Solution
-{
+class Solution {
 public:
-    int hammingWeight(uint32_t n) { return approach2(n); }
+    int hammingWeight(uint32_t n)
+    {
+        return approach2(n);
+    }
 
 private:
     // Approach1: O(logn)

@@ -32,8 +32,7 @@
  * ! 本题与LC 65类似，区别是本题要考虑空格。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isNumber(const std::string& s)
     {

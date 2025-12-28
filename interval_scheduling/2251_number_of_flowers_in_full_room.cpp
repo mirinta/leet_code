@@ -17,11 +17,9 @@
  * ! 1 <= people[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> fullBloomFlowers(std::vector<std::vector<int>>& flowers,
-                                      std::vector<int>& people)
+    std::vector<int> fullBloomFlowers(std::vector<std::vector<int>>& flowers, std::vector<int>& people)
     {
         const int n = flowers.size();
         const int m = people.size();

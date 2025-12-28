@@ -16,8 +16,7 @@
  * ! All the words in s are guaranteed to be separated by a single space.
  */
 
-class Solution
-{
+class Solution {
 public:
     void reverseWords(std::vector<char>& s)
     {

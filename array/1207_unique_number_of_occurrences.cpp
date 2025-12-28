@@ -10,8 +10,7 @@
  * ! -1000 <= arr[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     bool uniqueOccurrences(std::vector<int>& arr)
     {

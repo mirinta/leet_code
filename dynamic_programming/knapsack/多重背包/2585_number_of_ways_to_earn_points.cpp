@@ -20,8 +20,7 @@
  * ! 1 <= counti, marksi <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int waysToReachTarget(int target, std::vector<std::vector<int>>& types)
     {

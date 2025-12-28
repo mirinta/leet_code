@@ -29,8 +29,7 @@
  * ! path is a valid absolute Unix path.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string simplifyPath(std::string path)
     {

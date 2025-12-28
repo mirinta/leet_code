@@ -17,8 +17,7 @@
  * ! Sum of grid is equal to 9.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumMoves(std::vector<std::vector<int>>& grid)
     {
@@ -45,8 +44,7 @@ private:
     using Pair = std::pair<int, int>;
     using Tuple = std::tuple<int, int, int>;
 
-    void backtrack(int& result, std::vector<Tuple>& ones, int i, int moves,
-                   std::vector<Pair>& zeros)
+    void backtrack(int& result, std::vector<Tuple>& ones, int i, int moves, std::vector<Pair>& zeros)
     {
         if (i == zeros.size()) {
             result = std::min(result, moves);

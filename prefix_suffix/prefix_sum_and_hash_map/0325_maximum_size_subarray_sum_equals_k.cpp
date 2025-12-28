@@ -10,8 +10,7 @@
  * ! -10^9 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxSubArrayLen(std::vector<int>& nums, int k)
     {

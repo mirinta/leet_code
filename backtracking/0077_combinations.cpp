@@ -10,8 +10,7 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> combine(int n, int k)
     {

@@ -21,8 +21,7 @@
  * ! word1 and word2 contain only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool closeStrings(std::string word1, std::string word2)
     {

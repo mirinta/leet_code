@@ -7,10 +7,12 @@
  * ! 1 <= n <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int smallestNumber(int n) { return (1 << numOfBits(n)) - 1; }
+    int smallestNumber(int n)
+    {
+        return (1 << numOfBits(n)) - 1;
+    }
 
 private:
     int numOfBits(int n)

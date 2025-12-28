@@ -22,8 +22,7 @@
  * ! All pairs (ai, bi) are distinct.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), rank(n)
     {
@@ -33,7 +32,10 @@ public:
         }
     }
 
-    int numOfConnectedComponents() const { return count; }
+    int numOfConnectedComponents() const
+    {
+        return count;
+    }
 
     int find(int x)
     {
@@ -43,7 +45,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -69,19 +74,16 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> findCriticalAndPseudoCriticalEdges(
-        int n, std::vector<std::vector<int>>& edges)
+    std::vector<std::vector<int>> findCriticalAndPseudoCriticalEdges(int n, std::vector<std::vector<int>>& edges)
     {
         // store original indices
         // edges[i] = {vertex_a, vertex_b, weight, original_index}
         for (int i = 0; i < edges.size(); ++i) {
             edges[i].push_back(i);
         }
-        std::sort(edges.begin(), edges.end(),
-                  [](const auto& e1, const auto& e2) { return e1[2] < e2[2]; });
+        std::sort(edges.begin(), edges.end(), [](const auto& e1, const auto& e2) { return e1[2] < e2[2]; });
         const int mst = totalWeightOfMST(n, edges);
         std::vector<int> critical;
         std::vector<int> pseudoCritical;
@@ -98,8 +100,7 @@ public:
     }
 
 private:
-    int totalWeightOfMST(int n, const std::vector<std::vector<int>>& edges, int forceEdge = -1,
-                         int ignoreEdge = -1)
+    int totalWeightOfMST(int n, const std::vector<std::vector<int>>& edges, int forceEdge = -1, int ignoreEdge = -1)
     {
         UnionFind uf(n);
         int result = 0;

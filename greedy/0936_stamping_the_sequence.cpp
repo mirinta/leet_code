@@ -29,8 +29,7 @@
  * ! stamp and target consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> movesToStamp(std::string stamp, std::string target)
     {

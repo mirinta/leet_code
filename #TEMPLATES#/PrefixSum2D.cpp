@@ -1,15 +1,13 @@
 #include <vector>
 
-class PrefixSum2D
-{
+class PrefixSum2D {
 public:
     explicit PrefixSum2D(const std::vector<std::vector<int>>& mat)
         : presum(mat.size() + 1, std::vector<int>(mat[0].size() + 1, 0))
     {
         for (int i = 1; i <= mat.size(); ++i) {
             for (int j = 1; j <= mat[0].size(); ++j) {
-                presum[i][j] =
-                    presum[i - 1][j] + presum[i][j - 1] - presum[i - 1][j - 1] + mat[i - 1][j - 1];
+                presum[i][j] = presum[i - 1][j] + presum[i][j - 1] - presum[i - 1][j - 1] + mat[i - 1][j - 1];
             }
         }
     }

@@ -18,8 +18,7 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxIncreasingSubarrays(std::vector<int>& nums)
     {

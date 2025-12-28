@@ -26,11 +26,9 @@
  * ! 0 <= col < n
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<int>> colorBorder(std::vector<std::vector<int>>& grid, int row, int col,
-                                              int color)
+    std::vector<std::vector<int>> colorBorder(std::vector<std::vector<int>>& grid, int row, int col, int color)
     {
         if (grid[row][col] == color)
             return grid;
@@ -49,8 +47,12 @@ public:
 private:
     static const std::vector<std::pair<int, int>> kDirections;
 
-    void dfs(std::vector<std::pair<int, int>>& border, std::vector<std::vector<bool>>& visited,
-             int i, int j, int color, const std::vector<std::vector<int>>& grid)
+    void dfs(std::vector<std::pair<int, int>>& border,
+             std::vector<std::vector<bool>>& visited,
+             int i,
+             int j,
+             int color,
+             const std::vector<std::vector<int>>& grid)
     {
         if (onBorder(i, j, grid)) {
             border.emplace_back(i, j);

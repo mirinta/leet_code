@@ -10,8 +10,7 @@
  * ! 0 <= starti < endi <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canAttendMeetings(std::vector<std::vector<int>>& intervals)
     {

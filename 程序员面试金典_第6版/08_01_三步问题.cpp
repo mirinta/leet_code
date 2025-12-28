@@ -6,10 +6,12 @@
  * ! n范围在[1, 1000000]之间
  */
 
-class Solution
-{
+class Solution {
 public:
-    int waysToStep(int n) { return approach2(n); }
+    int waysToStep(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

@@ -18,8 +18,7 @@
  * ! All pairs (xi, yi) are distinct.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), rank(n)
     {
@@ -29,7 +28,10 @@ public:
         }
     }
 
-    int numOfConnectedComponents() const { return count; }
+    int numOfConnectedComponents() const
+    {
+        return count;
+    }
 
     int find(int x)
     {
@@ -39,7 +41,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -65,10 +70,12 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
-    int minCostConnectPoints(std::vector<std::vector<int>>& points) { return approach2(points); }
+    int minCostConnectPoints(std::vector<std::vector<int>>& points)
+    {
+        return approach2(points);
+    }
 
 private:
     int manhattanDistance(const std::vector<int>& p1, const std::vector<int>& p2)
@@ -82,8 +89,7 @@ private:
         const int n = points.size();
         using Pair = std::pair<int, int>; // <vertex, distance>
         auto comparator = [](const auto& p1, const auto& p2) { return p1.second > p2.second; };
-        std::priority_queue<Pair, std::vector<Pair>, decltype(comparator)> pq(
-            comparator); // min heap
+        std::priority_queue<Pair, std::vector<Pair>, decltype(comparator)> pq(comparator); // min heap
         for (int i = 1; i < n; ++i) {
             pq.emplace(i, manhattanDistance(points[0], points[i]));
         }
@@ -119,8 +125,7 @@ private:
                 edges.push_back({i, j, manhattanDistance(points[i], points[j])});
             }
         }
-        std::sort(edges.begin(), edges.end(),
-                  [](const auto& e1, const auto& e2) { return e1[2] < e2[2]; });
+        std::sort(edges.begin(), edges.end(), [](const auto& e1, const auto& e2) { return e1[2] < e2[2]; });
         UnionFind uf(n);
         int result = 0;
         for (const auto& edge : edges) {

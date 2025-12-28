@@ -19,8 +19,7 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> resultsArray(std::vector<int>& nums, int k)
     {

@@ -14,8 +14,7 @@
  * ! s consists of only upper case and lower case English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countKeyChanges(std::string s)
     {

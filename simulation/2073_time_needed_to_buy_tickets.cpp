@@ -20,10 +20,12 @@
  * ! 0 <= k < n
  */
 
-class Solution
-{
+class Solution {
 public:
-    int timeRequiredToBuy(std::vector<int>& tickets, int k) { return approach2(tickets, k); }
+    int timeRequiredToBuy(std::vector<int>& tickets, int k)
+    {
+        return approach2(tickets, k);
+    }
 
 private:
     int approach2(const std::vector<int>& tickets, int k)

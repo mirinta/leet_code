@@ -4,8 +4,7 @@
  * Definition for a Node.
  *
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* left;
@@ -44,8 +43,7 @@ public:
  * ! All the values of the tree are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* treeToDoublyList(Node* root)
     {

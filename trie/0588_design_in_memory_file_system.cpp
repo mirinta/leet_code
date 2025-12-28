@@ -45,15 +45,13 @@
  * ! At most 300 calls will be made to ls, mkdir, addContentToFile, and readContentFromFile.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     bool isFile{false};
     std::string content; // if it is not a file, content must be empty
     std::map<std::string, TrieNode*> next;
 };
 
-class FileSystem
-{
+class FileSystem {
 public:
     FileSystem() : root(new TrieNode) {}
 

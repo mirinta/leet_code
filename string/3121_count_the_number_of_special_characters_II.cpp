@@ -12,8 +12,7 @@
  * ! word consists of only lowercase and uppercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfSpecialChars(std::string word)
     {

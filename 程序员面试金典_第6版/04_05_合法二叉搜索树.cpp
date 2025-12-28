@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -15,10 +14,12 @@ struct TreeNode
  * 实现一个函数，检查一棵二叉树是否为二叉搜索树。
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isValidBST(TreeNode* root) { return approach1(root); }
+    bool isValidBST(TreeNode* root)
+    {
+        return approach1(root);
+    }
 
 private:
     using LL = long long;

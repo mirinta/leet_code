@@ -25,8 +25,7 @@
  * ! No two pieces are on the same square.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minMovesToCaptureTheQueen(int a, int b, int c, int d, int e, int f)
     {
@@ -52,5 +51,8 @@ public:
     }
 
 private:
-    bool inRange(int val, int low, int hi) { return val >= low && val <= hi; }
+    bool inRange(int val, int low, int hi)
+    {
+        return val >= low && val <= hi;
+    }
 };

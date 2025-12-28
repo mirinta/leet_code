@@ -17,8 +17,7 @@
  * ! 1 <= k <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countTheNumOfKFreeSubsets(std::vector<int>& nums, int k)
     {

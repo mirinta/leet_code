@@ -8,8 +8,7 @@
  * ! 1 <= 数组长度 <= 10000
  */
 
-class Solution
-{
+class Solution {
 public:
     int missingNumber(std::vector<int>& nums)
     {

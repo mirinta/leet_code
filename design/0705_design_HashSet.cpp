@@ -16,12 +16,14 @@
  * ! At most 10^4 calls will be made to "add", "remove", and "contains".
  */
 
-class MyHashSet
-{
+class MyHashSet {
 public:
     MyHashSet() {}
 
-    void add(int key) { data[hash(key)] = true; }
+    void add(int key)
+    {
+        data[hash(key)] = true;
+    }
 
     void remove(int key)
     {
@@ -31,12 +33,18 @@ public:
         data[hash(key)] = false;
     }
 
-    bool contains(int key) { return data[hash(key)]; }
+    bool contains(int key)
+    {
+        return data[hash(key)];
+    }
 
 private:
     static constexpr int kSize = 1e6 + 1;
 
-    int hash(int n) { return n % kSize; }
+    int hash(int n)
+    {
+        return n % kSize;
+    }
 
     bool data[kSize] = {false};
 };

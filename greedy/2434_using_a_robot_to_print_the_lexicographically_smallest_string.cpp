@@ -18,8 +18,7 @@
  * ! s consists of only English lowercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string robotWithString(std::string s)
     {

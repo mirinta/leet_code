@@ -17,10 +17,12 @@
  * ! in the triangle?
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumTotal(std::vector<std::vector<int>>& triangle) { return approach2(triangle); }
+    int minimumTotal(std::vector<std::vector<int>>& triangle)
+    {
+        return approach2(triangle);
+    }
 
 private:
     int approach2(const std::vector<std::vector<int>>& triangle)

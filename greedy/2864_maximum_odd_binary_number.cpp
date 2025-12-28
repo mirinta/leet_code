@@ -16,8 +16,7 @@
  * ! s contains at least one '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string maximumOddBinaryNumber(std::string s)
     {

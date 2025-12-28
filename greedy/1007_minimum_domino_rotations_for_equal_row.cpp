@@ -17,8 +17,7 @@
  * ! 1 <= tops[i], bottoms[i] <= 6
  */
 
-class Solution
-{
+class Solution {
 public:
     int minDominoRotations(std::vector<int>& tops, std::vector<int>& bottoms)
     {

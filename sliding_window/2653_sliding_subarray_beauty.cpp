@@ -18,8 +18,7 @@
  * ! -50 <= nums[i] <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> getSubarrayBeauty(std::vector<int>& nums, int k, int x)
     {

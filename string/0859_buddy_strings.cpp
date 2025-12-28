@@ -13,8 +13,7 @@
  * ! s and goal consist of lowercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool buddyStrings(const std::string& s, const std::string& goal)
     {

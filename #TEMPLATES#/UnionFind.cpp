@@ -1,7 +1,6 @@
 #include <vector>
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), size(n, 1)
     {
@@ -10,7 +9,10 @@ public:
         }
     }
 
-    int connectedComponents() const { return count; }
+    int connectedComponents() const
+    {
+        return count;
+    }
 
     /**
      * @note x is 0-indexed.
@@ -23,7 +25,10 @@ public:
         return root[x];
     }
 
-    bool connected(int p, int q) { return find(p) == find(q); }
+    bool connected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     /**
      * @note p and q are 0-indexed.

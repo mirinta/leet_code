@@ -15,8 +15,7 @@
  * ! word consists of lowercase and uppercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool detectCapitalUse(std::string word)
     {

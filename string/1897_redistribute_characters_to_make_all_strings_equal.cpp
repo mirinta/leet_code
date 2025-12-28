@@ -1,3 +1,4 @@
+#include <string>
 #include <unordered_map>
 #include <vector>
 
@@ -15,8 +16,7 @@
  * ! words[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool makeEqual(std::vector<std::string>& words)
     {

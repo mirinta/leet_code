@@ -30,10 +30,12 @@
  * ! If graph[u] contains v, then graph[v] contains u.
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isBipartite(const std::vector<std::vector<int>>& graph) { return approach1(graph); }
+    bool isBipartite(const std::vector<std::vector<int>>& graph)
+    {
+        return approach1(graph);
+    }
 
 private:
     // BFS, time O(V+E), space O(V+E)

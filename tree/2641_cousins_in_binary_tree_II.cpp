@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -28,8 +27,7 @@ struct TreeNode
  * ! 1 <= Node.val <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* replaceValueInTree(TreeNode* root)
     {
@@ -49,12 +47,10 @@ public:
                 auto* node = nodes[i].first;
                 sum += node->val;
                 if (node->left) {
-                    queue.emplace(node->left,
-                                  node->left->val + (node->right ? node->right->val : 0));
+                    queue.emplace(node->left, node->left->val + (node->right ? node->right->val : 0));
                 }
                 if (node->right) {
-                    queue.emplace(node->right,
-                                  node->right->val + (node->left ? node->left->val : 0));
+                    queue.emplace(node->right, node->right->val + (node->left ? node->left->val : 0));
                 }
             }
             for (const auto& [node, cousinSum] : nodes) {

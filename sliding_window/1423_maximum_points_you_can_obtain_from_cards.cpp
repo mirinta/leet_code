@@ -16,8 +16,7 @@
  * ! 1 <= k <= cardPoints.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxScore(std::vector<int>& cardPoints, int k)
     {

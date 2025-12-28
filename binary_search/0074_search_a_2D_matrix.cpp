@@ -15,8 +15,7 @@
  * ! -10^4 <= matrix[i][j], target <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     bool searchMatrix(std::vector<std::vector<int>>& matrix, int target)
     {

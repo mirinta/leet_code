@@ -10,8 +10,7 @@
  * Given "n", calculate F(n).
  */
 
-class Solution
-{
+class Solution {
 public:
     int fib(int n)
     {

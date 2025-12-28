@@ -18,8 +18,7 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string triangleType(std::vector<int>& nums)
     {

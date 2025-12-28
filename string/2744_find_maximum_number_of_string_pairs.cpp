@@ -21,8 +21,7 @@
  * ! words[i] contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumNumberOfStringPairs(std::vector<std::string>& words)
     {

@@ -25,8 +25,7 @@
  * ! 1 <= dist[i], speed[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int eliminateMaximum(std::vector<int>& dist, std::vector<int>& speed)
     {

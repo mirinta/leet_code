@@ -29,8 +29,7 @@
  * ! grid[i][j] is either '(' or ')'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool hasValidPath(std::vector<std::vector<char>>& grid)
     {
@@ -49,7 +48,10 @@ public:
 
 private:
     // balance = num of '(' - num of ')'
-    bool dfs(std::vector<std::vector<std::vector<int>>>& memo, int i, int j, int balance,
+    bool dfs(std::vector<std::vector<std::vector<int>>>& memo,
+             int i,
+             int j,
+             int balance,
              const std::vector<std::vector<char>>& grid)
     {
         const int m = grid.size();
@@ -70,7 +72,7 @@ private:
             return memo[i][j][balance];
 
         const int offset = grid[i][j] == ')' ? -1 : 1;
-        return memo[i][j][balance] = dfs(memo, i + 1, j, balance + offset, grid) ||
-                                     dfs(memo, i, j + 1, balance + offset, grid);
+        return memo[i][j][balance] =
+                   dfs(memo, i + 1, j, balance + offset, grid) || dfs(memo, i, j + 1, balance + offset, grid);
     }
 };

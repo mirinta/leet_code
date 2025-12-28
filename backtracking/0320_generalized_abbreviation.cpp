@@ -30,8 +30,7 @@
  * ! word consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> generateAbbreviations(std::string word)
     {
@@ -43,7 +42,10 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::string>& result, std::string& s, int i, bool canBeAbbreviated,
+    void backtrack(std::vector<std::string>& result,
+                   std::string& s,
+                   int i,
+                   bool canBeAbbreviated,
                    const std::string& word)
     {
         if (i == word.size()) {

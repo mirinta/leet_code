@@ -14,8 +14,7 @@
  * ! 1 <= k <= 15
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumOr(std::vector<int>& nums, int k)
     {
@@ -28,8 +27,7 @@ public:
         }
         long long result = 0;
         for (int i = 0; i < n; ++i) {
-            result =
-                std::max(result, prefix[i] | (static_cast<long long>(nums[i]) << k) | suffix[i]);
+            result = std::max(result, prefix[i] | (static_cast<long long>(nums[i]) << k) | suffix[i]);
         }
         return result;
     }

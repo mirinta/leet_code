@@ -13,8 +13,7 @@
  * ! All the strings of words are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> stringMatching(std::vector<std::string>& words)
     {

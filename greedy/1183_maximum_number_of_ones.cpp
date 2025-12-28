@@ -12,8 +12,7 @@
  * ! 0 <= maxOnes <= sideLength * sideLength
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumNumberOfOnes(int width, int height, int sideLength, int maxOnes)
     {

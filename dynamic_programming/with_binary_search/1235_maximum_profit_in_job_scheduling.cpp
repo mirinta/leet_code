@@ -17,11 +17,9 @@
  * ! 1 <= profit[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int jobScheduling(std::vector<int>& startTime, std::vector<int>& endTime,
-                      std::vector<int>& profit)
+    int jobScheduling(std::vector<int>& startTime, std::vector<int>& endTime, std::vector<int>& profit)
     {
         // dp[i] = max profit of the valid subsequence of jobs[0:i-1] ending at jobs[i-1]
         const int n = profit.size();
@@ -31,15 +29,14 @@ public:
             jobs[i][1] = endTime[i];
             jobs[i][2] = profit[i];
         }
-        std::sort(jobs.begin(), jobs.end(),
-                  [](const auto& t1, const auto& t2) { return t1[1] < t2[1]; });
+        std::sort(jobs.begin(), jobs.end(), [](const auto& t1, const auto& t2) { return t1[1] < t2[1]; });
         std::vector<int> dp(n + 1, 0);
         int result = 0;
         for (int i = 1; i <= n; ++i) {
             const int start = jobs[i - 1][0];
             const int score = jobs[i - 1][2];
-            auto iter = std::upper_bound(jobs.begin(), jobs.end(), start,
-                                         [](int val, const auto& v) { return v[1] > val; });
+            auto iter =
+                std::upper_bound(jobs.begin(), jobs.end(), start, [](int val, const auto& v) { return v[1] > val; });
             dp[i] = std::max(dp[i - 1], dp[iter - jobs.begin()] + score);
             result = std::max(result, dp[i]);
         }

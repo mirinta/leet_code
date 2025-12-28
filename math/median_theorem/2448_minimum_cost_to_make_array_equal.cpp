@@ -19,8 +19,7 @@
  * ! Test cases are generated in a way that the output doesn't exceed 2^53-1
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minCost(std::vector<int>& nums, std::vector<int>& cost)
     {
@@ -67,15 +66,13 @@ private:
         // prefixCost[i] = cost of changing nums[0:i-1] to nums[i]
         std::vector<long long> prefixCost(n, 0);
         for (long long i = 1, accumulateCost = info[0].second; i < n; ++i) {
-            prefixCost[i] =
-                prefixCost[i - 1] + (info[i].first - info[i - 1].first) * accumulateCost;
+            prefixCost[i] = prefixCost[i - 1] + (info[i].first - info[i - 1].first) * accumulateCost;
             accumulateCost += info[i].second;
         }
         // suffixCost[i] = cost of changing nums[i+1:n-1] to nums[i]
         std::vector<long long> suffixCost(n, 0);
         for (long long i = n - 2, accumulateCost = info[n - 1].second; i >= 0; --i) {
-            suffixCost[i] =
-                suffixCost[i + 1] + (info[i + 1].first - info[i].first) * accumulateCost;
+            suffixCost[i] = suffixCost[i + 1] + (info[i + 1].first - info[i].first) * accumulateCost;
             accumulateCost += info[i].second;
         }
         long long result = LLONG_MAX;

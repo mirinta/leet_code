@@ -6,8 +6,7 @@
  * ! 0 <= n <= 5 * 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPrimes(int n)
     {

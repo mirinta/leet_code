@@ -3,8 +3,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -31,8 +30,7 @@ struct ListNode
  * the input data and inserted in-place into the sorted list with each iteration.
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* insertionSortList(ListNode* head)
     {

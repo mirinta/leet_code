@@ -22,8 +22,7 @@
  * ! s and words[i] consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findSubstring(std::string s, std::vector<std::string>& words)
     {

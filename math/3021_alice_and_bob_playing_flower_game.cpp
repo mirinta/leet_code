@@ -30,8 +30,7 @@
  * ! 1 <= n, m <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long flowerGame(int n, int m)
     {
@@ -54,5 +53,8 @@ public:
 
 private:
     // return <num of odd integers in [1,n], num of even integers in [1,n]>
-    std::pair<long long, long long> helper(int n) { return std::make_pair(n / 2, n - n / 2); }
+    std::pair<long long, long long> helper(int n)
+    {
+        return std::make_pair(n / 2, n - n / 2);
+    }
 };

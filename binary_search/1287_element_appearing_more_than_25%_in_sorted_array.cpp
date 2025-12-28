@@ -10,10 +10,12 @@
  * ! 0 <= arr[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findSpecialInteger(std::vector<int>& arr) { return approach2(arr); }
+    int findSpecialInteger(std::vector<int>& arr)
+    {
+        return approach2(arr);
+    }
 
 private:
     // time O(logN), space O(1)
@@ -25,10 +27,8 @@ private:
         //     |<--->|
         const int n = arr.size();
         for (const auto& val : {arr[n / 4], arr[n / 2], arr[3 * n / 4]}) {
-            const int left =
-                std::distance(arr.begin(), std::lower_bound(arr.begin(), arr.end(), val));
-            const int right = std::distance(
-                arr.begin(), std::prev(std::upper_bound(arr.begin(), arr.end(), val)));
+            const int left = std::distance(arr.begin(), std::lower_bound(arr.begin(), arr.end(), val));
+            const int right = std::distance(arr.begin(), std::prev(std::upper_bound(arr.begin(), arr.end(), val)));
             if (right - left + 1 > n / 4)
                 return val;
         }

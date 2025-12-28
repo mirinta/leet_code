@@ -23,10 +23,12 @@
  * ! 0 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int wiggleMaxLength(std::vector<int>& nums) { return approach3(nums); }
+    int wiggleMaxLength(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     int approach3(const std::vector<int>& nums)

@@ -24,8 +24,7 @@
  * ! s consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestIdealString(std::string s, int k)
     {

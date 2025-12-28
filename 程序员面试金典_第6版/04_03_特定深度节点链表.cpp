@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -15,8 +14,7 @@ struct TreeNode
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -27,8 +25,7 @@ struct ListNode
  * D，则会创建出 D 个链表）。返回一个包含所有深度的链表的数组。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<ListNode*> listOfDepth(TreeNode* tree)
     {

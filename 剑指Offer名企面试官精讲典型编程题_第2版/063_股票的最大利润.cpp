@@ -8,8 +8,7 @@
  * ! 本题与LC 121相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxProfit(std::vector<int>& prices)
     {

@@ -10,10 +10,12 @@
  * ! 1 <= limit <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long distributeCandies(int n, int limit) { return approach2(n, limit); }
+    long long distributeCandies(int n, int limit)
+    {
+        return approach2(n, limit);
+    }
 
 private:
     long long approach2(int n, int limit)
@@ -31,7 +33,10 @@ private:
         return result;
     }
 
-    long long combination2(long long n) { return n > 1 ? n * (n - 1) / 2 : 0; }
+    long long combination2(long long n)
+    {
+        return n > 1 ? n * (n - 1) / 2 : 0;
+    }
 
     long long approach1(int n, int limit)
     {

@@ -12,8 +12,7 @@
  * ! 0 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string largestNumber(std::vector<int>& nums)
     {
@@ -23,8 +22,7 @@ public:
         for (const auto& val : nums) {
             strs.push_back(std::to_string(val));
         }
-        std::sort(strs.begin(), strs.end(),
-                  [](const auto& s1, const auto& s2) { return s1 + s2 > s2 + s1; });
+        std::sort(strs.begin(), strs.end(), [](const auto& s1, const auto& s2) { return s1 + s2 > s2 + s1; });
         if (strs[0] == "0")
             return "0";
 

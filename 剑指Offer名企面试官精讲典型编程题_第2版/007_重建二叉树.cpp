@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -20,8 +19,7 @@ struct TreeNode
  * ! 本题与LC 105相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* buildTree(std::vector<int>& preorder, std::vector<int>& inorder)
     {
@@ -38,8 +36,12 @@ public:
 private:
     std::unordered_map<int, int> map; // node value to node index in inorder vector
 
-    TreeNode* build(int preStart, int preEnd, int inStart, int inEnd,
-                    const std::vector<int>& preorder, const std::vector<int>& inorder)
+    TreeNode* build(int preStart,
+                    int preEnd,
+                    int inStart,
+                    int inEnd,
+                    const std::vector<int>& preorder,
+                    const std::vector<int>& inorder)
     {
         if (preStart > preEnd || inStart > inEnd)
             return nullptr;
@@ -49,10 +51,8 @@ private:
         const int numOfNodesInLeftSubTree = rootIndex - inStart;
 
         auto* root = new TreeNode(rootValue);
-        root->left = build(preStart + 1, preStart + numOfNodesInLeftSubTree, inStart, rootIndex - 1,
-                           preorder, inorder);
-        root->right = build(preStart + numOfNodesInLeftSubTree + 1, preEnd, rootIndex + 1, inEnd,
-                            preorder, inorder);
+        root->left = build(preStart + 1, preStart + numOfNodesInLeftSubTree, inStart, rootIndex - 1, preorder, inorder);
+        root->right = build(preStart + numOfNodesInLeftSubTree + 1, preEnd, rootIndex + 1, inEnd, preorder, inorder);
         return root;
     }
 };

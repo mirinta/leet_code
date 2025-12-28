@@ -20,8 +20,7 @@
  * ! 1 <= nums1[i], nums2[j] <= 2000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxUncrossedLines(std::vector<int>& nums1, std::vector<int>& nums2)
     {

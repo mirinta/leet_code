@@ -14,8 +14,7 @@
  * ! 1 <= n <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<std::string>> solveNQueens(int n)
     {
@@ -26,8 +25,7 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::vector<std::string>>& result, std::vector<std::string>& grid,
-                   int i, int n)
+    void backtrack(std::vector<std::vector<std::string>>& result, std::vector<std::string>& grid, int i, int n)
     {
         if (i == n) {
             result.push_back(grid);

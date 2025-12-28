@@ -13,10 +13,12 @@
  * ! 1 <= m, n <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int uniquePaths(int m, int n) { return approach2(m, n); }
+    int uniquePaths(int m, int n)
+    {
+        return approach2(m, n);
+    }
 
 private:
     // DP with space optimization, time O(MN), space O(N)

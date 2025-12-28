@@ -8,11 +8,9 @@
  * ! 1 <= arr1[i], arr2[i], arr3[i] <= 2000
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> arraysIntersection(std::vector<int>& arr1, std::vector<int>& arr2,
-                                        std::vector<int>& arr3)
+    std::vector<int> arraysIntersection(std::vector<int>& arr1, std::vector<int>& arr2, std::vector<int>& arr3)
     {
         int i = 0;
         int j = 0;

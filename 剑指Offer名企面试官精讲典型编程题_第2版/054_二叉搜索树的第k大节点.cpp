@@ -3,8 +3,7 @@
 /**
  *  Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -17,8 +16,7 @@ struct TreeNode
  * ! 1 ≤ k ≤ 二叉搜索树元素个数
  */
 
-class Solution
-{
+class Solution {
 public:
     int kthLargest(TreeNode* root, int k)
     {

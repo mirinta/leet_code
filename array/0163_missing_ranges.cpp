@@ -16,8 +16,7 @@
  * ! All the values of nums are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> findMissingRanges(std::vector<int>& nums, int lower, int upper)
     {

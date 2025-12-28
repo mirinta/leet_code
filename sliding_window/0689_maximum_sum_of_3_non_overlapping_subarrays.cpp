@@ -12,8 +12,7 @@
  * ! 1 <= k <= floor(nums.length / 3)
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> maxSumOfThreeSubarrays(std::vector<int>& nums, int k)
     {

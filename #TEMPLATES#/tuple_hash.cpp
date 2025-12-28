@@ -1,9 +1,8 @@
 #include <tuple>
 
 namespace std {
-template <>
-struct hash<tuple<int, int, int>>
-{
+template<>
+struct hash<tuple<int, int, int>> {
     size_t operator()(const tuple<int, int, int>& t) const
     {
         const auto& [a, b, c] = t;

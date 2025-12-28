@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -25,8 +24,7 @@ struct TreeNode
  * ! nums is sorted in a strictly increasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* sortedArrayToBST(std::vector<int>& nums)
     {

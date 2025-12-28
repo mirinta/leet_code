@@ -24,8 +24,7 @@
  * ! word consists of English uppercase and lowercase letters, digits, '@', '#', and '$'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isValid(std::string word)
     {

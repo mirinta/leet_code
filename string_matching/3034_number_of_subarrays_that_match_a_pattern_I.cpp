@@ -21,8 +21,7 @@
  * ! -1 <= pattern[i] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int countMatchingSubarrays(std::vector<int>& nums, std::vector<int>& pattern)
     {

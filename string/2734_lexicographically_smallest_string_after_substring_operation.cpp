@@ -14,8 +14,7 @@
  * ! s consists of lowercase English letters
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string smallestString(std::string s)
     {

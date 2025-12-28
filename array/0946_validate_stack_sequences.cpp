@@ -7,8 +7,7 @@
  * false otherwise.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validateStackSequences(const std::vector<int>& pushed, const std::vector<int>& popped)
     {

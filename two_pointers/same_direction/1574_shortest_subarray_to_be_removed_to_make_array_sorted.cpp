@@ -12,8 +12,7 @@
  * ! 0 <= arr[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int findLengthOfShortestSubarray(std::vector<int>& arr)
     {

@@ -46,11 +46,9 @@
  * ! For any folder not at the root level, its parent folder will also be in the input.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<std::string>> deleteDuplicateFolder(
-        std::vector<std::vector<std::string>>& paths)
+    std::vector<std::vector<std::string>> deleteDuplicateFolder(std::vector<std::vector<std::string>>& paths)
     {
         auto* root = new TrieNode;
         for (const auto& path : paths) {
@@ -99,8 +97,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::string code;
         std::unordered_map<std::string, TrieNode*> next;
     };

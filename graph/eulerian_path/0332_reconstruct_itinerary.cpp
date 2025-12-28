@@ -25,8 +25,7 @@
  * ! from_i != to_i
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> findItinerary(std::vector<std::vector<std::string>>& tickets)
     {

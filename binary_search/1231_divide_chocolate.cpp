@@ -17,8 +17,7 @@
  * ! 1 <= sweetness[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximizeSweetness(std::vector<int>& sweetness, int k)
     {

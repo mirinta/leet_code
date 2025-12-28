@@ -18,8 +18,7 @@
  * ! 1 <= nums[i] <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     int incremovableSubarrayCount(std::vector<int>& nums)
     {

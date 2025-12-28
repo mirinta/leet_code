@@ -27,8 +27,7 @@
  * The function get and put must each run in O(1) average time complexity.
  */
 
-class LFUCache
-{
+class LFUCache {
 public:
     explicit LFUCache(int capacity) : m_capacity(capacity) {}
 

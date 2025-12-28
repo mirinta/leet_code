@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <array>
 #include <queue>
 #include <string>
@@ -32,8 +33,7 @@
  * ! s[i] is either a lowercase English letter or '?'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string minimizeStringValue(std::string& s)
     {

@@ -18,8 +18,7 @@
  * ! boxes[i] is either '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> minOperations(std::string boxes)
     {

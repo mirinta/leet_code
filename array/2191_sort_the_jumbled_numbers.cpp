@@ -24,8 +24,7 @@
  * ! 0 <= nums[i] < 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sortJumbled(std::vector<int>& mapping, std::vector<int>& nums)
     {

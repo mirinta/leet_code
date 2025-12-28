@@ -21,8 +21,7 @@
  * ! grid[i][j] is 0 or 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int shortestPathBinaryMatrix(const std::vector<std::vector<int>>& grid)
     {
@@ -30,8 +29,8 @@ public:
         if (grid[0][0] != 0 || grid[n - 1][n - 1] != 0)
             return -1;
 
-        static const std::vector<std::pair<int, int>> kDirections{
-            {0, 1}, {0, -1}, {1, 0}, {-1, 0}, {1, 1}, {-1, 1}, {1, -1}, {-1, -1}};
+        static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {0, -1}, {1, 0},  {-1, 0},
+                                                                  {1, 1}, {-1, 1}, {1, -1}, {-1, -1}};
         std::vector<std::vector<bool>> visited(n, std::vector<bool>(n, false));
         visited[0][0] = true;
         std::queue<std::pair<int, int>> queue;

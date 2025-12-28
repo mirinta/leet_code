@@ -10,8 +10,7 @@
  * ! 1 <= k <= 2000
  */
 
-class Solution
-{
+class Solution {
 public:
     int twoSumLessThanK(std::vector<int>& nums, int k)
     {

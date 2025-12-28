@@ -1,8 +1,7 @@
 /**
  * Definition for a node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* next;
@@ -27,8 +26,7 @@ public:
  * ! 本题与LC 138相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* copyRandomList(Node* head)
     {

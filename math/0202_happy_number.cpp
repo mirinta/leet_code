@@ -17,8 +17,7 @@
  * ! 1 <= n <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isHappy(int n)
     {

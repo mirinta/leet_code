@@ -22,8 +22,7 @@
  * ! nums is sorted in ascending order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> summaryRanges(std::vector<int>& nums)
     {

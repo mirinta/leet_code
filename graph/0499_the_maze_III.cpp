@@ -35,12 +35,10 @@
  * ! The maze contains at least 2 empty spaces.
  */
 
-class Solution
-{
+class Solution {
 public:
     // Dijkstra, time O(MNlog(MN)), space O(MN)
-    std::string findShortestWay(std::vector<std::vector<int>>& maze, std::vector<int>& ball,
-                                std::vector<int>& hole)
+    std::string findShortestWay(std::vector<std::vector<int>>& maze, std::vector<int>& ball, std::vector<int>& hole)
     {
         const int m = maze.size();
         const int n = maze[0].size();
@@ -51,8 +49,7 @@ public:
             const auto& [dist2, x2, y2, instruction2] = t2;
             return dist1 == dist2 ? instruction1 > instruction2 : dist1 > dist2;
         };
-        std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(
-            comparator); // min heap
+        std::priority_queue<Tuple, std::vector<Tuple>, decltype(comparator)> pq(comparator); // min heap
         pq.emplace(0, ball[0], ball[1], "");
         while (!pq.empty()) {
             const auto [dist, x, y, instruction] = pq.top();
@@ -90,6 +87,8 @@ public:
 
 private:
     using Tuple = std::tuple<int, int, int, std::string>; // <dist, x, y, instruction>
-    const std::vector<std::tuple<int, int, std::string>> kDirections{
-        {-1, 0, "u"}, {1, 0, "d"}, {0, -1, "l"}, {0, 1, "r"}};
+    const std::vector<std::tuple<int, int, std::string>> kDirections{{-1, 0, "u"},
+                                                                     {1, 0, "d"},
+                                                                     {0, -1, "l"},
+                                                                     {0, 1, "r"}};
 };

@@ -17,8 +17,7 @@
  * ! 1 <= values[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int minScoreTriangulation(std::vector<int>& values)
     {

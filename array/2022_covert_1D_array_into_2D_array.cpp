@@ -17,8 +17,7 @@
  * ! 1 <= m, n <= 4 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> construct2DArray(std::vector<int>& original, int m, int n)
     {

@@ -17,8 +17,7 @@
  * ! 1 <= wi, hi <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxEnvelopes(std::vector<std::vector<int>>& envelopes)
     {

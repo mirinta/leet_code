@@ -18,8 +18,7 @@
  * ! -10^9 <= target <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool searchMatrix(const std::vector<std::vector<int>>& matrix, int target)
     {

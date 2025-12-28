@@ -21,8 +21,7 @@
  * ! 1 <= x, y <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> countOfPairs(int n, int x, int y)
     {

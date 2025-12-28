@@ -17,8 +17,7 @@
  * ! operations[i] will be either "++X", "X++", "--X", or "X--".
  */
 
-class Solution
-{
+class Solution {
 public:
     int finalValueAfterOperations(std::vector<std::string>& operations)
     {

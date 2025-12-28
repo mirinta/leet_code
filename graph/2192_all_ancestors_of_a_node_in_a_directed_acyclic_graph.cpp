@@ -22,8 +22,7 @@
  * ! The graph is directed and acyclic.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> getAncestors(int n, std::vector<std::vector<int>>& edges)
     {
@@ -45,8 +44,7 @@ public:
     }
 
 private:
-    void dfs(std::vector<bool>& visited, std::vector<int>& path, int v,
-             const std::vector<std::vector<int>>& graph)
+    void dfs(std::vector<bool>& visited, std::vector<int>& path, int v, const std::vector<std::vector<int>>& graph)
     {
         visited[v] = true;
         path.push_back(v);

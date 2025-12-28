@@ -10,8 +10,7 @@
  * ! 1 <= c <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minFlips(int a, int b, int c)
     {

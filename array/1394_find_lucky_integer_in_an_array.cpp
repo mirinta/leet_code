@@ -11,8 +11,7 @@
  * ! 1 <= arr[i] <= 500
  */
 
-class Solution
-{
+class Solution {
 public:
     int findLucky(std::vector<int>& arr)
     {

@@ -23,8 +23,7 @@
  * ! 1 <= k <= (nums.length + 1)/2
  */
 
-class Solution
-{
+class Solution {
 public:
     int minCapability(std::vector<int>& nums, int k)
     {
@@ -42,7 +41,7 @@ public:
     }
 
 private:
-    bool isValid(int max, const std::vector<int>& nums, int k)
+    bool isValid(int capacity, const std::vector<int>& nums, int k)
     {
         int count = 0;
         for (int i = 0; i < nums.size(); ++i) {

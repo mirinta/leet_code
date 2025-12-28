@@ -15,8 +15,7 @@
  * ! 1 <= x <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<int>& nums, int x)
     {

@@ -14,10 +14,12 @@
  * ! 1 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long continuousSubarrays(std::vector<int>& nums) { return approach2(nums); }
+    long long continuousSubarrays(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // sliding window + monotonic queue, TC = O(N), SC = O(N)
@@ -36,8 +38,7 @@ private:
                 increasing.pop_back();
             }
             increasing.push_back(nums[right]);
-            while (!increasing.empty() && !decreasing.empty() &&
-                   decreasing.front() - increasing.front() > 2) {
+            while (!increasing.empty() && !decreasing.empty() && decreasing.front() - increasing.front() > 2) {
                 if (nums[left] == decreasing.front()) {
                     decreasing.pop_front();
                 }

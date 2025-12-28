@@ -18,10 +18,12 @@
  * ! 2 <= k <= cookies.length
  */
 
-class Solution
-{
+class Solution {
 public:
-    int distributeCookies(std::vector<int>& cookies, int k) { return approach2(cookies, k); }
+    int distributeCookies(std::vector<int>& cookies, int k)
+    {
+        return approach2(cookies, k);
+    }
 
 private:
     int result = INT_MAX;

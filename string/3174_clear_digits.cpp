@@ -14,8 +14,7 @@
  * ! The input is generated such that it is possible to delete all digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string clearDigits(std::string s)
     {

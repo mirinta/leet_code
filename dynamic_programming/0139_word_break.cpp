@@ -16,8 +16,7 @@
  * ! All the strings of wordDict are unique.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     static constexpr int R = 26;
     std::array<TrieNode*, R> next{};
     bool isEnd = false;
@@ -32,8 +31,7 @@ struct TrieNode
     };
 };
 
-class Solution
-{
+class Solution {
 public:
     bool wordBreak(std::string s, std::vector<std::string>& wordDict)
     {

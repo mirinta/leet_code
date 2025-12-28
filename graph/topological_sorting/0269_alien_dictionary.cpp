@@ -19,8 +19,7 @@
  * ! words[i] consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string alienOrder(std::vector<std::string>& words)
     {

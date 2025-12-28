@@ -19,8 +19,7 @@
  * ! obstacleGrid[i][j] is 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid)
     {

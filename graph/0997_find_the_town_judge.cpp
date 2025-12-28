@@ -27,8 +27,7 @@
  * ! 1 <= ai, bi <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int findJudge(int n, std::vector<std::vector<int>>& trust)
     {

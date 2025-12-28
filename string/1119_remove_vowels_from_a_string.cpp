@@ -8,8 +8,7 @@
  * ! s consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string removeVowels(std::string s)
     {
@@ -23,5 +22,8 @@ public:
     }
 
 private:
-    bool isVowel(char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }
+    bool isVowel(char c)
+    {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
 };

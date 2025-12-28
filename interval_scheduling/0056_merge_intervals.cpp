@@ -11,8 +11,7 @@
  * ! 0 <= start_i <= end_i <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> merge(std::vector<std::vector<int>>& intervals)
     {
@@ -23,8 +22,7 @@ private:
     // sweep line, time O(NlogN), space O(N)
     std::vector<std::vector<int>> approach2(const std::vector<std::vector<int>>& intervals)
     {
-        std::vector<std::pair<int, int>>
-            points; // <coord,flag>, flag=1(starting point),-1(ending point)
+        std::vector<std::pair<int, int>> points; // <coord,flag>, flag=1(starting point),-1(ending point)
         points.reserve(intervals.size() * 2);
         for (const auto& interval : intervals) {
             points.emplace_back(interval[0], 1);
@@ -57,8 +55,7 @@ private:
         if (intervals.empty())
             return {};
 
-        std::sort(intervals.begin(), intervals.end(),
-                  [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
+        std::sort(intervals.begin(), intervals.end(), [](const auto& v1, const auto& v2) { return v1[0] < v2[0]; });
         // i0<---->i1
         //     j0<---->j1
         //                 k0<---->k1

@@ -16,8 +16,7 @@
  * ! At most 10^4 calls will be made to "sumRange".
  */
 
-class NumArray
-{
+class NumArray {
     // [0, sumRange[0,0], sumRange[0,1], ..., sumRange[0, N-1]]
     const std::vector<int> _preSums;
 
@@ -33,7 +32,10 @@ class NumArray
 public:
     NumArray(std::vector<int>& nums) : _preSums(createPreSums(nums)) {}
 
-    int sumRange(int left, int right) { return _preSums[right + 1] - _preSums[left]; }
+    int sumRange(int left, int right)
+    {
+        return _preSums[right + 1] - _preSums[left];
+    }
 };
 
 /**

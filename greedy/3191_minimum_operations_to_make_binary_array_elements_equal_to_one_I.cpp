@@ -16,8 +16,7 @@
  * ! 0 <= nums[i] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<int>& nums)
     {

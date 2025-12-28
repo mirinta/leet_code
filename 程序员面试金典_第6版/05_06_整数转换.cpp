@@ -6,10 +6,12 @@
  * ! A，B范围在[-2147483648, 2147483647]之间
  */
 
-class Solution
-{
+class Solution {
 public:
-    int convertInteger(int A, int B) { return numOfBinaryOnes(A ^ B); }
+    int convertInteger(int A, int B)
+    {
+        return numOfBinaryOnes(A ^ B);
+    }
 
 private:
     int numOfBinaryOnes(int n)

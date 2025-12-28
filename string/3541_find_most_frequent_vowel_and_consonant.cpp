@@ -21,8 +21,7 @@
  * ! s consists of lowercase English letters only.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxFreqSum(std::string s)
     {
@@ -41,5 +40,8 @@ public:
     }
 
 private:
-    bool isVowel(char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }
+    bool isVowel(char c)
+    {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
 };

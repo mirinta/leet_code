@@ -22,8 +22,7 @@
  * ! arrivali <= arrivali+1
  */
 
-class Solution
-{
+class Solution {
 public:
     double averageWaitingTime(std::vector<std::vector<int>>& customers)
     {

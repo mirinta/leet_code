@@ -12,10 +12,12 @@
  * ! 0 <= cost[i] <= 999
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minCostClimbingStairs(std::vector<int>& cost) { return approach2(cost); }
+    int minCostClimbingStairs(std::vector<int>& cost)
+    {
+        return approach2(cost);
+    }
 
 private:
     // DP with space optimization, time O(N), space O(1)

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -14,13 +15,11 @@
  * ! 1 <= durationi, lastDayi <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int scheduleCourse(std::vector<std::vector<int>>& courses)
     {
-        std::sort(courses.begin(), courses.end(),
-                  [](const auto& c1, const auto& c2) { return c1[1] < c2[1]; });
+        std::sort(courses.begin(), courses.end(), [](const auto& c1, const auto& c2) { return c1[1] < c2[1]; });
         std::priority_queue<int> pq; // max heap, durations
         int days = 0;
         for (const auto& course : courses) {

@@ -24,8 +24,7 @@
  * ! nums has exactly one dominant element.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumIndex(std::vector<int>& nums)
     {

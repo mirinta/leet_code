@@ -17,8 +17,7 @@
  * ! 1 <= nums[i] <= 500
  */
 
-class Solution
-{
+class Solution {
 public:
     bool divideArray(std::vector<int>& nums)
     {

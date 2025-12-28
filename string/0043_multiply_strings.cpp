@@ -12,8 +12,7 @@
  * ! Both num1 and num2 do not contain any leading zero, except the number 0 itself.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string multiply(std::string& num1, std::string& num2)
     {

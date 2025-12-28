@@ -16,8 +16,7 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     bool hasTrailingZeros(std::vector<int>& nums)
     {

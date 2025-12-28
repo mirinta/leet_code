@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -23,8 +22,7 @@ struct ListNode
  * ! Each node's value is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int getDecimalValue(ListNode* head)
     {

@@ -8,8 +8,7 @@
  * Return the merged string.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string mergeAlternately(const std::string& word1, const std::string& word2)
     {

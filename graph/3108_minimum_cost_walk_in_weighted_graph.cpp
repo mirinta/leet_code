@@ -32,8 +32,7 @@
  * ! 0 <= si, ti <= n - 1
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1), cost(n, -1)
     {
@@ -50,7 +49,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q, int w)
     {
@@ -68,7 +70,10 @@ public:
         cost[rootP] &= cost[rootQ] & w;
     }
 
-    int groupCost(int x) { return cost[find(x)]; }
+    int groupCost(int x)
+    {
+        return cost[find(x)];
+    }
 
 private:
     std::vector<int> root;
@@ -76,11 +81,9 @@ private:
     std::vector<int> cost;
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> minimumCost(int n, std::vector<std::vector<int>>& edges,
-                                 std::vector<std::vector<int>>& query)
+    std::vector<int> minimumCost(int n, std::vector<std::vector<int>>& edges, std::vector<std::vector<int>>& query)
     {
         UnionFind uf(n);
         for (const auto& e : edges) {

@@ -24,8 +24,7 @@
  * ! 本题与LC 295相同。
  */
 
-class MedianFinder
-{
+class MedianFinder {
 public:
     /** initialize your data structure here. */
     MedianFinder() {}

@@ -16,8 +16,7 @@
  * ! There are no self-loops or repeated edges.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1), count(n)
     {
@@ -26,7 +25,10 @@ public:
         }
     }
 
-    int numOfConnectedComponents() const { return count; }
+    int numOfConnectedComponents() const
+    {
+        return count;
+    }
 
     int find(int x)
     {
@@ -58,8 +60,7 @@ private:
     int count;
 };
 
-class Solution
-{
+class Solution {
 public:
     bool validTree(int n, std::vector<std::vector<int>>& edges)
     {

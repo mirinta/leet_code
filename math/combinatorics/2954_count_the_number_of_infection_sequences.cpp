@@ -26,8 +26,7 @@
  * ! sick is sorted in increasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfSequence(int n, std::vector<int>& sick)
     {

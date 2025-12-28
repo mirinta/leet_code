@@ -12,8 +12,7 @@
  * ! 0 <= arr[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sortByBits(std::vector<int>& arr)
     {

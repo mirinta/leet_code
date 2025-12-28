@@ -13,8 +13,7 @@
  * ! 1 <= n <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> getFactors(int n)
     {

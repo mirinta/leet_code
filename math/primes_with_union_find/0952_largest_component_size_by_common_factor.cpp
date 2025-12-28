@@ -17,8 +17,7 @@
  * ! All the values of nums are unique.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), rank(n, 1)
     {
@@ -54,8 +53,7 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
     int largestComponentSize(std::vector<int>& nums)
     {

@@ -31,8 +31,7 @@
  * ! At most 10^4 calls will be made in total to setCell, resetCell, and getValue.
  */
 
-class Spreadsheet
-{
+class Spreadsheet {
 public:
     Spreadsheet(int rows) : grid(rows + 1, std::vector<int>(26, 0)) {}
 
@@ -41,7 +40,10 @@ public:
         grid[stoi(1, cell.size() - 1, cell)][cell[0] - 'A'] = value;
     }
 
-    void resetCell(const std::string& cell) { setCell(cell, 0); }
+    void resetCell(const std::string& cell)
+    {
+        setCell(cell, 0);
+    }
 
     int getValue(const std::string& formula)
     {

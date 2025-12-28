@@ -13,10 +13,12 @@
  * ! The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> productExceptSelf(std::vector<int>& nums) { return approach2(nums); }
+    std::vector<int> productExceptSelf(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     std::vector<int> approach2(const std::vector<int>& nums)

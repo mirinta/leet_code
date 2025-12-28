@@ -34,8 +34,7 @@
  * ! All values in vBars are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximizeSquareHoleArea(int n, int m, std::vector<int>& hBars, std::vector<int>& vBars)
     {

@@ -23,10 +23,12 @@
  * ! There are no repeated edges.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
-    explicit UnionFind(int n) : root(n), size(n, 1) { std::iota(root.begin(), root.end(), 0); }
+    explicit UnionFind(int n) : root(n), size(n, 1)
+    {
+        std::iota(root.begin(), root.end(), 0);
+    }
 
     int find(int x)
     {
@@ -50,15 +52,17 @@ public:
         size[rootP] += size[rootQ];
     }
 
-    int sizeOfGroup(int x) { return size[find(x)]; }
+    int sizeOfGroup(int x)
+    {
+        return size[find(x)];
+    }
 
 private:
     std::vector<int> root;
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     int countCompleteComponents(int n, std::vector<std::vector<int>>& edges)
     {

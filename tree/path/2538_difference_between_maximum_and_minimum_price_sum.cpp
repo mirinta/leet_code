@@ -23,8 +23,7 @@
  * ! 1 <= price[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maxOutput(int n, std::vector<std::vector<int>>& edges, std::vector<int>& price)
     {
@@ -41,8 +40,7 @@ public:
 private:
     using Graph = std::vector<std::vector<int>>;
 
-    std::pair<int, int> dfs(int& result, int root, int parent, const std::vector<int>& price,
-                            const Graph& graph)
+    std::pair<int, int> dfs(int& result, int root, int parent, const std::vector<int>& price, const Graph& graph)
     {
         // node x is a leaf if graph[x].size() == 1 && graph[x][0] = parent
         int maxWithRoot = price[root];

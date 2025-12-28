@@ -22,8 +22,7 @@
  * ! words[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> removeAnagrams(std::vector<std::string>& words)
     {

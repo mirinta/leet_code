@@ -12,10 +12,12 @@
  * ! 0 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    int singleNonDuplicate(std::vector<int>& nums) { return approach2(nums); }
+    int singleNonDuplicate(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // binary search, time O(logN), space O(1)

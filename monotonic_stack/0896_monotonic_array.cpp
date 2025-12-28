@@ -12,10 +12,12 @@
  * ! -10^5 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool isMonotonic(std::vector<int>& nums) { return approach2(nums); }
+    bool isMonotonic(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // one-pass, time O(N), space O(1)

@@ -9,8 +9,7 @@
  * ! s consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canPermutePalindrome(std::string s)
     {
@@ -26,7 +25,7 @@ public:
                 return false;
 
             if (!isOdd && countOdd > 0)
-                return false;    
+                return false;
         }
         return true;
     }

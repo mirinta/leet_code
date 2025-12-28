@@ -26,8 +26,7 @@
  * ! 1 <= mat[i][j] <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     int mostFrequentPrime(std::vector<std::vector<int>>& mat)
     {

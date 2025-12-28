@@ -18,12 +18,14 @@
  * ! At most 104 calls will be made to add and find.
  */
 
-class TwoSum
-{
+class TwoSum {
 public:
     TwoSum() {}
 
-    void add(int number) { map[number]++; }
+    void add(int number)
+    {
+        map[number]++;
+    }
 
     bool find(int value)
     {

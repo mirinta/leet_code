@@ -13,10 +13,12 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findLHS(std::vector<int>& nums) { return approach2(nums); }
+    int findLHS(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     int approach2(const std::vector<int>& nums)

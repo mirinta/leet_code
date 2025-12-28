@@ -34,11 +34,9 @@
  * ! words[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> getWordsInLongestSubsequence(std::vector<std::string>& words,
-                                                          std::vector<int>& groups)
+    std::vector<std::string> getWordsInLongestSubsequence(std::vector<std::string>& words, std::vector<int>& groups)
     {
         // dp[i] = length of the longest valid subsequence of words[0:i] ending at words[i]
         const int n = words.size();

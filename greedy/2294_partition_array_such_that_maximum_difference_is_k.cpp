@@ -16,8 +16,7 @@
  * ! 0 <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int partitionArray(std::vector<int>& nums, int k)
     {

@@ -25,14 +25,11 @@
  * ! x < queries[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> countServers(int n, std::vector<std::vector<int>>& logs, int x,
-                                  std::vector<int>& queries)
+    std::vector<int> countServers(int n, std::vector<std::vector<int>>& logs, int x, std::vector<int>& queries)
     {
-        std::sort(logs.begin(), logs.end(),
-                  [](const auto& log1, const auto& log2) { return log1[1] < log2[1]; });
+        std::sort(logs.begin(), logs.end(), [](const auto& log1, const auto& log2) { return log1[1] < log2[1]; });
         std::vector<std::pair<int, int>> queryPairs;
         for (int i = 0; i < queries.size(); ++i) {
             queryPairs.emplace_back(queries[i], i);

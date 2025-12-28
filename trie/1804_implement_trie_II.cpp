@@ -2,8 +2,7 @@
 #include <string>
 #include <unordered_map>
 
-struct TrieNode
-{
+struct TrieNode {
     std::unordered_map<char, TrieNode*> next{};
     int countPass = 0; // num of words passing this node
     int countWord = 0; // num of words ending at this node
@@ -18,12 +17,14 @@ struct TrieNode
     }
 };
 
-class Trie
-{
+class Trie {
 public:
     Trie() : root(new TrieNode()) {}
 
-    ~Trie() { delete root; }
+    ~Trie()
+    {
+        delete root;
+    }
 
     void insert(const std::string& word)
     {

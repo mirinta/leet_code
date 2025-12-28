@@ -22,8 +22,7 @@
  * ! 1 <= rolls[i], mean <= 6
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> missingRolls(std::vector<int>& rolls, int mean, int n)
     {

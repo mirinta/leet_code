@@ -14,8 +14,7 @@
  * ! The input is generated such that each column contains at least one non-negative integer.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> modifiedMatrix(std::vector<std::vector<int>>& matrix)
     {

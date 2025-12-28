@@ -14,8 +14,7 @@
  * - arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validMountainArray(const std::vector<int>& arr)
     {

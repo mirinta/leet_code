@@ -17,8 +17,7 @@
  * ! 1 <= x, grid[i][j] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::vector<std::vector<int>>& grid, int x)
     {

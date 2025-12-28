@@ -26,8 +26,7 @@
  * ! tokens[i] is either an operator: "+", "-", "*", or "/", or an integer in the range [-200, 200].
  */
 
-class Solution
-{
+class Solution {
 public:
     int evalRPN(std::vector<std::string>& tokens)
     {

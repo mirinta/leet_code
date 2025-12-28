@@ -10,8 +10,7 @@
  * ! 0 <= threshold <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int numOfSubarrays(std::vector<int>& arr, int k, int threshold)
     {

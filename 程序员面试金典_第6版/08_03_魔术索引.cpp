@@ -8,8 +8,7 @@
  * !此题为原书中的 Follow-up，即数组中可能包含重复元素的版本
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMagicIndex(std::vector<int>& nums)
     {

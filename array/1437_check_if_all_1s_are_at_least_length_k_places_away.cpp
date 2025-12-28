@@ -9,8 +9,7 @@
  * ! nums[i] is 0 or 1
  */
 
-class Solution
-{
+class Solution {
 public:
     bool kLengthApart(std::vector<int>& nums, int k)
     {

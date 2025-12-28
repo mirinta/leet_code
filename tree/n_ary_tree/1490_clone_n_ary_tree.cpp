@@ -3,15 +3,17 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     std::vector<Node*> children;
 
     Node() {}
 
-    Node(int _val) { val = _val; }
+    Node(int _val)
+    {
+        val = _val;
+    }
 
     Node(int _val, std::vector<Node*> _children)
     {
@@ -37,8 +39,7 @@ public:
  * ! The total number of nodes is between [0, 10^4].
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* cloneTree(Node* root)
     {

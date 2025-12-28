@@ -25,8 +25,7 @@
  * ! 1 <= grid[i][j] <= 2500
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> zigzagTraversal(std::vector<std::vector<int>>& grid)
     {

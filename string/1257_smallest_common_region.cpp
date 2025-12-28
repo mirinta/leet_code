@@ -23,11 +23,10 @@
  * ! regions[i][j], region1, and region2 consist of English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::string findSmallestRegion(std::vector<std::vector<std::string>>& regions,
-                                   std::string region1, std::string region2)
+    std::string
+        findSmallestRegion(std::vector<std::vector<std::string>>& regions, std::string region1, std::string region2)
     {
         std::unordered_map<std::string, std::string> map; // child to parent
         for (const auto& r : regions) {

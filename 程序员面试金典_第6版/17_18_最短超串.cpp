@@ -10,8 +10,7 @@
  * ! 1 <= small.length <= 100000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> shortestSeq(std::vector<int>& big, std::vector<int>& small)
     {

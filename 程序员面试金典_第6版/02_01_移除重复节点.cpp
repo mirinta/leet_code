@@ -3,8 +3,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -17,8 +16,7 @@ struct ListNode
  * ! 链表元素在[0, 20000]范围内。
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* removeDuplicateNodes(ListNode* head)
     {

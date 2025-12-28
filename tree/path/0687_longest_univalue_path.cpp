@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -24,8 +23,7 @@ struct TreeNode
  * ! The depth of the tree will not exceed 1000.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestUnivaluePath(TreeNode* root)
     {

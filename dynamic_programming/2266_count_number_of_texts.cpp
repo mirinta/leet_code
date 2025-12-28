@@ -28,8 +28,7 @@
  * ! pressedKeys only consists of digits from '2' - '9'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countTexts(std::string pressedKeys)
     {

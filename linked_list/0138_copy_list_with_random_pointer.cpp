@@ -3,8 +3,7 @@
 /**
  * Definition of a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* next;
@@ -48,10 +47,12 @@ public:
  * ! Node.random is null or is pointing to some node in the linked list.
  */
 
-class Solution
-{
+class Solution {
 public:
-    Node* copyRandomList(Node* head) { return approach2(head); }
+    Node* copyRandomList(Node* head)
+    {
+        return approach2(head);
+    }
 
     Node* approach2(Node* head)
     {

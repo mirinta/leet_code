@@ -17,13 +17,11 @@
  * ! 1 <= pricei, beautyi, queries[j] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> maximumBeauty(std::vector<std::vector<int>>& items, std::vector<int>& queries)
     {
-        std::sort(items.begin(), items.end(),
-                  [](const auto& item1, const auto& item2) { return item1[0] < item2[0]; });
+        std::sort(items.begin(), items.end(), [](const auto& item1, const auto& item2) { return item1[0] < item2[0]; });
         std::vector<int> maxBeauty(items.size(), items[0][1]);
         for (int i = 1; i < items.size(); ++i) {
             maxBeauty[i] = std::max(maxBeauty[i - 1], items[i][1]);

@@ -28,11 +28,9 @@
  * ! 1 <= cost[i][j] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minCost(std::vector<int>& houses, std::vector<std::vector<int>>& cost, int m, int n,
-                int target)
+    int minCost(std::vector<int>& houses, std::vector<std::vector<int>>& cost, int m, int n, int target)
     {
         // dp[i][j][k] = min cost of painting houses[0:i-1] with exactly j neighborhoods
         // and houses[i-1] is painted in color k
@@ -63,8 +61,7 @@ public:
                             if (k0 == k)
                                 continue;
 
-                            dp[i][j][k] =
-                                std::min(dp[i][j][k], dp[i - 1][j - 1][k0] + cost[i - 1][k - 1]);
+                            dp[i][j][k] = std::min(dp[i][j][k], dp[i - 1][j - 1][k0] + cost[i - 1][k - 1]);
                         }
                     }
                 }

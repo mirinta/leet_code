@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -23,8 +22,7 @@ struct TreeNode
  * ! p and q are values in the tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findDistance(TreeNode* root, int p, int q)
     {

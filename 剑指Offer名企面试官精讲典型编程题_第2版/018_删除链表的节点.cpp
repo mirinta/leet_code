@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode(int x) : val(x), next(nullptr) {}
@@ -17,8 +16,7 @@ struct ListNode
  * ! 若使用 C 或 C++ 语言，你不需要 free 或 delete 被删除的节点
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* deleteNode(ListNode* head, int val)
     {

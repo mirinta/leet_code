@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -11,8 +10,7 @@ struct TreeNode
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-class Solution
-{
+class Solution {
 public:
     int countUnivalSubtrees(TreeNode* root)
     {
@@ -40,8 +38,8 @@ private:
         // left subtree is the same as the root, right subtree is empty
         const auto case3 = (root->left && root->left->val == root->val) && !root->right;
         // both subtrees are the same as the root
-        const auto case4 = (root->left && root->left->val == root->val) &&
-                           (root->right && root->right->val == root->val);
+        const auto case4 =
+            (root->left && root->left->val == root->val) && (root->right && root->right->val == root->val);
         if (case1 || case2 || case3 || case4) {
             result++;
             return true;

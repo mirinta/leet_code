@@ -22,8 +22,7 @@
  * ! 1 <= k <= word.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int countCompleteSubstrings(std::string word, int k)
     {
@@ -49,8 +48,7 @@ public:
                     freq[word[left] - 'a']--;
                     left++;
                 }
-                const int count = std::count_if(freq.begin(), freq.end(),
-                                                [k](int val) { return val > 0 && val == k; });
+                const int count = std::count_if(freq.begin(), freq.end(), [k](int val) { return val > 0 && val == k; });
                 result += count == x;
             }
         }

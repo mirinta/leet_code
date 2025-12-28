@@ -46,8 +46,7 @@
  * ! amount[i] is an even integer in the range [-10^4, 10^4].
  */
 
-class Solution
-{
+class Solution {
 public:
     int mostProfitablePath(std::vector<std::vector<int>>& edges, int bob, std::vector<int>& amount)
     {
@@ -86,7 +85,10 @@ public:
     }
 
 private:
-    bool dfs(std::unordered_map<int, int>& map, std::vector<bool>& visited, int v, int time,
+    bool dfs(std::unordered_map<int, int>& map,
+             std::vector<bool>& visited,
+             int v,
+             int time,
              const std::vector<std::vector<int>>& graph)
     {
         visited[v] = true;

@@ -23,11 +23,9 @@
  * ! 1 <= disappear[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> minimumTime(int n, std::vector<std::vector<int>>& edges,
-                                 std::vector<int>& disappear)
+    std::vector<int> minimumTime(int n, std::vector<std::vector<int>>& edges, std::vector<int>& disappear)
     {
         using Pair = std::pair<int, int>;
         std::vector<std::vector<Pair>> graph(n);

@@ -28,8 +28,7 @@
  * ! queryIP consists only of English letters, digits and the characters '.' and ':'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string validIPAddress(std::string queryIP)
     {

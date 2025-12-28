@@ -22,8 +22,7 @@
  * ! s1 and s2 consist only of the characters '0' and '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(std::string s1, std::string s2, int x)
     {
@@ -44,8 +43,7 @@ public:
 private:
     std::vector<std::vector<std::array<int, 2>>> memo;
 
-    int dp(int i, int count, bool flippedByOperation2, const std::string& s1, const std::string& s2,
-           int x)
+    int dp(int i, int count, bool flippedByOperation2, const std::string& s1, const std::string& s2, int x)
     {
         const int n = s1.size();
         if (i == n)

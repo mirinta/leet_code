@@ -23,8 +23,7 @@
  * ! 1 <= grid[i][j] <= 6
  */
 
-class Solution
-{
+class Solution {
 public:
     bool hasValidPath(std::vector<std::vector<int>>& grid)
     {
@@ -38,8 +37,7 @@ private:
     static const std::unordered_map<int, std::vector<std::pair<int, int>>> map;
     std::vector<std::vector<bool>> visited;
 
-    bool dfs(int x, int y, int srcX, int srcY, int m, int n,
-             const std::vector<std::vector<int>>& grid)
+    bool dfs(int x, int y, int srcX, int srcY, int m, int n, const std::vector<std::vector<int>>& grid)
     {
         if (!isValid(x, y, srcX, srcY, grid))
             return false;

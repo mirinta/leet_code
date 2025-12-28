@@ -9,8 +9,7 @@
  * ! s contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<std::string>> partition(std::string s)
     {
@@ -22,7 +21,9 @@ public:
 
 private:
     void backtrack(std::vector<std::vector<std::string>>& result,
-                   std::vector<std::string>& palindromes, int start, const std::string& s)
+                   std::vector<std::string>& palindromes,
+                   int start,
+                   const std::string& s)
     {
         if (start == s.size()) {
             result.push_back(palindromes);

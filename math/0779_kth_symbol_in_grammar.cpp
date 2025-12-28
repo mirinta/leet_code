@@ -15,8 +15,7 @@
 
 #include <cmath>
 
-class Solution
-{
+class Solution {
 public:
     int kthGrammar(int n, int k)
     {

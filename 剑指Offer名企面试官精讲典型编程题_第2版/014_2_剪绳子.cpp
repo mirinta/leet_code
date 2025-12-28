@@ -15,8 +15,7 @@
  * ! 本题与LC 343相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int cuttingRope(int n)
     {

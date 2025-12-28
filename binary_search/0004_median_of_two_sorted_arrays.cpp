@@ -14,8 +14,7 @@
  * ! -10^6 <= nums1[i], nums2[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2)
     {

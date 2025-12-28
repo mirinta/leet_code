@@ -14,10 +14,12 @@
  * ! The given array is guaranteed to be a valid array.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int missingNumber(std::vector<int>& arr) { return approach2(arr); }
+    int missingNumber(std::vector<int>& arr)
+    {
+        return approach2(arr);
+    }
 
 private:
     int approach2(const std::vector<int>& arr)

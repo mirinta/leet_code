@@ -16,8 +16,7 @@
  * ! 1 <= money <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int buyChoco(std::vector<int>& prices, int money)
     {

@@ -34,12 +34,13 @@
  * ! 0 <= initialBoxes[i] < n
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxCandies(std::vector<int>& status, std::vector<int>& candies,
+    int maxCandies(std::vector<int>& status,
+                   std::vector<int>& candies,
                    std::vector<std::vector<int>>& keys,
-                   std::vector<std::vector<int>>& containedBoxes, std::vector<int>& initialBoxes)
+                   std::vector<std::vector<int>>& containedBoxes,
+                   std::vector<int>& initialBoxes)
     {
         const int n = status.size();
         std::queue<int> queue;

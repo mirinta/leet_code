@@ -16,10 +16,12 @@
  * ! word consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int removeAlmostEqualCharacters(std::string word) { return approach3(word); }
+    int removeAlmostEqualCharacters(std::string word)
+    {
+        return approach3(word);
+    }
 
 private:
     // Greedy, time O(N), space O(1)

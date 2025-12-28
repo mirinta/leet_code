@@ -17,10 +17,12 @@
  * ! more times.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findDuplicate(std::vector<int>& nums) { return approach3(nums); }
+    int findDuplicate(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     // time O(n), space O(1)

@@ -14,10 +14,12 @@
  * ! 0 <= nums[i] <= 400
  */
 
-class Solution
-{
+class Solution {
 public:
-    int rob(std::vector<int>& nums) { return approach2(nums); }
+    int rob(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // DP with space optimization, TC = O(N), SC = O(1)

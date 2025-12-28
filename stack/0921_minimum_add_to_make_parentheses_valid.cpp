@@ -21,8 +21,7 @@
  * ! s[i] is either '(' or ')'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minAddToMakeValid(std::string s)
     {

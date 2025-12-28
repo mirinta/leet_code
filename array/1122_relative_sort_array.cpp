@@ -14,8 +14,7 @@
  * ! Each arr2[i] is in arr1.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> relativeSortArray(std::vector<int>& arr1, std::vector<int>& arr2)
     {

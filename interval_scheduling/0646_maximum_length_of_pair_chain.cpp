@@ -22,18 +22,19 @@
  * ! -1000 <= left_i < right_i <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findLongestChain(std::vector<std::vector<int>>& pairs) { return approach2(pairs); }
+    int findLongestChain(std::vector<std::vector<int>>& pairs)
+    {
+        return approach2(pairs);
+    }
 
 private:
     // DP (LIS), time O(N^2), space O(N)
     int approach2(std::vector<std::vector<int>>& pairs)
     {
         const int n = pairs.size();
-        std::sort(pairs.begin(), pairs.end(),
-                  [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
+        std::sort(pairs.begin(), pairs.end(), [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
         // dp[i] = max length of pair chain that ends with pairs[i]
         std::vector<int> dp(n, 1);
         int result = 1;
@@ -51,8 +52,7 @@ private:
     // interval-scheduling, time O(NlogN), space O(logN)
     int approach1(std::vector<std::vector<int>>& pairs)
     {
-        std::sort(pairs.begin(), pairs.end(),
-                  [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
+        std::sort(pairs.begin(), pairs.end(), [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
         int result = 1;
         int endingPoint = pairs[0][1];
         for (int i = 1; i < pairs.size(); ++i) {

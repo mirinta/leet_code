@@ -10,8 +10,7 @@
  * ! 本题与LC 47相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> permutation(std::string& s)
     {

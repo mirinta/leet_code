@@ -20,8 +20,7 @@
  * ! nums.length == n
  */
 
-class Solution
-{
+class Solution {
 public:
     bool primeSubOperation(std::vector<int>& nums)
     {

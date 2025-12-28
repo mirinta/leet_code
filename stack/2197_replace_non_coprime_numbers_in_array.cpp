@@ -28,8 +28,7 @@
  * ! 10^8.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> replaceNonCoprimes(std::vector<int>& nums)
     {

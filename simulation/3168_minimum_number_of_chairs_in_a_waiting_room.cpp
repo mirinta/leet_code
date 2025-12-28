@@ -15,8 +15,7 @@
  * ! s represents a valid sequence of entries and exits.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumChairs(std::string s)
     {

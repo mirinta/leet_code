@@ -16,8 +16,7 @@
  * ! brokenLetters consists of distinct lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int canBeTypedWords(std::string text, std::string brokenLetters)
     {

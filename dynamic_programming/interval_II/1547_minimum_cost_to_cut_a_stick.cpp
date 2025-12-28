@@ -22,10 +22,12 @@
  * ! All the integers in cuts array are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minCost(int n, std::vector<int>& cuts) { return approach2(n, cuts); }
+    int minCost(int n, std::vector<int>& cuts)
+    {
+        return approach2(n, cuts);
+    }
 
 private:
     int approach2(int n, std::vector<int>& cuts)
@@ -69,8 +71,7 @@ private:
 
         int result = INT_MAX;
         for (int i = left + 1; i < right; ++i) {
-            const int cost =
-                dfs(memo, left, i, cuts) + dfs(memo, i, right, cuts) + cuts[right] - cuts[left];
+            const int cost = dfs(memo, left, i, cuts) + dfs(memo, i, right, cuts) + cuts[right] - cuts[left];
             result = std::min(result, cost);
         }
         return memo[left][right] = result;

@@ -14,8 +14,7 @@
  * ! s1, s2 and s3 consist only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMinimumOperations(std::string s1, std::string s2, std::string s3)
     {

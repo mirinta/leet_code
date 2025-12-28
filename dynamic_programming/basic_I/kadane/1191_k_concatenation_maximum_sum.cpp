@@ -15,8 +15,7 @@
  * ! -10^4 <= arr[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int kConcatenationMaxSum(std::vector<int>& arr, int k)
     {

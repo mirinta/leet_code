@@ -10,8 +10,7 @@
  * ! 0 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumGap(const std::vector<int>& nums)
     {
@@ -33,8 +32,7 @@ public:
         // - bucket capacity is at least 1
         const int bucketSize = std::max(1, (max - min) / (n - 1));
         const int bucketNum = (max - min) / bucketSize + 1;
-        struct Bucket
-        {
+        struct Bucket {
             int minVal = INT_MAX;
             int maxVal = INT_MIN;
             bool isUsed = false;

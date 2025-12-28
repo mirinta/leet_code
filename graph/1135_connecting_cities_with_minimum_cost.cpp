@@ -21,8 +21,7 @@
  * ! 0 <= cost_i <= 10^5
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), rank(n)
     {
@@ -32,7 +31,10 @@ public:
         }
     }
 
-    int numOfConnectedComponents() const { return count; }
+    int numOfConnectedComponents() const
+    {
+        return count;
+    }
 
     int find(int x)
     {
@@ -42,7 +44,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -68,8 +73,7 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
     int minimumCost(int n, std::vector<std::vector<int>>& connections)
     {
@@ -90,8 +94,7 @@ private:
             graph[to].emplace_back(cost, from);
         }
         auto comparator = [](const auto& p1, const auto& p2) { return p1.first > p2.first; };
-        std::priority_queue<Pair, std::vector<Pair>, decltype(comparator)> pq(
-            comparator); // min heap
+        std::priority_queue<Pair, std::vector<Pair>, decltype(comparator)> pq(comparator); // min heap
         // start from vertex 0
         for (const auto& p : graph[0]) {
             pq.push(p);
@@ -121,8 +124,7 @@ private:
     // Kruskal's algorithm
     int approach1(int n, std::vector<std::vector<int>>& connections)
     {
-        std::sort(connections.begin(), connections.end(),
-                  [](const auto& e1, const auto& e2) { return e1[2] < e2[2]; });
+        std::sort(connections.begin(), connections.end(), [](const auto& e1, const auto& e2) { return e1[2] < e2[2]; });
         UnionFind uf(n);
         int result = 0;
         for (const auto& edge : connections) {

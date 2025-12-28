@@ -20,8 +20,7 @@
  * ! At most 10^5 calls in total will be made to reserve and unreserve.
  */
 
-class SeatManager
-{
+class SeatManager {
 public:
     SeatManager(int n)
     {
@@ -40,7 +39,10 @@ public:
         return result;
     }
 
-    void unreserve(int seatNumber) { pq.push(seatNumber); }
+    void unreserve(int seatNumber)
+    {
+        pq.push(seatNumber);
+    }
 
 private:
     std::priority_queue<int, std::vector<int>, std::greater<>> pq; // min heap

@@ -13,8 +13,7 @@
  * ! 1 <= nums[i], k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countGood(std::vector<int>& nums, int k)
     {

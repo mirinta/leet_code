@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -17,8 +16,7 @@ struct TreeNode
  * ! 节点总数 <= 10000
  */
 
-class Solution
-{
+class Solution {
 public:
     int pathSum(TreeNode* root, int sum)
     {

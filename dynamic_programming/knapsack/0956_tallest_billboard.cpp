@@ -16,8 +16,7 @@
  * ! sum(rods[i]) <= 5000
  */
 
-class Solution
-{
+class Solution {
 public:
     int tallestBillboard(std::vector<int>& rods)
     {

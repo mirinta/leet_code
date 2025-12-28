@@ -5,8 +5,7 @@
  * ! 保证乘法范围不会溢出
  */
 
-class Solution
-{
+class Solution {
 public:
     int multiply(int A, int B)
     {

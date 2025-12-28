@@ -16,8 +16,7 @@
  * ! s and t consist of lowercase letters, uppercase letters, and digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isOneEditDistance(std::string s, std::string t)
     {

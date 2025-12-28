@@ -17,8 +17,7 @@
  * ! 0 <= img[i][j] <= 255
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> imageSmoother(std::vector<std::vector<int>>& img)
     {

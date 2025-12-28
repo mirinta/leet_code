@@ -12,8 +12,7 @@
  * ! 0 <= matrix[i][j] <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestIncreasingPath(std::vector<std::vector<int>>& matrix)
     {
@@ -31,8 +30,7 @@ public:
 
 private:
     // length of the longest increasing path starting from (i,j)
-    int dp(std::vector<std::vector<int>>& memo, int i, int j,
-           const std::vector<std::vector<int>>& matrix)
+    int dp(std::vector<std::vector<int>>& memo, int i, int j, const std::vector<std::vector<int>>& matrix)
     {
         static const std::vector<std::pair<int, int>> kDirections{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
         if (memo[i][j] != -1)

@@ -13,8 +13,7 @@
  * ! -1000 <= matrix[i][j] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     void rotate(std::vector<std::vector<int>>& matrix)
     {

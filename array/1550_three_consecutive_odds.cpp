@@ -8,8 +8,7 @@
  * ! 1 <= arr[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     bool threeConsecutiveOdds(std::vector<int>& arr)
     {

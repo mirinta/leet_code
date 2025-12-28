@@ -30,8 +30,7 @@
 
 #include <string>
 
-class Solution
-{
+class Solution {
 public:
     int compareVersion(const std::string& version1, const std::string& version2)
     {

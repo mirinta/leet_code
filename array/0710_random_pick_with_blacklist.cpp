@@ -18,8 +18,7 @@
  * - "int pick()" returns a random integer in the range [0, n - 1] and not in "blacklist".
  */
 
-class Solution
-{
+class Solution {
     // let n = 5, then the picking range is [0, 1, 2, 3, 4]
     // let blacklist = [0, 1], then the whitelist is [2, 3, 4]
     // map 0 to 4, and map 1 to 3

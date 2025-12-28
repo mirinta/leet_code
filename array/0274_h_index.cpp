@@ -13,10 +13,12 @@
  * ! 0 <= citations[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int hIndex(std::vector<int>& citations) { return approach1(citations); }
+    int hIndex(std::vector<int>& citations)
+    {
+        return approach1(citations);
+    }
 
 private:
     // time O(N), space O(N)

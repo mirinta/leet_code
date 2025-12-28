@@ -11,8 +11,7 @@
  * ! -10^9 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int majorityElement(std::vector<int>& nums)
     {

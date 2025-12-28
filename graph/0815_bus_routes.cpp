@@ -24,8 +24,7 @@
  * ! 0 <= source, target < 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int numBusesToDestination(std::vector<std::vector<int>>& routes, int source, int target)
     {

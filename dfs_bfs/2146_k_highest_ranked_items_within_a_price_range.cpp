@@ -45,12 +45,12 @@
  * ! 1 <= k <= m * n
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> highestRankedKItems(std::vector<std::vector<int>>& grid,
                                                       std::vector<int>& pricing,
-                                                      std::vector<int>& start, int k)
+                                                      std::vector<int>& start,
+                                                      int k)
     {
         static const std::vector<std::pair<int, int>> kDirections{{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
         const int m = grid.size();
@@ -99,8 +99,7 @@ public:
 private:
     using Tuple = std::tuple<int, int, int, int>; // <dist, price, row, col>
 
-    struct Compare
-    {
+    struct Compare {
         bool operator()(const Tuple& a, const Tuple& b)
         {
             const auto& [dist1, price1, row1, col1] = a;

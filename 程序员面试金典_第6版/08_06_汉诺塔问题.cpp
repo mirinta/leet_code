@@ -14,8 +14,7 @@
  * ! A中盘子的数目不大于14个。
  */
 
-class Solution
-{
+class Solution {
 public:
     void hanota(std::vector<int>& A, std::vector<int>& B, std::vector<int>& C)
     {

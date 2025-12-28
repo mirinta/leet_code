@@ -4,8 +4,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -27,8 +26,7 @@ struct ListNode
  * ! not present in nums.
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* modifiedList(std::vector<int>& nums, ListNode* head)
     {

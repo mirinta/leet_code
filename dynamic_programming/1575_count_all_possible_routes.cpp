@@ -22,8 +22,7 @@
  * ! 1 <= fuel <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
     int countRoutes(std::vector<int>& locations, int start, int finish, int fuel)
     {
@@ -68,8 +67,7 @@ private:
         return dfs(memo, start, finish, fuel, locations);
     }
 
-    int dfs(std::vector<std::vector<int>>& memo, int i, int finish, int fuel,
-            const std::vector<int>& locations)
+    int dfs(std::vector<std::vector<int>>& memo, int i, int finish, int fuel, const std::vector<int>& locations)
     {
         if (fuel < 0)
             return 0;

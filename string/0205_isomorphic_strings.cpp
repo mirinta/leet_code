@@ -16,8 +16,7 @@
  * ! s and t consist of any valid ascii character.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isIsomorphic(std::string s, std::string t)
     {

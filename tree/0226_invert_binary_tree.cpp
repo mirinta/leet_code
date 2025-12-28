@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -20,10 +19,12 @@ struct TreeNode
  * ! -100 <= Node.val <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    TreeNode* invertTree(TreeNode* root) { return approach1(root); }
+    TreeNode* invertTree(TreeNode* root)
+    {
+        return approach1(root);
+    }
 
 private:
     // DFS, TC = O(N), SC = O(N)

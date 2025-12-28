@@ -15,8 +15,7 @@
  * ! Could you find a solution with O(n) time complexity?
  */
 
-class Solution
-{
+class Solution {
 public:
     long long subArrayRanges(std::vector<int>& nums)
     {

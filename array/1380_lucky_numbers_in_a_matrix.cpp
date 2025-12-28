@@ -13,8 +13,7 @@
  * ! All elements in the matrix are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> luckyNumbers(std::vector<std::vector<int>>& matrix)
     {

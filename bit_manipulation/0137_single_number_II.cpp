@@ -11,8 +11,7 @@
  * ! Each element in nums appears exactly three times except for one element which appears once.
  */
 
-class Solution
-{
+class Solution {
 public:
     int singleNumber(std::vector<int>& nums)
     {

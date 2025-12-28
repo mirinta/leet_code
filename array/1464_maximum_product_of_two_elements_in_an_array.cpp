@@ -8,8 +8,7 @@
  * ! 1 <= nums[i] <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxProduct(std::vector<int>& nums)
     {

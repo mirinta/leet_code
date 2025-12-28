@@ -22,8 +22,7 @@
  * ! At most 5 * 104 calls will be made to addNum and findMedian.
  */
 
-class MedianFinder
-{
+class MedianFinder {
 public:
     MedianFinder() = default;
 

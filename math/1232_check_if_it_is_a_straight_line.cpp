@@ -10,8 +10,7 @@
  * ! coordinates contains no duplicate point.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkStraightLine(const std::vector<std::vector<int>>& coordinates)
     {

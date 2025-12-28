@@ -19,11 +19,9 @@
  * ! 0 <= li <= ri < words.length
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> vowelStrings(std::vector<std::string>& words,
-                                  std::vector<std::vector<int>>& queries)
+    std::vector<int> vowelStrings(std::vector<std::string>& words, std::vector<std::vector<int>>& queries)
     {
         const int n = words.size();
         std::vector<int> presum(n + 1, 0);
@@ -39,7 +37,13 @@ public:
     }
 
 private:
-    bool isVowel(char c) { return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'; }
+    bool isVowel(char c)
+    {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
 
-    bool isValid(const std::string& s) { return isVowel(s.front()) && isVowel(s.back()); }
+    bool isValid(const std::string& s)
+    {
+        return isVowel(s.front()) && isVowel(s.back());
+    }
 };

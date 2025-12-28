@@ -6,8 +6,7 @@
  * 说明：解集不能包含重复的子集。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> subsets(std::vector<int>& nums)
     {
@@ -18,8 +17,7 @@ public:
     }
 
 private:
-    void dfs(std::vector<std::vector<int>>& result, std::vector<int>& path, int i,
-             const std::vector<int>& nums)
+    void dfs(std::vector<std::vector<int>>& result, std::vector<int>& path, int i, const std::vector<int>& nums)
     {
         result.push_back(path);
         if (i == nums.size())

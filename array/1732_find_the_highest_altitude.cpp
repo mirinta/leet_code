@@ -13,8 +13,7 @@
  * ! -100 <= gain[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int largestAltitude(const std::vector<int>& gain)
     {

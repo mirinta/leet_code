@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -22,8 +21,7 @@ struct TreeNode
  * ! -2^31 <= Node.val <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<double> averageOfLevels(TreeNode* root)
     {

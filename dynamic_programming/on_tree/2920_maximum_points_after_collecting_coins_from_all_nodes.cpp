@@ -29,8 +29,7 @@
  * ! 0 <= k <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumPoints(std::vector<std::vector<int>>& edges, std::vector<int>& coins, int k)
     {
@@ -62,7 +61,11 @@ private:
         return count;
     }
 
-    int dfs(int root, int parent, int numOfOption2, const std::vector<int>& coins, int k,
+    int dfs(int root,
+            int parent,
+            int numOfOption2,
+            const std::vector<int>& coins,
+            int k,
             const std::vector<std::vector<int>>& graph)
     {
         if (numOfOption2 >= maxShifts)

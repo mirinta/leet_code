@@ -24,8 +24,7 @@
  * ! kill is guaranteed to be in pid.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> killProcess(std::vector<int>& pid, std::vector<int>& ppid, int kill)
     {
@@ -40,8 +39,7 @@ public:
     }
 
 private:
-    void dfs(std::vector<int>& result, int root,
-             const std::unordered_map<int, std::vector<int>>& graph)
+    void dfs(std::vector<int>& result, int root, const std::unordered_map<int, std::vector<int>>& graph)
     {
         result.push_back(root);
         if (!graph.count(root))

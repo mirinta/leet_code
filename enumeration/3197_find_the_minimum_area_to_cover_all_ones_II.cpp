@@ -14,8 +14,7 @@
  * ! The input is generated such that there are at least three 1's in grid.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumSum(std::vector<std::vector<int>>& grid)
     {
@@ -101,8 +100,7 @@ public:
 private:
     // given a submatrix of grid, find the area of the min rectangle that contains all the 1's in
     // that submatrix similar to LC.3195
-    int solve(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY,
-              const std::vector<std::vector<int>>& grid)
+    int solve(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY, const std::vector<std::vector<int>>& grid)
     {
         int minX = INT_MAX;
         int maxX = 0;

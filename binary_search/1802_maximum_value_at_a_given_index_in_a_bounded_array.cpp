@@ -22,8 +22,7 @@
  * ! 0 <= index < n
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxValue(int n, int index, int maxSum)
     {
@@ -57,8 +56,7 @@ private:
 
         const long rightAPItems = std::max(0L, std::min(val - 1, n - index - 1));
         const long rightRemainingItems = std::max(0L, n - index - 1 - rightAPItems);
-        const long rightSum =
-            (val - 1 + val - rightAPItems) * rightAPItems / 2 + rightRemainingItems;
+        const long rightSum = (val - 1 + val - rightAPItems) * rightAPItems / 2 + rightRemainingItems;
 
         return leftSum + rightSum + val <= maxSum;
     }

@@ -32,8 +32,7 @@
  * ! formula is always valid.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string countOfAtoms(std::string formula)
     {

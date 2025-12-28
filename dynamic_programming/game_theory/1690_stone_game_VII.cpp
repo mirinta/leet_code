@@ -19,8 +19,7 @@
  * ! 1 <= stones[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int stoneGameVII(std::vector<int>& stones)
     {

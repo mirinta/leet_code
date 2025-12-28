@@ -15,8 +15,7 @@
  * ! All the elements of arr are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxChunksToSorted(std::vector<int>& arr)
     {

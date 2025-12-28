@@ -22,8 +22,7 @@
  * ! All the integers of nums1 also appear in nums2.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> nextGreaterElement(std::vector<int>& nums1, std::vector<int>& nums2)
     {

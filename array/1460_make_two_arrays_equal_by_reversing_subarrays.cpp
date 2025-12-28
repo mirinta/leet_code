@@ -13,8 +13,7 @@
  * ! 1 <= arr[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canBeEqual(std::vector<int>& target, std::vector<int>& arr)
     {

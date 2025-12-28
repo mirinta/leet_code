@@ -23,8 +23,7 @@
  * ! At most 1000 calls will be made to book.
  */
 
-class MyCalendarTwo
-{
+class MyCalendarTwo {
 public:
     MyCalendarTwo() {}
 

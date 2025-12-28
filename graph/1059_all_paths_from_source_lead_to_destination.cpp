@@ -23,11 +23,9 @@
  * ! The given graph may have self-loops and parallel edges.
  */
 
-class Solution
-{
+class Solution {
 public:
-    bool leadsToDestination(int n, std::vector<std::vector<int>>& edges, int source,
-                            int destination)
+    bool leadsToDestination(int n, std::vector<std::vector<int>>& edges, int source, int destination)
     {
         std::vector<std::vector<int>> graph(n);
         for (const auto& edge : edges) {
@@ -43,8 +41,7 @@ private:
     // Black = fully processed
     enum Color { White, Gray, Black };
 
-    bool dfs(std::vector<Color>& colors, int current, int target,
-             const std::vector<std::vector<int>>& graph)
+    bool dfs(std::vector<Color>& colors, int current, int target, const std::vector<std::vector<int>>& graph)
     {
         if (graph[current].empty())
             return current == target;

@@ -21,8 +21,7 @@
  * ! team c, then team a is stronger than team c.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findChampion(std::vector<std::vector<int>>& grid)
     {

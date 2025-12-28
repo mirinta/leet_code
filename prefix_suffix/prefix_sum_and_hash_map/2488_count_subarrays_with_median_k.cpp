@@ -21,8 +21,7 @@
  *  !The integers in nums are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countSubarrays(std::vector<int>& nums, int k)
     {

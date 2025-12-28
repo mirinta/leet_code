@@ -35,12 +35,10 @@
  * ! -10^5 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     // time O(MNlogN), space O(N)
-    std::vector<bool> checkArithmeticSubarrays(std::vector<int>& nums, std::vector<int>& l,
-                                               std::vector<int>& r)
+    std::vector<bool> checkArithmeticSubarrays(std::vector<int>& nums, std::vector<int>& l, std::vector<int>& r)
     {
         std::vector<bool> result(l.size());
         for (int i = 0; i < result.size(); ++i) {

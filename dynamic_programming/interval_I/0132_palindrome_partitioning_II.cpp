@@ -10,8 +10,7 @@
  * ! s consists of lowercase English letters only.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minCut(const std::string& s)
     {

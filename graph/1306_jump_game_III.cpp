@@ -14,8 +14,7 @@
  * ! 0 <= start < arr.length
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canReach(std::vector<int>& arr, int start)
     {

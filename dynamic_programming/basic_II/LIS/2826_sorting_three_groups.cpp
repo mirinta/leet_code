@@ -12,10 +12,12 @@
  * ! Follow-up: Can you come up with an algorithm that runs in O(n) time complexity?
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumOperations(std::vector<int>& nums) { return approach2(nums); }
+    int minimumOperations(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     int approach2(const std::vector<int>& nums)
@@ -32,8 +34,7 @@ private:
         for (int i = 1; i < n; ++i) {
             dp[i] = dp[i - 1]; // nums[i] is not picked
             if (nums[i] == 3) {
-                dp[i][2] =
-                    std::max(dp[i][2], 1 + std::max({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]}));
+                dp[i][2] = std::max(dp[i][2], 1 + std::max({dp[i - 1][0], dp[i - 1][1], dp[i - 1][2]}));
             } else if (nums[i] == 2) {
                 dp[i][1] = std::max(dp[i][1], 1 + std::max(dp[i - 1][0], dp[i - 1][1]));
             } else {

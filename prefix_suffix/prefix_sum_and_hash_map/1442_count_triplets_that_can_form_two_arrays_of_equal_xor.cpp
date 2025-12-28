@@ -20,10 +20,12 @@
  * ! 1 <= arr[i] <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countTriplets(std::vector<int>& arr) { return approach2(arr); }
+    int countTriplets(std::vector<int>& arr)
+    {
+        return approach2(arr);
+    }
 
 private:
     int approach2(const std::vector<int>& arr)

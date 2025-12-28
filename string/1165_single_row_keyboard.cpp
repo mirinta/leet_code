@@ -18,8 +18,7 @@
  * ! word[i] is an English lowercase letter.
  */
 
-class Solution
-{
+class Solution {
 public:
     int calculateTime(std::string keyboard, std::string word)
     {

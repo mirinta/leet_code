@@ -25,8 +25,7 @@
  * ! 1 <= obstacles[i] <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> longestObstacleCourseAtEachPosition(std::vector<int>& obstacles)
     {

@@ -16,8 +16,7 @@
  * ! nums[i] is sorted in non-decreasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> smallestRange(std::vector<std::vector<int>>& nums)
     {

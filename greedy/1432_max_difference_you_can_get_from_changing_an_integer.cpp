@@ -19,10 +19,12 @@
  * ! 1 <= num <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxDiff(int num) { return findMax(num) - findMin(num); }
+    int maxDiff(int num)
+    {
+        return findMax(num) - findMin(num);
+    }
 
 private:
     int findMax(int num)

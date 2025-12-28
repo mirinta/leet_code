@@ -28,11 +28,9 @@
  * ! 0 <= indexi, ki <= n - 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<long long> unmarkedSumArray(std::vector<int>& nums,
-                                            std::vector<std::vector<int>>& queries)
+    std::vector<long long> unmarkedSumArray(std::vector<int>& nums, std::vector<std::vector<int>>& queries)
     {
         const int n = nums.size();
         using Pair = std::pair<int, int>;

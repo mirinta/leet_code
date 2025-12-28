@@ -27,8 +27,7 @@
  * ! maxChanges + sum(nums) >= k
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minimumMoves(std::vector<int>& nums, int k, int maxChanges)
     {

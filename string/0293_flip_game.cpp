@@ -15,8 +15,7 @@
  * ! currentState[i] is either '+' or '-'.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> generatePossibleNextMoves(std::string currentState)
     {

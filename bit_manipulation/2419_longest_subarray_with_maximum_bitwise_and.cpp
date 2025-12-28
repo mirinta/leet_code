@@ -19,8 +19,7 @@
  * ! 1 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestSubarray(std::vector<int>& nums)
     {

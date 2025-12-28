@@ -14,8 +14,7 @@
  * ! mat[i] is sorted in strictly increasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     int smallestCommonElement(std::vector<std::vector<int>>& mat)
     {

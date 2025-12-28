@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -28,8 +27,7 @@ struct TreeNode
  * ! to_delete contains distinct values between 1 and 1000.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<TreeNode*> delNodes(TreeNode* root, std::vector<int>& to_delete)
     {
@@ -45,8 +43,7 @@ public:
     }
 
 private:
-    TreeNode* dfs(std::vector<TreeNode*>& result, TreeNode* root,
-                  const std::unordered_set<int>& toDelete)
+    TreeNode* dfs(std::vector<TreeNode*>& result, TreeNode* root, const std::unordered_set<int>& toDelete)
     {
         if (!root)
             return nullptr;

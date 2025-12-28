@@ -13,8 +13,7 @@
  * ! 0 <= answers[i] < 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int numRabbits(std::vector<int>& answers)
     {

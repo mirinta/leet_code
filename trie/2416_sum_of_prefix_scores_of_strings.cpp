@@ -19,8 +19,7 @@
  * ! words[i] consists of lowercase English letters.
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode) {}
 
@@ -53,8 +52,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         int count{0};
         std::array<TrieNode*, 26> next{};
     };
@@ -62,8 +60,7 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sumPrefixScores(std::vector<std::string>& words)
     {

@@ -18,8 +18,7 @@
  * ! 1 <= piles[i] <= 104
  */
 
-class Solution
-{
+class Solution {
 public:
     int stoneGameII(std::vector<int>& piles)
     {
@@ -34,8 +33,7 @@ public:
 
 private:
     // max score the first player can get in the game of piles[i:n-1]
-    int dfs(std::vector<std::vector<int>>& memo, int i, int M, int n,
-            const std::vector<int>& presum)
+    int dfs(std::vector<std::vector<int>>& memo, int i, int M, int n, const std::vector<int>& presum)
     {
         if (i == n)
             return 0;
@@ -47,8 +45,7 @@ private:
         for (int X = 1; X <= std::min(n - i, 2 * M); ++X) {
             const int score = presum[i + X] - presum[i];
             const int remaining = presum.back() - presum[i + X];
-            result =
-                std::max(result, score + remaining - dfs(memo, i + X, std::max(M, X), n, presum));
+            result = std::max(result, score + remaining - dfs(memo, i + X, std::max(M, X), n, presum));
         }
         return memo[i][M] = result;
     }

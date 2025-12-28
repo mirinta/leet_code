@@ -20,8 +20,7 @@
  * ! 本题与LC 8相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int strToInt(std::string str)
     {

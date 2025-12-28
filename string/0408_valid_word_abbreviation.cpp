@@ -36,8 +36,7 @@
  * ! All the integers in abbr will fit in a 32-bit integer.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validWordAbbreviation(std::string word, std::string abbr)
     {

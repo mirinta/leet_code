@@ -22,8 +22,7 @@
  * ! The phone numbers and seat numbers of the passengers are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countSeniors(std::vector<std::string>& details)
     {

@@ -17,8 +17,7 @@
  * ! All coordinates of buildings are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countCoveredBuildings(int n, std::vector<std::vector<int>>& buildings)
     {

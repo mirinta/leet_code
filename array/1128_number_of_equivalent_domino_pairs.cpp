@@ -14,8 +14,7 @@
  * ! 1 <= dominoes[i][j] <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     int numEquivDominoPairs(std::vector<std::vector<int>>& dominoes)
     {
@@ -39,5 +38,8 @@ public:
     }
 
 private:
-    int encode(int a, int b) { return 10 * a + b; }
+    int encode(int a, int b)
+    {
+        return 10 * a + b;
+    }
 };

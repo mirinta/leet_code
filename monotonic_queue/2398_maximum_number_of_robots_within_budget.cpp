@@ -20,19 +20,16 @@
  * ! 1 <= budget <= 10^15
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maximumRobots(std::vector<int>& chargeTimes, std::vector<int>& runningCosts,
-                      long long budget)
+    int maximumRobots(std::vector<int>& chargeTimes, std::vector<int>& runningCosts, long long budget)
     {
         return approach2(chargeTimes, runningCosts, budget);
     }
 
 private:
     // sliding window + monotonic queue, time O(N), space O(N)
-    int approach2(const std::vector<int>& chargeTimes, const std::vector<int>& runningCosts,
-                  long long budget)
+    int approach2(const std::vector<int>& chargeTimes, const std::vector<int>& runningCosts, long long budget)
     {
         const int n = chargeTimes.size();
         std::vector<long long> prefixSum(n + 1, 0); // prefixSum[i] = sum of runningCosts[0:i-1]
@@ -46,9 +43,8 @@ private:
                 maxDeque.pop_back();
             }
             maxDeque.push_back(chargeTimes[right]);
-            while (left <= right && (maxDeque.front() + (right - left + 1) * (prefixSum[right + 1] -
-                                                                              prefixSum[left]) >
-                                     budget)) {
+            while (left <= right &&
+                   (maxDeque.front() + (right - left + 1) * (prefixSum[right + 1] - prefixSum[left]) > budget)) {
                 if (maxDeque.front() == chargeTimes[left]) {
                     maxDeque.pop_front();
                 }
@@ -60,8 +56,7 @@ private:
     }
 
     // sliding window + multiset, time O(NlogN), space O(N)
-    int approach1(const std::vector<int>& chargeTimes, const std::vector<int>& runningCosts,
-                  long long budget)
+    int approach1(const std::vector<int>& chargeTimes, const std::vector<int>& runningCosts, long long budget)
     {
         const int n = chargeTimes.size();
         std::vector<long long> prefixSum(n + 1, 0); // prefixSum[i] = sum of runningCosts[0:i-1]
@@ -73,8 +68,7 @@ private:
         for (int left = 0, right = 0; right < n; ++right) {
             set.insert(chargeTimes[right]);
             while (left <= right &&
-                   (*set.rbegin() + (right - left + 1) * (prefixSum[right + 1] - prefixSum[left])) >
-                       budget) {
+                   (*set.rbegin() + (right - left + 1) * (prefixSum[right + 1] - prefixSum[left])) > budget) {
                 set.erase(set.find(chargeTimes[left]));
                 left++;
             }

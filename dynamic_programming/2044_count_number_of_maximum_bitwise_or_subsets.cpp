@@ -15,10 +15,12 @@
  * ! 1 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countMaxOrSubsets(std::vector<int>& nums) { return approach3(nums); }
+    int countMaxOrSubsets(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     int approach3(const std::vector<int>& nums)

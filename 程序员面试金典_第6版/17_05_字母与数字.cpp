@@ -10,8 +10,7 @@
  * ! array.length <= 100000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> findLongestSubarray(std::vector<std::string>& array)
     {

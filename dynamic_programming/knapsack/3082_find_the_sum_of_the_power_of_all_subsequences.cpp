@@ -15,10 +15,12 @@
  * ! 1 <= k <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int sumOfPower(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int sumOfPower(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;
@@ -53,8 +55,7 @@ private:
                     continue;
 
                 for (int x = i - 1; x >= 0; --x) {
-                    dp[i][j] =
-                        (dp[i][j] + fastPowMod(2, i - x - 1, kMod) * dp[x][diff] % kMod) % kMod;
+                    dp[i][j] = (dp[i][j] + fastPowMod(2, i - x - 1, kMod) * dp[x][diff] % kMod) % kMod;
                 }
             }
         }

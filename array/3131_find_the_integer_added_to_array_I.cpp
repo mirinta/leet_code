@@ -18,8 +18,7 @@
  * ! equal to nums2 by adding x to each element of nums1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int addedInteger(std::vector<int>& nums1, std::vector<int>& nums2)
     {

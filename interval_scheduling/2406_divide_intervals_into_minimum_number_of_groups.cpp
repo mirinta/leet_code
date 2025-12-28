@@ -18,8 +18,7 @@
  * ! 1 <= lefti <= righti <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int minGroups(std::vector<std::vector<int>>& intervals)
     {

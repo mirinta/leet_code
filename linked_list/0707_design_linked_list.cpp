@@ -29,8 +29,7 @@
  * ! At most 2000 calls will be made to get, addAtHead, addAtTail, addAtIndex and deleteAtIndex.
  */
 
-class MyLinkedList
-{
+class MyLinkedList {
 public:
     explicit MyLinkedList() : root(new Node(-1)) {}
 
@@ -91,8 +90,7 @@ public:
     }
 
 private:
-    struct Node
-    {
+    struct Node {
         int val;
         Node* next;
 

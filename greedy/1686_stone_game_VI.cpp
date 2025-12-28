@@ -27,8 +27,7 @@
  * ! 1 <= aliceValues[i], bobValues[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int stoneGameVI(std::vector<int>& aliceValues, std::vector<int>& bobValues)
     {
@@ -42,8 +41,7 @@ public:
         for (int i = 0; i < n; ++i) {
             pairs.emplace_back(aliceValues[i] + bobValues[i], i);
         }
-        std::sort(pairs.begin(), pairs.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
+        std::sort(pairs.begin(), pairs.end(), [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
         int alice = 0;
         int bob = 0;
         for (int i = 0; i < n; ++i) {

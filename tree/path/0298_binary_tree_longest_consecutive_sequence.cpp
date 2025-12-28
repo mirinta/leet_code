@@ -1,10 +1,10 @@
+#include <limits>
 #include <utility>
 
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -25,10 +25,12 @@ struct TreeNode
  * ! -3 * 10^4 <= Node.val <= 3 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int longestConsecutive(TreeNode* root) { return approach1(root); }
+    int longestConsecutive(TreeNode* root)
+    {
+        return approach1(root);
+    }
 
 private:
     // preorder-traversal

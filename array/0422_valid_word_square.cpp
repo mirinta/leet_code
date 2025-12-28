@@ -12,8 +12,7 @@
  * ! words[i] consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validWordSquare(std::vector<std::string>& words)
     {

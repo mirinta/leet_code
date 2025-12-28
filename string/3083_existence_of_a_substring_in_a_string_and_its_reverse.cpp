@@ -9,8 +9,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isSubstringPresent(std::string s)
     {

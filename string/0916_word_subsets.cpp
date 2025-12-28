@@ -18,11 +18,9 @@
  * ! All the strings of words1 are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> wordSubsets(std::vector<std::string>& words1,
-                                         std::vector<std::string>& words2)
+    std::vector<std::string> wordSubsets(std::vector<std::string>& words1, std::vector<std::string>& words2)
     {
         std::array<int, 26> target{};
         for (const auto& s : words2) {

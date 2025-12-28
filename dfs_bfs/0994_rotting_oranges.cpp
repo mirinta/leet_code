@@ -21,8 +21,7 @@
  * ! grid[i][j] is 0, 1, or 2.
  */
 
-class Solution
-{
+class Solution {
 public:
     int orangesRotting(std::vector<std::vector<int>>& grid)
     {

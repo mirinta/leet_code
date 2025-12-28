@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -25,8 +24,7 @@ struct ListNode
  * ! The beginning and end of the linked list have Node.val == 0.
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* mergeNodes(ListNode* head)
     {

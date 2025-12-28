@@ -24,11 +24,9 @@
  * ! It is guaranteed that coordinates contains pairwise distinct coordinates.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<long long> countBlackBlocks(int m, int n,
-                                            std::vector<std::vector<int>>& coordinates)
+    std::vector<long long> countBlackBlocks(int m, int n, std::vector<std::vector<int>>& coordinates)
     {
         // use top-left of a 2x2 block as its identifier (I), a black cell is denoted as B
         // I(B) X | I  B | I  X | I  X
@@ -36,8 +34,7 @@ public:
         // NOTE: top-left of a block can't exist in the last row and the last column of the grid
         auto encode = [n](long long x, long long y) { return x * n + y; };
         std::unordered_map<long long, long long> map;
-        static const std::vector<std::pair<long long, long long>> kDirections{
-            {0, 0}, {0, -1}, {-1, 0}, {-1, -1}};
+        static const std::vector<std::pair<long long, long long>> kDirections{{0, 0}, {0, -1}, {-1, 0}, {-1, -1}};
         for (const auto& coordinate : coordinates) {
             const auto& x = coordinate[0];
             const auto& y = coordinate[1];

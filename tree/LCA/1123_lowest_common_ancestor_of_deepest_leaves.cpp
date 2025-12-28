@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -34,8 +33,7 @@ struct TreeNode
  * ! The values of the nodes in the tree are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* lcaDeepestLeaves(TreeNode* root)
     {

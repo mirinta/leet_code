@@ -10,8 +10,7 @@
  * ! 0 <= num <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumSwap(int num)
     {

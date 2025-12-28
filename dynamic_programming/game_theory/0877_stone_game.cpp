@@ -20,8 +20,7 @@
  * ! sum(piles[i]) is odd.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool stoneGame(std::vector<int>& piles)
     {
@@ -37,7 +36,10 @@ public:
 
 private:
     // max score that the 1st action player can get at the end of the game piles[lo:hi]
-    int dfs(std::vector<std::vector<int>>& memo, int lo, int hi, const std::vector<int>& piles,
+    int dfs(std::vector<std::vector<int>>& memo,
+            int lo,
+            int hi,
+            const std::vector<int>& piles,
             const std::vector<int>& presum)
     {
         if (lo > hi)
@@ -47,11 +49,9 @@ private:
             return memo[lo][hi];
 
         // case 1: take piles[lo]
-        const int case1 =
-            piles[lo] + (presum[hi + 1] - presum[lo + 1]) - dfs(memo, lo + 1, hi, piles, presum);
+        const int case1 = piles[lo] + (presum[hi + 1] - presum[lo + 1]) - dfs(memo, lo + 1, hi, piles, presum);
         // case 2: take piles[hi]
-        const int case2 =
-            piles[hi] + (presum[hi] - presum[lo]) - dfs(memo, lo, hi - 1, piles, presum);
+        const int case2 = piles[hi] + (presum[hi] - presum[lo]) - dfs(memo, lo, hi - 1, piles, presum);
         return memo[lo][hi] = std::max(case1, case2);
     }
 };

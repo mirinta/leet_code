@@ -24,8 +24,7 @@
  * ! board[i][j] is a digit 1-9 or '.'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isValidSudoku(std::vector<std::vector<char>>& board)
     {

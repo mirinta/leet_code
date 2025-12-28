@@ -16,13 +16,11 @@
  * ! 0 <= xi, yi <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxWidthOfVerticalArea(std::vector<std::vector<int>>& points)
     {
-        std::sort(points.begin(), points.end(),
-                  [](const auto& p1, const auto& p2) { return p1[0] < p2[0]; });
+        std::sort(points.begin(), points.end(), [](const auto& p1, const auto& p2) { return p1[0] < p2[0]; });
         int result = 0;
         for (int i = 1; i < points.size(); ++i) {
             result = std::max(result, points[i][0] - points[i - 1][0]);

@@ -33,8 +33,7 @@
  * ! At most 10^4 calls will be made to each function transfer, deposit, withdraw.
  */
 
-class Bank
-{
+class Bank {
 public:
     Bank(std::vector<long long>& balance) : balance(std::move(balance)) {}
 
@@ -73,7 +72,10 @@ public:
     }
 
 private:
-    bool validateIndex(int i) { return i >= 0 && i < balance.size(); }
+    bool validateIndex(int i)
+    {
+        return i >= 0 && i < balance.size();
+    }
 
 private:
     std::vector<long long> balance;

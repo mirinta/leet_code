@@ -10,8 +10,7 @@
  * ! 本题与LC 50相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     double myPow(double x, int n)
     {

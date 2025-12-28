@@ -7,8 +7,7 @@
  * ! 1 <= nums[i] < 2^31
  */
 
-class Solution
-{
+class Solution {
 public:
     int singleNumber(std::vector<int>& nums)
     {

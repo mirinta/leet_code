@@ -29,10 +29,12 @@
  * ! 0 <= grid[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int cherryPickup(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int cherryPickup(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     // DP with space optimization, TC = O(MN^2), SC = O(N^2)
@@ -76,8 +78,8 @@ private:
         // while robot1 is located at (i,j1) and robot2 is located at (i,j2)
         const int m = grid.size();
         const int n = grid[0].size();
-        std::vector<std::vector<std::vector<int>>> dp(
-            m, std::vector<std::vector<int>>(n, std::vector<int>(n, INT_MIN)));
+        std::vector<std::vector<std::vector<int>>> dp(m,
+                                                      std::vector<std::vector<int>>(n, std::vector<int>(n, INT_MIN)));
         dp[0][0][n - 1] = grid[0][0] + grid[0][n - 1];
         for (int i = 1; i < m; ++i) {
             for (int j1 = 0; j1 < n; ++j1) {

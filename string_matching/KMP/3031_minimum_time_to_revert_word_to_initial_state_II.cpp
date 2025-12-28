@@ -21,8 +21,7 @@
  * ! word consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumTimeToInitialState(std::string word, int k)
     {

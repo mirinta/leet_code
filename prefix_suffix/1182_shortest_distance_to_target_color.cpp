@@ -16,11 +16,9 @@
  * ! 1 <= queries[i][1] <= 3
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> shortestDistanceColor(std::vector<int>& colors,
-                                           std::vector<std::vector<int>>& queries)
+    std::vector<int> shortestDistanceColor(std::vector<int>& colors, std::vector<std::vector<int>>& queries)
     {
         const int n = colors.size();
         std::vector<std::array<int, 4>> prefix(n, {-1, -1, -1, -1});

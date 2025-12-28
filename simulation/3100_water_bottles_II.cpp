@@ -19,8 +19,7 @@
  * ! 1 <= numExchange <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxBottlesDrunk(int numBottles, int numExchange)
     {

@@ -21,8 +21,7 @@
  * ! At most 10^5 calls total will be made to append, addAll, multAll, and getIndex.
  */
 
-class SegmentTree
-{
+class SegmentTree {
 public:
     explicit SegmentTree(const std::vector<long long>& nums)
         : n(nums.size()), data(4 * n, 0), lazyAdd(4 * n, 0), lazyMulti(4 * n, 1)
@@ -30,11 +29,20 @@ public:
         build(0, n - 1, 1, nums);
     }
 
-    long long query(long long L, long long R) { return query(L, R, 0, n - 1, 1); }
+    long long query(long long L, long long R)
+    {
+        return query(L, R, 0, n - 1, 1);
+    }
 
-    void add(long long L, long long R, long long delta) { add(L, R, delta, 0, n - 1, 1); }
+    void add(long long L, long long R, long long delta)
+    {
+        add(L, R, delta, 0, n - 1, 1);
+    }
 
-    void multi(long long L, long long R, long long factor) { multi(L, R, factor, 0, n - 1, 1); }
+    void multi(long long L, long long R, long long factor)
+    {
+        multi(L, R, factor, 0, n - 1, 1);
+    }
 
 private:
     void build(long long lo, long long hi, long long id, const std::vector<long long>& nums)
@@ -125,8 +133,7 @@ private:
     std::vector<long long> lazyMulti;
 };
 
-class Fancy
-{
+class Fancy {
 public:
     Fancy() {}
 

@@ -4,15 +4,17 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     std::vector<Node*> children;
 
     Node() {}
 
-    Node(int _val) { val = _val; }
+    Node(int _val)
+    {
+        val = _val;
+    }
 
     Node(int _val, std::vector<Node*> _children)
     {
@@ -32,10 +34,12 @@ public:
  * ! The height of the n-ary tree is less than or equal to 1000.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> preorder(Node* root) { return approach1(root); }
+    std::vector<int> preorder(Node* root)
+    {
+        return approach1(root);
+    }
 
 private:
     std::vector<int> approach2(Node* root)

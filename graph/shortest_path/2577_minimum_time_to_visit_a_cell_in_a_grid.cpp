@@ -1,3 +1,4 @@
+#include <array>
 #include <queue>
 #include <tuple>
 #include <vector>
@@ -23,8 +24,7 @@
  * ! grid[0][0] == 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumTime(std::vector<std::vector<int>>& grid)
     {
@@ -33,13 +33,12 @@ public:
 
         const int m = grid.size();
         const int n = grid[0].size();
-        static constexpr std::array kDirections{std::make_pair(0, 1), std::make_pair(0, -1),
-                                                std::make_pair(1, 0), std::make_pair(-1, 0)};
+        static constexpr std::array kDirections{std::make_pair(0, 1), std::make_pair(0, -1), std::make_pair(1, 0),
+                                                std::make_pair(-1, 0)};
         std::vector<std::vector<bool>> visited(m, std::vector<bool>(n, false));
         visited[0][0] = true;
         using Tuple = std::tuple<int, int, int>; // <i, j, time>
-        struct Compare
-        {
+        struct Compare {
             bool operator()(const Tuple& t1, const Tuple& t2) const
             {
                 return std::get<2>(t1) > std::get<2>(t2);

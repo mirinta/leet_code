@@ -29,8 +29,7 @@
  * ! 1 <= complexity[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPermutations(std::vector<int>& complexity)
     {

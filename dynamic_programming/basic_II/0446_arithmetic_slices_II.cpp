@@ -22,8 +22,7 @@
  * ! -2^31 <= nums[i] <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfArithmeticSlices(std::vector<int>& nums)
     {

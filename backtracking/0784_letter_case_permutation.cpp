@@ -11,8 +11,7 @@
  * ! s consists of lowercase English letters, uppercase English letters, and digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> letterCasePermutation(const std::string& s)
     {

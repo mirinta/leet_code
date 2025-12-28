@@ -10,8 +10,7 @@
  * ! a.length <= 100000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> constructArr(std::vector<int>& a)
     {

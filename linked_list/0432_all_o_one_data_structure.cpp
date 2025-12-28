@@ -31,8 +31,7 @@
  * ! At most 5 * 10^4 calls will be made to inc, dec, getMaxKey, and getMinKey.
  */
 
-class AllOne
-{
+class AllOne {
 public:
     AllOne() : head(new Node(0)), tail(new Node(0))
     {
@@ -124,8 +123,7 @@ public:
     }
 
 private:
-    struct Node
-    {
+    struct Node {
         int count{0};
         Node* prev;
         Node* next;

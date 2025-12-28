@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -26,8 +25,7 @@ struct TreeNode
  * ! It's guaranteed that val does not exist in the original BST.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val)
     {

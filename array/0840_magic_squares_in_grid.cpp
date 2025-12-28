@@ -18,8 +18,7 @@
  * ! 0 <= grid[i][j] <= 15
  */
 
-class Solution
-{
+class Solution {
 public:
     int numMagicSquaresInside(std::vector<std::vector<int>>& grid)
     {

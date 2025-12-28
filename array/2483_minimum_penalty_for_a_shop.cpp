@@ -23,10 +23,12 @@
  * ! customers consists only of characters 'Y' and 'N'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int bestClosingTime(std::string customers) { return approach2(customers); }
+    int bestClosingTime(std::string customers)
+    {
+        return approach2(customers);
+    }
 
 private:
     int approach2(const std::string& customers)

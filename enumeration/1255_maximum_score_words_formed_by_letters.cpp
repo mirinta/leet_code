@@ -20,11 +20,9 @@
  * ! words[i], letters[i] contains only lower case English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxScoreWords(std::vector<std::string>& words, std::vector<char>& letters,
-                      std::vector<int>& score)
+    int maxScoreWords(std::vector<std::string>& words, std::vector<char>& letters, std::vector<int>& score)
     {
         std::array<int, 26> total{};
         for (const auto& c : letters) {
@@ -54,8 +52,11 @@ public:
     }
 
 private:
-    int helper(int mask, int n, const std::array<int, 26>& total,
-               const std::vector<std::array<int, 26>>& candidates, const std::vector<int>& score)
+    int helper(int mask,
+               int n,
+               const std::array<int, 26>& total,
+               const std::vector<std::array<int, 26>>& candidates,
+               const std::vector<int>& score)
     {
         std::array<int, 26> count{};
         for (int i = 0; i < n; ++i) {

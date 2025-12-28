@@ -36,8 +36,7 @@
  * ! At most 3000 calls will be made to enQueue, deQueue, Front, Rear, isEmpty, and isFull.
  */
 
-class MyCircularQueue
-{
+class MyCircularQueue {
 public:
     explicit MyCircularQueue(int k) : _capacity(k), _queue(k, 0) {}
 
@@ -86,9 +85,15 @@ public:
         return _queue[(_headIndex + _count - 1) % _capacity];
     }
 
-    bool isEmpty() const { return _count == 0; }
+    bool isEmpty() const
+    {
+        return _count == 0;
+    }
 
-    bool isFull() const { return _count == _capacity; }
+    bool isFull() const
+    {
+        return _count == _capacity;
+    }
 
 private:
     int _headIndex{0};

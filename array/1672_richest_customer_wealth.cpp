@@ -8,8 +8,7 @@
  * customer is the customer that has the maximum wealth.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumWealth(std::vector<std::vector<int>>& accounts)
     {

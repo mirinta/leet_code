@@ -4,15 +4,17 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     std::vector<Node*> children;
 
     Node() {}
 
-    Node(int _val) { val = _val; }
+    Node(int _val)
+    {
+        val = _val;
+    }
 
     Node(int _val, std::vector<Node*> _children)
     {
@@ -33,10 +35,12 @@ public:
  * ! Could you solve this problem in constant space complexity with a linear time algorithm?
  */
 
-class Solution
-{
+class Solution {
 public:
-    Node* findRoot(std::vector<Node*> tree) { return approach2(tree); }
+    Node* findRoot(std::vector<Node*> tree)
+    {
+        return approach2(tree);
+    }
 
 private:
     // time O(N), space O(1)

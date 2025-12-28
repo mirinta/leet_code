@@ -17,8 +17,7 @@
  * ! -1000 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumPairRemoval(std::vector<int>& nums)
     {

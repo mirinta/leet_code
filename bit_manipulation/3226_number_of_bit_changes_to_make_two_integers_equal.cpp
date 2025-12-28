@@ -8,8 +8,7 @@
  * ! 1 <= n, k <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int minChanges(int n, int k)
     {

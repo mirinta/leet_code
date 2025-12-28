@@ -15,8 +15,7 @@
  * ! grid[i][j] is 0 or 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int shortestBridge(std::vector<std::vector<int>>& grid)
     {
@@ -62,8 +61,7 @@ public:
 private:
     static const std::vector<std::pair<int, int>> kDirections;
 
-    int dfs(std::queue<std::pair<int, int>>& queue, std::vector<std::vector<int>>& grid, int x,
-            int y, int n)
+    int dfs(std::queue<std::pair<int, int>>& queue, std::vector<std::vector<int>>& grid, int x, int y, int n)
     {
         grid[x][y] = 2;
         int count = 0;

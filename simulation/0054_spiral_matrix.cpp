@@ -9,8 +9,7 @@
  * ! -100 <= matrix[i][j] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> spiralOrder(std::vector<std::vector<int>>& matrix)
     {

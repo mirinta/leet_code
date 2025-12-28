@@ -34,8 +34,7 @@
  * ! strs[i] contains any possible characters out of 256 valid ASCII characters.
  */
 
-class Codec
-{
+class Codec {
 public:
     // Encodes a list of strings to a single string.
     std::string encode(std::vector<std::string>& strs)

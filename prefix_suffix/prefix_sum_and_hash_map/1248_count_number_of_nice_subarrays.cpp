@@ -12,10 +12,12 @@
  * ! 1 <= k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numberOfSubarrays(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int numberOfSubarrays(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     // sliding window, TC = O(N), SC = O(1)

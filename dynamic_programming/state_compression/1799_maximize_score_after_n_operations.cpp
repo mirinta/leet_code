@@ -22,8 +22,7 @@
  * ! 1 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxScore(std::vector<int>& nums)
     {
@@ -40,8 +39,7 @@ public:
     }
 
 private:
-    int dfs(std::vector<int>& memo, int operation, int state, int n,
-            const std::vector<std::vector<int>>& gcd)
+    int dfs(std::vector<int>& memo, int operation, int state, int n, const std::vector<std::vector<int>>& gcd)
     {
         if (state == (1 << n) - 1)
             return 0;
@@ -59,8 +57,7 @@ private:
                     continue;
 
                 const int score = operation * gcd[i][j];
-                result = std::max(
-                    result, score + dfs(memo, operation + 1, state | (1 << i) | (1 << j), n, gcd));
+                result = std::max(result, score + dfs(memo, operation + 1, state | (1 << i) | (1 << j), n, gcd));
             }
         }
         return memo[state] = result;

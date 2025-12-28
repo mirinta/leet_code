@@ -23,8 +23,7 @@
  * ! nums represents a valid binary tree with depth less than 5.
  */
 
-class Solution
-{
+class Solution {
 public:
     int pathSum(std::vector<int>& nums)
     {

@@ -19,8 +19,7 @@ none) are replaced with a "?".
  * ! you can obtain after replacing the "?" characters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string findLatestTime(std::string s)
     {

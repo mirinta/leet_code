@@ -13,8 +13,7 @@
  * ! ch is a lowercase English letter.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string reversePrefix(std::string word, char ch)
     {

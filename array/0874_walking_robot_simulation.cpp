@@ -38,8 +38,7 @@
  * ! The answer is guaranteed to be less than 2^31.
  */
 
-class Solution
-{
+class Solution {
 public:
     int robotSim(std::vector<int>& commands, std::vector<std::vector<int>>& obstacles)
     {
@@ -65,60 +64,56 @@ public:
             const int currX = x;
             const int currY = y;
             switch (d) {
-            case North:
-            {
-                y += command;
-                if (!mapX.count(x))
-                    break;
+                case North: {
+                    y += command;
+                    if (!mapX.count(x))
+                        break;
 
-                auto iter = mapX[x].upper_bound(currY);
-                if (iter == mapX[x].end())
-                    break;
+                    auto iter = mapX[x].upper_bound(currY);
+                    if (iter == mapX[x].end())
+                        break;
 
-                y = std::max(currY, std::min(y, *iter - 1));
-                break;
-            }
-            case East:
-            {
-                x += command;
-                if (!mapY.count(y))
+                    y = std::max(currY, std::min(y, *iter - 1));
                     break;
+                }
+                case East: {
+                    x += command;
+                    if (!mapY.count(y))
+                        break;
 
-                auto iter = mapY[y].upper_bound(currX);
-                if (iter == mapY[y].end())
+                    auto iter = mapY[y].upper_bound(currX);
+                    if (iter == mapY[y].end())
+                        break;
+
+                    x = std::max(currX, std::min(x, *iter - 1));
                     break;
+                }
+                case South: {
+                    y -= command;
+                    if (!mapX.count(x))
+                        break;
 
-                x = std::max(currX, std::min(x, *iter - 1));
-                break;
-            }
-            case South:
-            {
-                y -= command;
-                if (!mapX.count(x))
+                    auto iter = mapX[x].lower_bound(currY);
+                    if (iter == mapX[x].begin())
+                        break;
+
+                    iter = std::prev(iter);
+                    y = std::min(currY, std::max(y, *iter + 1));
                     break;
+                }
+                case West: {
+                    x -= command;
+                    if (!mapY.count(y))
+                        break;
 
-                auto iter = mapX[x].lower_bound(currY);
-                if (iter == mapX[x].begin())
+                    auto iter = mapY[y].lower_bound(currX);
+                    if (iter == mapY[y].begin())
+                        break;
+
+                    iter = std::prev(iter);
+                    x = std::min(currX, std::max(x, *iter + 1));
                     break;
-
-                iter = std::prev(iter);
-                y = std::min(currY, std::max(y, *iter + 1));
-                break;
-            }
-            case West:
-            {
-                x -= command;
-                if (!mapY.count(y))
-                    break;
-
-                auto iter = mapY[y].lower_bound(currX);
-                if (iter == mapY[y].begin())
-                    break;
-
-                iter = std::prev(iter);
-                x = std::min(currX, std::max(x, *iter + 1));
-                break;
-            }
+                }
             }
             result = std::max(result, squaredEuclideanDist(x, y));
         }
@@ -128,5 +123,8 @@ public:
 private:
     enum Direction { North, East, South, West };
 
-    int squaredEuclideanDist(int x, int y) { return x * x + y * y; }
+    int squaredEuclideanDist(int x, int y)
+    {
+        return x * x + y * y;
+    }
 };

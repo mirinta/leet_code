@@ -10,8 +10,7 @@
  * ! -10^6 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int findNumberOfLIS(std::vector<int>& nums)
     {

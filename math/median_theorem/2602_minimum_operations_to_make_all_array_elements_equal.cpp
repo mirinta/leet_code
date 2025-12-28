@@ -20,8 +20,7 @@
  * ! 1 <= nums[i], queries[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<long long> minOperations(std::vector<int>& nums, std::vector<int>& queries)
     {
@@ -62,8 +61,7 @@ private:
     //             |       |       |       |       |      |
     //       ------+-------+-------+-------+-------+------+-------
     //             x0      x1      x2      x3      x4
-    long long calcOperations(long long q, const std::vector<int>& nums,
-                             const std::vector<long long>& presum)
+    long long calcOperations(long long q, const std::vector<int>& nums, const std::vector<long long>& presum)
     {
         const int begin = 0;
         const int end = nums.size() - 1;

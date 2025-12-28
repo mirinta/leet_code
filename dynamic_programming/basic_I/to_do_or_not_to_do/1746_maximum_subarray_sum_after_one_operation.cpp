@@ -12,14 +12,13 @@
  * ! -10^4 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxSumAfterOperation(std::vector<int>& nums)
     {
         // dp[i][0] = max subarray sum of nums[0:i-1] ending at nums[i-1] and the operation is not
-        // applied 
-        // dp[i][1] = max subarray sum of nums[0:i-1] ending at nums[i-1] and the operation is 
+        // applied
+        // dp[i][1] = max subarray sum of nums[0:i-1] ending at nums[i-1] and the operation is
         // applied
         const int n = nums.size();
         std::vector<std::array<int, 2>> dp(n + 1, {INT_MIN / 2, INT_MIN / 2});

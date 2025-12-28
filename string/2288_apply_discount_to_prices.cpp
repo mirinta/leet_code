@@ -27,8 +27,7 @@
  * ! 0 <= discount <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string discountPrices(std::string sentence, int discount)
     {

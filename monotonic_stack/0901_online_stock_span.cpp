@@ -26,8 +26,7 @@
  * ! At most 104 calls will be made to next.
  */
 
-class StockSpanner
-{
+class StockSpanner {
 public:
     StockSpanner() = default;
 

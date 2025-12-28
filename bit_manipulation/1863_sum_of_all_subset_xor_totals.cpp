@@ -16,8 +16,7 @@
  * ! 1 <= nums[i] <= 20
  */
 
-class Solution
-{
+class Solution {
 public:
     int subsetXORSum(std::vector<int>& nums)
     {

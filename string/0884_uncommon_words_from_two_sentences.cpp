@@ -18,8 +18,7 @@
  * ! All the words in s1 and s2 are separated by a single space.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> uncommonFromSentences(std::string s1, std::string s2)
     {

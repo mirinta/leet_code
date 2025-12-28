@@ -8,10 +8,12 @@
  * ! mat[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numSubmat(std::vector<std::vector<int>>& mat) { return approach2(mat); }
+    int numSubmat(std::vector<std::vector<int>>& mat)
+    {
+        return approach2(mat);
+    }
 
 private:
     // Monotonic stack, TC = O(MN), SC = O(N)

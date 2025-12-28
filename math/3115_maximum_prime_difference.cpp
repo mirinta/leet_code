@@ -12,8 +12,7 @@
  * ! The input is generated such that the number of prime numbers in the nums is at least one.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumPrimeDifference(std::vector<int>& nums)
     {

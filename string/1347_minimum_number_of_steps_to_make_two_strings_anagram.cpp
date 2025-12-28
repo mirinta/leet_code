@@ -15,8 +15,7 @@
  * ! s and t consist of lowercase English letters only.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minSteps(std::string s, std::string t)
     {

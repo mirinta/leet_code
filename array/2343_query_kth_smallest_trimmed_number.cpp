@@ -37,8 +37,7 @@
  * ! 1 <= trim_i <= nums[i].length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> smallestTrimmedNumbers(const std::vector<std::string>& nums,
                                             const std::vector<std::vector<int>>& queries)

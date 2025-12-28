@@ -16,8 +16,7 @@
  * ! 1 <= k <= sum(piles[i].length) <= 2000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxValueOfCoins(std::vector<std::vector<int>>& piles, int k)
     {

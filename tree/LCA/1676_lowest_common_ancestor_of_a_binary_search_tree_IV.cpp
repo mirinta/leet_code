@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -31,8 +30,7 @@ struct TreeNode
  * ! All nodes[i] are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, std::vector<TreeNode*>& nodes)
     {

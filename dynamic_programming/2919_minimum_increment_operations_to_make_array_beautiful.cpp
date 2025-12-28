@@ -19,10 +19,12 @@
  * ! 0 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long minIncrementOperations(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    long long minIncrementOperations(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     // DP with space optimization, time O(N), space O(1)

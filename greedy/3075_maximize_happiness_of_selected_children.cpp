@@ -19,8 +19,7 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumHappinessSum(std::vector<int>& happiness, int k)
     {

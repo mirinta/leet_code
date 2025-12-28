@@ -26,8 +26,7 @@
  * ! locked[i] is either '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canBeValid(std::string s, std::string locked)
     {

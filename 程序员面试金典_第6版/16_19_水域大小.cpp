@@ -14,8 +14,7 @@
  * ! 0 < len(land[i]) <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> pondSizes(std::vector<std::vector<int>>& land)
     {

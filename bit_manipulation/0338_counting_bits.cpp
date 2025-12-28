@@ -9,10 +9,12 @@
  * ! Can you do it in linear time O(n) and possibly in a single pass?
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> countBits(int n) { return approach2(n); }
+    std::vector<int> countBits(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     // TC = O(N), SC = O(N)

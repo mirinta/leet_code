@@ -22,8 +22,7 @@
  * ! 1 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxOperations(std::vector<int>& nums)
     {
@@ -38,8 +37,7 @@ public:
     }
 
 private:
-    int dp(std::vector<std::vector<int>>& memo, int lo, int hi, int score,
-           const std::vector<int>& nums)
+    int dp(std::vector<std::vector<int>>& memo, int lo, int hi, int score, const std::vector<int>& nums)
     {
         if (hi - lo + 1 < 2)
             return 0;

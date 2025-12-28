@@ -21,8 +21,7 @@
  * ! k - 2 <= dist <= n - 2
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minimumCost(std::vector<int>& nums, int k, int dist)
     {
@@ -41,9 +40,9 @@ public:
         const int n = nums.size();
         const int targetNum = k - 1;
         const int windowSize = dist + 1;
-        std::multiset<int> set1; // the top targetNum smallest elements of the sliding window
-        std::multiset<int> set2; // the remaining elements of the sliding window
-        long long sum = 0;       // sum of the top targetNum smallest elements of the sliding window
+        std::multiset<int> set1;      // the top targetNum smallest elements of the sliding window
+        std::multiset<int> set2;      // the remaining elements of the sliding window
+        long long sum = 0;            // sum of the top targetNum smallest elements of the sliding window
         long long result = LLONG_MAX; // final result = nums[0] + min sum
         for (int i = 1; i < n; ++i) {
             if (set1.size() < targetNum) {

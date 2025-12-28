@@ -3,8 +3,7 @@
 /**
  * Definition for a Node.
  */
-class Node
-{
+class Node {
 public:
     int val;
     Node* left;
@@ -15,10 +14,7 @@ public:
 
     Node(int _val) : val(_val), left(nullptr), right(nullptr), next(nullptr) {}
 
-    Node(int _val, Node* _left, Node* _right, Node* _next)
-        : val(_val), left(_left), right(_right), next(_next)
-    {
-    }
+    Node(int _val, Node* _left, Node* _right, Node* _next) : val(_val), left(_left), right(_right), next(_next) {}
 };
 
 /**
@@ -31,8 +27,7 @@ public:
  * ! -100 <= Node.val <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     Node* connect(Node* root)
     {

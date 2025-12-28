@@ -28,11 +28,9 @@
  * ! The input is generated such that edges represents a valid tree.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> countPairsOfConnectableServers(std::vector<std::vector<int>>& edges,
-                                                    int signalSpeed)
+    std::vector<int> countPairsOfConnectableServers(std::vector<std::vector<int>>& edges, int signalSpeed)
     {
         const int n = edges.size() + 1;
         Graph graph(n);

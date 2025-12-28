@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -19,10 +18,12 @@ struct ListNode
  * ! 0 <= val <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
-    ListNode* removeElements(ListNode* head, int val) { return approach2(head, val); }
+    ListNode* removeElements(ListNode* head, int val)
+    {
+        return approach2(head, val);
+    }
 
 private:
     ListNode* approach2(ListNode* head, int val)

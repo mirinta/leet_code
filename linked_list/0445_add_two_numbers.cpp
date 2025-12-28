@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -22,8 +21,7 @@ struct ListNode
  * ! It is guaranteed that the list represents a number that does not have leading zeros.
  */
 
-class Solution
-{
+class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     {

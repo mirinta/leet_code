@@ -11,8 +11,7 @@
  * ! Each element in the array appears twice except for one element which appears only once.
  */
 
-class Solution
-{
+class Solution {
 public:
     int singleNumber(std::vector<int>& nums)
     {

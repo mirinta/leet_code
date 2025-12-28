@@ -12,10 +12,12 @@
  * ! 0 <= goal <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numSubarraysWithSum(std::vector<int>& nums, int goal) { return approach1(nums, goal); }
+    int numSubarraysWithSum(std::vector<int>& nums, int goal)
+    {
+        return approach1(nums, goal);
+    }
 
 private:
     // prefix sum + hash table, TC = O(N), SC = O(1)

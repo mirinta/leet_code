@@ -18,8 +18,7 @@
  * ! 0 <= nums1[i], nums2[i] <= 2 * 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int minSwap(std::vector<int>& nums1, std::vector<int>& nums2)
     {

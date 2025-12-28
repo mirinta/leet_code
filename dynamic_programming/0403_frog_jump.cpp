@@ -19,8 +19,7 @@
  * ! stones is sorted in a strictly increasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canCross(std::vector<int>& stones)
     {
@@ -34,7 +33,10 @@ public:
     }
 
 private:
-    bool dp(std::vector<std::vector<int>>& memo, int i, int k, const std::vector<int>& stones,
+    bool dp(std::vector<std::vector<int>>& memo,
+            int i,
+            int k,
+            const std::vector<int>& stones,
             const std::unordered_map<int, int>& map)
     {
         if (i == stones.size() - 1)

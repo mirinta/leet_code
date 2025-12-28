@@ -11,8 +11,7 @@
  * ! arr[i] < arr[j] for 1 <= i < j <= arr.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int findKthPositive(std::vector<int>& arr, int k)
     {

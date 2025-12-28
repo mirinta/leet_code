@@ -19,8 +19,7 @@
  * ! 1 <= k <= energy.length - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumEnergy(std::vector<int>& energy, int k)
     {

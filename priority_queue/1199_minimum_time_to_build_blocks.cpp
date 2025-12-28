@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <queue>
 #include <vector>
 
@@ -20,10 +21,12 @@
  * ! 1 <= split <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minBuildTime(std::vector<int>& blocks, int split) { return approach2(blocks, split); }
+    int minBuildTime(std::vector<int>& blocks, int split)
+    {
+        return approach2(blocks, split);
+    }
 
 private:
     // PQ, time O(NlogN), space O(N)
@@ -61,8 +64,7 @@ private:
     }
 
     // min cost of building blocks[i:n-1] with j workers
-    int dp(std::vector<std::vector<int>>& memo, int i, int j, int split,
-           const std::vector<int>& blocks)
+    int dp(std::vector<std::vector<int>>& memo, int i, int j, int split, const std::vector<int>& blocks)
     {
         if (i == blocks.size())
             return 0;
@@ -78,8 +80,7 @@ private:
 
         const int case1 = split + dp(memo, i, 2 * j, split,
                                      blocks); // only split, all workers split at the same time
-        const int case2 =
-            std::max(blocks[i], dp(memo, i + 1, j - 1, split, blocks)); // build block[i]
+        const int case2 = std::max(blocks[i], dp(memo, i + 1, j - 1, split, blocks)); // build block[i]
         memo[i][j] = std::min(case1, case2);
         return memo[i][j];
     }

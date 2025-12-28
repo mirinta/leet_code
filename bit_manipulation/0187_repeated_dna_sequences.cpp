@@ -1,6 +1,6 @@
 #include <string>
-#include <unordered_set>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 /**
@@ -18,10 +18,12 @@
  * ! s[i] is either 'A', 'C', 'G', or 'T'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> findRepeatedDnaSequences(std::string s) { return approach2(s); }
+    std::vector<std::string> findRepeatedDnaSequences(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     const std::unordered_map<char, int> value{{'A', 0}, {'C', 1}, {'G', 2}, {'T', 3}};

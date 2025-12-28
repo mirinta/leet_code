@@ -22,11 +22,9 @@
  * ! 0 <= ai, bi <= heights.length - 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> leftmostBuildingQueries(std::vector<int>& heights,
-                                             std::vector<std::vector<int>>& queries)
+    std::vector<int> leftmostBuildingQueries(std::vector<int>& heights, std::vector<std::vector<int>>& queries)
     {
         std::vector<std::vector<std::pair<int, int>>> newQueries(heights.size());
         std::vector<int> result(queries.size());

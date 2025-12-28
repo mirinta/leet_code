@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -26,8 +25,7 @@ struct TreeNode
  * ! -1000 <= targetSum <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> pathSum(TreeNode* root, int targetSum)
     {
@@ -38,8 +36,7 @@ public:
     }
 
 private:
-    void dfs(std::vector<std::vector<int>>& result, std::vector<int>& path, TreeNode* root,
-             int target)
+    void dfs(std::vector<std::vector<int>>& result, std::vector<int>& path, TreeNode* root, int target)
     {
         if (!root)
             return;

@@ -20,8 +20,7 @@
  * ! 1 <= k <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
     long long pickGifts(std::vector<int>& gifts, int k)
     {

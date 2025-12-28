@@ -13,8 +13,7 @@
  * ! All the characters of jewels are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numJewelsInStones(std::string jewels, std::string stones)
     {

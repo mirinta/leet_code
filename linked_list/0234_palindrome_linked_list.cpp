@@ -3,8 +3,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -19,8 +18,7 @@ struct ListNode
  * ! 0 <= Node.val <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isPalindrome(ListNode* head)
     {

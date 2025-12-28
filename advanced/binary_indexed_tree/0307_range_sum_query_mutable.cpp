@@ -25,8 +25,7 @@
  * ! At most 3 * 104 calls will be made to update and sumRange.
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
 public:
     explicit BinaryIndexedTree(int n) : tree(n + 1, 0) {}
 
@@ -50,9 +49,15 @@ public:
     }
 
 private:
-    int lowbit(int i) { return i & (-i); }
+    int lowbit(int i)
+    {
+        return i & (-i);
+    }
 
-    bool validate(int i) const { return i >= 1 && i < tree.size(); }
+    bool validate(int i) const
+    {
+        return i >= 1 && i < tree.size();
+    }
 
     long long presum(int i)
     {
@@ -68,8 +73,7 @@ private:
     std::vector<long long> tree;
 };
 
-class NumArray
-{
+class NumArray {
 public:
     NumArray(std::vector<int>& nums) : tree(nums.size())
     {
@@ -84,7 +88,10 @@ public:
         tree.add(index + 1, val - oldVal);
     }
 
-    int sumRange(int left, int right) { return tree.query(left + 1, right + 1); }
+    int sumRange(int left, int right)
+    {
+        return tree.query(left + 1, right + 1);
+    }
 
 private:
     BinaryIndexedTree tree;

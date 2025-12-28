@@ -19,10 +19,12 @@
  * ! pattern consists of only the letters 'I' and 'D'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::string smallestNumber(std::string pattern) { return approach2(pattern); }
+    std::string smallestNumber(std::string pattern)
+    {
+        return approach2(pattern);
+    }
 
 private:
     std::string approach2(std::string& pattern)

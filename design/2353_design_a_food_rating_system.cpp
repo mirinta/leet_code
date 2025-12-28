@@ -43,11 +43,9 @@
  * ! At most 2 * 10^4 calls in total will be made to changeRating and highestRated.
  */
 
-class FoodRatings
-{
+class FoodRatings {
 public:
-    FoodRatings(std::vector<std::string>& foods, std::vector<std::string>& cuisines,
-                std::vector<int>& ratings)
+    FoodRatings(std::vector<std::string>& foods, std::vector<std::string>& cuisines, std::vector<int>& ratings)
     {
         const int n = foods.size();
         for (int i = 0; i < n; ++i) {
@@ -75,15 +73,13 @@ public:
     }
 
 private:
-    struct Food
-    {
+    struct Food {
         std::string name;
         std::string cuisine;
         int rating{0};
     };
 
-    struct FoodCompare
-    {
+    struct FoodCompare {
         bool operator()(const Food& f1, const Food& f2) const
         {
             // sort ratings in descending order,

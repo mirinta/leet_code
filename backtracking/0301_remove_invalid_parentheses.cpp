@@ -14,8 +14,7 @@
  * ! There will be at most 20 parentheses in s.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> removeInvalidParentheses(const std::string& s)
     {
@@ -41,8 +40,13 @@ public:
 private:
     std::unordered_set<std::string> unique;
 
-    void backtrack(std::string& path, int i, int leftToRemove, int rightToRemove, int leftCount,
-                   int rightCount, const std::string& s)
+    void backtrack(std::string& path,
+                   int i,
+                   int leftToRemove,
+                   int rightToRemove,
+                   int leftCount,
+                   int rightCount,
+                   const std::string& s)
     {
         if (i == s.size()) {
             if (leftToRemove == 0 && rightToRemove == 0) {

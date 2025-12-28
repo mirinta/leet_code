@@ -7,8 +7,7 @@
  * ! 1 <= num <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkPerfectNumber(int num)
     {

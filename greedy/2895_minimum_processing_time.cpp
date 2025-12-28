@@ -19,8 +19,7 @@
  * ! tasks.length == 4 * n
  */
 
-class Solution
-{
+class Solution {
 public:
     int minProcessingTime(std::vector<int>& processorTime, std::vector<int>& tasks)
     {

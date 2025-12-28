@@ -19,17 +19,14 @@
  * ! All the strings of words are unique.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     std::unordered_map<char, TrieNode*> next;
     std::string word{};
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::string> findWords(std::vector<std::vector<char>>& board,
-                                       const std::vector<std::string>& words)
+    std::vector<std::string> findWords(std::vector<std::vector<char>>& board, const std::vector<std::string>& words)
     {
         auto* root = new TrieNode();
         for (const auto& word : words) {
@@ -56,8 +53,11 @@ public:
 private:
     const std::vector<std::pair<int, int>> kDirections{{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
 
-    void backtrack(std::vector<std::string>& result, std::vector<std::vector<char>>& board,
-                   TrieNode* parent, int x, int y)
+    void backtrack(std::vector<std::string>& result,
+                   std::vector<std::vector<char>>& board,
+                   TrieNode* parent,
+                   int x,
+                   int y)
     {
         const auto c = board[x][y];
         if (!parent || !parent->next.count(c))

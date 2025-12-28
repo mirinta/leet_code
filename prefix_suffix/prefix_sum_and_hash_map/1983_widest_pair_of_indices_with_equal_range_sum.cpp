@@ -18,8 +18,7 @@
  * ! nums2[i] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int widestPairOfIndices(std::vector<int>& nums1, std::vector<int>& nums2)
     {

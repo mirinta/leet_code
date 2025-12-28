@@ -11,10 +11,12 @@
  * ! 0 < grid[0].length <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxValue(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int maxValue(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     int approach2(std::vector<std::vector<int>>& grid)

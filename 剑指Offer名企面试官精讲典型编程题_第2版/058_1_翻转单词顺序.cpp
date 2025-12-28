@@ -13,8 +13,7 @@
  * ! 本题与LC 151相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string reverseWords(std::string s)
     {

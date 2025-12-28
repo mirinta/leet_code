@@ -28,8 +28,7 @@
  * ! No two rectangles overlap.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkValidCuts(int n, std::vector<std::vector<int>>& rectangles)
     {

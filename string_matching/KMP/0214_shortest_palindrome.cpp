@@ -10,8 +10,7 @@
  * ! s consists of lowercase English letters only.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string shortestPalindrome(std::string s)
     {

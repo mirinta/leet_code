@@ -23,8 +23,7 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string lastNonEmptyString(std::string s)
     {
@@ -45,9 +44,8 @@ public:
                 result.push_back('a' + i);
             }
         }
-        std::sort(result.begin(), result.end(), [&info](const char c1, const char c2) {
-            return info[c1 - 'a'] < info[c2 - 'a'];
-        });
+        std::sort(result.begin(), result.end(),
+                  [&info](const char c1, const char c2) { return info[c1 - 'a'] < info[c2 - 'a']; });
         return result;
     }
 };

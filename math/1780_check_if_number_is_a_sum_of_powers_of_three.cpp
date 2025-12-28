@@ -7,8 +7,7 @@
  * ! 1 <= n <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkPowersOfThree(int n)
     {

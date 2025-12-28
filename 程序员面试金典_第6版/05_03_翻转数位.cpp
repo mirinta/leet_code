@@ -5,10 +5,12 @@
  * 给定一个32位整数num，你可以将一个数位从0变为1。请编写一个程序，找出你能够获得的最长的一串1的长度。
  */
 
-class Solution
-{
+class Solution {
 public:
-    int reverseBits(int num) { return approach2(num); }
+    int reverseBits(int num)
+    {
+        return approach2(num);
+    }
 
 private:
     int approach2(int num)

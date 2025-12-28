@@ -7,8 +7,7 @@
  * After doing so, return the array.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> replaceElements(std::vector<int>& arr)
     {

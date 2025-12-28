@@ -30,8 +30,7 @@
  * once, it becomes "aa".
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isMatch(const std::string& s, const std::string& p)
     {

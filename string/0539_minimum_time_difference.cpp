@@ -10,8 +10,7 @@
  * ! timePoints[i] is in the format "HH:MM".
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMinDifference(std::vector<std::string>& timePoints)
     {

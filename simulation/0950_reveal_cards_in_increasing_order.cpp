@@ -28,8 +28,7 @@
  * ! All the values of deck are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> deckRevealedIncreasing(std::vector<int>& deck)
     {

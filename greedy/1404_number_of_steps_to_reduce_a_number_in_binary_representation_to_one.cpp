@@ -15,10 +15,12 @@
  * ! s[0] == '1'
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numSteps(std::string s) { return approach2(s); }
+    int numSteps(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     int approach2(const std::string& s)

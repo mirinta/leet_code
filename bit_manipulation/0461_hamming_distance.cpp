@@ -7,8 +7,7 @@
  * ! 0 <= x, y <= 231 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int hammingDistance(int x, int y)
     {

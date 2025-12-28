@@ -20,8 +20,7 @@
  * ! 1 <= piles[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minEatingSpeed(std::vector<int>& piles, int h)
     {

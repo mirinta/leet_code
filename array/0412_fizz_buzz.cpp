@@ -13,8 +13,7 @@
  * - answer[i] == "i" (as a string) if none of the above conditions are true
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> fizzBuzz(int n)
     {

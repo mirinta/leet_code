@@ -32,8 +32,7 @@
  * ! 0 <= rains[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> avoidFlood(std::vector<int>& rains)
     {

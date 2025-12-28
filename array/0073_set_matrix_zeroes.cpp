@@ -3,7 +3,7 @@
 
 /**
  * Given an m x n integer matrix, if an element is 0, ste its entire row and column to 0's.
- * 
+ *
  * You must do it in place.
  *
  * ! m == matrix.length
@@ -12,8 +12,7 @@
  * ! -2^31 <= matrix[i][j] <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     void setZeroes(std::vector<std::vector<int>>& matrix)
     {

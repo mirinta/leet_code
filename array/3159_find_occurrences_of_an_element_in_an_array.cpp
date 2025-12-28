@@ -14,8 +14,7 @@
  * ! 1 <= nums[i], x <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> occurrencesOfElement(std::vector<int>& nums, std::vector<int>& queries, int x)
     {

@@ -13,10 +13,12 @@
  * efficiently?
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findMaxConsecutiveOnes(const std::vector<int>& nums) { return approach2(nums); }
+    int findMaxConsecutiveOnes(const std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // approach 1: queue, time O(n), space O(1)

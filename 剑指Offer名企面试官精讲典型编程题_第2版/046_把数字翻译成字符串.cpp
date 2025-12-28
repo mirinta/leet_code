@@ -11,10 +11,12 @@
  * ! 0 <= num < 2^31
  */
 
-class Solution
-{
+class Solution {
 public:
-    int translateNum(int num) { return approach2(num); }
+    int translateNum(int num)
+    {
+        return approach2(num);
+    }
 
 private:
     int approach2(int num)

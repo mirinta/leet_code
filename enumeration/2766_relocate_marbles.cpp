@@ -24,11 +24,9 @@
  * ! we want to apply the ith move.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> relocateMarbles(std::vector<int>& nums, std::vector<int>& moveFrom,
-                                     std::vector<int>& moveTo)
+    std::vector<int> relocateMarbles(std::vector<int>& nums, std::vector<int>& moveFrom, std::vector<int>& moveTo)
     {
         std::set<int> set(nums.begin(), nums.end());
         for (int i = 0; i < moveFrom.size(); ++i) {

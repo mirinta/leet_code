@@ -23,16 +23,14 @@
  * ! 0 <= a, b, c <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int countGoodTriplets(std::vector<int>& arr, int a, int b, int c)
     {
         const int n = arr.size();
         int result = 0;
         auto isValid = [&](int i, int j, int k) {
-            return std::abs(arr[i] - arr[j]) <= a && std::abs(arr[j] - arr[k]) <= b &&
-                   std::abs(arr[i] - arr[k]) <= c;
+            return std::abs(arr[i] - arr[j]) <= a && std::abs(arr[j] - arr[k]) <= b && std::abs(arr[i] - arr[k]) <= c;
         };
         for (int j = 1; j < n - 1; ++j) {
             for (int i = j - 1; i >= 0; --i) {

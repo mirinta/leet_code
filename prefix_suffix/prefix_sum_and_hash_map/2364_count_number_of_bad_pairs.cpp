@@ -11,8 +11,7 @@
  * ! 1 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countBadPairs(std::vector<int>& nums)
     {

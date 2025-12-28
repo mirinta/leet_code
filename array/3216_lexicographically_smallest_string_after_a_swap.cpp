@@ -12,8 +12,7 @@
  * ! s consists only of digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string getSmallestString(std::string s)
     {

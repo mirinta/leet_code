@@ -12,10 +12,12 @@
  * ! 1 <= arrLen <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numWays(int steps, int arrLen) { return approach2(steps, arrLen); }
+    int numWays(int steps, int arrLen)
+    {
+        return approach2(steps, arrLen);
+    }
 
 private:
     // DP with space optimization, time (NM), space O(M)
@@ -50,11 +52,9 @@ private:
         dp[0][0] = 1;
         for (int i = 1; i <= steps; ++i) {
             for (int j = 0; j < arrLen; ++j) {
-                const auto case1 = dp[i - 1][j]; // stay
-                const auto case2 =
-                    j - 1 >= 0 ? dp[i - 1][j - 1] : 0; // reach j from j-1, i.e. move right
-                const auto case3 =
-                    j + 1 < arrLen ? dp[i - 1][j + 1] : 0; // reach j from j+1, i.e., move left
+                const auto case1 = dp[i - 1][j];                          // stay
+                const auto case2 = j - 1 >= 0 ? dp[i - 1][j - 1] : 0;     // reach j from j-1, i.e. move right
+                const auto case3 = j + 1 < arrLen ? dp[i - 1][j + 1] : 0; // reach j from j+1, i.e., move left
                 dp[i][j] = (case1 + case2 + case3) % kMod;
             }
         }

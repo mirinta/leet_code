@@ -13,8 +13,7 @@
  * ! 1 <= k <= arr.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxSumAfterPartitioning(std::vector<int>& arr, int k)
     {

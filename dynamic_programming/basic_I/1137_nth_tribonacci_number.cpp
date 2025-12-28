@@ -11,8 +11,7 @@
  * ! The answer is guaranteed to fit within a 32-bit integer, ie. answer <= 2^31 - 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int tribonacci(int n)
     {

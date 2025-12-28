@@ -17,8 +17,7 @@
  * ! 0 <= grid[i][j] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
     long long numberOfRightTriangles(std::vector<std::vector<int>>& grid)
     {

@@ -13,7 +13,8 @@
  *
  * - languages[i] is the set of languages the i​​​​​​th​​​​ user knows, and
  *
- * - friendships[i] = [u​​​​​​i​​​, v​​​​​​i] denotes a friendship between the users u​​​​​​​​​​​i​​​​​ and vi.
+ * - friendships[i] = [u​​​​​​i​​​, v​​​​​​i] denotes a friendship between the users
+ * u​​​​​​​​​​​i​​​​​ and vi.
  *
  * You can choose one language and teach it to some users so that all friends can communicate with
  * each other. Return the minimum number of users you need to teach.
@@ -32,11 +33,9 @@
  * ! languages[i] contains only unique values
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumTeachings(int n, std::vector<std::vector<int>>& languages,
-                         std::vector<std::vector<int>>& friendships)
+    int minimumTeachings(int n, std::vector<std::vector<int>>& languages, std::vector<std::vector<int>>& friendships)
     {
         std::unordered_map<int, std::bitset<501>> map;
         for (int i = 0; i < languages.size(); ++i) {

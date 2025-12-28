@@ -26,8 +26,7 @@
  * ! s, a, and b contain only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> beautifulIndices(std::string s, std::string a, std::string b, int k)
     {

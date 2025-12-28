@@ -5,8 +5,7 @@
  * ! 结果不会溢出 32 位整数
  */
 
-class Solution
-{
+class Solution {
 public:
     int add(int a, int b)
     {

@@ -11,10 +11,12 @@
  * ! nums[i] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long countAlternatingSubarrays(std::vector<int>& nums) { return approach2(nums); }
+    long long countAlternatingSubarrays(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     long long approach2(const std::vector<int>& nums)

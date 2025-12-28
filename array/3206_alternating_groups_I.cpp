@@ -20,16 +20,14 @@
  * ! 0 <= colors[i] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfAlternatingGroups(std::vector<int>& colors)
     {
         const int n = colors.size();
         int result = 0;
         for (int i = 0; i < n; ++i) {
-            if (colors[(i - 1 + n) % n] == colors[(i + 1) % n] &&
-                colors[(i + 1) % n] != colors[i]) {
+            if (colors[(i - 1 + n) % n] == colors[(i + 1) % n] && colors[(i + 1) % n] != colors[i]) {
                 result++;
             }
         }

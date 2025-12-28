@@ -13,8 +13,7 @@
  * ! pattern and s consist of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool wordPatternMatch(std::string pattern, std::string s)
     {
@@ -24,8 +23,11 @@ public:
 
 private:
     // check if s[j::] matches pattern[i::]
-    bool backtrack(std::unordered_map<char, std::string>& map, int i, int j,
-                   const std::string& pattern, const std::string& s)
+    bool backtrack(std::unordered_map<char, std::string>& map,
+                   int i,
+                   int j,
+                   const std::string& pattern,
+                   const std::string& s)
     {
         if (i == pattern.size() || j == s.size())
             return j == s.size() && i == pattern.size();

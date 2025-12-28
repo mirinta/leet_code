@@ -13,10 +13,12 @@
  * ! -10^4 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findKthLargest(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int findKthLargest(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     int approach2(std::vector<int>& nums, int k)

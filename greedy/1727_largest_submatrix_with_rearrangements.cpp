@@ -14,8 +14,7 @@
  * ! matrix[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int largestSubmatrix(std::vector<std::vector<int>>& matrix)
     {

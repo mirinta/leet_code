@@ -15,8 +15,7 @@
  * ! 0 <= n <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int leastInterval(std::vector<char>& tasks, int n)
     {

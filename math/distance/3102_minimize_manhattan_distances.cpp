@@ -15,8 +15,7 @@
  * ! 1 <= points[i][0], points[i][1] <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumDistance(std::vector<std::vector<int>>& points)
     {

@@ -15,8 +15,7 @@
  * ! 0 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxCoins(std::vector<int>& nums)
     {
@@ -38,8 +37,7 @@ private:
         int result = 0;
         // select the last bursted balloon k in the range [lo:hi]
         for (int i = lo; i <= hi; ++i) {
-            int score =
-                nums[i] * (hi + 1 >= n ? 1 : nums[hi + 1]) * (lo - 1 < 0 ? 1 : nums[lo - 1]);
+            int score = nums[i] * (hi + 1 >= n ? 1 : nums[hi + 1]) * (lo - 1 < 0 ? 1 : nums[lo - 1]);
             score += dp(memo, lo, i - 1, nums) + dp(memo, i + 1, hi, nums);
             result = std::max(result, score);
         }

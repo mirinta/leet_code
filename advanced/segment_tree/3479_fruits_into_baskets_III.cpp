@@ -22,8 +22,7 @@
  * ! 1 <= fruits[i], baskets[i] <= 10^9
  */
 
-class SegmentTree
-{
+class SegmentTree {
 public:
     explicit SegmentTree(const std::vector<int>& nums)
         : n(nums.size()), data(4 * n, 0), lazy(4 * n, 0), flag(4 * n, false)
@@ -32,10 +31,16 @@ public:
     }
 
     // query the max element of nums[L:R], L and R are 0-indexed
-    int query(int L, int R) { return query(L, R, 0, n - 1, 1); }
+    int query(int L, int R)
+    {
+        return query(L, R, 0, n - 1, 1);
+    }
 
     // set all elements of nums[L:R] to val, L and R are 0-indexed
-    void set(int L, int R, int val) { set(L, R, val, 0, n - 1, 1); }
+    void set(int L, int R, int val)
+    {
+        set(L, R, val, 0, n - 1, 1);
+    }
 
 private:
     void build(int lo, int hi, int id, const std::vector<int>& nums)
@@ -111,8 +116,7 @@ private:
     std::vector<bool> flag; // 1-indexed
 };
 
-class Solution
-{
+class Solution {
 public:
     int numOfUnplacedFruits(std::vector<int>& fruits, std::vector<int>& baskets)
     {

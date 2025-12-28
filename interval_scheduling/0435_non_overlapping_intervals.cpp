@@ -10,14 +10,12 @@
  * ! -5 * 10^4 <= starti < endi <= 5 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int eraseOverlapIntervals(std::vector<std::vector<int>>& intervals)
     {
         // sort by ending point
-        std::sort(intervals.begin(), intervals.end(),
-                  [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
+        std::sort(intervals.begin(), intervals.end(), [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
         int result = 0;
         int endingPoint = intervals[0][1];
         for (int i = 1; i < intervals.size(); ++i) {

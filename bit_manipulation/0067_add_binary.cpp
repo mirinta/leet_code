@@ -13,8 +13,7 @@
  * ! Each string does not contain leading zeros except for the zero itself.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string addBinary(std::string a, std::string b)
     {

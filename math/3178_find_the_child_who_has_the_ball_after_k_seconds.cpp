@@ -13,10 +13,12 @@
  * ! 1 <= k <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
-    int numberOfChild(int n, int k) { return approach2(n, k); }
+    int numberOfChild(int n, int k)
+    {
+        return approach2(n, k);
+    }
 
 private:
     // math, TC = O(1), SC = O(1)

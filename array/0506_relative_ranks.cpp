@@ -28,8 +28,7 @@
  * ! All the values in score are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> findRelativeRanks(std::vector<int>& score)
     {

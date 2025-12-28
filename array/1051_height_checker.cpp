@@ -12,8 +12,7 @@
  * Return the number of indicies where heights[i] != expected[i]
  */
 
-class Solution
-{
+class Solution {
 public:
     int heightChecker(const std::vector<int>& heights)
     {

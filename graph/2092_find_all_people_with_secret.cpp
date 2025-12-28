@@ -28,8 +28,7 @@
  * ! 1 <= firstPerson <= n - 1
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1)
     {
@@ -46,7 +45,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -75,8 +77,7 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findAllPeople(int n, std::vector<std::vector<int>>& meetings, int firstPerson)
     {

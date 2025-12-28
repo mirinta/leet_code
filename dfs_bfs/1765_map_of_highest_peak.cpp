@@ -31,8 +31,7 @@
  * ! There is at least one water cell.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> highestPeak(std::vector<std::vector<int>>& isWater)
     {

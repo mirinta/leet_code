@@ -24,8 +24,7 @@
  * ! -1000 <= nums[i], multipliers[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumScore(std::vector<int>& nums, std::vector<int>& multipliers)
     {
@@ -94,7 +93,10 @@ private:
 
     // 0 X X X left-1 left X X X X right right+1 X X n-1
     // |<--removed->|                    |<--removed-->|
-    int dfs(std::vector<std::vector<int>>& memo, int left, int i, const std::vector<int>& nums,
+    int dfs(std::vector<std::vector<int>>& memo,
+            int left,
+            int i,
+            const std::vector<int>& nums,
             const std::vector<int>& multipliers)
     {
         if (i == multipliers.size())
@@ -104,8 +106,7 @@ private:
             return memo[left][i];
 
         const int right = nums.size() - 1 - i + left;
-        const int case1 =
-            nums[left] * multipliers[i] + dfs(memo, left + 1, i + 1, nums, multipliers);
+        const int case1 = nums[left] * multipliers[i] + dfs(memo, left + 1, i + 1, nums, multipliers);
         const int case2 = nums[right] * multipliers[i] + dfs(memo, left, i + 1, nums, multipliers);
         return memo[left][i] = std::max(case1, case2);
     }

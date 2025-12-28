@@ -13,8 +13,7 @@
  * ! 0 <= grid[i][j] <= 9
  */
 
-class Solution
-{
+class Solution {
 public:
     bool satisfiesConditions(std::vector<std::vector<int>>& grid)
     {

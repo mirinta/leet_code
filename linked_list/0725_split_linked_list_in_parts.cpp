@@ -4,8 +4,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -30,8 +29,7 @@ struct ListNode
  * ! 1 <= k <= 50
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<ListNode*> splitListToParts(ListNode* head, int k)
     {

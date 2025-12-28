@@ -24,8 +24,7 @@
  * ! 1 <= piles[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxCoins(std::vector<int>& piles)
     {

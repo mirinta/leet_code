@@ -16,8 +16,7 @@
  * ! asteroids[i] != 0
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> asteroidCollision(std::vector<int>& asteroids)
     {

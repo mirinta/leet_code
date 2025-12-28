@@ -20,8 +20,7 @@
  * ! The decoded string is guaranteed to have less than 2^63 letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string decodeAtIndex(std::string s, int k)
     {

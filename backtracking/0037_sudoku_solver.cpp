@@ -19,10 +19,12 @@
  * ! It is guaranteed that the input board has only one solution.
  */
 
-class Solution
-{
+class Solution {
 public:
-    void solveSudoku(std::vector<std::vector<char>>& board) { backtrack(board, 0, 0); }
+    void solveSudoku(std::vector<std::vector<char>>& board)
+    {
+        backtrack(board, 0, 0);
+    }
 
 private:
     static constexpr int m = 9; // rows

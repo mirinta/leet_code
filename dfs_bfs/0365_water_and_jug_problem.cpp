@@ -16,8 +16,7 @@
  * ! 1 <= x, y, target <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canMeasureWater(int x, int y, int target)
     {

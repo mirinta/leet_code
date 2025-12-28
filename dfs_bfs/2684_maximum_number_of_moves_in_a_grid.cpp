@@ -18,10 +18,12 @@
  * ! 1 <= grid[i][j] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxMoves(std::vector<std::vector<int>>& grid) { return approach3(grid); }
+    int maxMoves(std::vector<std::vector<int>>& grid)
+    {
+        return approach3(grid);
+    }
 
 private:
     // BFS, TC = O(MN), SC = O(MN)

@@ -13,8 +13,7 @@
  * ! 0 <= k <= candies.length
  */
 
-class Solution
-{
+class Solution {
 public:
     int shareCandies(std::vector<int>& candies, int k)
     {

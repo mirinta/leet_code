@@ -10,8 +10,7 @@
  * ! All the given points are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     double largestTriangleArea(std::vector<std::vector<int>>& points)
     {

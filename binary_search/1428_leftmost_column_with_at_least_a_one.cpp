@@ -4,8 +4,7 @@
  * This is the BinaryMatrix's API interface.
  * You should not implement it, or speculate about its implementation
  */
-class BinaryMatrix
-{
+class BinaryMatrix {
 public:
     int get(int row, int col);
     std::vector<int> dimensions();
@@ -39,8 +38,7 @@ public:
  * ! mat[i] is sorted in non-decreasing order.
  */
 
-class Solution
-{
+class Solution {
 public:
     int leftMostColumnWithOne(BinaryMatrix& binaryMatrix)
     {

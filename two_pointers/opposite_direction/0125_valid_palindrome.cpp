@@ -11,8 +11,7 @@
  * ! s consists only of printable ASCII characters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isPalindrome(std::string s)
     {

@@ -1,4 +1,5 @@
 #include <numeric>
+#include <vector>
 
 /**
  * You are given an integer array nums of length n.
@@ -17,8 +18,7 @@
  * ! 1 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPartitions(std::vector<int>& nums)
     {

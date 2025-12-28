@@ -14,8 +14,7 @@
  * ! s and t consist of uppercase and lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string minWindow(std::string s, std::string t)
     {

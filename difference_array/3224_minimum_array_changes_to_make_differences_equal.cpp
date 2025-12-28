@@ -20,8 +20,7 @@
  * ! 0 <= nums[i] <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int minChanges(std::vector<int>& nums, int k)
     {

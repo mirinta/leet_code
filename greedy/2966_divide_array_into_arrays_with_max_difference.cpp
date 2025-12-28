@@ -20,8 +20,7 @@
  * ! 1 <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> divideArray(std::vector<int>& nums, int k)
     {

@@ -26,8 +26,7 @@
  * ! At most 100 calls will be made for shortestPath.
  */
 
-class Graph
-{
+class Graph {
 public:
     Graph(int n, const std::vector<std::vector<int>>& edges) : graph(n)
     {
@@ -36,7 +35,10 @@ public:
         }
     }
 
-    void addEdge(const std::vector<int>& edge) { graph[edge[0]].emplace_back(edge[1], edge[2]); }
+    void addEdge(const std::vector<int>& edge)
+    {
+        graph[edge[0]].emplace_back(edge[1], edge[2]);
+    }
 
     int shortestPath(int node1, int node2)
     {
@@ -63,9 +65,7 @@ public:
 
 private:
     using Pair = std::pair<int, int>; // <dist, v>
-    static constexpr auto comparator = [](const auto& p1, const auto& p2) {
-        return p1.first > p2.first;
-    };
+    static constexpr auto comparator = [](const auto& p1, const auto& p2) { return p1.first > p2.first; };
     std::vector<std::vector<std::pair<int, int>>> graph; // <vertex, cost>
 };
 

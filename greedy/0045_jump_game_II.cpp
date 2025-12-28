@@ -19,10 +19,12 @@
  * ! It's guaranteed that you can reach nums[n - 1].
  */
 
-class Solution
-{
+class Solution {
 public:
-    int jump(std::vector<int>& nums) { return approach3(nums); }
+    int jump(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     // time O(N), space O(1)

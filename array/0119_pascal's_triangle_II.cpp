@@ -8,8 +8,7 @@
  * ! 0 <= rowIndex <= 33
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> getRow(int rowIndex)
     {

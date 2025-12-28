@@ -8,8 +8,7 @@
  * ! 1 <= n <= 8
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> generateParenthesis(int n)
     {
@@ -20,8 +19,7 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::string>& result, std::string& current, int left, int right,
-                   int n)
+    void backtrack(std::vector<std::string>& result, std::string& current, int left, int right, int n)
     {
         if (left < right || left > n || right > n)
             return;

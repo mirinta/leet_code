@@ -13,8 +13,7 @@
  * ! 0 <= k < 64
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumSubarrayLength(std::vector<int>& nums, int k)
     {

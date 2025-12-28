@@ -22,8 +22,7 @@
  * ! fill is a lowercase English letter.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> divideString(std::string s, int k, char fill)
     {

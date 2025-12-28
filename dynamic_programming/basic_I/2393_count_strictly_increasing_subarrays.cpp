@@ -11,10 +11,12 @@
  * ! 1 <= nums[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long countSubarrays(std::vector<int>& nums) { return approach3(nums); }
+    long long countSubarrays(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     // DP with space optimization, time O(N), space O(1)

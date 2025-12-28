@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <array>
 #include <string>
 
@@ -11,8 +12,7 @@
  * ! s only consists of a, b or c characters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberOfSubstrings(std::string s)
     {

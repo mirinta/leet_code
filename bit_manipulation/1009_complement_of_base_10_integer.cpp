@@ -11,8 +11,7 @@
  * ! This question is the same as LC.476.
  */
 
-class Solution
-{
+class Solution {
 public:
     int bitwiseComplement(int n)
     {

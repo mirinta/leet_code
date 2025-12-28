@@ -27,8 +27,7 @@
  * ! Each character in words[i] is an English lowercase letter
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimizeConcatenatedLength(std::vector<std::string>& words)
     {

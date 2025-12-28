@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <vector>
 
 /**
@@ -22,8 +23,7 @@
  * ! The black pixels in the image only form one component.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minArea(std::vector<std::vector<char>>& image, int x, int y)
     {
@@ -43,8 +43,7 @@ private:
         int hi = xmax;
         while (lo < hi) {
             const int mid = lo + (hi - lo) / 2;
-            if (std::any_of(image[mid].begin(), image[mid].end(),
-                            [](const auto& v) { return v == '1'; })) {
+            if (std::any_of(image[mid].begin(), image[mid].end(), [](const auto& v) { return v == '1'; })) {
                 hi = mid;
             } else {
                 lo = mid + 1;
@@ -59,8 +58,7 @@ private:
         int hi = xmax;
         while (lo < hi) {
             const int mid = hi - (hi - lo) / 2;
-            if (std::any_of(image[mid].begin(), image[mid].end(),
-                            [](const auto& v) { return v == '1'; })) {
+            if (std::any_of(image[mid].begin(), image[mid].end(), [](const auto& v) { return v == '1'; })) {
                 lo = mid;
             } else {
                 hi = mid - 1;
@@ -75,8 +73,7 @@ private:
         int hi = ymax;
         while (lo < hi) {
             const int mid = lo + (hi - lo) / 2;
-            if (std::any_of(image.begin(), image.end(),
-                            [&](const auto& v) { return v[mid] == '1'; })) {
+            if (std::any_of(image.begin(), image.end(), [&](const auto& v) { return v[mid] == '1'; })) {
                 hi = mid;
             } else {
                 lo = mid + 1;
@@ -91,8 +88,7 @@ private:
         int hi = ymax;
         while (lo < hi) {
             const int mid = hi - (hi - lo) / 2;
-            if (std::any_of(image.begin(), image.end(),
-                            [&](const auto& v) { return v[mid] == '1'; })) {
+            if (std::any_of(image.begin(), image.end(), [&](const auto& v) { return v[mid] == '1'; })) {
                 lo = mid;
             } else {
                 hi = mid - 1;

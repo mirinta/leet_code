@@ -12,8 +12,7 @@
  * ! str1 and str2 consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string shortestCommonSupersequence(std::string str1, std::string str2)
     {

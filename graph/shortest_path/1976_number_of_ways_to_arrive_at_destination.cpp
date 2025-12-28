@@ -25,8 +25,7 @@
  * ! You can reach any intersection from any other intersection.
  */
 
-class Solution
-{
+class Solution {
 public:
     int countPaths(int n, std::vector<std::vector<int>>& roads)
     {
@@ -64,8 +63,10 @@ public:
 private:
     using Pair = std::pair<int, long long>;
 
-    struct Compare
-    {
-        bool operator()(const Pair& p1, const Pair& p2) const { return p1.second > p2.second; }
+    struct Compare {
+        bool operator()(const Pair& p1, const Pair& p2) const
+        {
+            return p1.second > p2.second;
+        }
     };
 };

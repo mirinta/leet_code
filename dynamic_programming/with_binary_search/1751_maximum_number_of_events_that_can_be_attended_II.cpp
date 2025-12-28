@@ -19,15 +19,13 @@
  * ! 1 <= valuei <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxValue(std::vector<std::vector<int>>& events, int k)
     {
         // dp[i][j] = max score of attending at most j events of events[0:i-1]
         const int n = events.size();
-        std::sort(events.begin(), events.end(),
-                  [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
+        std::sort(events.begin(), events.end(), [](const auto& v1, const auto& v2) { return v1[1] < v2[1]; });
         std::vector<std::vector<int>> dp(n + 1, std::vector<int>(k + 1, INT_MIN));
         for (int i = 0; i <= n; ++i) {
             dp[i][0] = 0;

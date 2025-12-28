@@ -16,8 +16,7 @@
  * ! 1 <= coins[i] <= 4 * 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int getMaximumConsecutive(std::vector<int>& coins)
     {

@@ -14,8 +14,7 @@
  * ! There is at least one 0 in mat.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> updateMatrix(std::vector<std::vector<int>>& mat)
     {

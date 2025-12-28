@@ -15,8 +15,7 @@
  * ! 1 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findErrorNums(std::vector<int>& nums)
     {

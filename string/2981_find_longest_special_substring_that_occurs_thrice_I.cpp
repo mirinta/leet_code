@@ -16,8 +16,7 @@
  * ! s consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumLength(std::string s)
     {

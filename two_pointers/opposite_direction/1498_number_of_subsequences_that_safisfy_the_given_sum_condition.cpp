@@ -13,8 +13,7 @@
  * ! 1 <= target <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int numSubseq(std::vector<int>& nums, int target)
     {

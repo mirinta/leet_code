@@ -18,10 +18,12 @@
  * ! 1 <= n <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int superEggDrop(int k, int n) { return approach3(k, n); }
+    int superEggDrop(int k, int n)
+    {
+        return approach3(k, n);
+    }
 
 private:
     // Approach 3: time O(KN), space O(KN)

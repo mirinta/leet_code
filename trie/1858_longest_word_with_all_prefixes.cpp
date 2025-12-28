@@ -18,8 +18,7 @@
  * ! 1 <= sum(words[i].length) <= 10^5
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode) {}
 
@@ -53,8 +52,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         bool isEnd{false};
         std::array<TrieNode*, 26> next{};
     };
@@ -62,8 +60,7 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::string longestWord(std::vector<std::string>& words)
     {

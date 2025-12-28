@@ -23,8 +23,7 @@
  * ! 0 <= tasks[i], workers[j], strength <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxTaskAssign(std::vector<int>& tasks, std::vector<int>& workers, int pills, int strength)
     {
@@ -45,8 +44,7 @@ public:
 
 private:
     // check if it is possible to finish the k easiest tasks
-    bool isValid(int k, const std::vector<int>& tasks, std::multiset<int> set, int pills,
-                 int strength)
+    bool isValid(int k, const std::vector<int>& tasks, std::multiset<int> set, int pills, int strength)
     {
         for (int i = k - 1; i >= 0; --i) {
             if (*set.rbegin() >= tasks[i]) {

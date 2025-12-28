@@ -12,19 +12,22 @@
 
 class Solution {
 public:
-    vector<int> sortArray(vector<int>& nums) {
+    std::vector<int> sortArray(std::vector<int>& nums)
+    {
         mergeSort(nums);
         return nums;
     }
 
 private:
-    void mergeSort(std::vector<int>& nums) {
+    void mergeSort(std::vector<int>& nums)
+    {
         const int n = nums.size();
         std::vector<int> aux(n);
         mergeSort(nums, aux, 0, n - 1);
     }
 
-    void mergeSort(std::vector<int>& nums, std::vector<int>& aux, int lo, int hi) {
+    void mergeSort(std::vector<int>& nums, std::vector<int>& aux, int lo, int hi)
+    {
         if (lo >= hi)
             return;
 
@@ -34,7 +37,8 @@ private:
         merge(nums, aux, lo, mid, hi);
     }
 
-    void merge(std::vector<int>& nums, std::vector<int>& aux, int lo, int mid, int hi) {
+    void merge(std::vector<int>& nums, std::vector<int>& aux, int lo, int mid, int hi)
+    {
         for (int k = lo; k <= hi; ++k) {
             aux[k] = nums[k];
         }

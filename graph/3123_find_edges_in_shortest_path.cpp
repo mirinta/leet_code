@@ -24,8 +24,7 @@
  * ! There are no repeated edges.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<bool> findAnswer(int n, std::vector<std::vector<int>>& edges)
     {

@@ -35,8 +35,7 @@
  * ! s consists of English letters, digits (0-9), ' ', '+', '-', and '.'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int myAtoi(const std::string& s)
     {

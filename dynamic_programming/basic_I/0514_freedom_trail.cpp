@@ -30,8 +30,7 @@
  * ! It is guaranteed that key could always be spelled by rotating ring.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findRotateSteps(std::string ring, std::string key)
     {
@@ -41,8 +40,7 @@ public:
 
 private:
     // min operations to spell key[j:n-1] while ring[i] is aligned at 12:00 direction
-    int dfs(std::vector<std::vector<int>>& memo, int i, int j, const std::string& ring,
-            const std::string& key)
+    int dfs(std::vector<std::vector<int>>& memo, int i, int j, const std::string& ring, const std::string& key)
     {
         if (j == key.size())
             return 0;

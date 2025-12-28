@@ -11,8 +11,7 @@
  * ! s and t consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isAnagram(std::string s, std::string t)
     {

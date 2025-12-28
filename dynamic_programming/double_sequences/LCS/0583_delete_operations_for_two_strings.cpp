@@ -11,10 +11,12 @@
  * ! word1 and word2 consist of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minDistance(std::string word1, std::string word2) { return approach2(word1, word2); }
+    int minDistance(std::string word1, std::string word2)
+    {
+        return approach2(word1, word2);
+    }
 
 private:
     int approach2(const std::string& s1, const std::string& s2)

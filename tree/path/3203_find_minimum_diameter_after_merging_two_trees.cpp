@@ -27,11 +27,9 @@
  * ! The input is generated such that edges1 and edges2 represent valid trees.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumDiameterAfterMerge(std::vector<std::vector<int>>& edges1,
-                                  std::vector<std::vector<int>>& edges2)
+    int minimumDiameterAfterMerge(std::vector<std::vector<int>>& edges1, std::vector<std::vector<int>>& edges2)
     {
         // case 1: tree1 is much larger than tree2
         const int d1 = treeDiameter(edges1);

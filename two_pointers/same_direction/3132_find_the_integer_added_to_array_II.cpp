@@ -19,8 +19,7 @@
  * ! equal to nums2 by removing two elements and adding x to each element of nums1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumAddedInteger(std::vector<int>& nums1, std::vector<int>& nums2)
     {
@@ -45,8 +44,7 @@ public:
 
 private:
     // check if nums2 is a subsequence of nums1[lo:hi] by adding x to each element of nums1[lo:hi]
-    bool isValid(int lo, int hi, int x, const std::vector<int>& nums1,
-                 const std::vector<int>& nums2)
+    bool isValid(int lo, int hi, int x, const std::vector<int>& nums1, const std::vector<int>& nums2)
     {
         int i = lo;
         int j = 0;

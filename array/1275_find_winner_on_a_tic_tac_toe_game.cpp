@@ -31,8 +31,7 @@
  * ! moves follow the rules of tic tac toe.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string tictactoe(std::vector<std::vector<int>>& moves)
     {
@@ -59,8 +58,8 @@ public:
             if (row + col == n - 1) {
                 antiDiagonal += player;
             }
-            if (std::abs(rowFreq[row]) == n || std::abs(colFreq[col]) == n ||
-                std::abs(diagonal) == n || std::abs(antiDiagonal) == n)
+            if (std::abs(rowFreq[row]) == n || std::abs(colFreq[col]) == n || std::abs(diagonal) == n ||
+                std::abs(antiDiagonal) == n)
                 return player == 1 ? "A" : "B";
 
             player *= -1;

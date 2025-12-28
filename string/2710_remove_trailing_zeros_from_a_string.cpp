@@ -9,8 +9,7 @@
  * ! num doesn't have any leading zeros.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string removeTrailingZeros(std::string num)
     {

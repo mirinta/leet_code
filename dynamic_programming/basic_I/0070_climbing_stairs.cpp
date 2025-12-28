@@ -8,10 +8,12 @@
  * ! 1 <= n <= 45
  */
 
-class Solution
-{
+class Solution {
 public:
-    int climbStairs(int n) { return approach2(n); }
+    int climbStairs(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     // DP with space optimization, TC = O(N), SC = O(1)

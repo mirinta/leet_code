@@ -20,10 +20,12 @@
  * ! 1 <= n <= 8
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxStudents(std::vector<std::vector<char>>& seats) { return approach2(seats); }
+    int maxStudents(std::vector<std::vector<char>>& seats)
+    {
+        return approach2(seats);
+    }
 
 private:
     int approach2(std::vector<std::vector<char>>& seats)
@@ -51,8 +53,7 @@ private:
                 dp[current] = 0;
                 const int ones = binaryOnes(current);
                 for (const auto& previous : prevStates) {
-                    if (!isValid(previous, seats[i - 1]) ||
-                        isCheatingPossible(previous, current, n))
+                    if (!isValid(previous, seats[i - 1]) || isCheatingPossible(previous, current, n))
                         continue;
 
                     currStates.insert(current);
@@ -83,12 +84,10 @@ private:
                     continue;
 
                 for (unsigned previous = 0; previous < maxState; ++previous) {
-                    if (!isValid(previous, seats[i - 2]) ||
-                        isCheatingPossible(previous, current, n))
+                    if (!isValid(previous, seats[i - 2]) || isCheatingPossible(previous, current, n))
                         continue;
 
-                    dp[i][current] =
-                        std::max(dp[i][current], dp[i - 1][previous] + binaryOnes(current));
+                    dp[i][current] = std::max(dp[i][current], dp[i - 1][previous] + binaryOnes(current));
                 }
             }
         }

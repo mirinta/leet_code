@@ -12,8 +12,7 @@
  *
  * std::vector<LLONG> tree: a 1-indexed array
  */
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
     using LLONG = long long;
 
 public:
@@ -26,12 +25,21 @@ public:
         }
     }
 
-    void reset() { std::fill(tree.begin(), tree.end(), 0); }
+    void reset()
+    {
+        std::fill(tree.begin(), tree.end(), 0);
+    }
 
-    LLONG query(LLONG left, LLONG right) { return presum(right) - presum(left - 1); }
+    LLONG query(LLONG left, LLONG right)
+    {
+        return presum(right) - presum(left - 1);
+    }
 
 private:
-    LLONG lowbit(LLONG i) { return i & (-i); }
+    LLONG lowbit(LLONG i)
+    {
+        return i & (-i);
+    }
 
     LLONG presum(LLONG i)
     {

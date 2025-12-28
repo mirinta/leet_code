@@ -3,8 +3,7 @@
 /**
  * Definition for polynomial singly-linked list.
  */
-struct PolyNode
-{
+struct PolyNode {
     int coefficient, power;
     PolyNode* next;
     PolyNode() : coefficient(0), power(0), next(nullptr) {};
@@ -44,10 +43,12 @@ struct PolyNode
  * ! PolyNode.power > PolyNode.next.power
  */
 
-class Solution
-{
+class Solution {
 public:
-    PolyNode* addPoly(PolyNode* poly1, PolyNode* poly2) { return approach2(poly1, poly2); }
+    PolyNode* addPoly(PolyNode* poly1, PolyNode* poly2)
+    {
+        return approach2(poly1, poly2);
+    }
 
 private:
     PolyNode* approach2(PolyNode* poly1, PolyNode* poly2)

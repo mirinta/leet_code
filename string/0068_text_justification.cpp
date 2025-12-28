@@ -31,8 +31,7 @@
  * ! words[i].length <= maxWidth
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> fullJustify(std::vector<std::string>& words, int maxWidth)
     {
@@ -57,8 +56,7 @@ public:
         return result;
     }
 
-    std::string generateFullyJustified(int left, int right, int maxWidth,
-                                       const std::vector<std::string>& words)
+    std::string generateFullyJustified(int left, int right, int maxWidth, const std::vector<std::string>& words)
     {
         // words[left:right]
         if (right - left + 1 <= 0)
@@ -72,8 +70,7 @@ public:
         for (int i = left; i <= right; ++i) {
             result.append(words[i]);
             if (spaces > 0) {
-                std::string temp(right - i > 0 ? std::ceil(1.0 * spaces / (right - i)) : spaces,
-                                 ' ');
+                std::string temp(right - i > 0 ? std::ceil(1.0 * spaces / (right - i)) : spaces, ' ');
                 spaces -= temp.size();
                 result.append(temp);
             }
@@ -81,8 +78,7 @@ public:
         return result;
     }
 
-    std::string generateLeftJustified(int left, int right, int maxWidth,
-                                      const std::vector<std::string>& words)
+    std::string generateLeftJustified(int left, int right, int maxWidth, const std::vector<std::string>& words)
     {
         // words[left, right]
         if (right - left + 1 <= 0)

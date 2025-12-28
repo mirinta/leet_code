@@ -22,15 +22,13 @@
  * ! searchWord consists of lowercase English letters.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     static constexpr int R = 26;
     bool isEnd = false;
     std::array<std::unique_ptr<TrieNode>, R> next;
 };
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(std::make_unique<TrieNode>()) {}
 
@@ -64,8 +62,7 @@ public:
     }
 
 private:
-    void dfsWithPrefix(std::vector<std::string>& result, std::string& word, TrieNode* node,
-                       int numLimit)
+    void dfsWithPrefix(std::vector<std::string>& result, std::string& word, TrieNode* node, int numLimit)
     {
         if (!node || result.size() == numLimit)
             return;
@@ -87,11 +84,10 @@ private:
     std::unique_ptr<TrieNode> root;
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<std::string>> suggestedProducts(
-        const std::vector<std::string>& products, const std::string& searchWord)
+    std::vector<std::vector<std::string>> suggestedProducts(const std::vector<std::string>& products,
+                                                            const std::string& searchWord)
     {
         Trie trie;
         for (const auto& name : products) {

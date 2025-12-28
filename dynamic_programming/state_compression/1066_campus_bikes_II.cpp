@@ -27,8 +27,7 @@
 #include <climits>
 #include <vector>
 
-class Solution
-{
+class Solution {
 public:
     int assignBikes(std::vector<std::vector<int>>& workers, std::vector<std::vector<int>>& bikes)
     {
@@ -44,8 +43,8 @@ public:
 
                 for (int j = 0; j < m; ++j) {
                     if ((state >> j) & 1) {
-                        dp[i][state] = std::min(dp[i][state], dp[i - 1][state ^ (1 << j)] +
-                                                                  dist(workers[i - 1], bikes[j]));
+                        dp[i][state] =
+                            std::min(dp[i][state], dp[i - 1][state ^ (1 << j)] + dist(workers[i - 1], bikes[j]));
                     }
                 }
             }

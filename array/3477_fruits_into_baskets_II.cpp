@@ -21,8 +21,7 @@
  * ! 1 <= fruits[i], baskets[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int numOfUnplacedFruits(std::vector<int>& fruits, std::vector<int>& baskets)
     {

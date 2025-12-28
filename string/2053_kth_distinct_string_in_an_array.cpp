@@ -1,3 +1,4 @@
+#include <string>
 #include <unordered_map>
 #include <vector>
 
@@ -14,8 +15,7 @@
  * ! arr[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string kthDistinct(std::vector<std::string>& arr, int k)
     {

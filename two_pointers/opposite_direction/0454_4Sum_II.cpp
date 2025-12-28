@@ -17,11 +17,9 @@
  * ! -2^28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2^28
  */
 
-class Solution
-{
+class Solution {
 public:
-    int fourSumCount(std::vector<int>& nums1, std::vector<int>& nums2, std::vector<int>& nums3,
-                     std::vector<int>& nums4)
+    int fourSumCount(std::vector<int>& nums1, std::vector<int>& nums2, std::vector<int>& nums3, std::vector<int>& nums4)
     {
         std::unordered_map<long long, int> map; // key = nums1[i]+nums2[j], value = frequency
         for (int i = 0; i < nums1.size(); ++i) {

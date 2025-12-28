@@ -5,8 +5,7 @@
  * 给定两个字符串，编写一个函数判定它们是否只需要一次(或者零次)编辑。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool oneEditAway(std::string first, std::string second)
     {

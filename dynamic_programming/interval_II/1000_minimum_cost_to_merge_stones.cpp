@@ -15,8 +15,7 @@
  * ! 2 <= k <= 30
  */
 
-class Solution
-{
+class Solution {
 public:
     int mergeStones(std::vector<int>& stones, int k)
     {

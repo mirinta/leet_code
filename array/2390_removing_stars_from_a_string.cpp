@@ -24,8 +24,7 @@
  * ! The operation above can be performed on s.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string removeStars(std::string s)
     {

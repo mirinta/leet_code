@@ -20,12 +20,10 @@
  * ! 1 <= success <= 10^10
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<int> successfulPairs(std::vector<int>& spells, std::vector<int>& potions,
-                                     long long success)
-    const int n = spells.size();
+    std::vector<int> successfulPairs(std::vector<int>& spells, std::vector<int>& potions, long long success) const
+        int n = spells.size();
     std::sort(potions.begin(), potions.end());
     std::vector<int> result(n, 0);
     for (int i = 0; i < n; ++i) {

@@ -17,8 +17,7 @@
  * ! -10^9 <= lower <= upper <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long countFairPairs(std::vector<int>& nums, int lower, int upper)
     {

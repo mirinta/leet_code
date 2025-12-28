@@ -8,8 +8,7 @@
  * ! Follow up: Could you write a solution that works in logarithmic time complexity?
  */
 
-class Solution
-{
+class Solution {
 public:
     int trailingZeroes(int n)
     {

@@ -22,8 +22,7 @@
  * ! 0 <= li <= ri < nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isZeroArray(std::vector<int>& nums, std::vector<std::vector<int>>& queries)
     {

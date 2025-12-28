@@ -10,10 +10,12 @@
  * ! 本题与LC 49相同。
  */
 
-class Solution
-{
+class Solution {
 public:
-    int nthUglyNumber(int n) { return approach2(n); }
+    int nthUglyNumber(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     int approach2(int n)

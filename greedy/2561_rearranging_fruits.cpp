@@ -19,8 +19,7 @@
  * ! 1 <= basket1[i],basket2[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minCost(std::vector<int>& basket1, std::vector<int>& basket2)
     {

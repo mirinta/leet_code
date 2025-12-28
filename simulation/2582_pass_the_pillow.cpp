@@ -15,10 +15,12 @@
  * ! 1 <= time <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int passThePillow(int n, int time) { return approach2(n, time); }
+    int passThePillow(int n, int time)
+    {
+        return approach2(n, time);
+    }
 
 private:
     int approach2(int n, int time)

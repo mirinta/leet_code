@@ -27,8 +27,7 @@
  * ! endTime[i] <= startTime[i + 1] where i lies in the range [0, n - 2].
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxFreeTime(int eventTime, std::vector<int>& startTime, std::vector<int>& endTime)
     {
@@ -57,8 +56,7 @@ public:
             const int left = startTime[i] - (i == 0 ? 0 : endTime[i - 1]);
             const int right = (i == n - 1 ? eventTime : startTime[i + 1]) - endTime[i];
             result = std::max(result, right + left);
-            if (duration <= (i == 0 ? 0 : prefix[i - 1]) ||
-                duration <= (i == n - 1 ? 0 : suffix[i + 1])) {
+            if (duration <= (i == 0 ? 0 : prefix[i - 1]) || duration <= (i == n - 1 ? 0 : suffix[i + 1])) {
                 result = std::max(result, duration + left + right);
             }
         }

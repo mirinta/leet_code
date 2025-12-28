@@ -26,8 +26,7 @@
  * ! There are no leading or trailing spaces.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isCircularSentence(std::string sentence)
     {

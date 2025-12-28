@@ -19,8 +19,7 @@
  * ! All integers in nums are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numOfWays(std::vector<int>& nums)
     {
@@ -46,8 +45,7 @@ private:
         }
         const long long waysToBuildLeft = dfs(left);
         const long long waysToBuildRight = dfs(right);
-        return (waysToBuildLeft * waysToBuildRight) % kMod *
-               combination(nums.size() - 1, left.size()) % kMod;
+        return (waysToBuildLeft * waysToBuildRight) % kMod * combination(nums.size() - 1, left.size()) % kMod;
     }
 
     long long combination(int m, int n)

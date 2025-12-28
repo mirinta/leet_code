@@ -13,8 +13,7 @@
  * ! sequence and word contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxRepeating(std::string sequence, std::string word)
     {

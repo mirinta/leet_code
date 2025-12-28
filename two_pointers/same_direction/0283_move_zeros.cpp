@@ -10,8 +10,7 @@
  * ! -2^31 <= nums[i] <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     void moveZeroes(std::vector<int>& nums)
     {

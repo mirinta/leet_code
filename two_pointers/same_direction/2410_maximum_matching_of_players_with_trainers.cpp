@@ -19,8 +19,7 @@
  * ! This question is the same as LC.445
  */
 
-class Solution
-{
+class Solution {
 public:
     int matchPlayersAndTrainers(std::vector<int>& players, std::vector<int>& trainers)
     {

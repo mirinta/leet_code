@@ -4,8 +4,7 @@
  * ! num的范围在[0, 2^30 - 1]之间，不会发生整数溢出。
  */
 
-class Solution
-{
+class Solution {
 public:
     int exchangeBits(int num)
     {

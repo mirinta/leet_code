@@ -18,8 +18,7 @@
  * ! All the values of spaces are strictly increasing.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string addSpaces(std::string& s, std::vector<int>& spaces)
     {

@@ -14,8 +14,7 @@
  * ! grid[i][j] == 0 or 1
  */
 
-class Solution
-{
+class Solution {
 public:
     int countServers(std::vector<std::vector<int>>& grid)
     {

@@ -27,8 +27,7 @@
  * ! There will be at least one element in the stack when pop, top, peekMax, or popMax is called.
  */
 
-class MaxStack
-{
+class MaxStack {
 public:
     MaxStack() {}
 
@@ -47,9 +46,15 @@ public:
         return val;
     }
 
-    int top() { return data.rbegin()->second; }
+    int top()
+    {
+        return data.rbegin()->second;
+    }
 
-    int peekMax() { return set.rbegin()->first; }
+    int peekMax()
+    {
+        return set.rbegin()->first;
+    }
 
     int popMax()
     {

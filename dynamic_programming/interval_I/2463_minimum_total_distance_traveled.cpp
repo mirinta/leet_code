@@ -40,14 +40,12 @@
  * ! The input will be generated such that it is always possible to repair every robot.
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minimumTotalDistance(std::vector<int>& robot, std::vector<std::vector<int>>& factory)
     {
         std::sort(robot.begin(), robot.end());
-        std::sort(factory.begin(), factory.end(),
-                  [](const auto& f1, const auto& f2) { return f1[0] < f2[0]; });
+        std::sort(factory.begin(), factory.end(), [](const auto& f1, const auto& f2) { return f1[0] < f2[0]; });
         const int m = robot.size();
         const int n = factory.size();
         // dist[i][j][k] = total dist of robot[i-k:i-1] to factory[j-1]

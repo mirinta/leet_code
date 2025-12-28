@@ -23,8 +23,7 @@
  * ! -1000 <= stoneValue[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string stoneGameIII(std::vector<int>& stoneValue)
     {
@@ -55,8 +54,7 @@ private:
         int result = INT_MIN;
         for (int take = 1; take <= std::min(3, n - lo); ++take) {
             const int score = presum[lo + take] - presum[lo];
-            result = std::max(
-                result, score + presum[n] - presum[lo + take] - dfs(memo, lo + take, n, presum));
+            result = std::max(result, score + presum[n] - presum[lo + take] - dfs(memo, lo + take, n, presum));
         }
         return memo[lo] = result;
     }

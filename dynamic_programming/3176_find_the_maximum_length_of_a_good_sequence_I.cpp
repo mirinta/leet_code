@@ -12,8 +12,7 @@
  * ! 0 <= k <= min(nums.length, 25)
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumLength(std::vector<int>& nums, int k)
     {

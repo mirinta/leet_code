@@ -15,8 +15,7 @@
  * ! "s" consists of digits only.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::string> restoreIpAddresses(std::string s)
     {

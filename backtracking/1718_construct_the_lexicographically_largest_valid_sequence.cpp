@@ -25,8 +25,7 @@
  * ! 1 <= n <= 20
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> constructDistancedSequence(int n)
     {

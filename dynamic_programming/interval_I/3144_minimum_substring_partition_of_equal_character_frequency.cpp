@@ -17,8 +17,7 @@
  * ! s consists only of English lowercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumSubstringsInPartition(std::string s)
     {

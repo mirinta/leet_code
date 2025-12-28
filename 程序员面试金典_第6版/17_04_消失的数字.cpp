@@ -6,8 +6,7 @@
  * 注意：本题相对书上原题稍作改动
  */
 
-class Solution
-{
+class Solution {
 public:
     int missingNumber(std::vector<int>& nums)
     {

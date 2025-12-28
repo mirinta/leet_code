@@ -14,8 +14,7 @@
  * ! 1 <= amounti <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int minTransfers(std::vector<std::vector<int>>& transactions)
     {

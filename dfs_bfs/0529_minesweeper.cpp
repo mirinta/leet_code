@@ -41,11 +41,9 @@
  * ! board[clickr][clickc] is either 'M' or 'E'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<std::vector<char>> updateBoard(std::vector<std::vector<char>>& board,
-                                               std::vector<int>& click)
+    std::vector<std::vector<char>> updateBoard(std::vector<std::vector<char>>& board, std::vector<int>& click)
     {
         for (const auto& coordinates : click) {
             const int x = click[0];

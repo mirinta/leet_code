@@ -15,10 +15,12 @@
  * ! s[i] is either '0' or '1'.
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long minimumSteps(std::string s) { return approach2(s); }
+    long long minimumSteps(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     long long approach2(const std::string& s)

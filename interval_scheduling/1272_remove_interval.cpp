@@ -17,8 +17,7 @@
  * ! -10^9 <= ai < bi <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> removeInterval(std::vector<std::vector<int>>& intervals,
                                                  std::vector<int>& toBeRemoved)

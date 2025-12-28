@@ -24,8 +24,7 @@
  * ! accounts[i][j] (for j > 0) is a valid email.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), rank(n)
     {
@@ -65,14 +64,12 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
     // N is the number of accounts, and K = max(accounts[i].size())
     // time complexity: O(NKa(N) + NKlog(NK))
     // space complexity: O(N + NK + space complexity of std::sort)
-    std::vector<std::vector<std::string>> accountsMerge(
-        std::vector<std::vector<std::string>>& accounts)
+    std::vector<std::vector<std::string>> accountsMerge(std::vector<std::vector<std::string>>& accounts)
     {
         const int n = accounts.size();
         UnionFind uf(n);

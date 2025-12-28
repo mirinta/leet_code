@@ -22,8 +22,7 @@
  * ! The test cases are generated such that an answer always exists.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string subStrHash(std::string s, int power, int modulo, int k, int hashValue)
     {
@@ -52,5 +51,8 @@ public:
     }
 
 private:
-    long long valueOf(char c) { return (c - 'a') + 1; }
+    long long valueOf(char c)
+    {
+        return (c - 'a') + 1;
+    }
 };

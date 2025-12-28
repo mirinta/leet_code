@@ -15,8 +15,7 @@
  * ! 0 <= k <= 20
  */
 
-class Solution
-{
+class Solution {
 public:
     int movingCount(int m, int n, int k)
     {

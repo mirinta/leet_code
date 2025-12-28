@@ -32,8 +32,7 @@
  * ! words[i] and target contain only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numWays(std::vector<std::string>& words, std::string target)
     {

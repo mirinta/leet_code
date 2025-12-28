@@ -1,5 +1,5 @@
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
 /**
  * Given a string s which consists of lowercase or uppercase letters, return the length of the
@@ -11,8 +11,7 @@
  * ! s consists of lowercase and/or uppercase English letters only.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestPalindrome(std::string s)
     {

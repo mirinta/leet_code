@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -28,8 +27,7 @@ struct TreeNode
  * ! inorder is guaranteed to be the inorder traversal of the tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* buildTree(std::vector<int>& preorder, std::vector<int>& inorder)
     {
@@ -59,8 +57,8 @@ public:
 private:
     std::unordered_map<int, int> map; // val to index of inorder
 
-    TreeNode* build(const std::vector<int>& preorder, int lo1, int hi1,
-                    const std::vector<int>& inorder, int lo2, int hi2)
+    TreeNode*
+        build(const std::vector<int>& preorder, int lo1, int hi1, const std::vector<int>& inorder, int lo2, int hi2)
     {
         if (lo1 > hi1)
             return nullptr;

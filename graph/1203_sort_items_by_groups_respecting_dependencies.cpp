@@ -27,13 +27,11 @@
  * ! beforeItems[i] does not contain duplicates elements.
  */
 
-class Solution
-{
+class Solution {
     using Graph = std::unordered_map<int, std::unordered_set<int>>;
 
 public:
-    std::vector<int> sortItems(int n, int m, std::vector<int>& group,
-                               std::vector<std::vector<int>>& beforeItems)
+    std::vector<int> sortItems(int n, int m, std::vector<int>& group, std::vector<std::vector<int>>& beforeItems)
     {
         // reassign group ID
         for (int i = 0, j = m; i < n; ++i) {

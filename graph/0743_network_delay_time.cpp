@@ -19,8 +19,7 @@
  * ! All the paris (ui, vi) are unique. (i.e., no multiple edges)
  */
 
-class Solution
-{
+class Solution {
 public:
     int networkDelayTime(std::vector<std::vector<int>>& times, int n, int k)
     {
@@ -32,8 +31,7 @@ public:
         }
         const int source = k - 1;
         auto comp = [](const auto& p1, const auto& p2) -> bool { return p1.first > p2.first; };
-        std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, decltype(comp)>
-            pq(comp);
+        std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, decltype(comp)> pq(comp);
         pq.emplace(0, source);
         std::vector<int> distTo(n, INT_MAX); // distTo[i] = distance between source and i
         distTo[source] = 0;

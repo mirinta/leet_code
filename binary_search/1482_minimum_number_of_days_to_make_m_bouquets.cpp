@@ -20,8 +20,7 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     int minDays(std::vector<int>& bloomDay, int m, int k)
     {

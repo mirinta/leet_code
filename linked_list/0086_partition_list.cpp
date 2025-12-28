@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -20,8 +19,7 @@ struct ListNode
  * ! -100 <= Node.val <= 100
  * ! -200 <= x <= 200
  */
-class Solution
-{
+class Solution {
 public:
     ListNode* partition(ListNode* head, int x)
     {

@@ -14,8 +14,7 @@
  * ! 1 <= ni, ki <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> waysToFillArray(std::vector<std::vector<int>>& queries)
     {

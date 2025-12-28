@@ -20,8 +20,7 @@
  * ! At most 50000 calls will be made to showFirstUnique and add.
  */
 
-class FirstUnique
-{
+class FirstUnique {
 public:
     FirstUnique(std::vector<int>& nums)
     {

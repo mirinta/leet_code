@@ -49,16 +49,14 @@
  * ! At most 5000 calls will be made to input.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     int times{0};
     std::unordered_map<char, TrieNode*> next;
 };
 
-class Trie
-{
+class Trie {
 public:
-    explicit Trie() : root(new TrieNode()){};
+    explicit Trie() : root(new TrieNode()) {};
 
     void insert(const std::string& sentence, int times = 1)
     {
@@ -112,8 +110,7 @@ private:
     TrieNode* root;
 
     using Pair = std::pair<std::string, int>; // <sentence, times>
-    struct Compare
-    {
+    struct Compare {
         bool operator()(const Pair& p1, const Pair& p2)
         {
             return p1.second == p2.second ? p1.first < p2.first : p1.second > p2.second;
@@ -124,8 +121,7 @@ private:
     PQ pq;
 };
 
-class AutocompleteSystem
-{
+class AutocompleteSystem {
 public:
     AutocompleteSystem(std::vector<std::string>& sentences, std::vector<int>& times)
     {

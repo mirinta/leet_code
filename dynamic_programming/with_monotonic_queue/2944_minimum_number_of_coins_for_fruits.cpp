@@ -20,10 +20,12 @@
  * ! 1 <= prices[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumCoins(std::vector<int>& prices) { return approach2(prices); }
+    int minimumCoins(std::vector<int>& prices)
+    {
+        return approach2(prices);
+    }
 
 private:
     // DP + Monotonic Queue, time O(N), space O(N)

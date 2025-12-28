@@ -16,8 +16,7 @@
  * ! hats[i] contains a list of unique integers.
  */
 
-class Solution
-{
+class Solution {
 public:
     int numberWays(std::vector<std::vector<int>>& hats)
     {
@@ -33,7 +32,10 @@ public:
     }
 
 private:
-    int dfs(std::vector<std::vector<int>>& memo, int hat, int state, int target,
+    int dfs(std::vector<std::vector<int>>& memo,
+            int hat,
+            int state,
+            int target,
             const std::vector<std::vector<int>>& prefer)
     {
         if (hat == prefer.size())

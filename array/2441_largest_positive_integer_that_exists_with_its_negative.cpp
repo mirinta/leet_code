@@ -12,8 +12,7 @@
  * ! nums[i] != 0
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMaxK(std::vector<int>& nums)
     {

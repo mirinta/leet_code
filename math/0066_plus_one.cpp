@@ -12,8 +12,7 @@
  * ! digits does not contain any leading 0's.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> plusOne(std::vector<int>& digits)
     {

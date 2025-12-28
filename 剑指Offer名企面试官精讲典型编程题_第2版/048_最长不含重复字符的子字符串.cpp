@@ -9,8 +9,7 @@
  * ! 本题与LC 3相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int lengthOfLongestSubstring(std::string s)
     {

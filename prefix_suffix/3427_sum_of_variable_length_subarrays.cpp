@@ -10,8 +10,7 @@
  * ! 1 <= nums[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int subarraySum(std::vector<int>& nums)
     {

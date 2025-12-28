@@ -29,8 +29,7 @@
  * ! 0 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maxPower(std::vector<int>& stations, int r, int k)
     {

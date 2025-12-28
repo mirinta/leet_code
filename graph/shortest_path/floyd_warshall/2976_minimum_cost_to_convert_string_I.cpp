@@ -25,11 +25,13 @@
  * ! original[i] != changed[i]
  */
 
-class Solution
-{
+class Solution {
 public:
-    long long minimumCost(std::string source, std::string target, std::vector<char>& original,
-                          std::vector<char>& changed, std::vector<int>& cost)
+    long long minimumCost(std::string source,
+                          std::string target,
+                          std::vector<char>& original,
+                          std::vector<char>& changed,
+                          std::vector<int>& cost)
     {
         const int n = source.size();
         const auto minDist = floyd(original, changed, cost);
@@ -46,9 +48,8 @@ public:
     }
 
 private:
-    std::vector<std::vector<long long>> floyd(const std::vector<char>& original,
-                                              const std::vector<char>& changed,
-                                              const std::vector<int>& cost)
+    std::vector<std::vector<long long>>
+        floyd(const std::vector<char>& original, const std::vector<char>& changed, const std::vector<int>& cost)
     {
         std::vector<std::vector<long long>> minDist(26, std::vector<long long>(26, LLONG_MAX));
         for (int i = 0; i < 26; ++i) {

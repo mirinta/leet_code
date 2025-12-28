@@ -9,10 +9,12 @@
  * ! s1 and s2 consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumDeleteSum(std::string s1, std::string s2) { return approach2(s1, s2); }
+    int minimumDeleteSum(std::string s1, std::string s2)
+    {
+        return approach2(s1, s2);
+    }
 
 private:
     int approach2(const std::string& s1, const std::string& s2)

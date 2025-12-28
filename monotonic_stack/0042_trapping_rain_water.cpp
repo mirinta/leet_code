@@ -10,10 +10,12 @@
  * ! 0 <= height[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
-    int trap(std::vector<int>& height) { return approach3(height); }
+    int trap(std::vector<int>& height)
+    {
+        return approach3(height);
+    }
 
 private:
     // monotonic stack, TC = O(N), SC = O(N)

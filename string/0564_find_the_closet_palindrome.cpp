@@ -12,8 +12,7 @@
  * ! n is representing an integer in the range [1, 10^18 - 1].
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string nearestPalindromic(std::string n)
     {

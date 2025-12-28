@@ -25,8 +25,7 @@
  * ! s consists of only 'N', 'S', 'E', and 'W'.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxDistance(std::string s, int k)
     {
@@ -47,8 +46,7 @@ public:
             }
             const int count1 = std::min({north, south, k});
             const int count2 = std::min({east, west, k - count1});
-            const int dist =
-                std::abs(north - south) + std::abs(east - west) + 2 * (count1 + count2);
+            const int dist = std::abs(north - south) + std::abs(east - west) + 2 * (count1 + count2);
             result = std::max(result, dist);
         }
         return result;

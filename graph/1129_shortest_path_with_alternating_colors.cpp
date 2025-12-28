@@ -24,11 +24,11 @@
  * ! 0 <= ai, bi, uj, vj < n
  */
 
-class Solution
-{
+class Solution {
 public:
     // BFS, time (V+E), space O(V+E)
-    std::vector<int> shortestAlternatingPaths(int n, std::vector<std::vector<int>>& redEdges,
+    std::vector<int> shortestAlternatingPaths(int n,
+                                              std::vector<std::vector<int>>& redEdges,
                                               std::vector<std::vector<int>>& blueEdges)
     {
         constexpr int kRed = 0;

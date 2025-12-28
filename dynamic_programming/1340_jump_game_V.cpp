@@ -21,10 +21,12 @@
  * ! 1 <= d <= arr.length
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxJumps(std::vector<int>& arr, int d) { return approach2(arr, d); }
+    int maxJumps(std::vector<int>& arr, int d)
+    {
+        return approach2(arr, d);
+    }
 
 private:
     // time O(ND), space O(N)

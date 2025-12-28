@@ -12,12 +12,10 @@
  * ! 0 <= stackNum <= 2
  */
 
-class TripleInOne
-{
+class TripleInOne {
 public:
     TripleInOne(int stackSize)
-        : capacity(stackSize), indices{-1, stackSize - 1, 2 * stackSize - 1},
-          data(3 * stackSize, -1)
+        : capacity(stackSize), indices{-1, stackSize - 1, 2 * stackSize - 1}, data(3 * stackSize, -1)
     {
     }
 
@@ -46,12 +44,21 @@ public:
         return data[indices[stackNum]];
     }
 
-    bool isEmpty(int stackNum) const { return indices[stackNum] < startIndex(stackNum); }
+    bool isEmpty(int stackNum) const
+    {
+        return indices[stackNum] < startIndex(stackNum);
+    }
 
 private:
-    int startIndex(int stackNum) const { return stackNum * capacity; }
+    int startIndex(int stackNum) const
+    {
+        return stackNum * capacity;
+    }
 
-    int endIndex(int stackNum) const { return startIndex(stackNum) + capacity - 1; }
+    int endIndex(int stackNum) const
+    {
+        return startIndex(stackNum) + capacity - 1;
+    }
 
 private:
     int capacity;

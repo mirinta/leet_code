@@ -12,8 +12,7 @@
  * ! -10^7 <= k <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     int subarraySum(std::vector<int>& nums, int k)
     {

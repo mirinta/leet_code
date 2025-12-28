@@ -15,8 +15,7 @@
  * ! 0 <= arr1[i], arr2[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int makeArrayIncreasing(std::vector<int>& arr1, std::vector<int>& arr2)
     {
@@ -28,8 +27,11 @@ public:
 
 private:
     // min num of operations to make arr1[i:n-1] strictly increasing
-    int dfs(std::vector<std::unordered_map<int, int>>& memo, int i, int prev,
-            const std::vector<int>& arr1, const std::vector<int>& arr2)
+    int dfs(std::vector<std::unordered_map<int, int>>& memo,
+            int i,
+            int prev,
+            const std::vector<int>& arr1,
+            const std::vector<int>& arr2)
     {
         if (i == arr1.size())
             return 0;

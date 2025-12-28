@@ -11,8 +11,7 @@
  * ! 0 <= nums[i] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int validSubarrays(std::vector<int>& nums)
     {
@@ -24,8 +23,7 @@ public:
         // thus, there are j-i valid subarrays that start with nums[i]
         // if j doesn't exist, it means nums[i:n) are all >= nums[i]
         const int n = nums.size();
-        std::vector<int> nextSmaller(
-            n, -1); // nums[i]=j, nums[j] is the next smaller element of nums[i]
+        std::vector<int> nextSmaller(n, -1); // nums[i]=j, nums[j] is the next smaller element of nums[i]
         std::stack<int> stack;
         for (int i = n - 1; i >= 0; --i) {
             while (!stack.empty() && nums[i] <= nums[stack.top()]) {

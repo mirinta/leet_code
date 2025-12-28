@@ -27,11 +27,9 @@
  * ! 1 <= heroes[i], monsters[i], coins[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<long long> maximumCoins(std::vector<int>& heroes, std::vector<int>& monsters,
-                                        std::vector<int>& coins)
+    std::vector<long long> maximumCoins(std::vector<int>& heroes, std::vector<int>& monsters, std::vector<int>& coins)
     {
         const int m = monsters.size();
         std::vector<std::pair<int, int>> info;
@@ -39,8 +37,7 @@ public:
         for (int i = 0; i < m; ++i) {
             info.emplace_back(monsters[i], coins[i]);
         }
-        std::sort(info.begin(), info.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+        std::sort(info.begin(), info.end(), [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
         std::vector<long long> presum(m + 1);
         for (int i = 1; i <= m; ++i) {
             presum[i] = presum[i - 1] + info[i - 1].second;

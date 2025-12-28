@@ -19,8 +19,7 @@
  * ! nums.length % 2 == 0
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> numberGame(std::vector<int>& nums)
     {

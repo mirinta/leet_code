@@ -15,8 +15,7 @@
  * ! 0 <= lefti <= righti < arr.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> xorQueries(std::vector<int>& arr, std::vector<std::vector<int>>& queries)
     {

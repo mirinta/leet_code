@@ -9,10 +9,12 @@
  * ! nums[i] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int findMaxConsecutiveOnes(std::vector<int>& nums) { return approach3(nums); }
+    int findMaxConsecutiveOnes(std::vector<int>& nums)
+    {
+        return approach3(nums);
+    }
 
 private:
     // sliding window, time O(N), space O(1)

@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -32,8 +31,7 @@ struct TreeNode
  * ! This question is the same as LC.1038.
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* convertBST(TreeNode* root)
     {

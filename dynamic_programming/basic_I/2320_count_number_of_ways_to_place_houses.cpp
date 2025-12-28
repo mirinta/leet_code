@@ -14,10 +14,12 @@
  * ! 1 <= n <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int countHousePlacements(int n) { return approach2(n); }
+    int countHousePlacements(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

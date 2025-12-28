@@ -25,8 +25,7 @@
  * ! ai != bi
  */
 
-class Solution
-{
+class Solution {
 public:
     int minReorder(int n, std::vector<std::vector<int>>& connections)
     {

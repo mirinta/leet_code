@@ -12,8 +12,7 @@
  * ! This question is the same as LC.1081.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string removeDuplicateLetters(std::string s)
     {

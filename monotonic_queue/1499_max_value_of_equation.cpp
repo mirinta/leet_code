@@ -20,8 +20,7 @@
  * ! xi form a strictly increasing sequence.
  */
 
-class Solution
-{
+class Solution {
 public:
     int findMaxValueOfEquation(std::vector<std::vector<int>>& points, int k)
     {
@@ -40,8 +39,7 @@ public:
                 deque.pop_front();
             }
             if (!deque.empty()) {
-                result =
-                    std::max(result, xj + yj + points[deque.front()][1] - points[deque.front()][0]);
+                result = std::max(result, xj + yj + points[deque.front()][1] - points[deque.front()][0]);
             }
             while (!deque.empty() && yj - xj >= points[deque.back()][1] - points[deque.back()][0]) {
                 deque.pop_back();

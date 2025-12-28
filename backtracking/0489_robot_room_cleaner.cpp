@@ -41,8 +41,7 @@
  *
  * You should not implement it, or speculate about its implementation
  */
-class Robot
-{
+class Robot {
 public:
     // Returns true if the cell in front is open and robot moves into the cell.
     // Returns false if the cell in front is blocked and robot stays in the current cell.
@@ -57,8 +56,7 @@ public:
     void clean();
 };
 
-class Solution
-{
+class Solution {
 public:
     void cleanRoom(Robot& robot)
     {
@@ -114,5 +112,8 @@ private:
         }
     }
 
-    std::string encode(int x, int y) { return std::to_string(x) + '-' + std::to_string(y); }
+    std::string encode(int x, int y)
+    {
+        return std::to_string(x) + '-' + std::to_string(y);
+    }
 };

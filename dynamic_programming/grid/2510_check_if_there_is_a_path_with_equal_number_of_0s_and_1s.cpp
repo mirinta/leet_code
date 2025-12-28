@@ -13,8 +13,7 @@
  * ! grid[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isThereAPath(std::vector<std::vector<int>>& grid)
     {
@@ -23,14 +22,18 @@ public:
         if ((m + n - 1) % 2 != 0)
             return false;
 
-        std::vector<std::vector<std::vector<int>>> memo(
-            m, std::vector<std::vector<int>>(n, std::vector<int>(m + n, -1)));
+        std::vector<std::vector<std::vector<int>>> memo(m,
+                                                        std::vector<std::vector<int>>(n, std::vector<int>(m + n, -1)));
         const int target = (m + n - 1) / 2;
         return dfs(memo, 0, 0, 0, target, grid);
     }
 
 private:
-    bool dfs(std::vector<std::vector<std::vector<int>>>& memo, int i, int j, int count, int target,
+    bool dfs(std::vector<std::vector<std::vector<int>>>& memo,
+             int i,
+             int j,
+             int count,
+             int target,
              const std::vector<std::vector<int>>& grid)
     {
         const int m = grid.size();

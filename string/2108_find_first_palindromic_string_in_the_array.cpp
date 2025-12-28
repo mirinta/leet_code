@@ -12,8 +12,7 @@
  * ! words[i] consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string firstPalindrome(std::vector<std::string>& words)
     {

@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -29,8 +28,7 @@ struct TreeNode
  * ! 1 <= Node.val <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     TreeNode* recoverFromPreorder(std::string traversal)
     {
@@ -63,8 +61,7 @@ private:
             root->left = dfs(leftCount, i + 1, nodes);
         }
         int rightCount = 0;
-        if (i + 1 + leftCount < nodes.size() &&
-            nodes[i].second + 1 == nodes[i + 1 + leftCount].second) {
+        if (i + 1 + leftCount < nodes.size() && nodes[i].second + 1 == nodes[i + 1 + leftCount].second) {
             root->right = dfs(rightCount, i + 1 + leftCount, nodes);
         }
         count += 1 + leftCount + rightCount;

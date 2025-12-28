@@ -6,10 +6,12 @@
  * ! 0 <= n (总金额) <= 1000000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int waysToChange(int amount) { return approach2(amount); }
+    int waysToChange(int amount)
+    {
+        return approach2(amount);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

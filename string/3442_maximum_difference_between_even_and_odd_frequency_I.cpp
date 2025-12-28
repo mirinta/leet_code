@@ -19,8 +19,7 @@
  * ! s contains at least one character with an odd frequency and one with an even frequency.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxDifference(std::string s)
     {

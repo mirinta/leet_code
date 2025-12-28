@@ -22,15 +22,13 @@
  * ! s contains only lower and upper case English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string makeGood(std::string s)
     {
         std::string result;
         for (const auto& c : s) {
-            if (!result.empty() && std::toupper(c) == std::toupper(result.back()) &&
-                c != result.back()) {
+            if (!result.empty() && std::toupper(c) == std::toupper(result.back()) && c != result.back()) {
                 result.pop_back();
             } else {
                 result.push_back(c);

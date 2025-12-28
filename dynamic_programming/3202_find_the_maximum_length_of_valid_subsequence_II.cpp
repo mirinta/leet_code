@@ -14,10 +14,12 @@
  * ! 1 <= k <= 10^3
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maximumLength(std::vector<int>& nums, int k) { return approach2(nums, k); }
+    int maximumLength(std::vector<int>& nums, int k)
+    {
+        return approach2(nums, k);
+    }
 
 private:
     int approach2(const std::vector<int>& nums, int k)

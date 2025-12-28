@@ -12,8 +12,7 @@
  * ! str1 and str2 consist of English uppercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string gcdOfStrings(std::string str1, std::string str2)
     {

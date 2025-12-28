@@ -15,8 +15,7 @@
  * ! 1 <= time[i], totalTrips <= 10^7
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minimumTime(std::vector<int>& time, int totalTrips)
     {

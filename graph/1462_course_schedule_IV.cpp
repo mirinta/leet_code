@@ -26,8 +26,7 @@
  * ! ui != vi
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<bool> checkIfPrerequisite(int numCourses,
                                           std::vector<std::vector<int>>& prerequisites,

@@ -7,8 +7,7 @@
  * ! 1 <= n <= 10000
  */
 
-class Solver
-{
+class Solver {
 public:
     explicit Solver()
     {
@@ -16,7 +15,10 @@ public:
         sum += count;
     }
 
-    static int getSum() { return sum; }
+    static int getSum()
+    {
+        return sum;
+    }
 
     static void reset()
     {
@@ -32,8 +34,7 @@ private:
 int Solver::count = 0;
 int Solver::sum = 0;
 
-class Solution
-{
+class Solution {
 public:
     int sumNums(int n)
     {

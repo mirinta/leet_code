@@ -21,15 +21,13 @@
  * prefix.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     static constexpr int R = 26;
     std::array<std::unique_ptr<TrieNode>, 26> next;
     int value = 0;
 };
 
-class MapSum
-{
+class MapSum {
 public:
     MapSum() : root(std::make_unique<TrieNode>()) {}
 

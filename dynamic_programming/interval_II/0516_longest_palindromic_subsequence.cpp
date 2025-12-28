@@ -11,10 +11,12 @@
  * ! s consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int longestPalindromeSubseq(const std::string& s) { return approach2(s); }
+    int longestPalindromeSubseq(const std::string& s)
+    {
+        return approach2(s);
+    }
 
 private:
     // DP with space optimization, time O(N^2), space O(N)

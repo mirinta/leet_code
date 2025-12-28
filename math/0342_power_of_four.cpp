@@ -8,8 +8,7 @@
  * ! Follow up: Could you solve it without loops/recursion?
  */
 
-class Solution
-{
+class Solution {
 public:
     bool isPowerOfFour(int n)
     {

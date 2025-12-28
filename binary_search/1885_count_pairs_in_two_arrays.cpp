@@ -14,8 +14,7 @@
  * ! 1 <= nums1[i], nums2[i] <= 10^5
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
 public:
     explicit BinaryIndexedTree(int n) : tree(n + 1, 0) {}
 
@@ -26,10 +25,16 @@ public:
         }
     }
 
-    long long query(int left, int right) { return prefix(right) - prefix(left - 1); }
+    long long query(int left, int right)
+    {
+        return prefix(right) - prefix(left - 1);
+    }
 
 private:
-    int lowbit(int i) { return i & (-i); }
+    int lowbit(int i)
+    {
+        return i & (-i);
+    }
 
     long long prefix(int i)
     {
@@ -44,8 +49,7 @@ private:
     std::vector<long long> tree;
 };
 
-class Solution
-{
+class Solution {
 public:
     long long countPairs(std::vector<int>& nums1, std::vector<int>& nums2)
     {

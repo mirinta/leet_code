@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -23,10 +22,12 @@ struct TreeNode
  * ! -100 <= Node.val <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxDepth(TreeNode* root) { return dfs(root); }
+    int maxDepth(TreeNode* root)
+    {
+        return dfs(root);
+    }
 
 private:
     int dfs(TreeNode* root)

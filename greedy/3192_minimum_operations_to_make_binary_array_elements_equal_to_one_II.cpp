@@ -15,10 +15,12 @@
  * ! 0 <= nums[i] <= 1
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minOperations(std::vector<int>& nums) { return approach2(nums); }
+    int minOperations(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     int approach2(const std::vector<int>& nums)

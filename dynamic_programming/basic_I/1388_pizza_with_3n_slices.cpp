@@ -21,8 +21,7 @@
  * ! 1 <= slices[i] <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxSizeSlices(std::vector<int>& slices)
     {
@@ -39,8 +38,7 @@ private:
         // dp[i][j][1] = max sum of picking at most j slices from slices[0:i-1] while slices[i-1] is
         // picked
         const int n = hi - lo + 1;
-        std::vector<std::vector<std::array<int, 2>>> dp(
-            n + 1, std::vector<std::array<int, 2>>(1 + k, {0, 0}));
+        std::vector<std::vector<std::array<int, 2>>> dp(n + 1, std::vector<std::array<int, 2>>(1 + k, {0, 0}));
         dp[0][0][1] = INT_MIN;
         for (int i = 1; i <= n; ++i) {
             for (int j = 1; j <= k; ++j) {

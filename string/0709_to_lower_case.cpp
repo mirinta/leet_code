@@ -7,8 +7,7 @@
  * ! s consists of printable ASCII characters.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string toLowerCase(const std::string& s)
     {

@@ -14,8 +14,7 @@
  * ! 0 <= pref[i] <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findArray(std::vector<int>& pref)
     {

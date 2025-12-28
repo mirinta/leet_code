@@ -18,8 +18,7 @@
  * ! 1 <= target <= 40
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target)
     {
@@ -31,8 +30,11 @@ public:
     }
 
 private:
-    void backtrack(std::vector<std::vector<int>>& result, std::vector<int>& combination, int i,
-                   std::vector<int>& candidates, int target)
+    void backtrack(std::vector<std::vector<int>>& result,
+                   std::vector<int>& combination,
+                   int i,
+                   std::vector<int>& candidates,
+                   int target)
     {
         if (target == 0) {
             result.push_back(combination);

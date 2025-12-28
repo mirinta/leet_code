@@ -24,8 +24,7 @@
  * ! There exists some nums that has adjacentPairs as its pairs.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> restoreArray(std::vector<std::vector<int>>& adjacentPairs)
     {
@@ -33,7 +32,9 @@ public:
     }
 
 private:
-    void dfs(std::vector<int>& result, std::unordered_set<int>& visited, int v,
+    void dfs(std::vector<int>& result,
+             std::unordered_set<int>& visited,
+             int v,
              const std::unordered_map<int, std::vector<int>>& graph)
     {
         visited.insert(v);

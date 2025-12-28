@@ -8,8 +8,7 @@
  * ! 1 <= n, x <= 10^8
  */
 
-class Solution
-{
+class Solution {
 public:
     long long minEnd(int n, int x)
     {

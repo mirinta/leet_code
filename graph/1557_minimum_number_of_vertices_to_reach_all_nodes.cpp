@@ -16,8 +16,7 @@
  * ! All pairs (from_i, to_i) are distinct.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findSmallestSetOfVertices(int n, std::vector<std::vector<int>>& edges)
     {

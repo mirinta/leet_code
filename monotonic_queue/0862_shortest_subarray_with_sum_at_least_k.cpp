@@ -12,8 +12,7 @@
  * ! 1 <= k <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int shortestSubarray(std::vector<int>& nums, int k)
     {

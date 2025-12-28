@@ -20,8 +20,7 @@
  * ! All the integers of mat are unique.
  */
 
-class Solution
-{
+class Solution {
 public:
     int firstCompleteIndex(std::vector<int>& arr, std::vector<std::vector<int>>& mat)
     {

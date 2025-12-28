@@ -10,8 +10,7 @@
  * ! There will be at least one word in "s".
  */
 
-class Solution
-{
+class Solution {
 public:
     int lengthOfLastWord(const std::string& s)
     {

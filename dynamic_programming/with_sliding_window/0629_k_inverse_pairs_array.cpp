@@ -12,10 +12,12 @@
  * ! 0 <= k <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
-    int kInversePairs(int n, int k) { return approach2(n, k); }
+    int kInversePairs(int n, int k)
+    {
+        return approach2(n, k);
+    }
 
 private:
     static constexpr int kMod = 1e9 + 7;

@@ -23,8 +23,7 @@
  * ! 0 <= heights[r][c] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> pacificAtlantic(std::vector<std::vector<int>>& heights)
     {

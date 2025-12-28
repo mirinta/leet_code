@@ -24,8 +24,7 @@
  * ! The given input is guaranteed to be a tree and there will be no repeated edges.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> findMinHeightTrees(int n, std::vector<std::vector<int>>& edges)
     {

@@ -10,8 +10,7 @@
  * ! 0 <= len(s2) <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     bool CheckPermutation(std::string s1, std::string s2)
     {

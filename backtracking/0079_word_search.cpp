@@ -15,8 +15,7 @@
  * ! board and word consists of only lowercase and uppercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool exist(std::vector<std::vector<char>>& board, std::string word)
     {
@@ -33,11 +32,10 @@ public:
     }
 
 private:
-    template <typename T>
+    template<typename T>
     using Vec2D = std::vector<std::vector<T>>;
 
-    bool backtrack(Vec2D<bool>& visited, int x, int y, int index, const std::string& word,
-                   const Vec2D<char>& board)
+    bool backtrack(Vec2D<bool>& visited, int x, int y, int index, const std::string& word, const Vec2D<char>& board)
     {
         if (index == word.size())
             return true;

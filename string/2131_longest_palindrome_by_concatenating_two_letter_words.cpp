@@ -19,8 +19,7 @@
  * ! words[i] consists of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestPalindrome(std::vector<std::string>& words)
     {
@@ -49,9 +48,18 @@ public:
     }
 
 private:
-    int encode(const std::string& s) { return (s[0] - 'a') * 100 + (s[1] - 'a'); }
+    int encode(const std::string& s)
+    {
+        return (s[0] - 'a') * 100 + (s[1] - 'a');
+    }
 
-    std::pair<int, int> decode(int val) { return {val / 100, val % 100}; }
+    std::pair<int, int> decode(int val)
+    {
+        return {val / 100, val % 100};
+    }
 
-    int getTarget(int val) { return val % 100 * 100 + val / 100; }
+    int getTarget(int val)
+    {
+        return val % 100 * 100 + val / 100;
+    }
 };

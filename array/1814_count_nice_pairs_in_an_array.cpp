@@ -17,8 +17,7 @@
  * ! 0 <= nums[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int countNicePairs(std::vector<int>& nums)
     {

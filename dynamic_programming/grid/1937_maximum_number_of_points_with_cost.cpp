@@ -27,8 +27,7 @@
  * !0 <= points[r][c] <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maxPoints(std::vector<std::vector<int>>& points)
     {

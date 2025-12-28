@@ -21,8 +21,7 @@
  * ! matrix[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> kWeakestRows(std::vector<std::vector<int>>& mat, int k)
     {
@@ -31,8 +30,7 @@ public:
         auto comparator = [](const auto& p1, const auto& p2) {
             return p1.first == p2.first ? p1.second < p2.second : p1.first < p2.first;
         };
-        std::priority_queue<Pair, std::vector<Pair>, decltype(comparator)> pq(
-            comparator); // max heap
+        std::priority_queue<Pair, std::vector<Pair>, decltype(comparator)> pq(comparator); // max heap
         for (int i = 0; i < m; ++i) {
             auto iter = std::upper_bound(mat[i].rbegin(), mat[i].rend(), 0);
             // soldiers appears to the left of all civilians

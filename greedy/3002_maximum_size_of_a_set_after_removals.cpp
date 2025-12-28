@@ -16,8 +16,7 @@
  * ! 1 <= nums1[i], nums2[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumSetSize(std::vector<int>& nums1, std::vector<int>& nums2)
     {
@@ -26,8 +25,8 @@ public:
         std::unordered_set<int> set2(nums2.begin(), nums2.end());
         int unique1 = set1.size(); // remove duplicates from nums1
         int unique2 = set2.size(); // remove duplicates from nums2
-        int intersection = std::count_if(set1.begin(), set1.end(),
-                                         [&set2](const auto& val) { return set2.count(val); });
+        int intersection =
+            std::count_if(set1.begin(), set1.end(), [&set2](const auto& val) { return set2.count(val); });
         // we need to remove more elements from unique1
         if (const int extra1 = unique1 - n / 2; extra1 > 0) {
             // remove elements from intersection as much as possible

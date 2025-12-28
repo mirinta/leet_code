@@ -29,13 +29,11 @@
  * ! 1 <= k <= n
  */
 
-class Solution
-{
+class Solution {
 public:
     long long findMaximumElegance(std::vector<std::vector<int>>& items, int k)
     {
-        std::sort(items.begin(), items.end(),
-                  [](const auto& v1, const auto& v2) { return v1[0] > v2[0]; });
+        std::sort(items.begin(), items.end(), [](const auto& v1, const auto& v2) { return v1[0] > v2[0]; });
         using Pair = std::pair<long long, int>; // <profit, category>
         auto compare = [](const auto& p1, const auto& p2) { return p1.first > p2.first; };
         std::priority_queue<Pair, std::vector<Pair>, decltype(compare)> pq(compare);

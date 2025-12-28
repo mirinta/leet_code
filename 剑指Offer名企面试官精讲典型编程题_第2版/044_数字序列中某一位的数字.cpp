@@ -10,8 +10,7 @@
  * ! 本题与LC 400相同。
  */
 
-class Solution
-{
+class Solution {
 public:
     int findNthDigit(int n)
     {

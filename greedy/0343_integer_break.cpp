@@ -10,10 +10,12 @@
  * ! 2 <= n <= 58
  */
 
-class Solution
-{
+class Solution {
 public:
-    int integerBreak(int n) { return approach2(n); }
+    int integerBreak(int n)
+    {
+        return approach2(n);
+    }
 
 private:
     // DP, time O(N^2), space O(N)

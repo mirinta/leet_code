@@ -12,10 +12,12 @@
  * ! 0 <= grid[i][j] <= 200
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minPathSum(std::vector<std::vector<int>>& grid) { return approach2(grid); }
+    int minPathSum(std::vector<std::vector<int>>& grid)
+    {
+        return approach2(grid);
+    }
 
 private:
     // DP with space optimization, time O(MN), space O(N)

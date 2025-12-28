@@ -13,8 +13,7 @@
  * ! r 和 c 的值均不超过 100。
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> pathWithObstacles(std::vector<std::vector<int>>& obstacleGrid)
     {

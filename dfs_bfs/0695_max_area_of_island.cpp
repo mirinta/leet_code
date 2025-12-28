@@ -15,8 +15,7 @@
  * ! grid[i][j] is either 0 or 1.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxAreaOfIsland(std::vector<std::vector<int>>& grid)
     {

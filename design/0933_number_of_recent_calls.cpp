@@ -22,12 +22,14 @@
  * ! At most 10^4 calls will be made to ping.
  */
 
-class RecentCounter
-{
+class RecentCounter {
 public:
     RecentCounter() {}
 
-    int ping(int t) { return approach2(t); }
+    int ping(int t)
+    {
+        return approach2(t);
+    }
 
 private:
     // approach2: queue

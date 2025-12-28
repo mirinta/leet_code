@@ -22,8 +22,7 @@
  * ! There are no self edges.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), rank(n, 1)
     {
@@ -40,7 +39,10 @@ public:
         return root[x];
     }
 
-    bool isConnected(int p, int q) { return find(p) == find(q); }
+    bool isConnected(int p, int q)
+    {
+        return find(p) == find(q);
+    }
 
     void connect(int p, int q)
     {
@@ -61,8 +63,7 @@ private:
     std::vector<int> rank;
 };
 
-class Solution
-{
+class Solution {
 public:
     bool validPath(int n, std::vector<std::vector<int>>& edges, int source, int destination)
     {
@@ -90,8 +91,7 @@ private:
         return dfs(visited, source, destination, graph);
     }
 
-    bool dfs(std::vector<bool>& visited, int i, int destination,
-             const std::vector<std::vector<int>>& graph)
+    bool dfs(std::vector<bool>& visited, int i, int destination, const std::vector<std::vector<int>>& graph)
     {
         if (i == destination)
             return true;

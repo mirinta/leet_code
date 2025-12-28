@@ -32,8 +32,7 @@
  * ! 1 <= num <= 3999
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string intToRoman(int num)
     {

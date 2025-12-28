@@ -26,8 +26,7 @@
  * ! queries[i][0] == 2: 0 <= queries[i][1] <= nums.length - 1, 1 <= queries[i][2] <= 10^5
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
 public:
     explicit BinaryIndexedTree(int n) : tree(n + 1, 0) {}
 
@@ -51,9 +50,15 @@ public:
     }
 
 private:
-    int lowbit(int i) { return i & (-i); }
+    int lowbit(int i)
+    {
+        return i & (-i);
+    }
 
-    bool validate(int i) const { return i >= 1 && i < tree.size(); }
+    bool validate(int i) const
+    {
+        return i >= 1 && i < tree.size();
+    }
 
     long long presum(int i)
     {
@@ -69,8 +74,7 @@ private:
     std::vector<long long> tree;
 };
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> countOfPeaks(std::vector<int>& nums, std::vector<std::vector<int>>& queries)
     {

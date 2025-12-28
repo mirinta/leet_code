@@ -14,8 +14,7 @@
  * ! It is guaranteed that all parentheses are balanced.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string reverseParentheses(std::string s)
     {

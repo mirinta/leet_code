@@ -28,8 +28,7 @@
  * ! There is at least one thief in the grid.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maximumSafenessFactor(std::vector<std::vector<int>>& grid)
     {

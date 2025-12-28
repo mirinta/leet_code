@@ -24,8 +24,7 @@
  * ! 1 <= k <= 2^31 - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkSubarraySum(std::vector<int>& nums, int k)
     {

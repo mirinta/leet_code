@@ -23,8 +23,7 @@
  * ! 1 <= n <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int clumsy(int n)
     {

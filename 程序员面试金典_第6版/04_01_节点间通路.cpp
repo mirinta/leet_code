@@ -9,8 +9,7 @@
  * ! 图中可能存在自环和平行边。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool findWhetherExistsPath(int n, std::vector<std::vector<int>>& graph, int start, int target)
     {
@@ -25,8 +24,7 @@ public:
     }
 
 private:
-    bool dfs(std::vector<bool>& visited, int curr, int target,
-             const std::vector<std::unordered_set<int>>& adjacency)
+    bool dfs(std::vector<bool>& visited, int curr, int target, const std::vector<std::unordered_set<int>>& adjacency)
     {
         if (curr == target)
             return true;

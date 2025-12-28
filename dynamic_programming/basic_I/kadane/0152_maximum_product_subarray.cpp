@@ -12,10 +12,12 @@
  * ! The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int maxProduct(std::vector<int>& nums) { return approach2(nums); }
+    int maxProduct(std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // DP with space optimization, TC = O(N), SC = O(1)

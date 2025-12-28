@@ -19,8 +19,7 @@
  * ! -2^31 <= v1[i], v2[i] <= 2^31 - 1
  */
 
-class ZigzagIterator
-{
+class ZigzagIterator {
 public:
     ZigzagIterator(std::vector<int>& v1, std::vector<int>& v2) : data(v1.size() + v2.size())
     {
@@ -42,9 +41,15 @@ public:
         }
     }
 
-    int next() { return data[index++]; }
+    int next()
+    {
+        return data[index++];
+    }
 
-    bool hasNext() { return index < data.size(); }
+    bool hasNext()
+    {
+        return index < data.size();
+    }
 
 private:
     int index{0};

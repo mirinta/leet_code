@@ -16,8 +16,7 @@
  * ! 1 <= k <= 10^5
  */
 
-class Solution
-{
+class Solution {
 public:
     int minOperations(int k)
     {

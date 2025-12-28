@@ -20,8 +20,7 @@
  * ! 0 <= row, column <= n - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     double knightProbability(int n, int k, int row, int column)
     {
@@ -67,8 +66,8 @@ private:
     double approach1(int n, int k, int row, int column)
     {
         // dp[t][i][j] = probability that the knight is located at (i,j) after exactly t moves
-        std::vector<std::vector<std::vector<double>>> dp(
-            k + 1, std::vector<std::vector<double>>(n, std::vector<double>(n)));
+        std::vector<std::vector<std::vector<double>>> dp(k + 1,
+                                                         std::vector<std::vector<double>>(n, std::vector<double>(n)));
         dp[0][row][column] = 1;
         for (int t = 1; t <= k; ++t) {
             for (int i = 0; i < n; ++i) {

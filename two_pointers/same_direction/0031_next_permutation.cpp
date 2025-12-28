@@ -29,8 +29,7 @@
  * ! 0 <= nums[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     void nextPermutation(std::vector<int>& nums)
     {

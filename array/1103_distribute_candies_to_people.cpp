@@ -20,8 +20,7 @@
  * ! 1 <= num_people <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> distributeCandies(int candies, int num_people)
     {

@@ -19,8 +19,7 @@
  * ! 1 <= k <= 500
  */
 
-class Solution
-{
+class Solution {
 public:
     char kthCharacter(int k)
     {

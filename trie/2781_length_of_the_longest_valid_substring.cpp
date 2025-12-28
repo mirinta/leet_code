@@ -18,8 +18,7 @@
  * ! forbidden[i] consists only of lowercase English letters.
  */
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode()) {}
 
@@ -52,8 +51,7 @@ public:
     }
 
 private:
-    struct TrieNode
-    {
+    struct TrieNode {
         std::array<TrieNode*, 26> next;
         bool isEnd{false};
     };
@@ -61,8 +59,7 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
     int longestValidSubstring(std::string word, std::vector<std::string>& forbidden)
     {

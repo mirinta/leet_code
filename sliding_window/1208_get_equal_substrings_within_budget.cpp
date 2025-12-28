@@ -16,8 +16,7 @@
  * ! s and t consist of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int equalSubstring(std::string s, std::string t, int maxCost)
     {

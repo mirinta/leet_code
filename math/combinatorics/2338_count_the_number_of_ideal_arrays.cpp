@@ -17,8 +17,7 @@
  * ! 1 <= maxValue <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     int idealArrays(int n, int maxValue)
     {
@@ -71,8 +70,7 @@ public:
     }
 
 private:
-    std::unordered_map<long long, long long> primeDecomposition(
-        long long n, const std::vector<long long>& primes)
+    std::unordered_map<long long, long long> primeDecomposition(long long n, const std::vector<long long>& primes)
     {
         std::unordered_map<long long, long long> map;
         for (const auto& p : primes) {

@@ -3,8 +3,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -18,10 +17,12 @@ struct TreeNode
  * unique values from "1" to "n". Return the answer in any order.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<TreeNode*> generateTrees(int n) { return build(1, n); }
+    std::vector<TreeNode*> generateTrees(int n)
+    {
+        return build(1, n);
+    }
 
 private:
     std::vector<TreeNode*> build(int low, int high)

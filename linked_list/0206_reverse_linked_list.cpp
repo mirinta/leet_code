@@ -1,8 +1,7 @@
 /**
  * Definition for singly-linked list.
  */
-struct ListNode
-{
+struct ListNode {
     int val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
@@ -17,10 +16,12 @@ struct ListNode
  * ! -5000 <= Node.val <= 5000
  */
 
-class Solution
-{
+class Solution {
 public:
-    ListNode* reverseList(ListNode* head) { return approach2(head); }
+    ListNode* reverseList(ListNode* head)
+    {
+        return approach2(head);
+    }
 
 private:
     ListNode* approach2(ListNode* head)

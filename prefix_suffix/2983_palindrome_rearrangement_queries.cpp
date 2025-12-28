@@ -36,11 +36,9 @@
  * ! s consists of only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::vector<bool> canMakePalindromeQueries(std::string s,
-                                               std::vector<std::vector<int>>& queries)
+    std::vector<bool> canMakePalindromeQueries(std::string s, std::vector<std::vector<int>>& queries)
     {
         n = s.size() / 2;
         const auto s1 = std::string(s.begin(), s.begin() + n);
@@ -72,8 +70,12 @@ private:
     int n{0};              // half length of s = s1.length = s2.length
     std::vector<int> diff; // diff[i] = num of different characters between s1[0:i) and s2[0:i)
 
-    bool check(const std::vector<std::array<int, 26>>& presum1, int l1, int r1,
-               const std::vector<std::array<int, 26>>& presum2, int l2, int r2)
+    bool check(const std::vector<std::array<int, 26>>& presum1,
+               int l1,
+               int r1,
+               const std::vector<std::array<int, 26>>& presum2,
+               int l2,
+               int r2)
     {
         if (l1 > l2)
             return check(presum2, l2, r2, presum1, l1, r1);
@@ -127,5 +129,8 @@ private:
         return true;
     }
 
-    bool isSame(int lo, int hi) { return diff[hi + 1] - diff[lo] == 0; }
+    bool isSame(int lo, int hi)
+    {
+        return diff[hi + 1] - diff[lo] == 0;
+    }
 };

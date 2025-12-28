@@ -16,10 +16,9 @@
  * ! The answer is guaranteed to fit in a 32-bit integer.
  */
 
-class BinaryIndexedTree
-{
+class BinaryIndexedTree {
 public:
-    explicit BinaryIndexedTree(int n) : tree(n + 1, 0){};
+    explicit BinaryIndexedTree(int n) : tree(n + 1, 0) {};
 
     void add(int i, int delta)
     {
@@ -28,7 +27,10 @@ public:
         }
     }
 
-    int query(int left, int right) { return presum(right) - presum(left - 1); }
+    int query(int left, int right)
+    {
+        return presum(right) - presum(left - 1);
+    }
 
 private:
     int presum(int i)
@@ -40,14 +42,16 @@ private:
         return sum;
     }
 
-    int lowbit(int i) { return i & -i; }
+    int lowbit(int i)
+    {
+        return i & -i;
+    }
 
 private:
     std::vector<int> tree;
 };
 
-class Solution
-{
+class Solution {
 public:
     int countRangeSum(std::vector<int>& nums, int lower, int upper)
     {
@@ -102,8 +106,13 @@ private:
         return result;
     }
 
-    void mergeSort(int& result, std::vector<long long>& nums, std::vector<long long>& aux, int lo,
-                   int hi, int lower, int upper)
+    void mergeSort(int& result,
+                   std::vector<long long>& nums,
+                   std::vector<long long>& aux,
+                   int lo,
+                   int hi,
+                   int lower,
+                   int upper)
     {
         if (lo >= hi)
             return;
@@ -114,8 +123,14 @@ private:
         merge(result, nums, aux, lo, mid, hi, lower, upper);
     }
 
-    void merge(int& result, std::vector<long long>& nums, std::vector<long long>& aux, int lo,
-               int mid, int hi, int lower, int upper)
+    void merge(int& result,
+               std::vector<long long>& nums,
+               std::vector<long long>& aux,
+               int lo,
+               int mid,
+               int hi,
+               int lower,
+               int upper)
     {
         for (int k = lo; k <= hi; ++k) {
             aux[k] = nums[k];

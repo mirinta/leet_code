@@ -14,8 +14,7 @@
  * ! s consists of uppercase and lowercase letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool halvesAreAlike(std::string s)
     {

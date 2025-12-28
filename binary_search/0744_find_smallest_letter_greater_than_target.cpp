@@ -14,8 +14,7 @@
  * ! target is a lowercase English letter.
  */
 
-class Solution
-{
+class Solution {
 public:
     char nextGreatestLetter(const std::vector<char>& letters, char target)
     {

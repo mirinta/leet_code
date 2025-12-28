@@ -15,13 +15,11 @@
  * !grid[i][j] is either 'W' or 'B'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canMakeSquare(std::vector<std::vector<char>>& grid)
     {
-        return isValid(0, 0, grid) || isValid(0, 1, grid) || isValid(1, 0, grid) ||
-               isValid(1, 1, grid);
+        return isValid(0, 0, grid) || isValid(0, 1, grid) || isValid(1, 0, grid) || isValid(1, 1, grid);
     }
 
 private:

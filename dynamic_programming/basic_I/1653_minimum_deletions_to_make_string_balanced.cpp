@@ -14,10 +14,12 @@
  * ! s[i] is 'a' or 'b'​​.
  */
 
-class Solution
-{
+class Solution {
 public:
-    int minimumDeletions(std::string s) { return approach2(s); }
+    int minimumDeletions(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     int approach2(const std::string& s)

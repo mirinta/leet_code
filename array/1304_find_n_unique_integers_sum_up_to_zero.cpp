@@ -6,8 +6,7 @@
  * ! 1 <= n <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> sumZero(int n)
     {

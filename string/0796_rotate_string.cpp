@@ -12,8 +12,7 @@
  * ! s and goal consist of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool rotateString(std::string s, std::string goal)
     {

@@ -29,8 +29,7 @@
  * ! For operations "C" and "D", there will always be at least one previous score on the record.
  */
 
-class Solution
-{
+class Solution {
 public:
     int calPoints(const std::vector<std::string>& operations)
     {

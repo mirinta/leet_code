@@ -8,8 +8,7 @@
  * ! 1 <= n <= 250
  */
 
-class Solution
-{
+class Solution {
 public:
     int countTriples(int n)
     {

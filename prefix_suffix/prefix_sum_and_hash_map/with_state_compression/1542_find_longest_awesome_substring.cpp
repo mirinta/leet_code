@@ -11,8 +11,7 @@
  * ! s consists only of digits.
  */
 
-class Solution
-{
+class Solution {
 public:
     int longestAwesome(std::string s)
     {

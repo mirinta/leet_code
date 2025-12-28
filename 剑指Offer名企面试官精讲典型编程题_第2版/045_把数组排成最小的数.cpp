@@ -10,8 +10,7 @@
  * ! 拼接起来的数字可能会有前导 0，最后结果不需要去掉前导 0
  */
 
-class Solution
-{
+class Solution {
 public:
     std::string minNumber(std::vector<int>& nums)
     {

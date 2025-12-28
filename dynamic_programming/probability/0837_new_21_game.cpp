@@ -17,8 +17,7 @@
  * ! 1 <= maxPts <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     double new21Game(int n, int k, int maxPts)
     {

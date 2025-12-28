@@ -10,10 +10,12 @@
  * ! -10^4 <= nums[i] <= 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
-    int lengthOfLIS(const std::vector<int>& nums) { return approach2(nums); }
+    int lengthOfLIS(const std::vector<int>& nums)
+    {
+        return approach2(nums);
+    }
 
 private:
     // Binary search, time O(NlogN), space O(N)

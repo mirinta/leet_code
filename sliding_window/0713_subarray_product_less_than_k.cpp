@@ -9,8 +9,7 @@
  * ! 0 <= k <= 10^6
  */
 
-class Solution
-{
+class Solution {
 public:
     int numSubarrayProductLessThanK(std::vector<int>& nums, int k)
     {

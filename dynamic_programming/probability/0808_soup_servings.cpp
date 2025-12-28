@@ -26,8 +26,7 @@
  * ! 0 <= n <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     double soupServings(int n)
     {

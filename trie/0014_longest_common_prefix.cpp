@@ -12,14 +12,12 @@
  * ! strs[i] consists of only lowercase English letters.
  */
 
-struct TrieNode
-{
+struct TrieNode {
     bool isEnd = false;
     std::unordered_map<char, TrieNode*> next;
 };
 
-class Trie
-{
+class Trie {
 public:
     explicit Trie() : root(new TrieNode()) {}
 
@@ -53,10 +51,12 @@ private:
     TrieNode* root;
 };
 
-class Solution
-{
+class Solution {
 public:
-    std::string longestCommonPrefix(std::vector<std::string>& strs) { return approach2(strs); }
+    std::string longestCommonPrefix(std::vector<std::string>& strs)
+    {
+        return approach2(strs);
+    }
 
 private:
     std::string approach2(const std::vector<std::string>& strs)

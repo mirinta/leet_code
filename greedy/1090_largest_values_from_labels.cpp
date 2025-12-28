@@ -23,11 +23,9 @@
  * ! 1 <= numWanted, useLimit <= n
  */
 
-class Solution
-{
+class Solution {
 public:
-    int largestValsFromLabels(std::vector<int>& values, std::vector<int>& labels, int numWanted,
-                              int useLimit)
+    int largestValsFromLabels(std::vector<int>& values, std::vector<int>& labels, int numWanted, int useLimit)
     {
         const int n = values.size();
         std::vector<std::pair<int, int>> v(n);
@@ -35,8 +33,7 @@ public:
             v[i].first = values[i];
             v[i].second = i;
         }
-        std::sort(v.begin(), v.end(),
-                  [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
+        std::sort(v.begin(), v.end(), [](const auto& p1, const auto& p2) { return p1.first > p2.first; });
         std::unordered_map<int, int> map;
         int result = 0;
         for (int i = 0; i < n && numWanted > 0; ++i) {

@@ -5,8 +5,7 @@
  * ! 1 <= x <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     int sumOfTheDigitsOfHarshadNumber(int x)
     {

@@ -20,8 +20,7 @@
  * ! word consists only of lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumOperationsToMakeKPeriodic(std::string word, int k)
     {

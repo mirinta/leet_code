@@ -31,8 +31,7 @@
  * ! The given graph is a directed acyclic graph.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumTime(int n, std::vector<std::vector<int>>& relations, std::vector<int>& time)
     {

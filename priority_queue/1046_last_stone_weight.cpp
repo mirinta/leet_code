@@ -18,8 +18,7 @@
  * Return the weight of the last remaining stones. If there are no stones left, return "0".
  */
 
-class Solution
-{
+class Solution {
 public:
     int lastStoneWeight(std::vector<int>& stones)
     {

@@ -4,8 +4,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -27,8 +26,7 @@ struct TreeNode
  * ! -10^9 <= target <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> closestKValues(TreeNode* root, double target, int k)
     {
@@ -72,8 +70,7 @@ private:
         inorder(deque, root->right, target, k);
     }
 
-    struct Comparator
-    {
+    struct Comparator {
         explicit Comparator(double target) : target(target) {}
 
         bool operator()(const int v1, const int v2) const

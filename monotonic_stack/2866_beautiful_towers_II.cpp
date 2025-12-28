@@ -25,8 +25,7 @@
  * ! 1 <= maxHeights[i] <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     long long maximumSumOfHeights(std::vector<int>& maxHeights)
     {

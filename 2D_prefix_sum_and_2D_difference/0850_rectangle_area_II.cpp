@@ -19,8 +19,7 @@
  * ! yi1 <= yi2
  */
 
-class Solution
-{
+class Solution {
 public:
     int rectangleArea(std::vector<std::vector<int>>& rectangles)
     {
@@ -69,10 +68,8 @@ public:
                     diff[i][j] -= diff[i - 1][j - 1];
                 }
                 if (diff[i][j] > 0) {
-                    const long long height =
-                        *std::next(xCoords.begin(), i + 1) - *std::next(xCoords.begin(), i);
-                    const long long width =
-                        *std::next(yCoords.begin(), j + 1) - *std::next(yCoords.begin(), j);
+                    const long long height = *std::next(xCoords.begin(), i + 1) - *std::next(xCoords.begin(), i);
+                    const long long width = *std::next(yCoords.begin(), j + 1) - *std::next(yCoords.begin(), j);
                     result = (result + height * width % kMod) % kMod;
                 }
             }

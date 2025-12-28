@@ -31,8 +31,7 @@
  * ! edges represents a valid tree.
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumScore(std::vector<int>& nums, std::vector<std::vector<int>>& edges)
     {
@@ -58,8 +57,12 @@ public:
     }
 
 private:
-    int dfs(std::vector<std::pair<int, int>>& XOR, int node, int parent, int notReachable,
-            const std::vector<int>& nums, const std::vector<std::vector<int>>& graph)
+    int dfs(std::vector<std::pair<int, int>>& XOR,
+            int node,
+            int parent,
+            int notReachable,
+            const std::vector<int>& nums,
+            const std::vector<std::vector<int>>& graph)
     {
         int total = nums[node];
         for (const auto& child : graph[node]) {
@@ -72,8 +75,7 @@ private:
         return total;
     }
 
-    void helper(int& result, const std::vector<std::pair<int, int>>& XOR, int root, int total,
-                int otherTotal)
+    void helper(int& result, const std::vector<std::pair<int, int>>& XOR, int root, int total, int otherTotal)
     {
         for (const auto& [val, id] : XOR) {
             if (id == root)

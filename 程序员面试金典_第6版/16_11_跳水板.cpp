@@ -11,8 +11,7 @@
  * ! 0 <= k <= 100000
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> divingBoard(int shorter, int longer, int k)
     {

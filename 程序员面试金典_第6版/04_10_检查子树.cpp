@@ -1,8 +1,7 @@
 /**
  * Definition for a binary tree node.
  */
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
@@ -21,8 +20,7 @@ struct TreeNode
  * ! 树的节点数目范围为[0, 20000]。
  */
 
-class Solution
-{
+class Solution {
 public:
     bool checkSubTree(TreeNode* t1, TreeNode* t2)
     {

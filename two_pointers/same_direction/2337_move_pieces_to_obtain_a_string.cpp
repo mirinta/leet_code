@@ -19,8 +19,7 @@
  * ! start and target consist of the characters 'L', 'R', and '_'.
  */
 
-class Solution
-{
+class Solution {
 public:
     bool canChange(std::string& start, std::string& target)
     {

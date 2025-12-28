@@ -14,8 +14,7 @@
  * ! 1 <= p <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minSubarray(std::vector<int>& nums, int p)
     {

@@ -15,8 +15,7 @@
  * ! The input is generated such that nums contains exactly two repeated elements.
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> getSneakyNumbers(std::vector<int>& nums)
     {

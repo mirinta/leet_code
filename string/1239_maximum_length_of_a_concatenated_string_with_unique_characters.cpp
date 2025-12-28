@@ -15,8 +15,7 @@
  * ! arr[i] contains only lowercase English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
     int maxLength(std::vector<std::string>& arr)
     {

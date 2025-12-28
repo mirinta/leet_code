@@ -19,8 +19,7 @@
  * ! 1 <= nums[i], original <= 1000
  */
 
-class Solution
-{
+class Solution {
 public:
     int findFinalValue(std::vector<int>& nums, int original)
     {

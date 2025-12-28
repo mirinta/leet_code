@@ -16,15 +16,12 @@
  * ! -10^4 < xi, yi < 10^4
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<std::vector<int>> kClosest(std::vector<std::vector<int>>& points, int k)
     {
         // max heap
-        auto comp = [](const auto& t1, const auto& t2) -> bool {
-            return std::get<0>(t1) < std::get<0>(t2);
-        };
+        auto comp = [](const auto& t1, const auto& t2) -> bool { return std::get<0>(t1) < std::get<0>(t2); };
         using Tuple = std::tuple<long, int, int>;
         std::priority_queue<Tuple, std::vector<Tuple>, decltype(comp)> pq(comp);
         for (const auto& point : points) {
@@ -33,8 +30,7 @@ public:
                 pq.pop();
             }
         }
-        std::vector<std::vector<int>> result(std::min<size_t>(k, pq.size()),
-                                             std::vector<int>(2, 0));
+        std::vector<std::vector<int>> result(std::min<size_t>(k, pq.size()), std::vector<int>(2, 0));
         for (int i = result.size() - 1; i >= 0; --i) {
             const auto [_, x, y] = pq.top();
             pq.pop();

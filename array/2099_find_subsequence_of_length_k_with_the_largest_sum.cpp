@@ -15,8 +15,7 @@
  * ! 1 <= k <= nums.length
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> maxSubsequence(std::vector<int>& nums, int k)
     {
@@ -26,10 +25,8 @@ public:
         for (int i = 0; i < n; ++i) {
             pairs.emplace_back(i, nums[i]);
         }
-        std::sort(pairs.begin(), pairs.end(),
-                  [](const auto& p1, const auto& p2) { return p1.second > p2.second; });
-        std::sort(pairs.begin(), pairs.begin() + k,
-                  [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
+        std::sort(pairs.begin(), pairs.end(), [](const auto& p1, const auto& p2) { return p1.second > p2.second; });
+        std::sort(pairs.begin(), pairs.begin() + k, [](const auto& p1, const auto& p2) { return p1.first < p2.first; });
         std::vector<int> result(k);
         for (int i = 0; i < k; ++i) {
             result[i] = pairs[i].second;

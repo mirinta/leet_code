@@ -14,8 +14,7 @@
  * ! 0 <= n <= 10^9
  */
 
-class Solution
-{
+class Solution {
 public:
     int minimumOneBitOperations(int n)
     {
@@ -42,9 +41,8 @@ public:
     }
 
 private:
-    struct pair_hash
-    {
-        template <typename T1, typename T2>
+    struct pair_hash {
+        template<typename T1, typename T2>
         size_t operator()(const std::pair<T1, T2>& p) const
         {
             const auto hash1 = std::hash<T1>()(p.first);
@@ -88,11 +86,13 @@ private:
         if (n & mask)
             return memo2[args] = transNto0((mask - 1) & n);
 
-        return memo2[args] =
-                   transNtoPowOf2((mask - 1) & n, bits - 1) + 1 + transPowOf2To0(bits - 1);
+        return memo2[args] = transNtoPowOf2((mask - 1) & n, bits - 1) + 1 + transPowOf2To0(bits - 1);
     }
 
-    int transPowOf2To0(int bits) { return (1 << bits) - 1; }
+    int transPowOf2To0(int bits)
+    {
+        return (1 << bits) - 1;
+    }
 
     int countBits(int n)
     {

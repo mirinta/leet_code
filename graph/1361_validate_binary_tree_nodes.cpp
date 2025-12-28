@@ -15,8 +15,7 @@
  * ! -1 <= leftChild[i], rightChild[i] <= n - 1
  */
 
-class Solution
-{
+class Solution {
 public:
     bool validateBinaryTreeNodes(int n, std::vector<int>& leftChild, std::vector<int>& rightChild)
     {

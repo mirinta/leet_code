@@ -10,8 +10,7 @@
  * ! 30 <= temperatures[i] <= 100
  */
 
-class Solution
-{
+class Solution {
 public:
     std::vector<int> dailyTemperatures(std::vector<int>& temperatures)
     {

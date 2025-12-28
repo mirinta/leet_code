@@ -15,8 +15,7 @@
  * ! No two stones are at the same coordinate point.
  */
 
-class UnionFind
-{
+class UnionFind {
 public:
     explicit UnionFind(int n) : count(n), root(n), size(n, 1)
     {
@@ -48,7 +47,10 @@ public:
         count--;
     }
 
-    int numOfConnectedComponents() { return count; }
+    int numOfConnectedComponents()
+    {
+        return count;
+    }
 
 private:
     int count;
@@ -56,8 +58,7 @@ private:
     std::vector<int> size;
 };
 
-class Solution
-{
+class Solution {
 public:
     int removeStones(std::vector<std::vector<int>>& stones)
     {

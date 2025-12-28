@@ -8,10 +8,12 @@
  * ! s consist of only digits and English letters.
  */
 
-class Solution
-{
+class Solution {
 public:
-    std::string longestPalindrome(std::string s) { return approach2(s); }
+    std::string longestPalindrome(std::string s)
+    {
+        return approach2(s);
+    }
 
 private:
     // time O(N^2), space O(1)
