@@ -16,7 +16,7 @@ public:
     }
 
 private:
-    template<typename Compare>
+    template <typename Compare>
     int helper(const std::vector<int>& nums, Compare compare)
     {
         const int n = nums.size();

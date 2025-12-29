@@ -32,7 +32,7 @@ public:
     }
 
 private:
-    template<typename T>
+    template <typename T>
     using Vec2D = std::vector<std::vector<T>>;
 
     bool backtrack(Vec2D<bool>& visited, int x, int y, int index, const std::string& word, const Vec2D<char>& board)

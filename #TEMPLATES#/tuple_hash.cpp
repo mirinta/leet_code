@@ -1,7 +1,7 @@
 #include <tuple>
 
 namespace std {
-template<>
+template <>
 struct hash<tuple<int, int, int>> {
     size_t operator()(const tuple<int, int, int>& t) const
     {
