@@ -38,28 +38,28 @@ private:
     {
         std::array<int, 3> rowSum{};
         std::array<int, 3> colSum{};
+        std::bitset<10> seen{};
+        seen[0] = true;
         int diagonal = 0;
         int antiDiagonal = 0;
-        std::bitset<10> mask;
-        mask[0] = 1;
-        for (int i = 0; i <= 2; ++i) {
-            for (int j = 0; j <= 2; ++j) {
-                const auto& val = grid[i + topX][j + topY];
-                if (mask[val] == 1)
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                const auto& val = grid[topX + i][topY + j];
+                if (val < 1 || val > 9 || seen[val])
                     return false;
 
-                mask[val] = 1;
+                seen[val] = true;
                 rowSum[i] += val;
                 colSum[j] += val;
                 if (i == j) {
                     diagonal += val;
                 }
-                if ((i == 1 && j == 1) || std::abs(i - j) == 2) {
+                if ((i == j && i == 1) || std::abs(i - j) == 2) {
                     antiDiagonal += val;
                 }
             }
         }
-        if (!mask.all())
+        if (!seen.all())
             return false;
 
         std::unordered_set<int> set;
