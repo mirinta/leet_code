@@ -26,106 +26,88 @@
 
 class UnionFind {
 public:
-    explicit UnionFind(int n) : _root(n), _rank(n), _count(n)
+    explicit UnionFind(int n) : root(n), size(n, 1)
     {
         for (int i = 0; i < n; ++i) {
-            _root[i] = i;
-            _rank[i] = 1;
+            root[i] = i;
         }
     }
 
-    int count() const
+    int find(int x)
     {
-        return _count;
-    }
-
-    int find(int x) const
-    {
-        if (x != _root[x]) {
-            _root[x] = find(_root[x]);
+        if (x != root[x]) {
+            root[x] = find(root[x]);
         }
-        return _root[x];
+        return root[x];
     }
 
-    bool isConnected(int p, int q) const
+    bool isConnected(int p, int q)
     {
         return find(p) == find(q);
     }
 
     void connect(int p, int q)
     {
-        const int rootP = find(p);
-        const int rootQ = find(q);
+        int rootP = find(p);
+        int rootQ = find(q);
         if (rootP == rootQ)
             return;
 
-        if (_rank[rootP] > _rank[rootQ]) {
-            _root[rootQ] = rootP;
-        } else if (_rank[rootP] < _rank[rootQ]) {
-            _root[rootP] = rootQ;
-        } else {
-            _root[rootQ] = rootP;
-            _rank[rootP] += 1;
+        if (size[rootQ] > size[rootP]) {
+            std::swap(rootP, rootQ);
         }
-        _count -= 1;
+        root[rootQ] = rootP;
+        size[rootP] += size[rootQ];
     }
 
 private:
-    mutable std::vector<int> _root;
-    std::vector<int> _rank;
-    int _count;
+    std::vector<int> root;
+    std::vector<int> size;
 };
 
 class Solution {
 public:
     int latestDayToCross(int row, int col, std::vector<std::vector<int>>& cells)
     {
-        const int numOfNodes = row * col + 2; // two extra nodes: virtual top and virtual bottom
-        UnionFind uf(numOfNodes);
-        const int kVirtualTop = numOfNodes - 2;
-        const int kVirtualBottom = numOfNodes - 1;
-        std::vector<std::vector<int>> graph(row, std::vector<int>(col, 0)); // initialize with 0, all lands
-        // connect each node in the top row with the virtual top node, and
-        // connect each node in the bottom row with the virtual bottom node
+        static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        const int n = row * col;
+        const int kVirtualTop = n;
+        const int kVirtualBottom = n + 1;
+        UnionFind uf(n + 2);
         for (int j = 0; j < col; ++j) {
-            uf.connect(j, kVirtualTop);
-            uf.connect((row - 1) * col + j, kVirtualBottom);
+            uf.connect(kVirtualTop, j);
+            uf.connect(kVirtualBottom, (row - 1) * col + j);
         }
-        // get the final graph
-        for (const auto& cell : cells) {
-            const int i = cell[0] - 1; // cell is 1-indexed
-            const int j = cell[1] - 1; // cell is 1-indexed
-            graph[i][j] = 1;
+        std::vector<std::vector<int>> grid(row, std::vector<int>(col, 0));
+        for (const auto& c : cells) {
+            grid[c[0] - 1][c[1] - 1] = 1;
         }
-        // connect lands
-        const std::vector<std::pair<int, int>> kDirections{{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
         for (int i = 0; i < row; ++i) {
             for (int j = 0; j < col; ++j) {
-                if (graph[i][j] == 1)
+                if (grid[i][j])
                     continue;
 
                 for (const auto& [dx, dy] : kDirections) {
                     const int x = i + dx;
                     const int y = j + dy;
-                    if (x < 0 || x >= row || y < 0 || y >= col || graph[x][y] == 1)
+                    if (x < 0 || x >= row || y < 0 || y >= col || grid[x][y])
                         continue;
 
                     uf.connect(i * col + j, x * col + y);
                 }
             }
         }
-        // check cells in reverse order, reset cells[i] from 1 to 0
         for (int t = cells.size() - 1; t >= 0; --t) {
             if (uf.isConnected(kVirtualTop, kVirtualBottom))
-                return t + 1; // t is 0-indexed, we want 1-indexed
+                return t + 1;
 
             const int i = cells[t][0] - 1;
             const int j = cells[t][1] - 1;
-            graph[i][j] = 0;
+            grid[i][j] = 0;
             for (const auto& [dx, dy] : kDirections) {
                 const int x = i + dx;
                 const int y = j + dy;
-                if (x < 0 || x >= row || y < 0 || y >= col || graph[x][y] == 1)
+                if (x < 0 || x >= row || y < 0 || y >= col || grid[x][y])
                     continue;
 
                 uf.connect(i * col + j, x * col + y);
