@@ -19,19 +19,19 @@ class Solution {
 public:
     long long maxMatrixSum(std::vector<std::vector<int>>& matrix)
     {
-        long long min = LLONG_MAX;
         int count = 0;
+        int min = INT_MAX;
         long long sum = 0;
         for (const auto& row : matrix) {
             for (const auto& val : row) {
-                sum += std::abs(val);
                 count += val < 0;
-                min = std::min<long long>(min, std::abs(val));
+                sum += std::abs(val);
+                min = std::min(min, std::abs(val));
             }
         }
-        if (count % 2 == 0)
-            return sum;
+        if (count % 2)
+            return sum - 2 * min;
 
-        return sum - 2 * min;
+        return sum;
     }
 };
