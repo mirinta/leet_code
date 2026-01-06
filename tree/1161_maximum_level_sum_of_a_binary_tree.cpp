@@ -31,30 +31,29 @@ public:
             return 0;
 
         std::queue<TreeNode*> queue;
-        queue.push(root);
-        int maxSum = INT_MIN;
-        int minLevel = 0;
-        int currentLevel = 0;
+        queue.emplace(root);
+        int level = 0;
+        int result = 0;
+        int max = INT_MIN;
         while (!queue.empty()) {
-            currentLevel++;
-            const auto size = queue.size();
-            int currentSum = 0;
-            for (size_t k = 0; k < size; ++k) {
-                auto* node = queue.front();
+            level++;
+            int sum = 0;
+            for (int k = queue.size(); k > 0; --k) {
+                auto node = queue.front();
                 queue.pop();
-                currentSum += node->val;
+                sum += node->val;
                 if (node->left) {
-                    queue.push(node->left);
+                    queue.emplace(node->left);
                 }
                 if (node->right) {
-                    queue.push(node->right);
+                    queue.emplace(node->right);
                 }
             }
-            if (currentSum > maxSum) {
-                maxSum = currentSum;
-                minLevel = currentLevel;
+            if (sum > max) {
+                max = sum;
+                result = level;
             }
         }
-        return minLevel;
+        return result;
     }
 };
