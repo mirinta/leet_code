@@ -1,4 +1,5 @@
 #include <utility>
+#include <vector>
 
 /**
  * Definition for a binary tree node.
@@ -29,31 +30,25 @@ class Solution {
 public:
     int maxProduct(TreeNode* root)
     {
-        constexpr int kMod = 1e9 + 7;
-        const long long total = getTotalSum(root);
-        long long result = 0;
-        dfs(result, root, total);
+        std::vector<long long> v;
+        const auto total = dfs(v, root);
+        long long result = LLONG_MIN;
+        for (const auto& sum : v) {
+            result = std::max(result, sum * (total - sum));
+        }
         return result % kMod;
     }
 
 private:
-    long long getTotalSum(TreeNode* root)
+    static constexpr long long kMod = 1e9 + 7;
+
+    long long dfs(std::vector<long long>& v, TreeNode* node)
     {
-        if (!root)
+        if (!node)
             return 0;
 
-        return root->val + getTotalSum(root->left) + getTotalSum(root->right);
-    }
-
-    long long dfs(long long& result, TreeNode* root, long long total)
-    {
-        if (!root)
-            return 0;
-
-        const long long left = dfs(result, root->left, total);
-        const long long right = dfs(result, root->right, total);
-        const long long sum = left + right + root->val;
-        result = std::max(result, sum * (total - sum)); // cut this subtree
-        return sum;
+        const long long result = node->val + dfs(v, node->left) + dfs(v, node->right);
+        v.push_back(result);
+        return result;
     }
 };
