@@ -29,30 +29,29 @@ class Solution {
 public:
     int maximizeSquareArea(int m, int n, std::vector<int>& hFences, std::vector<int>& vFences)
     {
-        hFences.reserve(hFences.size() + 2);
         hFences.push_back(1);
         hFences.push_back(m);
         std::sort(hFences.begin(), hFences.end());
-        std::unordered_set<long long> sizes(hFences.size() * hFences.size());
+        std::unordered_set<long long> set;
+        set.reserve(hFences.size() * hFences.size());
         for (int i = 0; i < hFences.size(); ++i) {
             for (int j = i + 1; j < hFences.size(); ++j) {
-                sizes.insert(hFences[j] - hFences[i]);
+                set.insert(hFences[j] - hFences[i]);
             }
         }
-        vFences.reserve(vFences.size() + 2);
         vFences.push_back(1);
         vFences.push_back(n);
         std::sort(vFences.begin(), vFences.end());
         long long result = -1;
         for (int i = 0; i < vFences.size(); ++i) {
             for (int j = i + 1; j < vFences.size(); ++j) {
-                const long long size = vFences[j] - vFences[i];
-                if (sizes.count(size)) {
-                    result = std::max(result, size * size);
+                const long long length = vFences[j] - vFences[i];
+                if (set.count(length)) {
+                    result = std::max(result, length * length);
                 }
             }
         }
-        constexpr int kMod = 1e9 + 7;
+        static constexpr long long kMod = 1e9 + 7;
         return result % kMod;
     }
 };
