@@ -39,6 +39,6 @@ private:
         if (i < 0)
             return -1;
 
-        return n & (n - (1 << i));
+        return n - (1 << i);
     }
 };
