@@ -24,11 +24,11 @@ long long dijkstra(int src, int dst, const Graph& graph)
     while (!pq.empty()) {
         const auto [v, weights] = pq.top();
         pq.pop();
-        if (v == dst)
-            return weights;
-
         if (weights > distTo[v])
             continue;
+
+        if (v == dst)
+            return weights;
 
         for (const auto& [adj, weight] : graph[v]) {
             if (distTo[v] + weight < distTo[adj]) {

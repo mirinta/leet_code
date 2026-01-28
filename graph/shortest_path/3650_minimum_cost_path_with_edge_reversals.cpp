@@ -36,11 +36,11 @@ public:
         while (!pq.empty()) {
             const auto [cost, v] = pq.top();
             pq.pop();
-            if (v == n - 1)
-                return cost;
-
             if (cost > distTo[v])
                 continue;
+
+            if (v == n - 1)
+                return cost;
 
             for (const auto& [next, w] : graph[v]) {
                 if (distTo[v] + w < distTo[next]) {
