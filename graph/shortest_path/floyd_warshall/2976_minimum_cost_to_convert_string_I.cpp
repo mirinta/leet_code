@@ -34,7 +34,7 @@ public:
                           std::vector<int>& cost)
     {
         const int n = source.size();
-        const auto minDist = floyd(original, changed, cost);
+        const auto minDist = solve(original, changed, cost);
         long long result = 0;
         for (int i = 0; i < n; ++i) {
             const int from = source[i] - 'a';
@@ -49,13 +49,14 @@ public:
 
 private:
     std::vector<std::vector<long long>>
-        floyd(const std::vector<char>& original, const std::vector<char>& changed, const std::vector<int>& cost)
+        solve(const std::vector<char>& original, const std::vector<char>& changed, const std::vector<int>& cost)
     {
+        const int n = original.size();
         std::vector<std::vector<long long>> minDist(26, std::vector<long long>(26, LLONG_MAX));
         for (int i = 0; i < 26; ++i) {
             minDist[i][i] = 0;
         }
-        for (int i = 0; i < original.size(); ++i) {
+        for (int i = 0; i < n; ++i) {
             const int from = original[i] - 'a';
             const int to = changed[i] - 'a';
             minDist[from][to] = std::min<long long>(minDist[from][to], cost[i]);
