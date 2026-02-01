@@ -41,36 +41,30 @@ public:
                           std::vector<std::string>& changed,
                           std::vector<int>& cost)
     {
-        if (source.size() != target.size())
-            return -1;
-
         std::unordered_map<std::string, int> map;
-        for (const auto& s : original) {
-            if (!map.count(s)) {
-                map[s] = map.size();
+        for (int i = 0; i < original.size(); ++i) {
+            if (!map.count(original[i])) {
+                map[original[i]] = map.size();
+            }
+            if (!map.count(changed[i])) {
+                map[changed[i]] = map.size();
             }
         }
-        for (const auto& s : changed) {
-            if (!map.count(s)) {
-                map[s] = map.size();
-            }
-        }
-        const int numOfNodes = map.size();
-        std::vector<std::vector<long long>> minDist(numOfNodes, std::vector<long long>(numOfNodes, LLONG_MAX));
-        for (int i = 0; i < numOfNodes; ++i) {
+        std::vector<std::vector<long long>> minDist(map.size(), std::vector<long long>(map.size(), LLONG_MAX));
+        for (int i = 0; i < map.size(); ++i) {
             minDist[i][i] = 0;
         }
-        for (int i = 0; i < cost.size(); ++i) {
+        for (int i = 0; i < original.size(); ++i) {
             const int from = map[original[i]];
             const int to = map[changed[i]];
             minDist[from][to] = std::min<long long>(minDist[from][to], cost[i]);
         }
-        for (int k = 0; k < numOfNodes; ++k) {
-            for (int i = 0; i < numOfNodes; ++i) {
+        for (int k = 0; k < map.size(); ++k) {
+            for (int i = 0; i < map.size(); ++i) {
                 if (minDist[i][k] == LLONG_MAX)
                     continue;
 
-                for (int j = 0; j < numOfNodes; ++j) {
+                for (int j = 0; j < map.size(); ++j) {
                     if (minDist[k][j] == LLONG_MAX)
                         continue;
 
@@ -78,15 +72,11 @@ public:
                 }
             }
         }
-        // dp[i] = min cost of changing source[0:i) to target[0:i)
-        // X X X X j-1 j X X X X X X X X i
-        // |<-dp[j]->| |<-can change?->|
-        // |<----------dp[i]---------->|
-        TrieNode root;
+        TrieNode root; // put all strings into one Trie, because original != changed[i]
         for (const auto& [s, id] : map) {
             auto* node = &root;
             for (auto iter = s.rbegin(); iter != s.rend(); ++iter) {
-                const int index = (*iter) - 'a';
+                const int index = *iter - 'a';
                 if (!node->next[index]) {
                     node->next[index] = new TrieNode();
                 }
@@ -94,12 +84,16 @@ public:
             }
             node->id = id;
         }
+        // dp[i] = min cost to convert source[0:i) to target[0:i)
+        // x x x x x x x x j-1 j x x x i
+        // |<-----dp[j]----->| |<--?-->|
+        // |<---------dp[i]----------->|
         const int n = source.size();
         std::vector<long long> dp(n + 1, LLONG_MAX);
         dp[0] = 0;
         for (int i = 1; i <= n; ++i) {
             if (source[i - 1] == target[i - 1]) {
-                dp[i] = dp[i - 1];
+                dp[i] = std::min(dp[i], dp[i - 1]);
             }
             auto* node1 = &root;
             auto* node2 = &root;
@@ -113,9 +107,13 @@ public:
                 node2 = node2->next[index2];
                 const int from = node1->id;
                 const int to = node2->id;
-                if (from >= 0 && to >= 0 && minDist[from][to] != LLONG_MAX && dp[j] != LLONG_MAX) {
-                    dp[i] = std::min(dp[i], dp[j] + minDist[from][to]);
-                }
+                if (from < 0 || to < 0)
+                    continue;
+
+                if (dp[j] == LLONG_MAX || minDist[from][to] == LLONG_MAX)
+                    continue;
+
+                dp[i] = std::min(dp[i], dp[j] + minDist[from][to]);
             }
         }
         return dp[n] == LLONG_MAX ? -1 : dp[n];
@@ -123,7 +121,7 @@ public:
 
 private:
     struct TrieNode {
-        std::array<TrieNode*, 26> next{nullptr};
+        std::array<TrieNode*, 26> next;
         int id{-1};
     };
 };
