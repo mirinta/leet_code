@@ -16,43 +16,23 @@
 
 class Solution {
 public:
-    int minimumDeletions(std::string s)
+    int minimumDeletions(const std::string& s)
     {
-        return approach2(s);
-    }
-
-private:
-    int approach2(const std::string& s)
-    {
+        // dp[i][0] = length of the longest valid subsequence of s[0:i) ending at s[i] = 'a'
+        // dp[i][1] = length of the longest valid subsequence of s[0:i) ending at s[i] = 'b'
         const int n = s.size();
-        int endWithA = 0;
-        int endWithB = 0;
-        for (const auto& c : s) {
-            if (c == 'a') {
-                endWithA++;
-            } else {
-                endWithB = std::max(endWithA, endWithB) + 1;
-            }
-        }
-        return n - std::max(endWithA, endWithB);
-    }
-
-    int approach1(const std::string& s)
-    {
-        // dp[i][0] = length of the longest non-decreasing subsequence of nums[0:i] ending at 'a'
-        // dp[i][1] = length of the longest non-decreasing subsequence of nums[0:i] ending at 'b'
-        const int n = s.size();
-        std::vector<std::array<int, 2>> dp(n);
-        dp[0][s[0] == 'a'] = 1;
-        for (int i = 1; i < n; ++i) {
-            if (s[i] == 'a') {
-                dp[i][1] = dp[i - 1][1] + 1;
-                dp[i][0] = dp[i - 1][0];
-            } else {
-                dp[i][0] = std::max(dp[i - 1][1], dp[i - 1][0]) + 1;
+        std::vector<std::array<int, 2>> dp(n + 1, {0, 0});
+        int result = n;
+        for (int i = 1; i <= n; ++i) {
+            if (s[i - 1] == 'a') {
+                dp[i][0] = dp[i - 1][0] + 1;
                 dp[i][1] = dp[i - 1][1];
+            } else {
+                dp[i][0] = dp[i - 1][0];
+                dp[i][1] = std::max(dp[i - 1][0], dp[i - 1][1]) + 1;
             }
+            result = std::min(result, n - std::max(dp[i][0], dp[i][1]));
         }
-        return n - std::max(dp[n - 1][0], dp[n - 1][1]);
+        return result;
     }
 };
