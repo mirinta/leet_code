@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cmath>
 #include <utility>
 
@@ -27,23 +28,22 @@ class Solution {
 public:
     bool isBalanced(TreeNode* root)
     {
-        return dfs(root) != -1;
+        bool result = true;
+        dfs(result, root);
+        return result;
     }
 
 private:
-    // return the max depth of the given binary tree
-    // if it is a complete binary tree
-    // otherwise, return -1
-    int dfs(TreeNode* root)
+    int dfs(bool& result, TreeNode* node)
     {
-        if (!root)
+        if (!node)
             return 0;
 
-        const int left = dfs(root->left);
-        const int right = dfs(root->right);
-        if (left < 0 || right < 0 || std::abs(left - right) > 1)
-            return -1;
-
-        return 1 + std::max(left, right);
+        const auto left = dfs(result, node->left);
+        const auto right = dfs(result, node->right);
+        if (std::abs(left - right) > 1) {
+            result = false;
+        }
+        return std::max(left, right) + 1;
     }
 };
