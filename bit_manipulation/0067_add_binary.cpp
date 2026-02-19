@@ -15,36 +15,25 @@
 
 class Solution {
 public:
-    std::string addBinary(std::string a, std::string b)
+    std::string addBinary(std::string& a, std::string& b)
     {
-        if (a.empty() || b.empty())
-            return a.empty() ? b : a;
-
-        int i = a.size() - 1;
-        int j = b.size() - 1;
-        int carry = 0;
+        const int n1 = a.size();
+        const int n2 = b.size();
         std::string result;
+        int i = n1 - 1;
+        int j = n2 - 1;
+        int carry = 0;
         while (i >= 0 || j >= 0) {
-            if (i < 0) {
-                result.push_back(compute(carry, '0', b[j--]));
-            } else if (j < 0) {
-                result.push_back(compute(carry, a[i--], '0'));
-            } else {
-                result.push_back(compute(carry, a[i--], b[j--]));
-            }
+            const int d1 = i < 0 ? 0 : a[i--] - '0';
+            const int d2 = j < 0 ? 0 : b[j--] - '0';
+            const int sum = d1 + d2 + carry;
+            result.push_back(sum % 2 + '0');
+            carry = sum / 2;
         }
-        if (carry) {
-            result.push_back(carry + '0');
+        if (carry > 0) {
+            result.push_back('1');
         }
         std::reverse(result.begin(), result.end());
         return result;
-    }
-
-private:
-    char compute(int& carry, char c1, char c2)
-    {
-        const int sum = (c1 - '0') + (c2 - '0') + carry;
-        carry = sum / 2;
-        return sum % 2 + '0';
     }
 };

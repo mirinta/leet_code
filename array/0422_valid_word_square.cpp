@@ -16,24 +16,13 @@ class Solution {
 public:
     bool validWordSquare(std::vector<std::string>& words)
     {
-        if (words.empty())
-            return false;
-
-        // check whether it is a square matrix
-        const size_t m = words.size();
-        size_t n = 0;
-        for (const auto& word : words) {
-            n = std::max(n, word.size());
-        }
-        if (m != n)
-            return false;
-
-        // check whether it is a symmetric matrix
+        const int m = words.size();
         for (int i = 0; i < m; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                const auto& c1 = j < words[i].size() ? words[i][j] : '#';
-                const auto& c2 = i < words[j].size() ? words[j][i] : '#';
-                if (c1 != c2)
+            for (int j = 0; j < words[i].size(); ++j) {
+                if (j >= m || i >= words[j].size())
+                    return false;
+
+                if (words[i][j] != words[j][i])
                     return false;
             }
         }
