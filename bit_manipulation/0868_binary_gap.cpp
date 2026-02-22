@@ -15,15 +15,15 @@ class Solution {
 public:
     int binaryGap(int n)
     {
-        int prev = -1;
         int result = 0;
-        for (int i = 0; n; ++i, n >>= 1) {
-            if (n & 1) {
-                if (prev >= 0) {
-                    result = std::max(result, i - prev);
-                }
-                prev = i;
+        for (int i = 0, prev = -1; n != 0; ++i, n >>= 1) {
+            if ((n & 1) == 0)
+                continue;
+
+            if (prev != -1) {
+                result = std::max(result, i - prev);
             }
+            prev = i;
         }
         return result;
     }
