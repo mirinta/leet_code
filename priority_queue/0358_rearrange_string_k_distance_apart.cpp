@@ -14,45 +14,49 @@
 
 class Solution {
 public:
-    std::string rearrangeString(std::string s, int k)
+    std::string rearrangeString(std::string& s, int k)
     {
         if (k == 0)
             return s;
 
-        std::unordered_map<char, int> map; // letter to frequency
+        // i i+1 ........... i+k-1 i+k
+        // x |<-different chars->| x
+        // from index i to index i+k-1, we need at least k different chars
+        std::unordered_map<char, int> map;
         for (const auto& c : s) {
             map[c]++;
         }
-        auto comparator = [](const auto& p1, const auto& p2) {
-            // sort frequencies in descending order
-            // if there's a tie, sort letters in ascending order
-            return p1.second == p2.second ? p1.first > p2.first : p1.second < p2.second;
+        using Pair = std::pair<char, int>; // <char, freq>
+        auto compare = [](const auto& p1, const auto& p2) {
+            if (p1.second == p2.second)
+                return p1.first > p2.first;
+
+            return p1.second < p2.second;
         };
-        using Pair = std::pair<char, int>; // letter to frequency
-        std::priority_queue<Pair, std::vector<Pair>, decltype(comparator)> pq(comparator);
-        for (const auto& pair : map) {
-            pq.emplace(pair);
+        std::priority_queue<Pair, std::vector<Pair>, decltype(compare)> pq(compare);
+        for (const auto& [c, freq] : map) {
+            pq.emplace(c, freq);
         }
         std::string result;
+        result.reserve(s.size());
         while (!pq.empty()) {
-            // less than k characters
-            // - if there's only one letter left and its frequency is 1, ok
-            // - otherwise, it is not possible to rearrange the string
-            if (pq.size() < k && pq.top().second > 1)
+            if (pq.top().second > 1 && pq.size() < k)
                 return {};
 
-            // pick the top k frequent characters
-            std::vector<Pair> vec(std::min<size_t>(k, pq.size()));
-            for (auto& pair : vec) {
-                pair = pq.top();
+            // use the top k characters (must be different)
+            std::vector<Pair> pairs;
+            const int count = std::min<int>(k, pq.size());
+            pairs.reserve(k);
+            for (int i = 0; i < count; ++i) {
+                const auto [c, freq] = pq.top();
                 pq.pop();
-                result.push_back(pair.first);
-                pair.second--;
-            }
-            for (const auto& pair : vec) {
-                if (pair.second > 0) {
-                    pq.emplace(pair);
+                result.push_back(c);
+                if (freq - 1 > 0) {
+                    pairs.emplace_back(c, freq - 1);
                 }
+            }
+            for (const auto& [c, freq] : pairs) {
+                pq.emplace(c, freq);
             }
         }
         return result;
