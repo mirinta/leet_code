@@ -17,15 +17,15 @@ public:
     std::vector<int> sortByBits(std::vector<int>& arr)
     {
         std::sort(arr.begin(), arr.end(), [this](const auto& val1, const auto& val2) {
-            const auto count1 = binaryOnes(val1);
-            const auto count2 = binaryOnes(val2);
+            const auto count1 = setbits(val1);
+            const auto count2 = setbits(val2);
             return count1 == count2 ? val1 < val2 : count1 < count2;
         });
         return arr;
     }
 
 private:
-    int binaryOnes(int n)
+    int setbits(int n)
     {
         int count = 0;
         while (n) {
