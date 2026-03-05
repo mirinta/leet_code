@@ -15,26 +15,19 @@
 
 class Solution {
 public:
-    int minOperations(std::string s)
+    int minOperations(std::string& s)
+    {
+        return std::min(helper(s, 0), helper(s, 1));
+    }
+
+private:
+    int helper(const std::string& s, int start)
     {
         const int n = s.size();
-        // case1: num of operations to make s valid and s[0] = 0
-        // - elements at even indices must be 0
-        // - elements at odd indices must be 1
-        int case1 = 0;
-        // case2: num of operations to make s valid and s[0] = 1
-        // - elements at even indices must be 1
-        // - elements at odd indices must be 0
-        int case2 = 0;
+        int result = 0;
         for (int i = 0; i < n; ++i) {
-            if (i % 2 == 0) {
-                case1 += s[i] == '0' ? 0 : 1;
-                case2 += s[i] == '1' ? 0 : 1;
-            } else {
-                case1 += s[i] == '1' ? 0 : 1;
-                case2 += s[i] == '0' ? 0 : 1;
-            }
+            result += s[i] != std::abs(i % 2 - start) + '0';
         }
-        return std::min(case1, case2);
+        return result;
     }
 };
