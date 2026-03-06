@@ -17,17 +17,11 @@ class Solution {
 public:
     int minOperations(std::string& s)
     {
-        return std::min(helper(s, 0), helper(s, 1));
-    }
-
-private:
-    int helper(const std::string& s, int start)
-    {
         const int n = s.size();
-        int result = 0;
+        int count = 0; // start with 0
         for (int i = 0; i < n; ++i) {
-            result += s[i] != std::abs(i % 2 - start) + '0';
+            count += s[i] != i % 2 + '0';
         }
-        return result;
+        return std::min(count, n - count);
     }
 };
