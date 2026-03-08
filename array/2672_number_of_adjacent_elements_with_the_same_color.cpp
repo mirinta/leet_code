@@ -28,17 +28,13 @@ public:
         for (const auto& q : queries) {
             const auto& index = q[0];
             const auto& color = q[1];
-            if (color == colors[index]) {
-                result.push_back(count);
-                continue;
+            if (colors[index] != color) {
+                count -= index > 0 && colors[index - 1] != 0 && colors[index - 1] == colors[index];
+                count -= index + 1 < n && colors[index + 1] != 0 && colors[index + 1] == colors[index];
+                count += index > 0 && colors[index - 1] == color;
+                count += index + 1 < n && colors[index + 1] == color;
+                colors[index] = color;
             }
-            if (index - 1 >= 0 && colors[index - 1] != 0) {
-                count += colors[index] == colors[index - 1] ? -1 : colors[index - 1] == color;
-            }
-            if (index + 1 < n && colors[index + 1] != 0) {
-                count += colors[index] == colors[index + 1] ? -1 : colors[index + 1] == color;
-            }
-            colors[index] = color;
             result.push_back(count);
         }
         return result;
