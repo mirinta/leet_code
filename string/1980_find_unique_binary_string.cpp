@@ -1,6 +1,4 @@
-#include <bitset>
 #include <string>
-#include <unordered_set>
 #include <vector>
 
 /**
@@ -19,34 +17,17 @@ class Solution {
 public:
     std::string findDifferentBinaryString(std::vector<std::string>& nums)
     {
-        return approach2(nums);
-    }
-
-private:
-    // time O(N), space O(1)
-    std::string approach2(const std::vector<std::string>& nums)
-    {
-        // final answer has at least one bit difference between each nums[i]
+        // answer and s[i] must have at least one different character
+        // then we can build the answer:
+        // - answer[0] is different to s[0][0]
+        // - answer[1] is different to s[1][1]
+        // ...
+        const int n = nums.size();
         std::string result;
-        result.reserve(nums.size());
-        for (int i = 0; i < nums.size(); ++i) {
-            result.push_back(nums[i][i] == '0' ? '1' : '0');
+        result.reserve(n);
+        for (int i = 0; i < n; ++i) {
+            result.push_back(1 - (nums[i][i] - '0') + '0');
         }
         return result;
-    }
-
-    // time O(N^2), space O(N)
-    std::string approach1(const std::vector<std::string>& nums)
-    {
-        const int n = nums.size();
-        std::unordered_set<int> visited;
-        for (const auto& s : nums) {
-            visited.insert(std::stoi(s, nullptr, 2)); // binary string to integer
-        }
-        for (int i = 0; i < (1 << n); ++i) {
-            if (!visited.count(i))
-                return std::bitset<16>(i).to_string().substr(16 - n); // at most 16 bits
-        }
-        return {};
     }
 };
