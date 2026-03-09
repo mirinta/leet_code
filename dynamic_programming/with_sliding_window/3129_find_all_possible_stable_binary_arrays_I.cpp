@@ -64,19 +64,19 @@ private:
         dp[0][0] = {1, 1};
         for (int i = 0; i <= zero; ++i) {
             for (int j = 0; j <= one; ++j) {
-                // X X X X 1 [0], 1 tailing zero, dp[i][j][0] += dp[i-1][j][1]
-                // X X X 1 0 [0], 2 tailing zeros, dp[i][j][0] += dp[i-2][j][1]
-                // X X 1 0 0 [0], 3 tailing zeros, dp[i][j][0] += dp[i-3][j][1]
+                // X X X X 1 [0], 1 trailing zero, dp[i][j][0] += dp[i-1][j][1]
+                // X X X 1 0 [0], 2 trailing zeros, dp[i][j][0] += dp[i-2][j][1]
+                // X X 1 0 0 [0], 3 trailing zeros, dp[i][j][0] += dp[i-3][j][1]
                 // ...
-                // X 1 0 ... [0], limit tailing zeros, dp[i][j][0] += dp[i-limit][j][1]
+                // X 1 0 ... [0], limit trailing zeros, dp[i][j][0] += dp[i-limit][j][1]
                 for (int k = 1; k <= std::min(i, limit); ++k) {
                     dp[i][j][0] = (dp[i][j][0] + dp[i - k][j][1]) % kMod;
                 }
-                // X X X X 0 [1], 1 tailing one, dp[i][j][1] += dp[i][j-1][0]
-                // X X X 0 1 [1], 2 tailing ones, dp[i][j][1] += dp[i-1][j-2][0]
-                // X X 0 1 1 [1], 3 tailing ones, dp[i][j][1] += dp[i-1][j-3][0]
+                // X X X X 0 [1], 1 trailing one, dp[i][j][1] += dp[i][j-1][0]
+                // X X X 0 1 [1], 2 trailing ones, dp[i][j][1] += dp[i-1][j-2][0]
+                // X X 0 1 1 [1], 3 trailing ones, dp[i][j][1] += dp[i-1][j-3][0]
                 // ...
-                // X 0 1 ... [1], limit tailing ones, dp[i][j][1] += dp[i-1][j-limit][0]
+                // X 0 1 ... [1], limit trailing ones, dp[i][j][1] += dp[i-1][j-limit][0]
                 for (int k = 1; k <= std::min(j, limit); ++k) {
                     dp[i][j][1] = (dp[i][j][1] + dp[i][j - k][0]) % kMod;
                 }
