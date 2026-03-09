@@ -56,9 +56,9 @@ private:
     // DP, TC = O(zero*one*max(zero,one)), SC = O(zero*one)
     int approach1(int zero, int one, int limit)
     {
-        // dp[i][j][0] = num of valid arrays that each array has i 1's and j 0's, and each array is
+        // dp[i][j][0] = num of valid arrays that each array has i 0's and j 1's, and each array is
         // ending at 0
-        // dp[i][j][1] = num of valid arrays that each array has i 1's and j 0's, and each array is
+        // dp[i][j][1] = num of valid arrays that each array has i 0's and j 1's, and each array is
         // ending at 1
         std::vector<std::vector<std::array<int, 2>>> dp(zero + 1, std::vector<std::array<int, 2>>(one + 1, {0, 0}));
         dp[0][0] = {1, 1};
