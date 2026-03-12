@@ -15,20 +15,19 @@ class Solution {
 public:
     int bitwiseComplement(int n)
     {
-        if (n == 0)
-            return 1;
-
-        const int bits = numOfBits(n);
-        return n ^ ((1LL << bits) - 1);
+        return (1 << numOfBits(n)) - 1 - n;
     }
 
 private:
-    int numOfBits(int num)
+    int numOfBits(int n)
     {
+        if (n == 0)
+            return 1;
+
         int result = 0;
-        while (num) {
+        while (n) {
             result++;
-            num >>= 1;
+            n >>= 1;
         }
         return result;
     }
