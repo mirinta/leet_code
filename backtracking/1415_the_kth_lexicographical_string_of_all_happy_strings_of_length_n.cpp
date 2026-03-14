@@ -25,19 +25,19 @@ class Solution {
 public:
     std::string getHappyString(int n, int k)
     {
-        int count = 0;
+        static constexpr std::string_view options{"abc"};
         std::string s;
         std::string result;
         std::function<bool(int)> backtrack = [&](int i) {
             if (i == n) {
-                if (++count == k) {
+                if (--k == 0) {
                     result = s;
                     return true;
                 }
                 return false;
             }
-            for (char c = 'a'; c <= 'c'; ++c) {
-                if (!s.empty() && c == s.back())
+            for (const auto& c : options) {
+                if (!s.empty() && s.back() == c)
                     continue;
 
                 s.push_back(c);
