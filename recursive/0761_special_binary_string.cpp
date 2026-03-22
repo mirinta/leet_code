@@ -47,8 +47,8 @@ public:
         }
         std::sort(strs.begin(), strs.end(), std::greater<>());
         std::string result;
-        for (const auto& s : strs) {
-            result.append(s);
+        for (const auto& str : strs) {
+            result.append(str);
         }
         return result;
     }
