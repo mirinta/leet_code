@@ -1,4 +1,5 @@
 #include <array>
+#include <climits>
 #include <vector>
 
 /**
@@ -28,66 +29,63 @@ public:
     }
 
 private:
-    // DP with space optimization, TC = O(MN), SC = O(N)
+    static constexpr long long kMod = 1e9 + 7;
+
     int approach2(const std::vector<std::vector<int>>& grid)
     {
         const int m = grid.size();
         const int n = grid[0].size();
-        std::vector<std::array<long long, 2>> dp(n);
+        std::vector<std::array<long long, 2>> dp(n, {INT_MAX, INT_MIN});
         dp[0] = {grid[0][0], grid[0][0]};
         for (int j = 1; j < n; ++j) {
-            dp[j][0] = std::min(dp[j - 1][0] * grid[0][j], dp[j - 1][1] * grid[0][j]);
-            dp[j][1] = std::max(dp[j - 1][0] * grid[0][j], dp[j - 1][1] * grid[0][j]);
+            dp[j][0] = std::min(grid[0][j] * dp[j - 1][0], grid[0][j] * dp[j - 1][1]);
+            dp[j][1] = std::max(grid[0][j] * dp[j - 1][0], grid[0][j] * dp[j - 1][1]);
         }
         for (int i = 1; i < m; ++i) {
-            auto backup = dp[0][0];
-            dp[0][0] = std::min(backup * grid[i][0], dp[0][1] * grid[i][0]);
-            dp[0][1] = std::max(backup * grid[i][0], dp[0][1] * grid[i][0]);
+            auto [bkp0, bkp1] = dp[0];
+            dp[0][0] = std::min(grid[i][0] * bkp0, grid[i][0] * bkp1);
+            dp[0][1] = std::max(grid[i][0] * bkp0, grid[i][0] * bkp1);
             for (int j = 1; j < n; ++j) {
-                backup = dp[j][0];
+                bkp0 = dp[j][0];
+                bkp1 = dp[j][1];
                 dp[j][0] = std::min(
-                    {backup * grid[i][j], dp[j][1] * grid[i][j], dp[j - 1][0] * grid[i][j], dp[j - 1][1] * grid[i][j]});
+                    {grid[i][j] * bkp0, grid[i][j] * bkp1, grid[i][j] * dp[j - 1][0], grid[i][j] * dp[j - 1][1]});
                 dp[j][1] = std::max(
-                    {backup * grid[i][j], dp[j][1] * grid[i][j], dp[j - 1][0] * grid[i][j], dp[j - 1][1] * grid[i][j]});
+                    {grid[i][j] * bkp0, grid[i][j] * bkp1, grid[i][j] * dp[j - 1][0], grid[i][j] * dp[j - 1][1]});
             }
         }
-        if (dp[n - 1][1] < 0)
-            return -1;
-
-        return dp[n - 1][1] % kMod;
+        return dp[n - 1][1] < 0 ? -1 : dp[n - 1][1] % kMod;
     }
 
-    // DP, TC = O(MN), SC = O(MN)
     int approach1(const std::vector<std::vector<int>>& grid)
     {
-        // dp[i][j][0] = min product moving from (0,0) to (i,j)
-        // dp[i][j][1] = max product moving from (0,0) to (i,j)
+        // dp[i][j][0] = min product from (0,0) to (i,j)
+        // dp[i][j][1] = max product from (0,0) to (i,j)
         const int m = grid.size();
         const int n = grid[0].size();
         std::vector<std::vector<std::array<long long, 2>>> dp(
             m, std::vector<std::array<long long, 2>>(n, {INT_MAX, INT_MIN}));
         dp[0][0] = {grid[0][0], grid[0][0]};
         for (int i = 1; i < m; ++i) {
-            dp[i][0][0] = std::min(dp[i - 1][0][0] * grid[i][0], dp[i - 1][0][1] * grid[i][0]);
-            dp[i][0][1] = std::max(dp[i - 1][0][0] * grid[i][0], dp[i - 1][0][1] * grid[i][0]);
+            dp[i][0][0] = std::min(grid[i][0] * dp[i - 1][0][0], grid[i][0] * dp[i - 1][0][1]);
+            dp[i][0][1] = std::max(grid[i][0] * dp[i - 1][0][0], grid[i][0] * dp[i - 1][0][1]);
         }
         for (int j = 1; j < n; ++j) {
-            dp[0][j][0] = std::min(dp[0][j - 1][0] * grid[0][j], dp[0][j - 1][1] * grid[0][j]);
-            dp[0][j][1] = std::max(dp[0][j - 1][0] * grid[0][j], dp[0][j - 1][1] * grid[0][j]);
+            dp[0][j][0] = std::min(grid[0][j] * dp[0][j - 1][0], grid[0][j] * dp[0][j - 1][1]);
+            dp[0][j][1] = std::max(grid[0][j] * dp[0][j - 1][0], grid[0][j] * dp[0][j - 1][1]);
         }
         for (int i = 1; i < m; ++i) {
             for (int j = 1; j < n; ++j) {
-                dp[i][j][0] = std::min({dp[i - 1][j][0] * grid[i][j], dp[i - 1][j][1] * grid[i][j],
-                                        dp[i][j - 1][0] * grid[i][j], dp[i][j - 1][1] * grid[i][j]});
-                dp[i][j][1] = std::max({dp[i - 1][j][0] * grid[i][j], dp[i - 1][j][1] * grid[i][j],
-                                        dp[i][j - 1][0] * grid[i][j], dp[i][j - 1][1] * grid[i][j]});
+                dp[i][j][0] = std::min({grid[i][j] * dp[i - 1][j][0], grid[i][j] * dp[i - 1][j][1],
+                                        grid[i][j] * dp[i][j - 1][0], grid[i][j] * dp[i][j - 1][1]});
+                dp[i][j][1] = std::max({grid[i][j] * dp[i - 1][j][0], grid[i][j] * dp[i - 1][j][1],
+                                        grid[i][j] * dp[i][j - 1][0], grid[i][j] * dp[i][j - 1][1]});
             }
         }
-        if (dp[m - 1][n - 1][1] < 0)
-            return -1;
-
-        return dp[m - 1][n - 1][1] % kMod;
+        return dp[m - 1][n - 1][1] < 0 ? -1 : dp[m - 1][n - 1][1] % kMod;
     }
+};
+
 
 private:
     static constexpr int kMod = 1e9 + 7;
