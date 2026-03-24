@@ -1,3 +1,4 @@
+#include <array>
 #include <vector>
 
 /**
@@ -17,30 +18,29 @@ class Solution {
 public:
     std::vector<std::vector<int>> constructProductMatrix(std::vector<std::vector<int>>& grid)
     {
-        // (a * b) % c = [(a % c) * (b % c)] %c
         const int m = grid.size();
         const int n = grid[0].size();
-        constexpr int kMod = 12345;
-        std::vector<long> nums(m * n);
+        auto encode = [&](int i, int j) { return i * n + j; };
+        std::vector<std::array<long long, 3>> data(m * n, {0, 1, 1}); // <origin, prefix, suffix>
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                nums[i * n + j] = grid[i][j];
+                data[encode(i, j)][0] = grid[i][j];
             }
         }
-        std::vector<long> prefix(m * n, 1);
-        std::vector<long> suffix(m * n, 1);
-        for (int i = 1; i < prefix.size(); ++i) {
-            prefix[i] = prefix[i - 1] * nums[i - 1] % kMod;
+        for (int i = 1, j = m * n - 2; i < m * n && j >= 0; ++i, --j) {
+            data[i][1] = data[i - 1][1] * data[i - 1][0] % kMod;
+            data[j][2] = data[j + 1][2] * data[j + 1][0] % kMod;
         }
-        for (int j = suffix.size() - 2; j >= 0; --j) {
-            suffix[j] = suffix[j + 1] * nums[j + 1] % kMod;
-        }
-        std::vector<std::vector<int>> result(m, std::vector<int>(n, 1));
+        std::vector<std::vector<int>> result(m, std::vector<int>(n));
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                result[i][j] = prefix[i * n + j] * suffix[i * n + j] % kMod;
+                const int k = encode(i, j);
+                result[i][j] = data[k][1] * data[k][2] % kMod;
             }
         }
         return result;
     }
+
+private:
+    static constexpr long long kMod = 12345;
 };
