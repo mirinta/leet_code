@@ -25,8 +25,8 @@ public:
         for (int i = 0; i < m; ++i) {
             const int shift = i % 2 ? -1 : 1;
             for (int j = 0; j < n; ++j) {
-                const int t = (j + k * shift) % n;
-                if (mat[i][j] != mat[i][t < 0 ? n + t : t])
+                const int t = (j + k * shift + n) % n;
+                if (mat[i][j] != mat[i][t])
                     return false;
             }
         }
