@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <array>
 #include <vector>
 
@@ -33,38 +32,29 @@ public:
     {
         const int m = coins.size();
         const int n = coins[0].size();
-        std::vector<std::vector<std::array<long long, 3>>> dp(
-            m, std::vector<std::array<long long, 3>>(n, {INT_MIN, INT_MIN, INT_MIN}));
-        dp[0][0][0] = coins[0][0];
-        if (coins[0][0] < 0) {
-            dp[0][0][1] = 0;
+        Memo memo(m, std::vector<std::array<int, 3>>(n, {INT_MIN, INT_MIN, INT_MIN}));
+        return dfs(memo, 0, 0, 2, coins);
+    }
+
+private:
+    using Memo = std::vector<std::vector<std::array<int, 3>>>;
+
+    int dfs(Memo& memo, int i, int j, int ability, const std::vector<std::vector<int>>& coins)
+    {
+        if (i >= coins.size() || j >= coins[0].size())
+            return INT_MIN;
+
+        if (i == coins.size() - 1 && j == coins[0].size() - 1)
+            return ability > 0 ? std::max(0, coins[i][j]) : coins[i][j];
+
+        if (memo[i][j][ability] != INT_MIN)
+            return memo[i][j][ability];
+
+        int result = coins[i][j] + std::max(dfs(memo, i + 1, j, ability, coins), dfs(memo, i, j + 1, ability, coins));
+        if (coins[i][j] < 0 && ability > 0) {
+            result =
+                std::max({result, dfs(memo, i + 1, j, ability - 1, coins), dfs(memo, i, j + 1, ability - 1, coins)});
         }
-        for (int j = 1; j < n; ++j) {
-            for (int k = 0; k < 3; ++k) {
-                dp[0][j][k] = coins[0][j] + dp[0][j - 1][k];
-                if (coins[0][j] < 0 && k > 0) {
-                    dp[0][j][k] = std::max(dp[0][j][k], dp[0][j - 1][k - 1]);
-                }
-            }
-        }
-        for (int i = 1; i < m; ++i) {
-            for (int k = 0; k < 3; ++k) {
-                dp[i][0][k] = coins[i][0] + dp[i - 1][0][k];
-                if (coins[i][0] < 0 && k > 0) {
-                    dp[i][0][k] = std::max(dp[i][0][k], dp[i - 1][0][k - 1]);
-                }
-            }
-        }
-        for (int i = 1; i < m; ++i) {
-            for (int j = 1; j < n; ++j) {
-                for (int k = 0; k < 3; ++k) {
-                    dp[i][j][k] = std::max(dp[i - 1][j][k], dp[i][j - 1][k]) + coins[i][j];
-                    if (coins[i][j] < 0 && k > 0) {
-                        dp[i][j][k] = std::max({dp[i][j][k], dp[i - 1][j][k - 1], dp[i][j - 1][k - 1]});
-                    }
-                }
-            }
-        }
-        return *std::max_element(dp[m - 1][n - 1].begin(), dp[m - 1][n - 1].end());
+        return memo[i][j][ability] = result;
     }
 };
