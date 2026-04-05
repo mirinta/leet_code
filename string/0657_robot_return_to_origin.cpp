@@ -14,36 +14,27 @@
  * the right once, 'L' will always make it move left, etc. Also, assume that the magnitude of the
  * robot's movement is the same for each move.
  *
+ * ! 1 <= moves.length <= 2 * 10^4
  * ! moves only contains the characters 'U', 'D', 'L' and 'R'.
  */
 
 class Solution {
 public:
-    bool judgeCircle(const std::string& moves)
+    bool judgeCircle(std::string& moves)
     {
-        if (moves.empty())
-            return true;
-
-        int horizontalMovement = 0;
-        int verticalMovement = 0;
-        for (const auto& move : moves) {
-            switch (move) {
-                case 'U':
-                    horizontalMovement++;
-                    break;
-                case 'D':
-                    horizontalMovement--;
-                    break;
-                case 'L':
-                    verticalMovement++;
-                    break;
-                case 'R':
-                    verticalMovement--;
-                    break;
-                default:
-                    break;
+        int horizontal = 0;
+        int vertical = 0;
+        for (const auto& c : moves) {
+            if (c == 'L') {
+                horizontal--;
+            } else if (c == 'R') {
+                horizontal++;
+            } else if (c == 'U') {
+                vertical++;
+            } else {
+                vertical--;
             }
         }
-        return horizontalMovement == 0 && verticalMovement == 0;
+        return horizontal == 0 && vertical == 0;
     }
 };
