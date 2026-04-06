@@ -1,5 +1,4 @@
-#include <set>
-#include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 /**
@@ -42,89 +41,39 @@ class Solution {
 public:
     int robotSim(std::vector<int>& commands, std::vector<std::vector<int>>& obstacles)
     {
-        std::unordered_map<int, std::set<int>> mapX;
-        std::unordered_map<int, std::set<int>> mapY;
+        static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        std::unordered_set<long long> set;
         for (const auto& coord : obstacles) {
-            mapX[coord[0]].insert(coord[1]);
-            mapY[coord[1]].insert(coord[0]);
+            set.insert(encode(coord[0], coord[1]));
         }
+        int d = 0;
         int x = 0;
         int y = 0;
-        Direction d = North;
         int result = 0;
-        for (const auto& command : commands) {
-            if (command == -1) {
-                d = static_cast<Direction>((d + 1) % 4);
-                continue;
-            }
-            if (command == -2) {
-                d = static_cast<Direction>((d + 3) % 4);
-                continue;
-            }
-            const int currX = x;
-            const int currY = y;
-            switch (d) {
-                case North: {
-                    y += command;
-                    if (!mapX.count(x))
+        for (const auto& c : commands) {
+            if (c == -1) {
+                d = (d + 1) % 4;
+            } else if (c == -2) {
+                d = (d + 3) % 4;
+            } else {
+                for (int step = 0; step < c; ++step) {
+                    const int newX = x + kDirections[d].first;
+                    const int newY = y + kDirections[d].second;
+                    if (set.count(encode(newX, newY)))
                         break;
 
-                    auto iter = mapX[x].upper_bound(currY);
-                    if (iter == mapX[x].end())
-                        break;
-
-                    y = std::max(currY, std::min(y, *iter - 1));
-                    break;
-                }
-                case East: {
-                    x += command;
-                    if (!mapY.count(y))
-                        break;
-
-                    auto iter = mapY[y].upper_bound(currX);
-                    if (iter == mapY[y].end())
-                        break;
-
-                    x = std::max(currX, std::min(x, *iter - 1));
-                    break;
-                }
-                case South: {
-                    y -= command;
-                    if (!mapX.count(x))
-                        break;
-
-                    auto iter = mapX[x].lower_bound(currY);
-                    if (iter == mapX[x].begin())
-                        break;
-
-                    iter = std::prev(iter);
-                    y = std::min(currY, std::max(y, *iter + 1));
-                    break;
-                }
-                case West: {
-                    x -= command;
-                    if (!mapY.count(y))
-                        break;
-
-                    auto iter = mapY[y].lower_bound(currX);
-                    if (iter == mapY[y].begin())
-                        break;
-
-                    iter = std::prev(iter);
-                    x = std::min(currX, std::max(x, *iter + 1));
-                    break;
+                    x = newX;
+                    y = newY;
                 }
             }
-            result = std::max(result, squaredEuclideanDist(x, y));
+            result = std::max(result, x * x + y * y);
         }
         return result;
     }
 
 private:
-    enum Direction { North, East, South, West };
-
-    int squaredEuclideanDist(int x, int y)
+    long long encode(long long x, long long y)
     {
-        return x * x + y * y;
+        return (x << 32) + y;
     }
 };
