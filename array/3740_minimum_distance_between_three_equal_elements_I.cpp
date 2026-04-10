@@ -32,11 +32,8 @@ public:
             // since i < j < k
             // then abs(i-j) + abs(j-k) + abs(k-i) = j - i + k - j + k - i = 2 * (k - i)
             const int m = indices.size();
-            for (int k = 0, i = 0; k < m; ++k) {
-                if (k - i + 1 == 3) {
-                    result = std::min(result, 2 * (indices[k] - indices[i]));
-                    i++;
-                }
+            for (int i = 2; i < m; ++i) {
+                result = std::min(result, 2 * (indices[i] - indices[i - 2]));
             }
         }
         return result == INT_MAX ? -1 : result;
