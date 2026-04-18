@@ -40,9 +40,6 @@ public:
 private:
     int reverse(int n)
     {
-        while (n % 10 == 0) {
-            n /= 10;
-        }
         int result = 0;
         while (n) {
             result = result * 10 + n % 10;
