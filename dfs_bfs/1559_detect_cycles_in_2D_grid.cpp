@@ -22,7 +22,7 @@
 
 class UnionFind {
 public:
-    explicit UnionFind(int n) : root(n), rank(n, 1)
+    explicit UnionFind(int n) : root(n), size(n, 1)
     {
         for (int i = 0; i < n; ++i) {
             root[i] = i;
@@ -44,83 +44,35 @@ public:
         if (rootP == rootQ)
             return false;
 
-        if (rank[rootQ] > rank[rootP]) {
+        if (size[rootQ] > size[rootP]) {
             std::swap(rootP, rootQ);
         }
         root[rootQ] = rootP;
-        rank[rootP] += rank[rootQ];
+        size[rootP] += size[rootQ];
         return true;
     }
 
 private:
     std::vector<int> root;
-    std::vector<int> rank;
+    std::vector<int> size;
 };
 
 class Solution {
 public:
     bool containsCycle(std::vector<std::vector<char>>& grid)
     {
-        return approach2(grid);
-    }
-
-private:
-    bool approach2(const std::vector<std::vector<char>>& grid)
-    {
         const int m = grid.size();
         const int n = grid[0].size();
+        auto encode = [&](int i, int j) { return n * i + j; };
         UnionFind uf(m * n);
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                if (j + 1 < n && grid[i][j] == grid[i][j + 1] && !uf.connect(encode(i, j, n), encode(i, j + 1, n)))
+                if (i + 1 < m && grid[i][j] == grid[i + 1][j] && !uf.connect(encode(i, j), encode(i + 1, j)))
                     return true;
 
-                if (i + 1 < m && grid[i][j] == grid[i + 1][j] && !uf.connect(encode(i, j, n), encode(i + 1, j, n)))
-                    return true;
-            }
-        }
-        return false;
-    }
-
-    int encode(int i, int j, int n)
-    {
-        return i * n + j;
-    }
-
-    bool approach1(const std::vector<std::vector<char>>& grid)
-    {
-        const int m = grid.size();
-        const int n = grid[0].size();
-        std::vector<std::vector<bool>> visited(m, std::vector<bool>(n, false));
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < n; ++j) {
-                if (!visited[i][j] && dfs(visited, i, j, -1, -1, grid))
+                if (j + 1 < n && grid[i][j] == grid[i][j + 1] && !uf.connect(encode(i, j), encode(i, j + 1)))
                     return true;
             }
-        }
-        return false;
-    }
-
-    bool dfs(std::vector<std::vector<bool>>& visited,
-             int i,
-             int j,
-             int fromX,
-             int fromY,
-             const std::vector<std::vector<char>>& grid)
-    {
-        static const std::vector<std::pair<int, int>> kDirections{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-        visited[i][j] = true;
-        for (const auto& [dx, dy] : kDirections) {
-            const int x = i + dx;
-            const int y = j + dy;
-            if (x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size() || grid[x][y] != grid[i][j])
-                continue;
-
-            if (visited[x][y] && (x != fromX && y != fromY))
-                return true;
-
-            if (!visited[x][y] && dfs(visited, x, y, i, j, grid))
-                return true;
         }
         return false;
     }
