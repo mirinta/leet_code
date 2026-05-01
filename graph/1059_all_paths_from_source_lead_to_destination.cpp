@@ -28,33 +28,30 @@ public:
     bool leadsToDestination(int n, std::vector<std::vector<int>>& edges, int source, int destination)
     {
         std::vector<std::vector<int>> graph(n);
-        for (const auto& edge : edges) {
-            graph[edge[0]].push_back(edge[1]);
+        for (const auto& e : edges) {
+            graph[e[0]].push_back(e[1]);
         }
-        std::vector<Color> colors(n, White);
-        return dfs(colors, source, destination, graph);
+        std::vector<Status> status(n, NotStarted);
+        return dfs(status, source, destination, graph);
     }
 
 private:
-    // White = not processed
-    // Gray = being processed
-    // Black = fully processed
-    enum Color { White, Gray, Black };
+    enum Status { NotStarted, InProgress, Completed };
 
-    bool dfs(std::vector<Color>& colors, int current, int target, const std::vector<std::vector<int>>& graph)
+    bool dfs(std::vector<Status>& status, int node, int target, const std::vector<std::vector<int>>& graph)
     {
-        if (graph[current].empty())
-            return current == target;
+        if (graph[node].empty())
+            return node == target;
 
-        colors[current] = Gray;
-        for (const auto& adj : graph[current]) {
-            if (colors[adj] == Gray)
+        status[node] = InProgress;
+        for (const auto& next : graph[node]) {
+            if (status[next] == InProgress)
                 return false;
 
-            if (colors[adj] == White && !dfs(colors, adj, target, graph))
+            if (status[next] == NotStarted && !dfs(status, next, target, graph))
                 return false;
         }
-        colors[current] = Black;
+        status[node] = Completed;
         return true;
     }
 };
