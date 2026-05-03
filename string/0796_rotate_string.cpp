@@ -14,12 +14,22 @@
 
 class Solution {
 public:
-    bool rotateString(std::string s, std::string goal)
+    bool rotateString(std::string& s, std::string& goal)
     {
         if (s.size() != goal.size())
             return false;
 
-        s += s;
-        return s.find(goal) != std::string::npos;
+        const int n = s.size();
+        for (int i = 0; i < 2 * n - 1; ++i) {
+            bool matched = true;
+            for (int j = 0; j < n; ++j) {
+                matched &= s[(i % n + j) % n] == goal[j];
+                if (!matched)
+                    break;
+            }
+            if (matched)
+                return true;
+        }
+        return false;
     }
 };
