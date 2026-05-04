@@ -17,19 +17,13 @@ class Solution {
 public:
     void rotate(std::vector<std::vector<int>>& matrix)
     {
-        // 1 2 3           7 4 1                 1 4 7
-        // 4 5 6 -ROTATE-> 8 5 2 -REVERSE ROWS-> 2 5 8
-        // 7 8 9           9 6 3                 3 6 9
-        //   |                                     |
-        //   |---------------TRANSPOSE------------>|
-        const int m = matrix.size();
-        // transpose
-        for (int i = 0; i < m; ++i) {
-            for (int j = 0; j < i; ++j) {
+        // rotate 90 degrees = transpose + reverse by row
+        const int n = matrix.size();
+        for (int i = 0; i < n; ++i) {
+            for (int j = i + 1; j < n; ++j) {
                 std::swap(matrix[i][j], matrix[j][i]);
             }
         }
-        // reverse each row
         for (auto& row : matrix) {
             std::reverse(row.begin(), row.end());
         }
