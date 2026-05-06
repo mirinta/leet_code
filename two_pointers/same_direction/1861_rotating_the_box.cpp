@@ -30,17 +30,28 @@ class Solution {
 public:
     std::vector<std::vector<char>> rotateTheBox(std::vector<std::vector<char>>& box)
     {
+        // before rotation:
+        // # # # . . . *
+        //           ^ ^
+        //           | |
+        //         j-1 j
+        //
+        // after rotation:
+        // . . . # # # *
+        //           ^ ^
+        //           | |
+        //         j-1 j
         const int m = box.size();
         const int n = box[0].size();
         std::vector<std::vector<char>> result(n, std::vector<char>(m, '.'));
         for (int i = 0; i < m; ++i) {
-            for (int j = n - 1, empty = n - 1; j >= 0; --j) {
+            for (int j = n - 1, last = n - 1; j >= 0; --j) {
                 if (box[i][j] == '*') {
                     result[j][m - i - 1] = '*';
-                    empty = j - 1;
+                    last = j - 1;
                 } else if (box[i][j] == '#') {
-                    result[empty][m - i - 1] = '#';
-                    empty--;
+                    result[last][m - i - 1] = '#';
+                    last--;
                 }
             }
         }
