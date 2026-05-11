@@ -23,17 +23,22 @@ class Solution {
 public:
     std::vector<int> maxValue(std::vector<int>& nums)
     {
-        return approach2(nums);
-    }
-
-private:
-    std::vector<int> approach2(const std::vector<int>& nums)
-    {
+        // prefixMax[i] = max of nums[0:i]
+        // suffixMin[i] = min of nums[i:n-1]
+        //
+        // key fact: i can always jump to the index of prefixMax[i]
+        //
         // case 1:
-        // if prefixMax[i] <= suffixMin[i+1], then i can not jump to [i+1,n-1]
-        // thus, answer[i] = prefix[i]
+        // if prefixMax[i] >= suffixMin[i+1]
+        // then i can not jump to [i+1, n-1]
+        // thus, answer[i] = prefixMax[i]
+        //
         // case 2:
-        // if prefixMax[i] > suffixMin[i+1], then i can jump to the index of prefixMax[i], then jump to i+1
+        // if prefixMax[i] > suffixMin[i+1]
+        // then i can jump to the index of prefixMax[i],
+        // then jump to the index of suffixMin[i+1]
+        // if the index of suffixMin[i+1] == i+1, then i can jump to i+1
+        // if the index of suffixMin[i+1] != i+1, nums[i+1] > suffixMin[i+1], then i can jump to i+1
         // thus, answer[i] = answer[i+1]
         const int n = nums.size();
         std::vector<int> prefixMax(n);
@@ -47,52 +52,12 @@ private:
             suffixMin[i] = std::min(suffixMin[i + 1], nums[i]);
         }
         std::vector<int> result(n);
-        result[n - 1] = prefixMax[n - 1];
-        for (int i = n - 2; i >= 0; --i) {
-            if (prefixMax[i] <= suffixMin[i + 1]) {
+        for (int i = n - 1; i >= 0; --i) {
+            if (i == n - 1 || prefixMax[i] <= suffixMin[i + 1]) {
                 result[i] = prefixMax[i];
             } else {
                 result[i] = result[i + 1];
             }
-        }
-        return result;
-    }
-
-    std::vector<int> approach1(const std::vector<int>& nums)
-    {
-        const int n = nums.size();
-        std::vector<int> root(n);
-        for (int i = 0; i < n; ++i) {
-            root[i] = i;
-        }
-        std::function<int(int)> find = [&](int x) {
-            if (root[x] != x) {
-                root[x] = find(root[x]);
-            }
-            return root[x];
-        };
-        std::function<void(int, int)> connect = [&](int p, int q) {
-            int rootP = find(p);
-            int rootQ = find(q);
-            if (rootP == rootQ)
-                return;
-
-            if (nums[rootQ] > nums[rootP]) {
-                std::swap(rootP, rootQ);
-            }
-            root[rootQ] = rootP;
-        };
-        std::stack<int> stack;
-        for (int i = 0; i < n; ++i) {
-            while (!stack.empty() && nums[i] < nums[stack.top()]) {
-                connect(i, stack.top());
-                stack.pop();
-            }
-            stack.push(find(i));
-        }
-        std::vector<int> result(n);
-        for (int i = 0; i < n; ++i) {
-            result[i] = nums[find(i)];
         }
         return result;
     }
