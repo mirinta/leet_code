@@ -26,27 +26,19 @@ class Solution {
 public:
     int findMin(std::vector<int>& nums)
     {
-        if (nums.size() == 1)
-            return nums.front();
-
-        // nums may contain duplicates
-        // [LEFT...MAX][MIN...RIGHT]
-        int left = 0;
-        int right = nums.size() - 1;
-        while (left < right) {
-            const int mid = left + (right - left) / 2;
-            if (nums[mid] > nums[right]) {
-                // nums[mid] is in the left part, skip nums[LEFT:MID]
-                left = mid + 1;
-            } else if (nums[mid] < nums[right]) {
-                // nums[mid] is in the right part
-                right = mid; // not mid - 1, because nums[mid] may be the minimum element
+        // [LEFT ... MAX][MIN ... RIGHT]
+        int lo = 0;
+        int hi = nums.size() - 1;
+        while (lo < hi) {
+            const int mid = lo + (hi - lo) / 2;
+            if (nums[mid] > nums[hi]) {
+                lo = mid + 1;
+            } else if (nums[mid] < nums[hi]) {
+                hi = mid;
             } else {
-                // nums[mid] == nums[right], we can't determine which part contains nums[mid]
-                // so we simply skip nums[right]
-                right--;
+                hi--;
             }
         }
-        return nums[left];
+        return nums[lo];
     }
 };
