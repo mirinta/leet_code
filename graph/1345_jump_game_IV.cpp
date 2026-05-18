@@ -26,45 +26,45 @@ class Solution {
 public:
     int minJumps(std::vector<int>& arr)
     {
-        static const std::array<int, 2> kOffsets{-1, 1};
+        static constexpr std::array<int, 2> directions{-1, 1};
         const int n = arr.size();
         std::unordered_map<int, std::vector<int>> map;
         for (int i = 0; i < n; ++i) {
             map[arr[i]].push_back(i);
         }
+        std::queue<int> queue;
+        queue.emplace(0);
         std::vector<bool> visited(n, false);
         visited[0] = true;
-        std::queue<int> queue;
-        queue.push(0);
-        int steps = 0;
+        int result = 0;
         while (!queue.empty()) {
-            const int size = queue.size();
-            for (int k = 0; k < size; ++k) {
-                const int i = queue.front();
+            for (int k = queue.size(); k > 0; --k) {
+                const auto curr = queue.front();
                 queue.pop();
-                if (i == n - 1)
-                    return steps;
+                if (curr == n - 1)
+                    return result;
 
-                for (const auto& offset : kOffsets) {
-                    const int x = i + offset;
-                    if (x < 0 || x >= n || visited[x])
+                for (const auto& d : directions) {
+                    const int next = curr + d;
+                    if (next < 0 || next >= n || visited[next])
                         continue;
 
-                    visited[x] = true;
-                    queue.push(x);
+                    visited[next] = true;
+                    queue.emplace(next);
                 }
-                if (!map.count(arr[i]))
+                if (!map.count(arr[curr]))
                     continue;
 
-                for (const auto& j : map[arr[i]]) {
-                    if (!visited[j]) {
-                        visited[j] = true;
-                        queue.push(j);
-                    }
+                for (const auto& next : map[arr[curr]]) {
+                    if (next == curr || visited[next])
+                        continue;
+
+                    visited[next] = true;
+                    queue.emplace(next);
                 }
-                map.erase(arr[i]);
+                map.erase(arr[curr]); // IMPORTANT!
             }
-            steps++;
+            result++;
         }
         return -1;
     }
