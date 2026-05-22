@@ -24,30 +24,30 @@ class Solution {
 public:
     int search(std::vector<int>& nums, int target)
     {
+        // [LEFT ... MAX][MIN ... RIGHT]
         const int n = nums.size();
-        int left = 0;
-        int right = n - 1;
-        while (left <= right) {
-            const int mid = left + (right - left) / 2;
+        int lo = 0;
+        int hi = n - 1;
+        while (lo <= hi) {
+            const int mid = lo + (hi - lo) / 2;
             if (nums[mid] == target)
                 return mid;
 
-            // no duplicate values
-            if (nums[mid] >= nums[left]) {
-                // LEFT ... MID-1 MID MID+1 ... MAX MIN...RIGHT
-                // |<---case1-->|     |<--------case2-------->|
-                if (target >= nums[left] && target < nums[mid]) {
-                    right = mid - 1;
+            if (nums[mid] >= nums[lo]) {
+                // case1: [LEFT ... MID ... MAX][MIN ... RIGHT]
+                //         |<--zone-->|
+                if (target >= nums[lo] && target < nums[mid]) {
+                    hi = mid - 1;
                 } else {
-                    left = mid + 1;
+                    lo = mid + 1;
                 }
             } else {
-                // LEFT ... MAX MIN ... MID-1 MID MID+1 ... RIGHT
-                // |<---------case1-------->|     |<---case2--->|
-                if (target <= nums[right] && target > nums[mid]) {
-                    left = mid + 1;
+                // case2: [LEFT ... MAX][MIN ... MID ... RIGHT]
+                //                               |<--zone--->|
+                if (target <= nums[hi] && target > nums[mid]) {
+                    lo = mid + 1;
                 } else {
-                    right = mid - 1;
+                    hi = mid - 1;
                 }
             }
         }
