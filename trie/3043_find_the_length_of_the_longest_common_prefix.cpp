@@ -38,19 +38,19 @@ public:
         }
     }
 
-    int lengthOfLongestCommonPrefix(const std::string& s)
+    int lengthOfLCP(const std::string& s)
     {
         auto* node = root;
-        int count = 0;
+        int result = 0;
         for (const auto& c : s) {
             const int index = c - '0';
             if (!node->next[index])
                 break;
 
-            count++;
             node = node->next[index];
+            result++;
         }
-        return count;
+        return result;
     }
 
 private:
@@ -66,12 +66,12 @@ public:
     int longestCommonPrefix(std::vector<int>& arr1, std::vector<int>& arr2)
     {
         Trie trie;
-        for (const auto& val : arr1) {
-            trie.insert(std::to_string(val));
+        for (const auto& v : arr1) {
+            trie.insert(std::to_string(v));
         }
         int result = 0;
-        for (const auto& val : arr2) {
-            result = std::max(result, trie.lengthOfLongestCommonPrefix(std::to_string(val)));
+        for (const auto& v : arr2) {
+            result = std::max(result, trie.lengthOfLCP(std::to_string(v)));
         }
         return result;
     }
