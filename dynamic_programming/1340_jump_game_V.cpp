@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <functional>
 #include <vector>
 
 /**
@@ -25,74 +26,30 @@ class Solution {
 public:
     int maxJumps(std::vector<int>& arr, int d)
     {
-        return approach2(arr, d);
-    }
-
-private:
-    // time O(ND), space O(N)
-    int approach2(const std::vector<int>& arr, int d)
-    {
         const int n = arr.size();
         std::vector<int> memo(n, -1);
+        std::function<int(int)> dfs = [&](int i) {
+            if (memo[i] != -1)
+                return memo[i];
+
+            int result = 1;
+            for (int j = i + 1; j <= std::min(i + d, n - 1); ++j) {
+                if (arr[i] <= arr[j])
+                    break;
+
+                result = std::max(result, 1 + dfs(j));
+            }
+            for (int j = i - 1; j >= std::max(i - d, 0); --j) {
+                if (arr[i] <= arr[j])
+                    break;
+
+                result = std::max(result, 1 + dfs(j));
+            }
+            return memo[i] = result;
+        };
         int result = 0;
         for (int i = 0; i < n; ++i) {
-            result = std::max(result, dfs(memo, i, d, arr));
-        }
-        return result;
-    }
-
-    int dfs(std::vector<int>& memo, int i, int d, const std::vector<int>& arr)
-    {
-        if (memo[i] != -1)
-            return memo[i];
-
-        int result = 1;
-        const int n = arr.size();
-        for (int j = i + 1; j <= std::min(n - 1, i + d); ++j) {
-            if (arr[j] >= arr[i])
-                break;
-
-            result = std::max(result, 1 + dfs(memo, j, d, arr));
-        }
-        for (int j = i - 1; j >= std::max(0, i - d); --j) {
-            if (arr[j] >= arr[i])
-                break;
-
-            result = std::max(result, 1 + dfs(memo, j, d, arr));
-        }
-        memo[i] = result;
-        return result;
-    }
-
-    // time (NlogN+ND), space O(N)
-    int approach1(const std::vector<int>& arr, int d)
-    {
-        const int n = arr.size();
-        std::vector<std::pair<int, int>> pairs; // <value, index>
-        pairs.reserve(n);
-        for (int i = 0; i < n; ++i) {
-            pairs.emplace_back(arr[i], i);
-        }
-        std::sort(pairs.begin(), pairs.end());
-        // dp[i] = max num of indices we can visit starting from index i
-        // base case: dp[i] = 1, at least visit itself
-        std::vector<int> dp(n, 1);
-        int result = 1;
-        for (int k = 1; k < n; ++k) {
-            const auto& [height, i] = pairs[k];
-            for (int j = i + 1; j <= std::min(n - 1, i + d); ++j) {
-                if (arr[j] >= height)
-                    break;
-
-                dp[i] = std::max(dp[i], 1 + dp[j]);
-            }
-            for (int j = i - 1; j >= std::max(0, i - d); --j) {
-                if (arr[j] >= height)
-                    break;
-
-                dp[i] = std::max(dp[i], 1 + dp[j]);
-            }
-            result = std::max(result, dp[i]);
+            result = std::max(result, dfs(i));
         }
         return result;
     }
