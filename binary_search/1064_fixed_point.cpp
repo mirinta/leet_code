@@ -23,6 +23,9 @@ public:
                 lo = mid + 1;
             }
         }
-        return lo == n || arr[lo] != lo ? -1 : lo;
+        if (lo == n || arr[lo] != lo)
+            return -1;
+
+        return lo;
     }
 };
