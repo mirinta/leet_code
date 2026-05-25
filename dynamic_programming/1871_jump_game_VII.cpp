@@ -20,27 +20,20 @@
 
 class Solution {
 public:
-    bool canReach(std::string s, int minJump, int maxJump)
+    bool canReach(std::string& s, int minJump, int maxJump)
     {
         // dp[i] = whether we can reach index i
-        // If there exist an index j in the range [i-max,i-min] and dp[j] = true,
-        // then we can reach index i.
-        // For each index i, it is not efficient to loop through [i-max,i-min].
-        // In fact, we don't need to know the exact value of j.
-        // We can count the num of reachable indices in the range [i-max, i-min].
-        // - if the count is > 0, then index i is reachable.
-        // - for index i, count(i-max,i-max+1,...,i-min)
-        // - for index i+1, count(i-max+1,...,i-min,i-min+1)
-        // - it is similar to counting using a sliding window
+        // if we can move from j to i,
+        // then j is in the range of [i-max, i-min]
+        // thus, dp[i] = true if there exists a true value in dp[i-max:i-min]
         const int n = s.size();
-        std::vector<int> dp(n, false);
+        std::vector<bool> dp(n, false);
         dp[0] = true;
-        int count = 0;
-        for (int i = 1; i < n; ++i) {
-            if (i > maxJump && dp[i - maxJump - 1]) {
+        for (int i = 1, count = 0; i < n; ++i) {
+            if (i - maxJump - 1 >= 0 && dp[i - maxJump - 1]) {
                 count--;
             }
-            if (i >= minJump && dp[i - minJump]) {
+            if (i - minJump >= 0 && dp[i - minJump]) {
                 count++;
             }
             dp[i] = s[i] == '0' && count > 0;
