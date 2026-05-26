@@ -1,5 +1,4 @@
 #include <string>
-#include <unordered_set>
 
 /**
  * You are given a string word. A letter is called special if it appears both in lowercase and
@@ -13,16 +12,27 @@
 
 class Solution {
 public:
-    int numberOfSpecialChars(std::string word)
+    int numberOfSpecialChars(std::string& word)
     {
-        std::unordered_set<char> set(word.begin(), word.end());
-        int result = 0;
-        for (int i = 0; i < 26; ++i) {
-            const char lower = i + 'a';
-            const char upper = std::toupper(lower);
-            if (set.count(lower) && set.count(upper)) {
-                result++;
+        int upper = 0;
+        int lower = 0;
+        for (const auto& c : word) {
+            if (std::isupper(c)) {
+                upper |= 1 << (c - 'A');
+            } else {
+                lower |= 1 << (c - 'a');
             }
+        }
+        return setbits(upper & lower);
+    }
+
+private:
+    int setbits(int n)
+    {
+        int result = 0;
+        while (n) {
+            n &= n - 1;
+            result++;
         }
         return result;
     }
