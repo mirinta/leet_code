@@ -1,5 +1,5 @@
+#include <array>
 #include <string>
-#include <unordered_map>
 
 /**
  * You are given a string word. A letter c is called special if it appears both in lowercase and
@@ -14,22 +14,22 @@
 
 class Solution {
 public:
-    int numberOfSpecialChars(std::string word)
+    int numberOfSpecialChars(std::string& word)
     {
         const int n = word.size();
-        std::unordered_map<char, int> map;
+        // <uppercase first index, lowercase last index>
+        std::array<std::pair<int, int>, 26> info{};
+        info.fill({INT_MAX, -1});
         for (int i = 0; i < n; ++i) {
-            if (std::islower(word[i]) || !map.count(word[i])) {
-                map[word[i]] = i;
+            if (std::isupper(word[i])) {
+                info[word[i] - 'A'].first = std::min(info[word[i] - 'A'].first, i);
+            } else {
+                info[word[i] - 'a'].second = i;
             }
         }
         int result = 0;
-        for (int i = 0; i < 26; ++i) {
-            const char lower = i + 'a';
-            const char upper = std::toupper(lower);
-            if (map.count(lower) && map.count(upper) && map[lower] < map[upper]) {
-                result++;
-            }
+        for (const auto& [first, last] : info) {
+            result += first != INT_MAX && last != -1 && first > last;
         }
         return result;
     }
