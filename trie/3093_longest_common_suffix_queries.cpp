@@ -24,46 +24,59 @@
  */
 
 class Trie {
-public:
-    explicit Trie() : root(new TrieNode()) {}
+    struct TrieNode {
+        std::array<TrieNode*, 26> next{};
+        int length{INT_MAX};
+        int index{INT_MAX};
 
-    void insert(const std::string& s, int index)
-    {
-        const int length = s.size();
-        auto* node = root;
-        for (auto iter = s.rbegin(); iter != s.rend(); ++iter) {
-            const int i = *iter - 'a';
-            if (!node->next[i]) {
-                node->next[i] = new TrieNode();
+        ~TrieNode()
+        {
+            for (int i = 0; i < 26; ++i) {
+                delete next[i];
             }
-            node = node->next[i];
-            if (length < node->length) {
-                node->length = length;
+        }
+    };
+
+public:
+    explicit Trie() : root(new TrieNode) {}
+
+    ~Trie()
+    {
+        delete root;
+    }
+
+    void insertReversely(const std::string& s, int index)
+    {
+        const int n = s.size();
+        auto* node = root;
+        for (int i = n - 1; i >= 0; --i) {
+            if (!node->next[s[i] - 'a']) {
+                node->next[s[i] - 'a'] = new TrieNode;
+            }
+            node = node->next[s[i] - 'a'];
+            if (n < node->length) {
+                node->length = n;
+                node->index = index;
+            } else if (n == node->length && index < node->index) {
                 node->index = index;
             }
         }
     }
 
-    int find(const std::string& suffix)
+    int findReversely(const std::string& s)
     {
+        const int n = s.size();
         auto* node = root;
-        for (auto iter = suffix.rbegin(); iter != suffix.rend(); ++iter) {
-            const int i = *iter - 'a';
-            if (!node->next[i])
+        for (int i = n - 1; i >= 0; --i) {
+            if (!node->next[s[i] - 'a'])
                 break;
 
-            node = node->next[i];
+            node = node->next[s[i] - 'a'];
         }
         return node->index;
     }
 
 private:
-    struct TrieNode {
-        std::array<TrieNode*, 26> next;
-        int index{-1};
-        int length{INT_MAX};
-    };
-
     TrieNode* root;
 };
 
@@ -72,19 +85,21 @@ public:
     std::vector<int> stringIndices(std::vector<std::string>& wordsContainer, std::vector<std::string>& wordsQuery)
     {
         Trie trie;
-        int minLength = INT_MAX;
-        int minIndex = INT_MAX;
-        for (int i = 0; i < wordsContainer.size(); ++i) {
-            trie.insert(wordsContainer[i], i);
-            if (wordsContainer[i].size() < minLength) {
-                minLength = wordsContainer[i].size();
-                minIndex = i;
+        const int n = wordsContainer.size();
+        int shortestLength = INT_MAX;
+        int shortest = -1;
+        for (int i = 0; i < n; ++i) {
+            trie.insertReversely(wordsContainer[i], i);
+            if (wordsContainer[i].size() < shortestLength) {
+                shortestLength = wordsContainer[i].size();
+                shortest = i;
             }
         }
-        std::vector<int> result(wordsQuery.size());
-        for (int i = 0; i < wordsQuery.size(); ++i) {
-            const int j = trie.find(wordsQuery[i]);
-            result[i] = j == -1 ? minIndex : j;
+        std::vector<int> result;
+        result.reserve(wordsQuery.size());
+        for (const auto& s : wordsQuery) {
+            const int j = trie.findReversely(s);
+            result.push_back(j == INT_MAX ? shortest : j);
         }
         return result;
     }
