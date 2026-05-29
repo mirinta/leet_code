@@ -1,5 +1,5 @@
+#include <array>
 #include <string>
-#include <unordered_map>
 
 /**
  * A confusing number is a number that when rotated 180 degrees becomes a different number with each
@@ -24,15 +24,17 @@ class Solution {
 public:
     bool confusingNumber(int n)
     {
-        static const std::unordered_map<char, char> map{{'0', '0'}, {'1', '1'}, {'6', '9'}, {'8', '8'}, {'9', '6'}};
-        auto str = std::to_string(n);
-        for (auto& c : str) {
-            if (!map.count(c))
+        static constexpr std::array<int, 10> map{0, 1, -1, -1, -1, -1, 9, -1, 8, 6};
+        const int origin = n;
+        int rotated = 0;
+        while (n) {
+            const int d = n % 10;
+            if (map[d] == -1)
                 return false;
 
-            c = map.at(c);
+            rotated = rotated * 10 + map[d];
+            n /= 10;
         }
-        std::reverse(str.begin(), str.end());
-        return std::stoi(str) != n;
+        return origin != rotated;
     }
 };
