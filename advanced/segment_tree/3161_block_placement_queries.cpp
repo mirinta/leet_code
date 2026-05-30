@@ -29,20 +29,19 @@
 
 class SegmentTree {
 public:
-    explicit SegmentTree(const std::vector<int>& nums)
-        : n(nums.size()), data(4 * n, 0), lazy(4 * n, 0), flag(4 * n, false)
+    explicit SegmentTree(const std::vector<int>& nums) : n(nums.size()), data(4 * n), lazy(4 * n), flag(4 * n)
     {
         build(0, n - 1, 1, nums);
+    }
+
+    void set(int L, int R, int value)
+    {
+        set(L, R, value, 0, n - 1, 1);
     }
 
     int query(int L, int R)
     {
         return query(L, R, 0, n - 1, 1);
-    }
-
-    void set(int L, int R, int val)
-    {
-        set(L, R, val, 0, n - 1, 1);
     }
 
 private:
@@ -58,34 +57,9 @@ private:
         data[id] = std::max(data[2 * id], data[2 * id + 1]);
     }
 
-    int query(int L, int R, int lo, int hi, int id)
-    {
-        if (lo >= L && hi <= R)
-            return data[id];
-
-        if (flag[id]) {
-            data[2 * id] = lazy[id];
-            data[2 * id + 1] = lazy[id];
-            lazy[2 * id] = lazy[id];
-            lazy[2 * id + 1] = lazy[id];
-            lazy[id] = 0;
-            flag[2 * id] = true;
-            flag[2 * id + 1] = true;
-            flag[id] = false;
-        }
-        const int mid = lo + (hi - lo) / 2;
-        int result = INT_MIN;
-        if (mid >= L) {
-            result = std::max(result, query(L, R, lo, mid, 2 * id));
-        }
-        if (mid < R) {
-            result = std::max(result, query(L, R, mid + 1, hi, 2 * id + 1));
-        }
-        return result;
-    }
-
     void set(int L, int R, int val, int lo, int hi, int id)
     {
+        // current segment is [lo:hi], target range is [L:R]
         if (lo >= L && hi <= R) {
             data[id] = val;
             lazy[id] = val;
@@ -98,9 +72,9 @@ private:
             lazy[2 * id] = lazy[id];
             lazy[2 * id + 1] = lazy[id];
             lazy[id] = 0;
+            flag[id] = false;
             flag[2 * id] = true;
             flag[2 * id + 1] = true;
-            flag[id] = false;
         }
         const int mid = lo + (hi - lo) / 2;
         if (mid >= L) {
@@ -112,11 +86,37 @@ private:
         data[id] = std::max(data[2 * id], data[2 * id + 1]);
     }
 
+    int query(int L, int R, int lo, int hi, int id)
+    {
+        if (lo >= L && hi <= R)
+            return data[id];
+
+        if (flag[id]) {
+            data[2 * id] = lazy[id];
+            data[2 * id + 1] = lazy[id];
+            lazy[2 * id] = lazy[id];
+            lazy[2 * id + 1] = lazy[id];
+            lazy[id] = 0;
+            flag[id] = false;
+            flag[2 * id] = true;
+            flag[2 * id + 1] = true;
+        }
+        const int mid = lo + (hi - lo) / 2;
+        int result = INT_MIN;
+        if (mid >= L) {
+            result = std::max(result, query(L, R, lo, mid, 2 * id));
+        }
+        if (mid < R) {
+            result = std::max(result, query(L, R, mid + 1, hi, 2 * id + 1));
+        }
+        return result;
+    }
+
 private:
     const int n;
-    std::vector<int> data;  // 1-indexed
-    std::vector<int> lazy;  // 1-indexed
-    std::vector<bool> flag; // 1-indexed
+    std::vector<int> data;
+    std::vector<int> lazy;
+    std::vector<bool> flag;
 };
 
 class Solution {
@@ -127,21 +127,22 @@ public:
         for (const auto& q : queries) {
             max = std::max(max, q[1]);
         }
-        // tree[i] = empty space between i and the nearest block to the left of i
+        // tree[i] = empty space between i and the nearest obstacle to the left of i
         SegmentTree tree(std::vector<int>(max + 2, 0));
-        std::set<int> set{0, max + 1};
+        std::set<int> obstacles{0, max + 1};
         std::vector<bool> result;
+        result.reserve(queries.size());
         for (const auto& q : queries) {
-            const int x = q[1];
-            auto iter = set.lower_bound(x);
-            const int prev = *std::prev(iter);
-            const int next = *iter;
+            const auto& x = q[1];
+            const int prev = *std::prev(obstacles.lower_bound(x)); // nearest obstacle to the left of x
+            const int next = *obstacles.upper_bound(x);            // nearest obstacle to the right of x
             if (q[0] == 1) {
-                set.insert(x);
-                tree.set(x, x, x - prev);
-                tree.set(next, next, next - x);
+                tree.set(x, x, x - prev);       // tree[x] becomes x-prev
+                tree.set(next, next, next - x); // tree[next] becomes next-x
+                obstacles.insert(x);
             } else {
-                result.push_back(std::max(x - prev, tree.query(0, prev)) >= q[2]);
+                // query the max empty space in [0:prev], i.e., max of tree[0:prev]
+                result.push_back(std::max(tree.query(0, prev), x - prev) >= q[2]);
             }
         }
         return result;
