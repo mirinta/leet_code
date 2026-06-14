@@ -1,4 +1,4 @@
-#include <vector>
+#include <algorithm>
 
 /**
  * Definition for singly-linked list.
@@ -31,14 +31,44 @@ class Solution {
 public:
     int pairSum(ListNode* head)
     {
-        std::vector<int> v;
-        for (auto* p = head; p; p = p->next) {
-            v.push_back(p->val);
-        }
-        int result = INT_MIN;
-        for (int i = 0, j = v.size() - 1; i < j; ++i, --j) {
-            result = std::max(result, v[i] + v[j]);
+        auto* last = reverse(getMiddle(head));
+        int result = 0;
+        while (last) {
+            result = std::max(result, head->val + last->val);
+            head = head->next;
+            last = last->next;
         }
         return result;
+    }
+
+private:
+    ListNode* getMiddle(ListNode* head)
+    {
+        if (!head)
+            return nullptr;
+
+        auto* slow = head;
+        auto* fast = head;
+        while (fast && fast->next) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow;
+    }
+
+    ListNode* reverse(ListNode* head)
+    {
+        if (!head)
+            return nullptr;
+
+        ListNode* prev = nullptr;
+        auto* curr = head;
+        while (curr) {
+            auto* next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
     }
 };
