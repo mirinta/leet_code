@@ -29,15 +29,16 @@ public:
         if (!head)
             return nullptr;
 
-        ListNode vHead(-1);
-        vHead.next = head;
-        auto* slow = &vHead;
+        ListNode vHead(-1, head);
+        auto* curr = &vHead;
+        auto* slow = head;
         auto* fast = head;
         while (fast && fast->next) {
             fast = fast->next->next;
             slow = slow->next;
+            curr = curr->next;
         }
-        slow->next = slow->next->next;
+        curr->next = slow->next;
         return vHead.next;
     }
 };
