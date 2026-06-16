@@ -97,7 +97,7 @@ class Solution {
 public:
     std::vector<int> assignEdgeWeights(std::vector<std::vector<int>>& edges, std::vector<std::vector<int>>& queries)
     {
-        static constexpr auto powOf2 = []() {
+        static const auto powOf2 = []() {
             static constexpr long long kMod = 1e9 + 7;
             std::array<long long, 100000> result{};
             result[0] = 1;
