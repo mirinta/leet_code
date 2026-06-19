@@ -17,15 +17,11 @@ class Solution {
 public:
     int largestAltitude(const std::vector<int>& gain)
     {
-        // index:    0  1  2  3   4
-        // gain:    -5  1  5  0  -7
-        // nums: 0  -5 -4  1  1  -6
-        // gain[i] + nums[i-1] = nums[i]
-        int prevHeight = 0;
-        int result = prevHeight;
+        int curr = 0;
+        int result = curr;
         for (const auto& val : gain) {
-            prevHeight += val;
-            result = std::max(result, prevHeight);
+            curr += val;
+            result = std::max(result, curr);
         }
         return result;
     }

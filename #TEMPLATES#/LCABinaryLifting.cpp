@@ -1,3 +1,4 @@
+#include <bit>
 #include <functional>
 #include <vector>
 
