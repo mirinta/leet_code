@@ -24,25 +24,26 @@ public:
         for (const auto& val : nums) {
             map[val]++;
         }
+        // special case: x = 1
         int result = 0;
         if (map.count(1)) {
-            result = map[1] % 2 != 0 ? map[1] : map[1] - 1;
+            result = map[1] - (map[1] % 2 == 0);
             map.erase(1);
         }
         for (const auto& [val, freq] : map) {
+            long long x = val;
             int length = 0;
-            long long base = val;
             while (true) {
-                if (!map.count(base)) {
-                    length -= 1;
+                if (!map.count(x)) {
+                    length = std::max(0, length - 1);
                     break;
                 }
-                if (map[base] == 1) {
-                    length += 1;
+                if (map[x] == 1) {
+                    length++;
                     break;
                 }
                 length += 2;
-                base *= base;
+                x *= x;
             }
             result = std::max(result, length);
         }
