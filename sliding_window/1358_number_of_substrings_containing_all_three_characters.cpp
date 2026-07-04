@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <array>
 #include <string>
 
@@ -14,25 +13,19 @@
 
 class Solution {
 public:
-    int numberOfSubstrings(std::string s)
+    int numberOfSubstrings(std::string& s)
     {
         const int n = s.size();
         std::array<int, 3> count{};
         int result = 0;
         for (int left = 0, right = 0; right < n; ++right) {
             count[s[right] - 'a']++;
-            while (isValid(count)) {
+            while (count[0] >= 1 && count[1] >= 1 && count[2] >= 1) {
                 count[s[left] - 'a']--;
                 left++;
             }
             result += left;
         }
         return result;
-    }
-
-private:
-    bool isValid(const std::array<int, 3>& count)
-    {
-        return std::all_of(count.begin(), count.end(), [](const auto& val) { return val >= 1; });
     }
 };
