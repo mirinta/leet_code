@@ -15,22 +15,17 @@ class Solution {
 public:
     std::vector<int> sequentialDigits(int low, int high)
     {
-        const std::string s("123456789");
+        static const std::string s{"123456789"};
         std::vector<int> result;
-        for (int length = std::to_string(low).size(); length <= std::to_string(high).size(); ++length) {
-            for (int i = 0; i + length - 1 < s.size(); ++i) {
-                const int val = std::stoi(s.substr(i, length));
-                if (inRange(val, low, high)) {
-                    result.push_back(val);
+        for (int L = std::to_string(low).size(); L <= std::to_string(high).size(); ++L) {
+            for (int start = 0; start + L - 1 < s.size(); ++start) {
+                const auto sub = s.substr(start, L);
+                const auto val = std::stoi(sub);
+                if (val >= low && val <= high) {
+                    result.emplace_back(val);
                 }
             }
         }
         return result;
-    }
-
-private:
-    bool inRange(int val, int low, int high)
-    {
-        return low <= val && val <= high;
     }
 };
