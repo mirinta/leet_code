@@ -22,14 +22,15 @@ class Solution {
 public:
     std::vector<int> arrayRankTransform(std::vector<int>& arr)
     {
-        std::set<int> set(arr.begin(), arr.end());
-        int rank = 1;
+        const int n = arr.size();
+        std::set<int> set{arr.begin(), arr.end()};
         std::unordered_map<int, int> map;
+        int rank = 1;
         for (const auto& val : set) {
             map[val] = rank++;
         }
-        std::vector<int> result(arr.size());
-        for (int i = 0; i < arr.size(); ++i) {
+        std::vector<int> result(n);
+        for (int i = 0; i < n; ++i) {
             result[i] = map[arr[i]];
         }
         return result;
