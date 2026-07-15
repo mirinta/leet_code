@@ -27,12 +27,14 @@ class UnionFind {
 public:
     explicit UnionFind(int n) : root(n), size(n, 1)
     {
-        std::iota(root.begin(), root.end(), 0);
+        for (int i = 0; i < n; ++i) {
+            root[i] = i;
+        }
     }
 
     int find(int x)
     {
-        if (x != root[x]) {
+        if (root[x] != x) {
             root[x] = find(root[x]);
         }
         return root[x];
@@ -52,11 +54,6 @@ public:
         size[rootP] += size[rootQ];
     }
 
-    int sizeOfGroup(int x)
-    {
-        return size[find(x)];
-    }
-
 private:
     std::vector<int> root;
     std::vector<int> size;
@@ -70,17 +67,17 @@ public:
         for (const auto& e : edges) {
             uf.connect(e[0], e[1]);
         }
-        std::unordered_map<int, int> map;
+        std::unordered_map<int, std::pair<int, int>> map;
+        for (int i = 0; i < n; ++i) {
+            map[uf.find(i)].first++;
+        }
         for (const auto& e : edges) {
-            map[uf.find(e[0])]++;
+            map[uf.find(e[0])].second++;
         }
         int result = 0;
-        for (int i = 0; i < n; ++i) {
-            if (i != uf.find(i))
-                continue;
-
-            const int m = uf.sizeOfGroup(i);
-            result += map[uf.find(i)] == m * (m - 1) / 2;
+        for (const auto& [k, v] : map) {
+            const auto& [numOfNodes, numOfEdges] = v;
+            result += numOfEdges == (numOfNodes - 1) * numOfNodes / 2;
         }
         return result;
     }
