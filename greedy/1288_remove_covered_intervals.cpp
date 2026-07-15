@@ -19,13 +19,17 @@ class Solution {
 public:
     int removeCoveredIntervals(std::vector<std::vector<int>>& intervals)
     {
-        const int n = intervals.size();
+        // interval1: [a, b]
+        // interval2: [x, y]
+        // interval1 is covered by interval2 means:
+        // x <= a && y >= b
         std::sort(intervals.begin(), intervals.end(), [](const auto& v1, const auto& v2) {
             if (v1[0] == v2[0])
                 return v1[1] > v2[1];
 
             return v1[0] < v2[0];
         });
+        const int n = intervals.size();
         int result = 0;
         for (int i = 0, end = 0; i < n; ++i) {
             if (intervals[i][1] > end) {
