@@ -1,3 +1,4 @@
+#include <functional>
 #include <string>
 #include <vector>
 
@@ -32,35 +33,26 @@
 
 class Solution {
 public:
-    std::vector<std::string> generateAbbreviations(std::string word)
+    std::vector<std::string> generateAbbreviations(std::string& word)
     {
+        const int n = word.size();
         std::string s;
         std::vector<std::string> result;
-        backtrack(result, s, 0, true, word);
-        backtrack(result, s, 0, false, word);
-        return result;
-    }
-
-private:
-    void backtrack(std::vector<std::string>& result,
-                   std::string& s,
-                   int i,
-                   bool canBeAbbreviated,
-                   const std::string& word)
-    {
-        if (i == word.size()) {
-            result.push_back(s);
-            return;
-        }
-        const int originalLength = s.size();
-        for (int len = 1; len <= word.size() - i; ++len) {
-            if (canBeAbbreviated) {
-                s.append(std::to_string(len));
-            } else {
-                s.append(word.begin() + i, word.begin() + i + len);
+        std::function<void(int, bool)> backtrack = [&](int i, bool can) {
+            if (i >= n) {
+                result.emplace_back(s);
+                return;
             }
-            backtrack(result, s, i + len, !canBeAbbreviated, word);
-            s.erase(s.begin() + originalLength, s.end());
-        }
+            s.push_back(word[i]);
+            backtrack(i + 1, true);
+            s.pop_back();
+            for (int len = 1, orgLen = s.size(); can && (i + len - 1 < n); ++len) {
+                s.append(std::to_string(len));
+                backtrack(i + len, false);
+                s.resize(orgLen);
+            }
+        };
+        backtrack(0, true);
+        return result;
     }
 };
