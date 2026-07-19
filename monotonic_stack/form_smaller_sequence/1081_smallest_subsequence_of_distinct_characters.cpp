@@ -13,7 +13,7 @@
 
 class Solution {
 public:
-    std::string smallestSubsequence(std::string s)
+    std::string smallestSubsequence(std::string& s)
     {
         static constexpr int R = 26;
         const int n = s.size();
