@@ -1,5 +1,4 @@
 #include <array>
-#include <stack>
 #include <string>
 
 /**
@@ -14,33 +13,27 @@
 
 class Solution {
 public:
-    std::string removeDuplicateLetters(std::string s)
+    std::string removeDuplicateLetters(std::string& s)
     {
+        static constexpr int R = 26;
         const int n = s.size();
-        std::array<int, 26> last{};
+        std::array<int, R> last{};
         last.fill(-1);
         for (int i = 0; i < n; ++i) {
             last[s[i] - 'a'] = i;
         }
-        std::array<int, 26> inStack{};
-        inStack.fill(false);
-        std::stack<int> stack;
+        std::array<bool, R> inResult{};
+        std::string result;
         for (int i = 0; i < n; ++i) {
-            if (inStack[s[i] - 'a'])
+            if (inResult[s[i] - 'a'])
                 continue;
 
-            while (!stack.empty() && s[i] < s[stack.top()] && last[s[stack.top()] - 'a'] > i) {
-                const int top = stack.top();
-                stack.pop();
-                inStack[s[top] - 'a'] = false;
+            while (!result.empty() && s[i] < result.back() && i < last[result.back() - 'a']) {
+                inResult[result.back() - 'a'] = false;
+                result.pop_back();
             }
-            stack.push(i);
-            inStack[s[i] - 'a'] = true;
-        }
-        std::string result(stack.size(), ' ');
-        for (int i = result.size() - 1; i >= 0; --i) {
-            result[i] = s[stack.top()];
-            stack.pop();
+            result.push_back(s[i]);
+            inResult[s[i] - 'a'] = true;
         }
         return result;
     }
