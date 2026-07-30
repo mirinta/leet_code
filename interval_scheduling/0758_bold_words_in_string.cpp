@@ -19,74 +19,28 @@
 
 class Solution {
 public:
-    std::string boldWords(std::vector<std::string>& words, std::string s)
-    {
-        return approach2(s, words);
-    }
-
-private:
-    const std::string kBoldTagBegin{"<b>"};
-    const std::string kBoldTagEnd{"</b>"};
-
-    std::string approach2(const std::string& s, const std::vector<std::string>& words)
+    std::string boldWords(std::vector<std::string>& words, std::string& s)
     {
         const int n = s.size();
-        std::vector<bool> isBold(n, false);
+        std::vector<bool> mask(n, false);
         for (const auto& word : words) {
             int start = s.find(word);
             while (start != std::string::npos) {
-                std::fill(isBold.begin() + start, isBold.begin() + start + word.size(), true);
+                std::fill(mask.begin() + start, mask.begin() + start + word.size(), true);
                 start = s.find(word, start + 1);
             }
         }
         std::string result;
+        result.reserve(n);
         for (int i = 0; i < n; ++i) {
-            if (isBold[i] && (i == 0 || !isBold[i - 1])) {
-                result.append(kBoldTagBegin);
+            if (mask[i] && (i == 0 || !mask[i - 1])) {
+                result.append("<b>");
             }
             result.push_back(s[i]);
-            if (isBold[i] && (i == n - 1 || !isBold[i + 1])) {
-                result.append(kBoldTagEnd);
+            if (mask[i] && (i == n - 1 || !mask[i + 1])) {
+                result.append("</b>");
             }
         }
         return result;
-    }
-
-    std::string approach1(std::string& s, const std::vector<std::string>& words)
-    {
-        std::vector<std::pair<int, int>> intervals;
-        for (const auto& word : words) {
-            int start = s.find(word);
-            while (start != std::string::npos) {
-                intervals.emplace_back(start, start + word.size() - 1);
-                start = s.find(word, start + 1);
-            }
-        }
-        mergeIntervals(intervals);
-        int count = 0;
-        for (const auto& [i, j] : intervals) {
-            s.insert(i + count, kBoldTagBegin);
-            count += kBoldTagBegin.size();
-            s.insert(j + 1 + count, kBoldTagEnd);
-            count += kBoldTagEnd.size();
-        }
-        return s;
-    }
-
-    void mergeIntervals(std::vector<std::pair<int, int>>& intervals)
-    {
-        if (intervals.empty() || intervals.size() == 1)
-            return;
-
-        std::sort(intervals.begin(), intervals.end());
-        std::vector<std::pair<int, int>> merged;
-        for (const auto& interval : intervals) {
-            if (merged.empty() || interval.first > merged.back().second + 1) {
-                merged.push_back(interval);
-            } else {
-                merged.back().second = std::max(merged.back().second, interval.second);
-            }
-        }
-        intervals = merged;
     }
 };
