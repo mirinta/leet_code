@@ -19,32 +19,36 @@
  */
 
 class Trie {
+    struct TrieNode {
+        std::array<std::unique_ptr<TrieNode>, 26> next{};
+        bool isEnd{false};
+    };
+
 public:
     explicit Trie() : root(new TrieNode) {}
 
     void insert(const std::string& s)
     {
-        auto* node = root;
+        auto* node = root.get();
         for (const auto& c : s) {
             const int index = c - 'a';
             if (!node->next[index]) {
-                node->next[index] = new TrieNode;
+                node->next[index] = std::make_unique<TrieNode>();
             }
-            node = node->next[index];
+            node = node->next[index].get();
         }
         node->isEnd = true;
     }
 
-    // check if every prefix of s is in the trie
-    bool check(const std::string& s)
+    bool isValid(const std::string& s)
     {
-        auto* node = root;
+        auto* node = root.get();
         for (const auto& c : s) {
             const int index = c - 'a';
             if (!node->next[index])
                 return false;
 
-            node = node->next[index];
+            node = node->next[index].get();
             if (!node->isEnd)
                 return false;
         }
@@ -52,12 +56,7 @@ public:
     }
 
 private:
-    struct TrieNode {
-        bool isEnd{false};
-        std::array<TrieNode*, 26> next{};
-    };
-
-    TrieNode* root;
+    std::unique_ptr<TrieNode> root;
 };
 
 class Solution {
@@ -70,7 +69,7 @@ public:
         }
         std::string result;
         for (const auto& s : words) {
-            if (!trie.check(s) || s.size() < result.size())
+            if (!trie.isValid(s) || s.size() < result.size())
                 continue;
 
             result = s.size() > result.size() ? s : std::min(result, s);
