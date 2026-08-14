@@ -1,5 +1,5 @@
+#include <array>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 /**
@@ -12,17 +12,16 @@
 
 class Solution {
 public:
-    int maximumLengthSubstring(std::string s)
+    int maximumLengthSubstring(std::string& s)
     {
         const int n = s.size();
-        std::unordered_map<char, int> map;
+        std::array<int, 26> count{};
         int result = 0;
         for (int left = 0, right = 0; right < n; ++right) {
-            map[s[right]]++;
-            while (map[s[right]] > 2) {
-                if (--map[s[left]] == 0) {
-                    map.erase(s[left]);
-                }
+            const int index = s[right] - 'a';
+            count[index]++;
+            while (count[index] > 2) {
+                count[s[left] - 'a']--;
                 left++;
             }
             result = std::max(result, right - left + 1);
