@@ -25,23 +25,26 @@ class Solution {
 public:
     int maxNumberOfFamilies(int n, std::vector<std::vector<int>>& reservedSeats)
     {
-        static constexpr int mask1 = 15 << 3;       // seats[3:6], 0-indexed
-        static constexpr int mask2 = 15 << 5;       // seats[6:9], 0-indexed
-        static constexpr int mask3 = 15 << 1;       // seats[1:4], 0-indexed
-        static constexpr int mask4 = mask2 | mask3; // seats[1:8], 0-indexed
-        std::unordered_map<int, std::vector<int>> map;
-        for (const auto& s : reservedSeats) {
-            map[s[0]].emplace_back(s[1]);
-        }
-        int result = (n - map.size()) * 2;
-        for (const auto& [row, seats] : map) {
-            int mask = (1 << 10) - 1;
-            for (const auto& i : seats) {
-                mask ^= 1 << (i - 1);
+        // 9 8 7 | 6 5 4 3 | 2 1 0
+        static constexpr int case1 = 15 << 1; // seats[1:4]
+        static constexpr int case2 = 15 << 3; // seats[3:6]
+        static constexpr int case3 = 15 << 5; // seats[5:8]
+        static constexpr int case4 = case1 | case3;
+        std::unordered_map<int, int> map;
+        for (const auto& info : reservedSeats) {
+            const auto& row = info[0] - 1;
+            const auto& id = info[1] - 1;
+            if (!map.count(row)) {
+                map[row] = (1 << 10) - 1;
             }
-            if (!((mask & mask4) ^ mask4)) {
+            map[row] ^= (1 << id);
+        }
+        // each non-reserved row can assign at most two groups
+        int result = 2 * (n - map.size());
+        for (const auto& [r, mask] : map) {
+            if ((mask & case4) == case4) {
                 result += 2;
-            } else if (!((mask & mask1) ^ mask1) || !((mask & mask2) ^ mask2) || !((mask & mask3) ^ mask3)) {
+            } else if ((mask & case1) == case1 || (mask & case2) == case2 || (mask & case3) == case3) {
                 result++;
             }
         }
