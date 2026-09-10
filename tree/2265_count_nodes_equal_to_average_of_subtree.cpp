@@ -31,29 +31,23 @@ class Solution {
 public:
     int averageOfSubtree(TreeNode* root)
     {
-        if (!root)
-            return 0;
-
         int result = 0;
         dfs(result, root);
         return result;
     }
 
 private:
-    // return[0] = num of nodes
-    // return[1] = total sum of all the nodes
+    // return <num of nodes, sum of nodes>
     std::pair<int, int> dfs(int& result, TreeNode* root)
     {
         if (!root)
             return {0, 0};
 
-        const auto [leftCount, leftSum] = dfs(result, root->left);
-        const auto [rightCount, rightSum] = dfs(result, root->right);
-        const auto sum = root->val + leftSum + rightSum;
-        const auto count = leftCount + rightCount + 1;
-        if (sum / count == root->val) {
-            result++;
-        }
+        const auto [lCount, lSum] = dfs(result, root->left);
+        const auto [rCount, rSum] = dfs(result, root->right);
+        const int count = lCount + rCount + 1;
+        const int sum = lSum + rSum + root->val;
+        result += sum / count == root->val;
         return {count, sum};
     }
 };
